@@ -1,0 +1,365 @@
+<!-- 
+관리자 페이지 메인 레이아웃 구조
+1. 루트 컨테이너
+2. 상단 네비게이션 바
+3. 메인 콘텐츠 영역
+   - 사이드바 네비게이션
+   - 주요 콘텐츠 영역
+-->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>관리자 페이지</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="../../static/css/admin/global.css" />
+    <link rel="stylesheet" href="../../static/css/admin/navi.css" />
+    <link rel="stylesheet" href="../../static/css/admin/sidebar.css" />
+    <link rel="stylesheet" href="../../static/css/admin/main.css" />
+    <link rel="stylesheet" href="../../static/css/admin/media.css" />
+  </head>
+  <body class="admin-body">
+    <!-- 전체 페이지 루트 컨테이너 -->
+    <div id="root">
+      <!-- 관리자 페이지 레이아웃 컨테이너 -->
+      <div id="admin-layout" class="layout-container">
+        <!-- 상단 네비게이션 바 -->
+        <header class="gnb-container" id="admin-gnb">
+          <div class="gnb-content">
+            <div class="logo-wrapper">
+              <button
+                class="logo-btn"
+                type="button"
+                aria-label="로고 버튼"
+              ></button>
+              <div class="logo-type">· only for 관리자</div>
+            </div>
+          </div>
+        </header>
+
+        <!-- 메인 콘텐츠 영역 -->
+        <div class="main-content">
+          <!-- 사이드바 네비게이션 -->
+          <nav
+            id="sidebar-nav"
+            class="sidebar-container sidebar-expanded sidebar-scroll"
+          >
+            <div class="sidebar-content">
+              <div class="nav-menu">
+                <div
+                  id="nav-links"
+                  class="nav-links-menu"
+                  style="overflow: auto"
+                >
+                  <!-- 공고관리 섹션 -->
+                  <div class="menu-section">
+                    <a class="menu-item menu-has-submenu">
+                      <span class="menu-label">
+                        <img
+                          src="../../static/images/admin/공고.svg"
+                          alt="공고관리"
+                          class="menu-icon"
+                          width="16"
+                          height="16"
+                        />
+                        공고관리
+                        <img
+                          src="../../static/images/admin/arrow.svg"
+                          class="arrow-icon menu-arrow"
+                          alt="메뉴 화살표"
+                        />
+                      </span>
+                    </a>
+                    <div class="submenu-container">
+                      <a class="submenu-item" href="/admin/announce/list"
+                        >공고목록</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- 회원관리 섹션 -->
+                  <div class="menu-section">
+                    <a class="menu-item menu-has-submenu">
+                      <span class="menu-label">
+                        <img
+                          src="../../static/images/admin/회원1.png"
+                          alt="회원관리"
+                          class="menu-icon"
+                          width="16"
+                          height="16"
+                        />
+                        회원관리
+                        <img
+                          src="../../static/images/admin/arrow.svg"
+                          class="arrow-icon menu-arrow"
+                          alt="메뉴 화살표"
+                        />
+                      </span>
+                    </a>
+                    <div class="submenu-container">
+                      <a class="submenu-item" href="/admin/member/company"
+                        >기업회원</a
+                      >
+                      <a class="submenu-item" href="/admin/member/user"
+                        >일반회원</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- 문의관리 섹션 -->
+                  <div class="menu-section">
+                    <a class="menu-item menu-has-submenu">
+                      <span class="menu-label">
+                        <img
+                          src="../../static/images/admin/문의.png"
+                          alt="문의관리"
+                          class="menu-icon"
+                          width="16"
+                          height="16"
+                        />
+                        문의관리
+                        <img
+                          src="../../static/images/admin/arrow.svg"
+                          class="arrow-icon menu-arrow"
+                          alt="메뉴 화살표"
+                        />
+                      </span>
+                    </a>
+                    <div class="submenu-container">
+                      <a class="submenu-item" href="/admin/inquiry/personal"
+                        >개인문의</a
+                      >
+                      <a class="submenu-item" href="/admin/inquiry/company"
+                        >기업문의</a
+                      >
+                    </div>
+                  </div>
+
+                  <!-- 신고관리 섹션 -->
+                  <div class="menu-section">
+                    <a class="menu-item menu-has-submenu">
+                      <span class="menu-label">
+                        <img
+                          src="../../static/images/admin/신고.png"
+                          alt="신고관리"
+                          class="menu-icon"
+                          width="16"
+                          height="16"
+                        />
+                        신고관리
+                        <img
+                          src="../../static/images/admin/arrow.svg"
+                          class="arrow-icon menu-arrow"
+                          alt="메뉴 화살표"
+                        />
+                      </span>
+                    </a>
+                    <div class="submenu-container">
+                      <a class="submenu-item" href="/admin/report/list"
+                        >신고목록</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <!-- 메인 컨텐츠 영역 -->
+          <div id="main-contents" class="contents-container">
+            <main class="project-container">
+              <div id="project-content" class="project-box">
+                <section>
+                  <div class="head-banner"></div>
+                </section>
+                <section class="project-presentation">
+                  <h2 class="presentation-title">프로젝트 관리</h2>
+                  <div class="presentation-desc">
+                    프로젝트를 공개하는 데 필요한 내용을 작성해 주세요.
+                  </div>
+                  <div class="presentation-content">
+                    <div class="project-wrapper">
+                      <div class="project-layout">
+                        <div class="project-contents">
+                          <!-- 프로젝트 상태 배너 -->
+                          <div class="status-banner">
+                            <dl>
+                              <dt class="status-label">
+                                프로젝트 준비 상태
+                                <button
+                                  class="btn btn-secondary btn-xs status-modal-btn"
+                                  type="button"
+                                >
+                                  <span class="btn-text"
+                                    >지금 나의 단계는?</span
+                                  >
+                                </button>
+                              </dt>
+                              <dd>
+                                <ul>
+                                  <li class="status-view">
+                                    <div
+                                      class="status-icon status-yellow"
+                                    ></div>
+                                    프로젝트 작성 중
+                                  </li>
+                                </ul>
+                                <div class="status-guide">
+                                  아래의 필수 항목들이 모두 작성 완료 상태로
+                                  바뀌면 [제출하기]를 누를 수 있어요.
+                                </div>
+                              </dd>
+                            </dl>
+                          </div>
+
+                          <!-- 일정 정보 배너 -->
+                          <div class="schedule-banner">
+                            <img
+                              src="../../static/images/admin/캘린더.svg"
+                              alt="캘린더 아이콘"
+                              class="schedule-icon"
+                            />
+                            <div class="schedule-info">
+                              <p>프로젝트 진행 일정을 확인해 보세요!</p>
+                              <a
+                                href="/studio/reward/337842/schedule"
+                                class="btn btn-secondary btn-sm"
+                              >
+                                <span class="btn-text">일정 보기</span>
+                              </a>
+                            </div>
+                          </div>
+
+                          <!-- 프로젝트 메뉴 리스트 -->
+                          <div class="menu-list-container">
+                            <ul>
+                              <!-- 서비스 요금 -->
+                              <li class="menu-card menu-wadiz">
+                                <div class="menu-content">
+                                  <div class="menu-name">서비스 요금</div>
+                                  <em class="menu-status menu-wadiz-color">
+                                    작성 전
+                                  </em>
+                                  <a
+                                    class="menu-btn"
+                                    href="/studio/reward/337842/funding/plan"
+                                  >
+                                    <span>작성하기</span>
+                                  </a>
+                                </div>
+                              </li>
+
+                              <!-- 프로젝트 정보 -->
+                              <li class="menu-card menu-wadiz">
+                                <div class="menu-content">
+                                  <div class="menu-name">프로젝트 정보</div>
+                                  <em class="menu-status menu-wadiz-color">
+                                    작성 전
+                                  </em>
+                                  <a
+                                    class="menu-btn"
+                                    href="/studio/reward/337842/funding/screening"
+                                  >
+                                    <span>작성하기</span>
+                                  </a>
+                                </div>
+                              </li>
+
+                              <!-- 스토리 작성 -->
+                              <li class="menu-card menu-wadiz">
+                                <div class="menu-content">
+                                  <div class="menu-name">스토리 작성</div>
+                                  <em class="menu-status menu-wadiz-color">
+                                    작성 전
+                                  </em>
+                                  <a
+                                    class="menu-btn"
+                                    href="/studio/reward/337842/funding/story"
+                                  >
+                                    <span>작성하기</span>
+                                  </a>
+                                </div>
+                              </li>
+
+                              <!-- 리워드 설계 -->
+                              <li class="menu-card menu-wadiz">
+                                <div class="menu-content">
+                                  <div class="menu-name">리워드 설계</div>
+                                  <em class="menu-status menu-wadiz-color">
+                                    작성 전
+                                  </em>
+                                  <a
+                                    class="menu-btn"
+                                    href="/studio/reward/337842/funding/condition"
+                                  >
+                                    <span>작성하기</span>
+                                  </a>
+                                </div>
+                              </li>
+
+                              <!-- 정책 -->
+                              <li class="menu-card menu-wadiz">
+                                <div class="menu-content">
+                                  <div class="menu-name">정책</div>
+                                  <em class="menu-status menu-wadiz-color">
+                                    작성 전
+                                  </em>
+                                  <a
+                                    class="menu-btn"
+                                    href="/studio/reward/337842/funding/policy"
+                                  >
+                                    <span>작성하기</span>
+                                  </a>
+                                </div>
+                              </li>
+
+                              <!-- 메이커 정보 -->
+                              <li class="menu-card menu-wadiz">
+                                <div class="menu-content">
+                                  <div class="menu-name">메이커 정보</div>
+                                  <em class="menu-status menu-wadiz-color">
+                                    작성 전
+                                  </em>
+                                  <a
+                                    class="menu-btn"
+                                    href="/studio/reward/337842/funding/makerInfo"
+                                  >
+                                    <span>작성하기</span>
+                                  </a>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <!-- 제출 버튼 -->
+                          <div class="submit-btn-wrapper">
+                            <button
+                              class="btn btn-primary btn-contained btn-disabled submit-btn"
+                              type="button"
+                              disabled
+                            >
+                              <span class="btn-text">제출하기</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </main>
+          </div>
+
+          <!-- 사이드바 토글 버튼 -->
+          <button type="button" class="sidebar-toggle-btn sidebar-expanded">
+            <i class="toggle-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- JavaScript 파일 연결 -->
+    <script src="../../static/js/admin/sidebar_each_menu_toggle.js"></script>
+    <script src="../../static/js/admin/sidebar_toggle.js"></script>
+  </body>
+</html>
