@@ -20,10 +20,17 @@ const searchBoxBlink = document.querySelector("div.search-box");
 const searchBoxHidden = document.querySelector("div.searchbox-hidden")
 const searchBoxOnClick = document.querySelector("div.searchbox-onclick")
 
-searchBoxBlink.addEventListener('click', function () {
-    searchBoxHidden.style.display = "block";
-    searchBoxOnClick.style.display = "block";
+document.addEventListener('click', function(e){
+    if(searchBoxBlink.contains(e.target)){
+        searchBoxHidden.style.display = "block";
+        searchBoxOnClick.style.display = "block";
+    }
+    else if(!searchBoxHidden.contains(e.target)){
+        searchBoxHidden.style.display = "none";
+        searchBoxOnClick.style.display = "none";
+    }
 })
 
 
-// window.addEventListener
+
+
