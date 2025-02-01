@@ -26,10 +26,4 @@ searchBoxBlink.addEventListener('click', function () {
 })
 
 
-$('document').click(function(e) {
-    // 특정 div (예: .target-div) 외부를 클릭했을 때
-    if (!$(e.target).closest('div.search-box').length) {
-        searchBoxHidden.style.display = "block";
-        searchBoxOnClick.style.display = "block";
-    }
-});
+// window.addEventListener
