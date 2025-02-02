@@ -155,7 +155,7 @@
     font-weight: 400;
 }
 
-.header4>li>a {
+.header4 > li >a {
     cursor: pointer;
     display: inline-block;
     position: relative;
