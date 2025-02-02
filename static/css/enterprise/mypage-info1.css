@@ -919,3 +919,17 @@ button {
 }
 
 /* 위는 기존 CSS */
+
+.wrap_content {
+    position: relative;
+    margin-top: 65px;
+    padding: 50px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+.wrap_content .wrap_title {
+    padding-bottom: 40px;
+}
