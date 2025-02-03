@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 .header-sc {
     position: fixed;
     top: 0px;
@@ -68,9 +72,12 @@
     font-size: 16px;
     line-height: 24px;
 }
+<<<<<<< HEAD
 .searchbox-inner .search-box input:focus{
     outline:none;
 }
+=======
+>>>>>>> master
 
 .searchbox-inner .search-button {
     position: absolute;
@@ -133,7 +140,10 @@
     height: 100%;
     display: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 /*  ---------------------------------------------- */
 .nav-sc3 {
     display: flex;
@@ -196,10 +206,13 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+<<<<<<< HEAD
 .header-right6 li {
     position: relative;
     padding: 0px 12px;
 }
+=======
+>>>>>>> master
 
 .header-right6 li button {
     display: inline-block;
@@ -293,7 +306,10 @@
     border-top: 1px solid rgb(228, 228, 228);
     padding-top: 24px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 .mypagemenu2-2 {
     font-size: 15px;
     line-height: 22px;
@@ -303,7 +319,10 @@
     position: relative;
     font-weight: 900;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 .mymenu-popuptext {
     cursor: default;
     position: absolute;
@@ -335,7 +354,11 @@
     position: relative;
 }
 
+<<<<<<< HEAD
 .main-content2-inner>h1 {
+=======
+.main-content2-inner > h1 {
+>>>>>>> master
     width: 100%;
     display: flex;
     align-items: center;
@@ -343,6 +366,7 @@
     margin: 0px 0px 24px;
 }
 
+<<<<<<< HEAD
 .main-content2-inner>h1>span:nth-child(1) {
     font-size: 24px;
     line-height: 32px;
@@ -350,13 +374,26 @@
 }
 
 .main-content2-inner>h1>span:nth-child(2) {
+=======
+.main-content2-inner > h1 > span:nth-child(1){
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(34, 34, 34);    
+}
+
+.main-content2-inner > h1 > span:nth-child(2) {
+>>>>>>> master
     display: none;
     font-size: 24px;
     line-height: 32px;
     color: rgb(34, 34, 34);
 }
 
+<<<<<<< HEAD
 .main-content2-inner>h1>span:nth-child(3) {
+=======
+.main-content2-inner > h1 > span:nth-child(3) {
+>>>>>>> master
     display: flex;
     align-items: center;
     color: rgb(136, 136, 136);
@@ -366,7 +403,11 @@
     line-height: 24px;
 }
 
+<<<<<<< HEAD
 .main-content2-inner>div {
+=======
+.main-content2-inner > div{
+>>>>>>> master
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -375,6 +416,7 @@
     left: 0px;
 
 }
+<<<<<<< HEAD
 
 .scrap-wrap {
     width: calc(100% + 20px);
@@ -441,6 +483,9 @@
 }
 
 .top-checkbox4 {
+=======
+.top-checkbox4{
+>>>>>>> master
     border: 1px solid rgb(212, 212, 212);
     border-radius: 4px;
     width: 20px;
@@ -453,6 +498,7 @@
     margin-right: 8px !important;
 }
 
+<<<<<<< HEAD
 .article-wrap {
     display: flex;
     flex-wrap: wrap;
@@ -462,6 +508,8 @@
     left: 0px;
 }
 
+=======
+>>>>>>> master
 .main-content5-bottom-box {
     opacity: initial;
     position: relative;
@@ -469,6 +517,7 @@
     padding: 10px;
 }
 
+<<<<<<< HEAD
 .main-content5-bottom-box:hover .img-filter {
     background-color: rgb(0, 0, 0);
     opacity: 0.3;
@@ -480,6 +529,8 @@
     border-radius: 4px;
 }
 
+=======
+>>>>>>> master
 .main-content5-bottom-box .img-box {
     width: 100%;
     height: 166px;
@@ -489,10 +540,13 @@
     position: relative;
 }
 
+<<<<<<< HEAD
 .main-content5-bottom-box:hover .img {
     transform: scale(1.2);
 }
 
+=======
+>>>>>>> master
 .main-content5-bottom-box .img-box .img {
     width: 250px;
     height: 166px;
@@ -501,7 +555,10 @@
     image-rendering: -webkit-optimize-contrast;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 .d-date {
     position: absolute;
     gap: 4px;
