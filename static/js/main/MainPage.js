@@ -1,3 +1,16 @@
+// 검색창 눌렀을 때만 뜨는 창
+const searchBox = document.querySelector(".searchBox>input");
+const searchWindow = document.querySelector(".searchWindow");
+
+searchBox.addEventListener("focus", () => {
+    searchWindow.style.visibility = "visible";
+});
+
+searchBox.addEventListener("blur", () => {
+    searchWindow.style.visibility = "hidden";
+});
+
+// 메인 슬라이드 배너
 const bannerTrack = document.querySelector(".bannerTrack");
 const leftArrow = document.querySelector(".leftButton");
 const rightArrow = document.querySelector(".rightButton");
@@ -137,4 +150,77 @@ rightArrow.addEventListener("click", () => {
     count++;
     updateSlide();
     autoSlideInterval = setInterval(autoSlide, 4000);
+});
+
+// 사이드 배너
+const leftSideBanner = document.createElement("div");
+const rightSideBanner = document.createElement("div");
+const banner = document.querySelector("div.slickTrack");
+const buttons = document.querySelectorAll(".sideSlideButton>span");
+let slideIndex = 1;
+let tempButton = buttons[0];
+
+tempButton.style.backgroundColor = "rgb(136, 136, 136)";
+
+leftSideBanner.innerHTML = `<div class="sideSlickSlide">
+                                    <a href="/" class="slickSlideLink">
+                                        <div class="sideSlideImg1"></div>
+                                    </a>
+                                </div>`;
+rightSideBanner.innerHTML = `<div class="sideSlickSlide">
+                                    <a href="/" class="slickSlideLink">
+                                        <div class="sideSlideImg3"></div>
+                                    </a>
+                                </div>`;
+
+banner.appendChild(leftSideBanner);
+banner.prepend(rightSideBanner);
+
+banner.style.transform = `translate(-100px)`;
+
+const startSlideShow = () => {
+    slideIndex++;
+    banner.style.transform = `translate(-${100 * slideIndex}px)`;
+    banner.style.transition = `transform 0.5s`;
+
+    if (slideIndex === 4) {
+        setTimeout(() => {
+            banner.style.transform = `translate(-100px)`;
+            banner.style.transition = `transform 0s`;
+        }, 500);
+        slideIndex = 1;
+    }
+    tempButton.style.backgroundColor = "rgb(212, 212, 212)";
+    buttons[slideIndex - 1].style.backgroundColor = "rgb(136, 136, 136)";
+    tempButton = buttons[slideIndex - 1];
+};
+
+let slideTimer = setInterval(startSlideShow, 4000);
+let buttonCheck = true;
+
+buttons.forEach((button, i) => {
+    button.addEventListener("click", () => {
+        if (!buttonCheck) {
+            return;
+        }
+
+        buttonCheck = false;
+
+        clearInterval(slideTimer);
+
+        tempButton.style.backgroundColor = "rgb(212, 212, 212)";
+        slideIndex = i + 1;
+
+        banner.style.transform = `translate(-${100 * slideIndex}px)`;
+        banner.style.transition = `transform 0.5s`;
+
+        buttons[i].style.backgroundColor = "rgb(136, 136, 136)";
+        tempButton = buttons[i];
+
+        slideTimer = setInterval(startSlideShow, 4000);
+
+        setTimeout(() => {
+            buttonCheck = true;
+        }, 500);
+    });
 });
