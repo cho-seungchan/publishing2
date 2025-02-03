@@ -186,6 +186,42 @@ img, fieldset, iframe {
     stroke: rgb(0, 221, 109);
 }
 
+.searchWindow{
+    position: absolute;
+    top: 51px;
+    left: 0px;
+    width: 472px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+    box-shadow: rgba(20, 20, 20, 0.12) 0px 8px 16px;
+    border-radius: 8px;
+    z-index: 6;
+    padding: 24px;
+    visibility: hidden;
+}
+
+.searchWindowTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.searchWindowTitle > h4{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+
+.searchWindowContents{
+    padding: 28px 0px 36px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(153, 153, 153);
+}
+
 .leftNavigation{
     display: flex;
     margin-left: -20px;

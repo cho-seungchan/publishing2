@@ -1,3 +1,16 @@
+// 검색창 눌렀을 때만 뜨는 창
+const searchBox = document.querySelector(".searchBox>input");
+const searchWindow = document.querySelector(".searchWindow");
+
+searchBox.addEventListener("focus", () => {
+    searchWindow.style.visibility = "visible";
+});
+
+searchBox.addEventListener("blur", () => {
+    searchWindow.style.visibility = "hidden";
+});
+
+// 메인 슬라이드 배너
 const bannerTrack = document.querySelector(".bannerTrack");
 const leftArrow = document.querySelector(".leftButton");
 const rightArrow = document.querySelector(".rightButton");
