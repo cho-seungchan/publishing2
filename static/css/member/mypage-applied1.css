@@ -68,9 +68,7 @@
     font-size: 16px;
     line-height: 24px;
 }
-.search-box input:focus {
-    outline : none;
-}
+
 .searchbox-inner .search-button {
     position: absolute;
     left: 16px;
@@ -169,11 +167,6 @@
     margin-right: -12px;
     font-size: 14px;
     line-height: 20px;
-}
-
-.header-right6 li {
-    position: relative;
-    padding: 0px 12px;
 }
 
 .header-right-user7 {
