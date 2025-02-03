@@ -239,6 +239,14 @@ img, fieldset, iframe {
     padding: 0px 20px;
 }
 
+.leftNavigation:hover a {
+    opacity: 0.5;
+}
+
+.leftNavigation a:hover {
+    opacity: 1;
+}
+
 .navigationMenu{
     cursor: pointer;
     display: inline-block;
