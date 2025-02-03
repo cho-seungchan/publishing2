@@ -1,12 +1,13 @@
-const editButton = document.querySelectorAll("button.btn-modify");
-const check = document.querySelectorAll("tr.field");
+const editButtons = document.querySelectorAll("button.btn-modify");
 
-editButton.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        console.log(check.classList);
-        editButton.parentElement.previousSibling.classList.remove("inactive");
-        editButton.parentElement.previousSibling.previousSibling.classList.add(
-            "inactive"
-        );
+editButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const container = document.getElementsByClassName("field");
+        const firstDiv = container.lastChild.childNodes[0];
+        const secondDiv = container.lastChild.childNodes[1];
+        firstDiv.classList.add("inactive");
+        secondDiv.classList.remove("inactive");
+        console.log(firstDiv.classList);
+        console.log(secondDiv.classList);
     });
 });
