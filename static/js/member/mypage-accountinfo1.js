@@ -83,10 +83,56 @@ birthEditButton.addEventListener('click', ()=>{
 const emailEditButton = document.getElementById('btnEmail');
 const emailCheckButton = document.getElementById('btnMaskingEmail')
 const emailCancelButton = document.getElementById('btnEmailCancel')
+const editDiv = document.getElementById('edit-email')
+const changeEmailSpan = document.getElementById('person-email')
+const currentEmailSpan = document.getElementById('person-masking-email')
+const emailCertButton = document.getElementById('btnCertEmail')
+const emailMessage = document.getElementById('privacy-guide-email')
+const emailCertDiv = document.getElementById('mail-cert-num')
 
 emailEditButton.addEventListener('click',()=>{
-    const editDiv = document.getElementById('edit-email')
-    const nextSpan = document.getElementById('person-email')
     editDiv.classList.remove('inactive')
-    nextSpan.style.display = "none"
+    changeEmailSpan.style.display = "none"
+    emailEditButton.setAttribute("disabled","true")
+    emailCancelButton.removeAttribute("disabled")
+    emailMessage.classList.remove('inactive')
+    currentEmailSpan.style.display = 'block'
 })
+
+emailCancelButton.addEventListener('click',() =>{
+    editDiv.classList.add('inactive')
+    emailCancelButton.setAttribute("disabled","true")
+    emailEditButton.removeAttribute("disabled")
+    emailMessage.classList.add('inactive')
+    currentEmailSpan.removeAttribute('display')
+    emailCertDiv.classList.add('inactive')
+})
+
+emailCheckButton.addEventListener('click', ()=> {
+    changeEmailSpan.style.display = "inline-block"
+    currentEmailSpan.style.display = 'none'
+})
+
+emailCertButton.addEventListener('click', () => {
+    emailCertDiv.classList.remove('inactive')
+
+})
+
+const timerSpan = document.getElementById('remain-time-mail')
+timerSpan.style.color = "red"
+let time = 180;//초로 표시
+
+const updateTimer = () => {
+    const minute = Math.floor(time / 60);
+    const second = time % 60;
+    timerSpan.textContent = `${minute}:${second < 10 ? '0' + second : second}`;
+
+    if(time <=0){
+        clearInterval(timerInterval);
+        alert("입력 시간이 만료되었습니다. 인증번호를 다시 발송해주세요.");
+    }
+    else{
+        time--;
+    }
+};
+const timerInterval = setInterval(updateTimer, 1000);
