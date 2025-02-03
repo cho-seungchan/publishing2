@@ -1,59 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 포지션 찾아보기 버튼 = 공고 목록 -->
+<!-- 이력서 완성하러가기 버튼 = 지원서 홈 버튼 -->
 
 <head>
     <meta charset="utf-8" />
-    <link rel="preconnect" href="https://cdn.jumpit.co.kr" />
-    <link href="https://cdn.jumpit.co.kr" rel="dns-prefetch" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link href="https://www.googletagmanager.com" rel="dns-prefetch" />
-    <!-- <meta name="viewport"
-        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" /> -->
-    <link rel="preload" href="/_next/static/media/ff840cfebfb63b0c-s.p.woff2" as="font" crossorigin=""
-        type="font/woff2" />
-    <link rel="stylesheet" href="/static/member/css/member-mypage-main1.css" data-precedence="next" />
-    <link rel="stylesheet" href="/static/member/css/member-mypage-main2.css" />
-    <link rel="stylesheet" href="/static/member/css/member-mypage-main3.css" />
-    <link rel="preload" as="script" fetchpriority="low"
-        href="https://jumpit.saramin.co.kr/_next/static/chunks/webpack-e00980e9ec739c33.js" />
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-K2J5HLX"></script>
-    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/fd9d1056-1403efed8a5d9a56.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/2472-cc8bce19171016d7.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/main-app-85571a0f19fa6cc2.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/6394-782c5889429c5852.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/5526-48949280dbc9d3fa.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/8285-67151ff55d513e44.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/9222-0b87edff29c22664.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/9903-e4aec8f8082baf1a.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/9536-17c5180b41a54dae.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/5812-2e7efb9d8229a50d.js" async=""></script>
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/1527-600699e62b81c450.js" async=""></script>
-    <link rel="preload" href="https://dynamic.criteo.com/js/ld/ld.js?a=116898" as="script" />
-    <link rel="preload" href="https://www.googletagmanager.com/gtag/js?id=G-HLK7K0XF15" as="script" />
-    <link rel="preload" href="https://t1.daumcdn.net/kas/static/kp.js" as="script" />
-    <link rel="preload" href="https://cdn.megadata.co.kr/dist/prod/v2/mtm.js?adverId=jumpit&amp;device=B" as="script" />
-    <title>점핏 | 마이페이지</title>
-    <meta name="description" content="개발자 맞춤 이력서와 채용 공고, 취업·이직 꿀팁 콘텐츠 확인하고 점핏으로 FIT하게 취업하자!" />
-    <meta name="keywords" content="개발자 채용,이력서,이력서양식,스타트업 채용,대기업 채용,취업,구인,구직,면접제안,기업정보,커리어,커리어개발,기업정보,채용정보" />
-    <meta name="naver-site-verification" content="b0e5d9e30ab4abe67694a4472741b130e5833906" />
-    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="stylesheet" href="/static/css/member/mypage-main1.css" data-precedence="next" />
+    <link rel="stylesheet" href="/static/css/member/mypage-main2.css" />
+    <link rel="stylesheet" href="/static/css/member/mypage-main3.css" />
+    <title>템프 | 마이페이지</title>
+    <link rel="icon" href="/publishing/static/images/member/favicon.ico" />
     <meta name="next-size-adjust" />
-    <script src="https://jumpit.saramin.co.kr/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js" nomodule=""></script>
     <style data-styled="active" data-styled-version="6.0.7">
     </style>
-    <script async="" src="//static.airbridge.io/sdk/latest/airbridge.min.js"></script>
-    <!-- head에 필요 없는 내용 수정 중 -->
     <style>
         @font-face {
-            font-family: Retro;
-            src: url("/static/member/fonts/establish\ Retrosans.ttf");
-        }
-
-        @font-face {
             font-family: Jumpit;
-            src: url("/static/member/fonts/ff840cfebfb63b0c-s.p.woff2");
+            src: url("/static/fonts/member/ff840cfebfb63b0c-s.p.woff2");
         }
 
         * {
@@ -68,10 +32,11 @@
             <div class="div-sc2">
                 <div class="logo-wrap">
                     <a aria-label="점핏" class="logo-top" href="/">
-                        <img src="/static/member/images/temp-logo.png" width="62" height="28" fill="none"
-                            viewBox="0 0 62 28" aria-hidden="true">
-                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="62"
-                            height="28" fill="none" viewBox="0 0 62 28" aria-hidden="true">
+                        <!-- <img src="/publishing/static/images/member/temp-logo.png"
+                            width="62" height="28" fill="none"
+                            viewBox="0 0 62 28" aria-hidden="true"> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="28" fill="none" viewBox="0 0 62 28"
+                            aria-hidden="true">
                             <mask id="a" width="62" height="28" x="0" y="0" maskUnits="userSpaceOnUse"
                                 style="mask-type: luminance">
                                 <path fill="#fff" d="M62 0H0v28h62V0Z"></path>
@@ -118,7 +83,7 @@
                                 <path fill="#5CF636"
                                     d="M62 24.92a2.682 2.682 0 1 1-5.364-.002A2.682 2.682 0 0 1 62 24.92Z"></path>
                             </g>
-                        </svg> -->
+                        </svg>
                     </a>
                 </div>
                 <div class="searchbox-top">
@@ -139,6 +104,14 @@
                         </div>
                         <button class="close-button">닫기</button>
                     </div>
+                    <div class="searchbox-hidden">
+                        <div class="recentsearch">
+                            <h4>최근 검색어</h4>
+                        </div>
+                        <div class="searchbox-hidden-content">최근 검색어가
+                            없습니다.<br></div>
+                    </div>
+                    <div class="searchbox-onclick"></div>
                 </div>
             </div>
             <nav aria-label="Main navigation" class="nav-sc3">
@@ -165,15 +138,7 @@
                         </div>
                         <div class="header-right-menu8">
                             <ul>
-                                <li><a href="/myjumpit">마이점핏</a>
-                                </li>
-                                <li>
-                                    <a href="/applications-status/applied">취업축하금
-                                        신청</a>
-                                </li>
-                                <li>
-                                    <a href="/account">KDT
-                                        훈련과정 인증</a>
+                                <li><a href="/publishing/templates/member/mypage-main.html">마이점핏</a>
                                 </li>
                                 <li>
                                     <button type="button">로그아웃</button>
@@ -190,41 +155,41 @@
             <div class="main-wrapper0">
                 <div class="main-content1">
                     <div>
-                        <h2><a href="/myjumpit" style="font-family: Retro;">마이템프</a>
+                        <h2><a href="/templates/member/mypage-main.html">마이템프</a>
                         </h2>
                         <div class="mypagemenu-wrapper">
                             <ul class="mypagemenu1">
                                 <li class="mypagemenu2">
-                                    <a target="_self" href="/applications-status/applied">입사지원
+                                    <a target="_self" href="/templates/member/mypage-applied.html">입사지원
                                         현황</a>
                                 </li>
                                 <li class="mypagemenu2">
-                                    <a target="_self" href="/celebrate">스크랩 리스트</a>
+                                    <a target="_self" href="/templates/member/mypage-scraplist.html">스크랩
+                                        리스트</a>
                                 </li>
                                 <li class="mypagemenu2">
-                                    <a target="_self" href="/scraps">결제 관리</a>
+                                    <a target="_self" href="/templates/member/mypage-payment.html">결제
+                                        관리</a>
                                 </li>
                                 <li class="mypagemenu2-1">
-                                    <a target="_self" href="/notifications">계정 정보 설정</a>
+                                    <a target="_self" href="/templates/member/mypage-accountinfo.html">계정
+                                        정보 설정</a>
                                 </li>
                                 <li class="mypagemenu2">
-                                    <a target="_self" href="/account">계정 탈퇴</a>
+                                    <a target="_self" href="/templates/member/mypage-accountwithdrawl.html">계정
+                                        탈퇴</a>
                                 </li>
 
                             </ul>
-                            <!-- <div class="mymenu-popuptext"> -->
-                            <!-- 최종합격하셨나요?<br /><span class="green">💸취업축하금 신청</span>하세요! -->
-                            <!-- 필요 없을 것 같은 부분 -->
-                            <!-- </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="main-content2">
-                    <h1 style="font-family: Retro;">마이템프
+                    <h1>마이템프
                     </h1>
                     <ul class="topbox0">
                         <li class="topbox-content1">
-                            <a href="/applications-status/writing">
+                            <a href="/publishing/templates/member/mypage-applied.html">
                                 <dl>
                                     <dt>고민중</dt>
                                     <dd>0</dd>
@@ -232,7 +197,7 @@
                             </a>
                         </li>
                         <li class="topbox-content1">
-                            <a href="/applications-status/applied">
+                            <a href="/publishing/templates/member/mypage-applied.html">
                                 <dl>
                                     <dt>지원완료</dt>
                                     <dd>0</dd>
@@ -240,7 +205,7 @@
                             </a>
                         </li>
                         <li class="topbox-content1">
-                            <a href="/applications-status/passed">
+                            <a href="/publishing/templates/member/mypage-applied.html">
                                 <dl>
                                     <dt>서류통과</dt>
                                     <dd>0</dd>
@@ -248,7 +213,7 @@
                             </a>
                         </li>
                         <li class="topbox-content1">
-                            <a href="/applications-status/hired">
+                            <a href="/publishing/templates/member/mypage-applied.html">
                                 <dl>
                                     <dt>최종합격</dt>
                                     <dd>0</dd>
@@ -256,7 +221,7 @@
                             </a>
                         </li>
                         <li class="topbox-content1">
-                            <a href="/applications-status/rejected">
+                            <a href="/publishing/templates/member/mypage-applied.html">
                                 <dl>
                                     <dt>불합격</dt>
                                     <dd>0</dd>
@@ -276,7 +241,8 @@
                         </div>
                     </a><!--$--><!--/$-->
                     <div class="main-content5">
-                        <h2 style="font-family: Retro;">스크랩한 포지션이 없어요<i>😥</i></h2>
+                        <h2>스크랩한 포지션이
+                            없어요<i>😥</i></h2>
                         <div class="main-content5-top">
                             <div>
                                 <p><span>📂</span></p>
@@ -290,12 +256,13 @@
                             </div>
                         </div>
                         <h2 class="main-content5-bottom-header">
-                            <span style="font-family: Retro;">이번주 인기 포지션</span><a href="/positions?">전체보기</a>
+                            <span>이번주 인기
+                                포지션</span><a href="/positions?">전체보기</a>
                         </h2>
                         <div class="main-content5-bottom">
                             <div class="main-content5-bottom-box">
                                 <a target="_self" title="Java 백엔드 개발자(경력: 5년~15년)" href="/position/39324">
-                                    <div class="img_filter">
+                                    <div class="img-filter">
                                     </div>
                                     <div class="img-box">
                                         <img alt="아파트아이" class="img"
@@ -358,7 +325,7 @@
                             <!--  -->
                             <div class="main-content5-bottom-box">
                                 <a target="_self" title="Payment 개발 담당자(JAVA 기반)" href="/position/41047">
-                                    <div class="img_filter">
+                                    <div class="img-filter">
                                     </div>
                                     <div class="img-box">
                                         <img alt="디어유" class="img"
@@ -430,7 +397,7 @@
                             <!--  -->
                             <div class="main-content5-bottom-box">
                                 <a target="_self" title="Back-End Engineer" href="/position/41440">
-                                    <div class="img_filter">
+                                    <div class="img-filter">
                                     </div>
                                     <div class="img-box">
                                         <img alt="불마켓랩스(BullMarketLabsCo.Ltd.)" class="img"
@@ -502,7 +469,7 @@
                             <!--  -->
                             <div class="main-content5-bottom-box">
                                 <a target="_self" title="Java개발자 (Cloud Native) (경력 3년~5년)" href="/position/41480">
-                                    <div class="img_filter">
+                                    <div class="img-filter">
                                     </div>
                                     <div class="img-box">
                                         <img alt="엠로" class="img"
@@ -566,7 +533,7 @@
                             <!--  -->
                             <div class="main-content5-bottom-box">
                                 <a target="_self" title="Game Programmer 경력 채용" href="/position/41539">
-                                    <div class="img_filter">
+                                    <div class="img-filter">
                                     </div>
                                     <div class="img-box">
                                         <img alt="퍼즐원스튜디오" class="img"
@@ -634,7 +601,7 @@
                             <!--  -->
                             <div class="main-content5-bottom-box">
                                 <a target="_self" title="백엔드 엔지니어(3년 이상)" href="/position/41618">
-                                    <div class="img_filter">
+                                    <div class="img-filter">
                                     </div>
                                     <div class="img-box">
                                         <img alt="레플리" class="img"
@@ -699,7 +666,7 @@
         </div>
     </main>
     <div id="modal"></div>
-    <script src="/_next/static/chunks/webpack-e00980e9ec739c33.js" async=""></script>
+    <!-- <script src="/_next/static/chunks/webpack-e00980e9ec739c33.js" async=""></script>
     <script>
         (self.__next_f = self.__next_f || []).push([0]);
         self.__next_f.push([2, null]);
@@ -960,7 +927,8 @@
     <next-route-announcer style="position: absolute"></next-route-announcer><iframe allow="join-ad-interest-group"
         data-tagging-id="G-HLK7K0XF15" data-load-time="1737886601268" height="0" width="0"
         src="https://td.doubleclick.net/td/ga/rul?tid=G-HLK7K0XF15&amp;gacid=1029725707.1732531337&amp;gtm=45je51n0v877665575za200&amp;dma=0&amp;gcd=13l3l3l3l1l1&amp;npa=0&amp;pscdl=noapi&amp;aip=1&amp;fledge=1&amp;frm=0&amp;tag_exp=102067555~102067808~102081485~102123608&amp;z=1490588846"
-        style="display: none; visibility: hidden"></iframe>
+        style="display: none; visibility: hidden"></iframe> -->
 </body>
+<script src="/static/js/member/mypage-all.js"></script>
 
 </html>
