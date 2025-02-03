@@ -78,3 +78,15 @@ birthEditButton.addEventListener('click', ()=>{
         birthCheckButton.nextElementSibling.setAttribute('disabled','true');
         birthCheckButton.previousElementSibling.removeAttribute('disabled');
         })
+
+
+const emailEditButton = document.getElementById('btnEmail');
+const emailCheckButton = document.getElementById('btnMaskingEmail')
+const emailCancelButton = document.getElementById('btnEmailCancel')
+
+emailEditButton.addEventListener('click',()=>{
+    const editDiv = document.getElementById('edit-email')
+    const nextSpan = document.getElementById('person-email')
+    editDiv.classList.remove('inactive')
+    nextSpan.style.display = "none"
+})
