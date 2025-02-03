@@ -68,13 +68,9 @@
     font-size: 16px;
     line-height: 24px;
 }
-<<<<<<< HEAD
 .search-box input:focus {
     outline : none;
 }
-=======
-
->>>>>>> master
 .searchbox-inner .search-button {
     position: absolute;
     left: 16px;
