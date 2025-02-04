@@ -57,3 +57,25 @@ rejectedButton.addEventListener("click", () => {
         }
     });
 });
+
+const filterButton = document.querySelectorAll("button.btn-text")
+const filterArrow = document.querySelectorAll("svg.arrow")
+
+filterButton.forEach(button => {
+    button.addEventListener('click',()=> {
+        filterArrow.forEach(arrow =>{
+            
+            if(button.getAttribute("aria-expanded") == "false"){
+                button.setAttribute("aria-expanded","true")
+                arrow.classList.add("arrow-up")
+                console.log(button.getAttribute("aria-expanded"))
+            }
+            else{
+                button.setAttribute("aria-expanded","false")
+                arrow.classList.remove("arrow-up")
+                console.log(button.getAttribute("aria-expanded"))
+            }
+        })
+        
+    })
+})
