@@ -1,4 +1,3 @@
-
 .header-sc {
     position: fixed;
     top: 0px;
@@ -69,6 +68,9 @@
     font-size: 16px;
     line-height: 24px;
 }
+.searchbox-inner .search-box input:focus{
+    outline:none;
+}
 
 .searchbox-inner .search-button {
     position: absolute;
@@ -131,6 +133,10 @@
     height: 100%;
     display: none;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 /*  ---------------------------------------------- */
 .nav-sc3 {
     display: flex;
@@ -192,6 +198,10 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+.header-right6 li {
+    position: relative;
+    padding: 0px 12px;
 }
 
 .header-right6 li button {
@@ -286,6 +296,10 @@
     border-top: 1px solid rgb(228, 228, 228);
     padding-top: 24px;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 .mypagemenu2-2 {
     font-size: 15px;
     line-height: 22px;
@@ -295,6 +309,10 @@
     position: relative;
     font-weight: 900;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 .mymenu-popuptext {
     cursor: default;
     position: absolute;
@@ -326,7 +344,7 @@
     position: relative;
 }
 
-.main-content2-inner > h1 {
+.main-content2-inner>h1 {
     width: 100%;
     display: flex;
     align-items: center;
@@ -334,20 +352,20 @@
     margin: 0px 0px 24px;
 }
 
-.main-content2-inner > h1 > span:nth-child(1){
+.main-content2-inner>h1>span:nth-child(1) {
     font-size: 24px;
     line-height: 32px;
-    color: rgb(34, 34, 34);    
+    color: rgb(34, 34, 34);
 }
 
-.main-content2-inner > h1 > span:nth-child(2) {
+.main-content2-inner>h1>span:nth-child(2) {
     display: none;
     font-size: 24px;
     line-height: 32px;
     color: rgb(34, 34, 34);
 }
 
-.main-content2-inner > h1 > span:nth-child(3) {
+.main-content2-inner>h1>span:nth-child(3) {
     display: flex;
     align-items: center;
     color: rgb(136, 136, 136);
@@ -357,7 +375,7 @@
     line-height: 24px;
 }
 
-.main-content2-inner > div{
+.main-content2-inner>div {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -366,7 +384,72 @@
     left: 0px;
 
 }
-.top-checkbox4{
+
+.scrap-wrap {
+    width: calc(100% + 20px);
+    padding: 0px 10px;
+}
+
+.scrap-list {
+    background-color: rgb(251, 251, 253);
+    width: 100%;
+    height: 236px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scrap-list>div {
+    text-align: center;
+}
+
+.scrap-list>div>p {
+    text-align: center;
+}
+
+.scrap-list>div>p:nth-child(1) {
+    font-size: 28px;
+    margin: 0px 0px 12px;
+    font-weight: 500;
+}
+
+.scrap-list>div>p:nth-child(2) {
+    color: rgb(34, 34, 34);
+    font-weight: 700;
+    margin: 0px 0px 4px;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.scrap-list>div>p:nth-child(3) {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0px 0px 16px;
+}
+
+.scarp-search-button {
+    border-radius: 3px;
+    height: 48px;
+    width: 180px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.scarp-search-button-color {
+    background: rgb(0, 221, 109);
+    border: 1px solid rgb(0, 221, 109);
+    color: rgb(255, 255, 255);
+}
+
+.recommended {
+    margin: 60px 0px 20px;
+    position: relative;
+}
+
+.top-checkbox4 {
     border: 1px solid rgb(212, 212, 212);
     border-radius: 4px;
     width: 20px;
@@ -379,11 +462,31 @@
     margin-right: 8px !important;
 }
 
+.article-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: calc(100% + 20px);
+    margin: 0px 0px 0px -10px;
+    left: 0px;
+}
+
 .main-content5-bottom-box {
     opacity: initial;
     position: relative;
     width: calc(33.3% - 20px);
     padding: 10px;
+}
+
+.main-content5-bottom-box:hover .img-filter {
+    background-color: rgb(0, 0, 0);
+    opacity: 0.3;
+    width: calc(100% - 19px);
+    height: 166px;
+    position: absolute;
+    top: 11px;
+    z-index: 1;
+    border-radius: 4px;
 }
 
 .main-content5-bottom-box .img-box {
@@ -393,6 +496,10 @@
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.1);
     position: relative;
+}
+
+.main-content5-bottom-box:hover .img {
+    transform: scale(1.2);
 }
 
 .main-content5-bottom-box .img-box .img {
