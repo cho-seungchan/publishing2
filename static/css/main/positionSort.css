@@ -153,7 +153,7 @@ header{
 
 .pageLogo{
     display: inline-flex;
-    transform: translateX(-20px);
+    transform: translateX(-80px);
 }
 
 .mainSearch{
