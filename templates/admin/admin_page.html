@@ -33,7 +33,8 @@
                 type="button"
                 aria-label="로고 버튼"
               ></button>
-              <div class="logo-type">· only for 관리자</div>
+              <!-- 쓸 수도 있을거 같아서 일단 만들어 놓음. -->
+              <div class="logo-type"></div>
             </div>
           </div>
         </header>
@@ -72,9 +73,7 @@
                       </span>
                     </a>
                     <div class="submenu-container">
-                      <a class="submenu-item" href="/admin/announce/list"
-                        >공고목록</a
-                      >
+                      <a class="submenu-item" href="#">공고목록</a>
                     </div>
                   </div>
 
@@ -98,12 +97,8 @@
                       </span>
                     </a>
                     <div class="submenu-container">
-                      <a class="submenu-item" href="/admin/member/company"
-                        >기업회원</a
-                      >
-                      <a class="submenu-item" href="/admin/member/user"
-                        >일반회원</a
-                      >
+                      <a class="submenu-item" href="#">일반회원</a>
+                      <a class="submenu-item" href="#">기업회원</a>
                     </div>
                   </div>
 
@@ -127,12 +122,8 @@
                       </span>
                     </a>
                     <div class="submenu-container">
-                      <a class="submenu-item" href="/admin/inquiry/personal"
-                        >개인문의</a
-                      >
-                      <a class="submenu-item" href="/admin/inquiry/company"
-                        >기업문의</a
-                      >
+                      <a class="submenu-item" href="#">개인문의</a>
+                      <a class="submenu-item" href="#">기업문의</a>
                     </div>
                   </div>
 
@@ -156,9 +147,7 @@
                       </span>
                     </a>
                     <div class="submenu-container">
-                      <a class="submenu-item" href="/admin/report/list"
-                        >신고목록</a
-                      >
+                      <a class="submenu-item" href="#">신고목록</a>
                     </div>
                   </div>
                 </div>
@@ -174,173 +163,99 @@
                   <div class="head-banner"></div>
                 </section>
                 <section class="project-presentation">
-                  <h2 class="presentation-title">프로젝트 관리</h2>
+                  <h2 class="presentation-title">HOME</h2>
                   <div class="presentation-desc">
-                    프로젝트를 공개하는 데 필요한 내용을 작성해 주세요.
+                    각 관리 메뉴에 간편하고 빠르게 접근할 수 있습니다.
                   </div>
                   <div class="presentation-content">
                     <div class="project-wrapper">
                       <div class="project-layout">
                         <div class="project-contents">
-                          <!-- 프로젝트 상태 배너 -->
-                          <div class="status-banner">
-                            <dl>
-                              <dt class="status-label">
-                                프로젝트 준비 상태
-                                <button
-                                  class="btn btn-secondary btn-xs status-modal-btn"
-                                  type="button"
-                                >
-                                  <span class="btn-text"
-                                    >지금 나의 단계는?</span
-                                  >
-                                </button>
-                              </dt>
-                              <dd>
-                                <ul>
-                                  <li class="status-view">
-                                    <div
-                                      class="status-icon status-yellow"
-                                    ></div>
-                                    프로젝트 작성 중
-                                  </li>
-                                </ul>
-                                <div class="status-guide">
-                                  아래의 필수 항목들이 모두 작성 완료 상태로
-                                  바뀌면 [제출하기]를 누를 수 있어요.
-                                </div>
-                              </dd>
-                            </dl>
-                          </div>
-
-                          <!-- 일정 정보 배너 -->
-                          <div class="schedule-banner">
-                            <img
-                              src="../../static/images/admin/캘린더.svg"
-                              alt="캘린더 아이콘"
-                              class="schedule-icon"
-                            />
-                            <div class="schedule-info">
-                              <p>프로젝트 진행 일정을 확인해 보세요!</p>
-                              <a
-                                href="/studio/reward/337842/schedule"
-                                class="btn btn-secondary btn-sm"
-                              >
-                                <span class="btn-text">일정 보기</span>
-                              </a>
-                            </div>
-                          </div>
-
-                          <!-- 프로젝트 메뉴 리스트 -->
+                          <!-- 메뉴 리스트 컨테이너 -->
                           <div class="menu-list-container">
                             <ul>
-                              <!-- 서비스 요금 -->
-                              <li class="menu-card menu-wadiz">
+                              <!-- 공고목록 - 공고관리 -->
+                              <li class="menu-card menu-announce">
                                 <div class="menu-content">
-                                  <div class="menu-name">서비스 요금</div>
-                                  <em class="menu-status menu-wadiz-color">
-                                    작성 전
-                                  </em>
-                                  <a
-                                    class="menu-btn"
-                                    href="/studio/reward/337842/funding/plan"
+                                  <div class="menu-name">공고목록</div>
+                                  <em class="menu-status menu-wadiz-color"
+                                    >공고관리</em
                                   >
-                                    <span>작성하기</span>
+                                  <a class="menu-btn" href="#">
+                                    <span>바로가기</span>
                                   </a>
                                 </div>
                               </li>
 
-                              <!-- 프로젝트 정보 -->
-                              <li class="menu-card menu-wadiz">
+                              <!-- 일반회원 - 회원관리 -->
+                              <li class="menu-card menu-member">
                                 <div class="menu-content">
-                                  <div class="menu-name">프로젝트 정보</div>
-                                  <em class="menu-status menu-wadiz-color">
-                                    작성 전
-                                  </em>
-                                  <a
-                                    class="menu-btn"
-                                    href="/studio/reward/337842/funding/screening"
+                                  <div class="menu-name">일반회원 관리</div>
+                                  <em class="menu-status menu-wadiz-color"
+                                    >회원관리</em
                                   >
-                                    <span>작성하기</span>
+                                  <a class="menu-btn" href="#">
+                                    <span>바로가기</span>
                                   </a>
                                 </div>
                               </li>
 
-                              <!-- 스토리 작성 -->
-                              <li class="menu-card menu-wadiz">
+                              <!-- 기업회원 - 회원관리 -->
+                              <li class="menu-card menu-member">
                                 <div class="menu-content">
-                                  <div class="menu-name">스토리 작성</div>
-                                  <em class="menu-status menu-wadiz-color">
-                                    작성 전
-                                  </em>
-                                  <a
-                                    class="menu-btn"
-                                    href="/studio/reward/337842/funding/story"
+                                  <div class="menu-name">기업회원 관리</div>
+                                  <em class="menu-status menu-wadiz-color"
+                                    >회원관리</em
                                   >
-                                    <span>작성하기</span>
+                                  <a class="menu-btn" href="#">
+                                    <span>바로가기</span>
                                   </a>
                                 </div>
                               </li>
 
-                              <!-- 리워드 설계 -->
-                              <li class="menu-card menu-wadiz">
+                              <!-- 개인문의 - 문의관리 -->
+                              <li class="menu-card menu-inquiry">
                                 <div class="menu-content">
-                                  <div class="menu-name">리워드 설계</div>
-                                  <em class="menu-status menu-wadiz-color">
-                                    작성 전
-                                  </em>
-                                  <a
-                                    class="menu-btn"
-                                    href="/studio/reward/337842/funding/condition"
+                                  <div class="menu-name">
+                                    개인문의 목록 / 답변
+                                  </div>
+                                  <em class="menu-status menu-wadiz-color"
+                                    >문의관리</em
                                   >
-                                    <span>작성하기</span>
+                                  <a class="menu-btn" href="#">
+                                    <span>바로가기</span>
                                   </a>
                                 </div>
                               </li>
 
-                              <!-- 정책 -->
-                              <li class="menu-card menu-wadiz">
+                              <!-- 기업문의 - 문의관리 -->
+                              <li class="menu-card menu-inquiry">
                                 <div class="menu-content">
-                                  <div class="menu-name">정책</div>
-                                  <em class="menu-status menu-wadiz-color">
-                                    작성 전
-                                  </em>
-                                  <a
-                                    class="menu-btn"
-                                    href="/studio/reward/337842/funding/policy"
+                                  <div class="menu-name">
+                                    기업문의 목록 / 답변
+                                  </div>
+                                  <em class="menu-status menu-wadiz-color"
+                                    >문의관리</em
                                   >
-                                    <span>작성하기</span>
+                                  <a class="menu-btn" href="#">
+                                    <span>바로가기</span>
                                   </a>
                                 </div>
                               </li>
 
-                              <!-- 메이커 정보 -->
-                              <li class="menu-card menu-wadiz">
+                              <!-- 신고목록 - 신고관리 -->
+                              <li class="menu-card menu-report">
                                 <div class="menu-content">
-                                  <div class="menu-name">메이커 정보</div>
-                                  <em class="menu-status menu-wadiz-color">
-                                    작성 전
-                                  </em>
-                                  <a
-                                    class="menu-btn"
-                                    href="/studio/reward/337842/funding/makerInfo"
+                                  <div class="menu-name">신고목록</div>
+                                  <em class="menu-status menu-wadiz-color"
+                                    >신고관리</em
                                   >
-                                    <span>작성하기</span>
+                                  <a class="menu-btn" href="#">
+                                    <span>바로가기</span>
                                   </a>
                                 </div>
                               </li>
                             </ul>
-                          </div>
-
-                          <!-- 제출 버튼 -->
-                          <div class="submit-btn-wrapper">
-                            <button
-                              class="btn btn-primary btn-contained btn-disabled submit-btn"
-                              type="button"
-                              disabled
-                            >
-                              <span class="btn-text">제출하기</span>
-                            </button>
                           </div>
                         </div>
                       </div>
@@ -350,7 +265,6 @@
               </div>
             </main>
           </div>
-
           <!-- 사이드바 토글 버튼 -->
           <button type="button" class="sidebar-toggle-btn sidebar-expanded">
             <i class="toggle-icon"></i>
