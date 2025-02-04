@@ -58,24 +58,19 @@ rejectedButton.addEventListener("click", () => {
     });
 });
 
-const filterButton = document.querySelectorAll("button.btn-text")
-const filterArrow = document.querySelectorAll("svg.arrow")
+const filterButton = document.querySelector("button.btn-text")
+const filterArrow = document.querySelector("svg.arrow")
+const filterList = document.querySelector("div.filter-list")
+const filterBackground = document.querySelector("div.filter-background")
+filterButton.addEventListener('click', () =>{
+    if(filterButton.getAttribute("aria-expanded")=="false"){
+        filterButton.setAttribute("aria-expanded","true")
+        filterArrow.classList.add("arrow-up")
 
-filterButton.forEach(button => {
-    button.addEventListener('click',()=> {
-        filterArrow.forEach(arrow =>{
-            
-            if(button.getAttribute("aria-expanded") == "false"){
-                button.setAttribute("aria-expanded","true")
-                arrow.classList.add("arrow-up")
-                console.log(button.getAttribute("aria-expanded"))
-            }
-            else{
-                button.setAttribute("aria-expanded","false")
-                arrow.classList.remove("arrow-up")
-                console.log(button.getAttribute("aria-expanded"))
-            }
-        })
-        
-    })
+    }
+    else{
+        filterButton.setAttribute("aria-expanded","false")
+        filterArrow.classList.remove("arrow-up")
+    }
 })
+
