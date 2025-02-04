@@ -74,7 +74,6 @@ birthCancelButton.addEventListener("click", () => {
     birthCheckButton.setAttribute("disabled", "true");
     birthCheckButton.nextElementSibling.setAttribute("disabled", "true");
     birthCheckButton.previousElementSibling.removeAttribute("disabled");
-    time = 180;
 });
 
 const emailEditButton = document.getElementById("btnEmail");
@@ -103,7 +102,8 @@ emailCancelButton.addEventListener("click", () => {
     emailMessage.classList.add("inactive");
     currentEmailSpan.removeAttribute("display");
     emailCertDiv.classList.add("inactive");
-    // clearTimeout(updateTimer);
+    emailCertButton.removeAttribute("disabled");
+    emailCertButton.innerText = "인증요청";
 });
 
 emailCheckButton.addEventListener("click", () => {
@@ -113,12 +113,15 @@ emailCheckButton.addEventListener("click", () => {
 
 const timerSpan = document.getElementById("remain-time-mail");
 timerSpan.style.color = "red";
-let time = 180;
 
 emailCertButton.addEventListener("click", function () {
     emailCertDiv.classList.remove("inactive");
+    emailCertButton.setAttribute("disabled", "true");
+    emailCertButton.innerText = "발송완료";
     alert("인증번호가 발송되었습니다.");
-    const updateTimer = () => {
+    let time = 180;
+
+    let updateTimer = () => {
         const minute = Math.floor(time / 60);
         const second = time % 60;
         timerSpan.textContent = `${minute}:${
@@ -128,31 +131,47 @@ emailCertButton.addEventListener("click", function () {
         if (time <= 0) {
             clearInterval(timerInterval);
             alert("입력 시간이 만료되었습니다. 인증번호를 다시 발송해주세요.");
-            setTimeout(() => {
-                time = 180;
-            });
         } else {
             time--;
         }
     };
-    const timerInterval = setInterval(updateTimer, 1000);
+    let timerInterval = setInterval(updateTimer, 1000);
 });
 
-//초로 표시
+const certNumInput = document.getElementById("mailCertNum");
 
-// const updateTimer = () => {
-//     const minute = Math.floor(time / 60);
-//     const second = time % 60;
-//     timerSpan.textContent = `${minute}:${second < 10 ? "0" + second : second}`;
+certNumInput.addEventListener("input", () => {
+    if (certNumInput.value !== "") {
+        emailConfirmButton.removeAttribute("disabled");
+    }
+});
 
-//     if (time <= 0) {
-//         clearInterval(timerInterval);
-//         alert("입력 시간이 만료되었습니다. 인증번호를 다시 발송해주세요.");
-//         setTimeout(() => {
-//             time = 180;
-//         });
-//     } else {
-//         time--;
+const emailConfirmButton = document.getElementById("btnCertConfirmMail");
+emailConfirmButton.addEventListener("click", () => {
+    let certNum = 127361;
+    if (certNumInput.value == certNum) {
+        alert("인증되었습니다.");
+        changeEmailSpan.style.display = "none";
+        emailCertDiv.classList.add("inactive");
+        emailMessage.classList.add("inactive");
+        emailCancelButton.setAttribute("disabled", "true");
+        emailEditButton.removeAttribute("disabled");
+        emailCertButton.removeAttribute("disabled");
+        emailCertButton.innerText = "인증요청";
+    } else {
+        alert("잘못된 인증번호입니다.");
+    }
+});
+
+const checkEmailCerted = document.getElementById("mailCert");
+
+// checkEmailCerted.addEventListener('',() => {
+//     if('이메일 인증된 상태'){
+//         checkEmailCerted.classList.add("badge-verified");
 //     }
-// };
-// const timerInterval = setInterval(updateTimer, 1000);
+//     else{
+//         checkEmailCerted.classList.remove("badge-verified");
+//     }
+// })
+
+// 취소 버튼이나 확인 버튼으로 인증이 완료된 경우에 타이머가 초기화 되어야 하는데 안 됨.
