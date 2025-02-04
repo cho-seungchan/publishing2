@@ -107,6 +107,7 @@ emailCancelButton.addEventListener("click", () => {
 });
 
 emailCheckButton.addEventListener("click", () => {
+    // 여기에 기존 이메일과의 유효성 검사 필요.
     changeEmailSpan.style.display = "inline-block";
     currentEmailSpan.style.display = "none";
 });
@@ -118,6 +119,7 @@ emailCertButton.addEventListener("click", function () {
     emailCertDiv.classList.remove("inactive");
     emailCertButton.setAttribute("disabled", "true");
     emailCertButton.innerText = "발송완료";
+    emailConfirmButton.removeAttribute("disabled");
     alert("인증번호가 발송되었습니다.");
     let time = 180;
 
@@ -140,27 +142,27 @@ emailCertButton.addEventListener("click", function () {
 
 const certNumInput = document.getElementById("mailCertNum");
 
-certNumInput.addEventListener("input", () => {
-    if (certNumInput.value !== "") {
-        emailConfirmButton.removeAttribute("disabled");
-    }
-});
+// certNumInput.addEventListener("input", () => {
+//     if (certNumInput.value !== "") {
+//         emailConfirmButton.removeAttribute("disabled");
+//     }
+// });
 
 const emailConfirmButton = document.getElementById("btnCertConfirmMail");
 emailConfirmButton.addEventListener("click", () => {
-    let certNum = 127361;
-    if (certNumInput.value == certNum) {
-        alert("인증되었습니다.");
-        changeEmailSpan.style.display = "none";
-        emailCertDiv.classList.add("inactive");
-        emailMessage.classList.add("inactive");
-        emailCancelButton.setAttribute("disabled", "true");
-        emailEditButton.removeAttribute("disabled");
-        emailCertButton.removeAttribute("disabled");
-        emailCertButton.innerText = "인증요청";
-    } else {
-        alert("잘못된 인증번호입니다.");
-    }
+    // let certNum = 127361;
+    // if (certNumInput.value == certNum) {
+    alert("인증되었습니다.");
+    changeEmailSpan.style.display = "none";
+    emailCertDiv.classList.add("inactive");
+    emailMessage.classList.add("inactive");
+    emailCancelButton.setAttribute("disabled", "true");
+    emailEditButton.removeAttribute("disabled");
+    emailCertButton.removeAttribute("disabled");
+    emailCertButton.innerText = "인증요청";
+    // } else {
+    //     alert("잘못된 인증번호입니다.");
+    // }
 });
 
 const checkEmailCerted = document.getElementById("mailCert");
