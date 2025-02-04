@@ -72,7 +72,7 @@ header{
     top: 0px;
     left: 0px;
     right: 0px;
-    z-index: 10;
+    z-index: 5;
     background-color: rgb(255, 255, 255);
     width: 100%;
     border-bottom: 1px solid rgb(228, 228, 228);
@@ -82,21 +82,61 @@ header{
     position: relative;
     max-width: 1060px;
     margin: 0px auto;
+    width: 100%;
 }
 
 .fixedNavigation{
+    position: fixed;
     display: flex;
-    justify-content: space-between;
+    background-color: white;
+    justify-content: space-evenly;
     align-items: center;
     height: 64px;
     transition: 0.2s;
+    left: 0;
+    z-index: 4;
+    width: 100%;
 }
 
 .mainNavigation{
+    position: fixed;
+    top: 64px; /* fixedNav의 높이에 맞춰 아래로 위치 */
+    left: 0px;
     display: flex;
-    justify-content: space-between;
+    background-color: white;
+    justify-content: space-around;
     align-items: center;
     height: 56px;
+    width: 100%;
+    transition: 0.3s ease;
+    transform: translateY(-100%); /* 처음에는 화면 밖으로 숨김 */
+    opacity: 0; /* 처음에 숨김 */
+    z-index: 2;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.mainNavigation.show {
+    opacity: 1;
+    transform: translateY(0); /* 화면에 위치하게 설정 */
+}
+
+.leftNavigation,
+.rightNavigation {
+    display: flex;
+    list-style-type: none;
+}
+
+.leftNavigation {
+    transform: translateX(55px);
+}
+
+.rightNavigation {
+    transform: translateX(-55px);
+}
+
+.leftNavigation li,
+.rightNavigation li {
+    margin-right: 20px;
 }
 
 .logoWrap{
@@ -105,10 +145,15 @@ header{
 
 .pageLogo{
     display: inline-flex;
+    transform: translateX(-20px);
 }
 
 .mainSearch{
     position: relative;
+}
+
+.pageLogo{
+    display: inline-flex;
 }
 
 .searchWrapper{
@@ -132,7 +177,11 @@ header{
     border: 1.5px solid rgb(0, 221, 109);
 }
 
-.searchBox>input{
+.closeButton{
+    display: none;
+}
+
+.searchBox > input {
     width: 100%;
     padding: 0px 40px 0px 44px;
     height: 40px;
@@ -145,18 +194,59 @@ header{
     line-height: 24px;
 }
 
+.searchBox > input:focus {
+    outline: none;
+}
+
 .searchButton{
     position: absolute;
     left: 16px;
     top: 8px;
 }
 
-.searchButton>svg>g>circle, .searchButton>svg>g>path{
+.searchButton > svg > g > circle {
     stroke: rgb(0, 221, 109);
 }
 
-.closeButton{
-    display: none;
+.searchButton > svg > g > path {
+    stroke: rgb(0, 221, 109);
+}
+
+.searchWindow {
+    position: fixed; /* 화면 전체 기준으로 배치 */
+    top: 64px; /* fixedNav 아래 */
+    left: 50%;
+    transform: translateX(-2%);
+    width: 472px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+    box-shadow: rgba(20, 20, 20, 0.12) 0px 8px 16px;
+    border-radius: 8px;
+    z-index: 999999; /* 최상위 */
+    padding: 24px;
+    visibility: hidden;
+}
+
+.searchWindowTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.searchWindowTitle > h4{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+
+.searchWindowContents{
+    padding: 28px 0px 36px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(153, 153, 153);
 }
 
 main{
@@ -378,6 +468,10 @@ main{
     -webkit-box-orient: vertical;
 }
 
+.mainContentCard:hover .positionCardTitle{
+    text-decoration: underline;
+}
+
 .companyName>span{
     font-size: 14px;
     line-height: 20px;
@@ -514,4 +608,21 @@ footer{
 
 .snsIcon>a>img {
     margin-right: 8px;
+}
+
+.dDay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 2px 8px;
+    background-color: rgba(0, 221, 109, 0.8);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 221, 109);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px 0px, rgba(0, 0, 0, 0.08) 0px -2px 4px 0px;
 }
