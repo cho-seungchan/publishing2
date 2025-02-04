@@ -324,6 +324,11 @@
     font-size: 14px;
     line-height: 20px;
 }
+.header-right6 li {
+    position: relative;
+    padding: 0px 12px;
+}
+
 
 .header-right-user7 {
     padding-top: 1px;
@@ -602,6 +607,7 @@
 
 .cont_withdrawal {
     padding-top: 20px;
+    width : 100%
 }
 
    
@@ -811,6 +817,42 @@
     line-height: 20px;
 }
 
+.InpBox .Chk .Lbl:before {
+    display: inline-block;
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--gray70);
+    border-radius: 4px;
+    vertical-align: top;
+    background: #fff;
+    content: '';
+}
+
+.InpBox .Chk input:checked~.Lbl:before {
+    border-color: var(--greentemp);
+    background: var(--greentemp);
+}
+
+.InpBox .Chk .Lbl:after {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 5px;
+    border-bottom: 2px solid var(--white);
+    border-left: 2px solid var(--white);
+    border-radius: 1px;
+    transform: rotate(-45deg);
+    content: '';
+}
+
+.InpBox .Chk input:checked~.Lbl:after {
+    display: inline-block;
+    border-color: var(--white);
+}
+
 .cont_withdrawal .wrap_buttons {
     display: flex;
     justify-content: center;
@@ -847,4 +889,180 @@
 
 .cont_withdrawal .wrap_buttons .BtnType {
     width: 170px;
+}
+
+.cont_withdrawal .txt_subtitle {
+    display: block;
+    margin-top: 8px;
+    color: var(--gray100);
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 22px;
+}
+
+.cont_withdrawal .wrap_forms {
+    padding: 50px 0;
+    min-height: 236px;
+    border: 1px solid var(--gray40);
+    border-radius: 12px;
+}
+
+.cont_withdrawal .box_common {
+    width: 528px;
+    margin: 0 auto;
+}
+
+.cont_withdrawal .area_forms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px;
+    width: 528px;
+    min-height: 48px;
+    margin: 0 auto;
+}
+
+.cont_withdrawal .area_forms+.area_forms {
+    margin-top: 20px;
+}
+
+.cont_withdrawal .area_forms.type_password {
+    gap: 36px;
+}
+
+.cont_withdrawal .area_forms dt {
+    width: 85px;
+    color: var(--gray120);
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 48px;
+}
+
+.cont_withdrawal .area_forms.type_password dt {
+    width: 82px;
+}
+
+.cont_withdrawal .area_forms dd {
+    flex: 1;
+}
+
+.cont_withdrawal .area_forms .txt_id {
+    color: var(--gray120);
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 48px;
+}
+
+.TypoBox {
+    display: inline-block;
+    position: relative;
+    border: 1px solid var(--gray70);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--white);
+}
+
+.TypoBox .Typo {
+    padding: 8px 12px;
+    width: 100%;
+    height: 38px;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--gray100);
+    font-size: 14px;
+    line-height: 20px;
+    background: none;
+}
+
+.TypoBox .Typo.SizeL {
+    padding: 12px;
+    height: 46px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+.cont_withdrawal :where(.TypoBox, .InpBox) {
+    width: 100%;
+}
+
+.cont_withdrawal .wrap_buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 50px;
+}
+
+.cont_withdrawal .wrap_buttons .BtnType {
+    width: 170px;
+}
+
+.InpBox select {
+    padding: 0 28px 0 12px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--gray70);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--gray100);
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    background: var(--white) url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.5 0H8.5L4.5 5L0.5 0Z' fill='%2367738E'/%3E%3C/svg%3E") no-repeat right 12px top 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.InpBox select:hover {
+    background-color: var(--gray20);
+}
+
+.InpBox.SizeL select {
+    height: 48px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+
+.cont_withdrawal .area_conts {
+    display: none;
+    margin-top: 30px;
+    padding-top: 30px;
+    color: var(--gray120);
+    font-size: 15px;
+    line-height: 22px;
+    border-top: 1px solid var(--gray40);
+}
+
+.InpBox textarea {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 24px;
+    width: 100%;
+    height: calc(100% - 25px);
+    border: 1px solid var(--gray70);
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: var(--gray120);
+    font-size: 14px;
+    line-height: 21px;
+    vertical-align: top;
+    background-color: var(--white);
+    resize: none;
+}
+
+.cont_withdrawal .area_conts.show {
+    display: block;
+}
+
+.cont_withdrawal .area_conts p+.btn_page {
+    margin-top: 24px;
+}
+
+.cont_withdrawal fieldset{
+    border : none;
 }
