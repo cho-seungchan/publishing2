@@ -858,3 +858,16 @@ b {
   background-size: cover;
   content: "";
 }
+.login_company {
+  --common_a_hover_color: #3769ed;
+  width: 320px;
+}
+#company_login {
+  transform: translateX(-355px);
+  display: none;
+  position: relative;
+  background-color: white;
+}
+.normal_user {
+  display: block;
+}
