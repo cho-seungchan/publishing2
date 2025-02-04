@@ -20,11 +20,6 @@
     <script async="" src="//static.airbridge.io/sdk/latest/airbridge.min.js"></script>
     <style>
         @font-face {
-            font-family: Retro;
-            src: url("/publishing/static/member/fonts/establish\ Retrosans.ttf");
-        }
-
-        @font-face {
             font-family: Jumpit;
             src: url("/static/fonts/member/ff840cfebfb63b0c-s.p.woff2");
         }
@@ -162,7 +157,7 @@
             <div class="main-wrapper0">
                 <div class="main-content1">
                     <div>
-                        <h2><a href="/publishing/templates/member/mypage-main.html" style="font-family: Retro;">마이템프</a>
+                        <h2><a href="/publishing/templates/member/mypage-main.html">마이템프</a>
                         </h2>
                         <div class="mypagemenu-wrapper">
                             <ul class="mypagemenu1">
@@ -194,7 +189,7 @@
                 <div class="main-content2">
                     <ul class="applied-list0">
                         <h1>
-                            <div style="font-family: Retro;">
+                            <div>
                                 계정 정보 수정</div>
                         </h1>
                         <div class="applied-list-blank">
@@ -263,7 +258,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="field-btn">
-                                                            <button type="button" class="BtnType SizeS btn_modify" >수정</button>
+                                                            <button type="button"
+                                                                class="BtnType SizeS btn_modify">수정</button>
                                                             <button type="button" id="btnName"
                                                                 class="BtnType SizeS btn-confirm"
                                                                 disabled="">확인</button>
@@ -461,22 +457,17 @@
                                                                         disabled=""
                                                                         class="BtnType SizeS colorBlue btn-confirm">확인</button>
                                                                 </span>
-                                                                <span class="remain-time">남은시간 <span
-                                                                        id="remain-time-mail">2:00</span></span>
+                                                                <span class="remain-time" style="color: red;">남은시간 <span
+                                                                        id="remain-time-mail"
+                                                                        style="color: red;"></span></span>
                                                             </div>
                                                         </div>
                                                         <div class="ipin-guide privacy-guide inactive"
                                                             id="privacy-guide-email">
-                                                            <svg class="icon-exclam">
-                                                                <use xlink:href="#svg_my_29"><svg id="svg_my_29"
-                                                                        viewBox="0 0 24 24">
-                                                                        <path fill="currentColor"
-                                                                            d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0zm0 1.5c-4.694 0-8.5 3.806-8.5 8.5s3.806 8.5 8.5 8.5 8.5-3.806 8.5-8.5-3.806-8.5-8.5-8.5zM10 9c.513 0 .936.386.993.883L11 10v4.5c0 .552-.448 1-1 1-.513 0-.936-.386-.993-.883L9 14.5V10c0-.552.448-1 1-1zm0-4c.69 0 1.25.56 1.25 1.25S10.69 7.5 10 7.5s-1.25-.56-1.25-1.25S9.31 5 10 5z"
-                                                                            transform="translate(-1133 -2449) translate(448 2449) translate(685) translate(2 2)">
-                                                                        </path>
-                                                                    </svg>
-                                                                </use>
+                                                            <!-- <svg class="icon-exclam"><use xlink:href="#svg_my_29"><svg id="svg_my_29" viewBox="0 0 24 24">
+                                                                <path fill="currentColor" d="M10 0c5.523 0 10 4.477 10 10s-4.477 10-10 10S0 15.523 0 10 4.477 0 10 0zm0 1.5c-4.694 0-8.5 3.806-8.5 8.5s3.806 8.5 8.5 8.5 8.5-3.806 8.5-8.5-3.806-8.5-8.5-8.5zM10 9c.513 0 .936.386.993.883L11 10v4.5c0 .552-.448 1-1 1-.513 0-.936-.386-.993-.883L9 14.5V10c0-.552.448-1 1-1zm0-4c.69 0 1.25.56 1.25 1.25S10.69 7.5 10 7.5s-1.25-.56-1.25-1.25S9.31 5 10 5z" transform="translate(-1133 -2449) translate(448 2449) translate(685) translate(2 2)"></path>
                                                             </svg>
+                                                        </use></svg> -->
                                                             현재 이메일이 기억나지 않는다면 <a href="javascript:void(0)"
                                                                 class="ipin-link" id="pass-cert-email">본인명의 인증</a> 후 수정할
                                                             수 있습니다.
