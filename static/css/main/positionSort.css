@@ -134,6 +134,14 @@ header{
     transform: translateX(-55px);
 }
 
+.leftNavigation:hover a {
+    opacity: 0.5;
+}
+
+.leftNavigation a:hover {
+    opacity: 1;
+}
+
 .leftNavigation li,
 .rightNavigation li {
     margin-right: 20px;
@@ -338,6 +346,10 @@ main{
     border: 1px solid rgb(0, 221, 109);
     background-color: rgb(0, 221, 109);
     font-weight: bold;
+}
+
+.categoryButton[aria-pressed="false"]:hover{
+    background-color: rgb(228, 228, 228);
 }
 
 .categoryButton>span{

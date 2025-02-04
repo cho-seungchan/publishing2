@@ -5,12 +5,10 @@ const searchWindow = document.querySelector(".searchWindow");
 searchBox.addEventListener("focus", () => {
     searchWindow.style.visibility = "visible";
     searchWindow.style.zIndex = "999999";
-    mainNav.style.zIndex = "4"; // **mainNav를 아래로 내리기**
 });
 
 searchBox.addEventListener("blur", () => {
     searchWindow.style.visibility = "hidden";
-    mainNav.style.zIndex = "10";
 });
 
 // 네비 스크롤에 따라 나타났다 없어지게 하기
@@ -77,4 +75,13 @@ mainNav.addEventListener("mouseout", function () {
     if (window.scrollY > scrollThreshold) {
         mainNav.classList.remove("show");
     }
+});
+
+// 카테고리 버튼을 누르면 aria-pressed의 상태 변화
+document.querySelectorAll(".categoryButton").forEach((button) => {
+    button.addEventListener("click", () => {
+        // aria-pressed 속성 값 토글
+        const isPressed = button.getAttribute("aria-pressed") === "true";
+        button.setAttribute("aria-pressed", isPressed ? "false" : "true");
+    });
 });
