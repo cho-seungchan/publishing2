@@ -601,3 +601,28 @@
     background: none;
     border: 1px solid rgb(196, 196, 196);
 }
+
+.resume-question-inner::before {
+    content: "?";
+}
+
+.resume-content-bottom>span {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(153, 153, 153);
+}
+
+.new-resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.new-resume svg {
+    width: 32px;
+    height: 32px;
+}
