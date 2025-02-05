@@ -83,9 +83,9 @@ compnayLogo.style.display = "none";
 normalLogo.style.display = "block";
 
 companybutton.addEventListener("click", () => {
-  //console.log("IN");
+  console.log("IN");
   if (company.style.opacity === "0") {
-    //console.log("IN2");
+    console.log("IN2");
     normalLogo.style.display = "none";
     compnayLogo.style.display = "block";
     //
@@ -99,15 +99,13 @@ companybutton.addEventListener("click", () => {
   }
 });
 normalbutton.addEventListener("click", () => {
-  //console.log("normal IN");
+  console.log("normal IN");
   if (normal.style.opacity === "0") {
-    //console.log("if-IN");
+    console.log("if-IN");
     normalLogo.style.display = "block";
     compnayLogo.style.display = "none";
-    //
     normal.style.opacity = "1";
     normal.style.pointerEvents = "auto";
-    //
     company.style.pointerEvents = "none";
     company.style.opacity = "0";
   }

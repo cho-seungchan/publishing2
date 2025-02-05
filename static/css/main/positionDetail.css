@@ -1,0 +1,788 @@
+@font-face {
+    font-family: 'Pretendard';
+    src: url(../../fonts/main/PretendardVariable.woff2) format('woff');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+* {
+    scrollbar-color: auto;
+    scrollbar-width: auto;
+}
+
+html {
+    display: block;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    text-size-adjust: none;
+    font-synthesis: none !important;
+}
+
+body {
+    display: block;
+    margin: 8px;
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 24px;
+    overflow-x: hidden;
+    font-family: 'Pretendard';
+}
+
+html, body, header, nav, aside, main, article, section, footer, h1, h2, h3, h4, ul, ol, li, dl, dt, dd, p, pre, em, address, blockquote, q, form, fieldset, input, textarea, select, button, iframe {
+    margin: 0px;
+    padding: 0px;
+}
+
+input{
+    appearance: none;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    border-radius: 0px;
+    background: none;
+    cursor: pointer;
+}
+
+input, textarea, select, button {
+    border-radius: 0px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+header, nav, aside, main, article, section, footer {
+    display: block;
+}
+
+html, body, header, nav, aside, main, article, section, footer, h1, h2, h3, h4, ul, ol, li, dl, dt, dd, p, pre, em, address, blockquote, q, form, fieldset, input, textarea, select, button, iframe {
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+main{
+    background-color: rgb(255, 255, 255);
+    padding-top: 120px;
+}
+
+img, fieldset, iframe {
+    border: none;
+}
+
+.headerWrapper{
+    position: relative;
+    max-width: 1060px;
+    margin: 0px auto;
+}
+
+.headerUpper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    transition: 0.2s;
+}
+
+.mainNavigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    z-index: 13;
+}
+
+.logoWrap{
+    padding-top: 5px;
+}
+
+.mainSearch{
+    position: relative;
+}
+
+.pageLogo{
+    display: inline-flex;
+}
+
+.mainSearch{
+    position: relative;
+}
+
+.searchWrapper{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    max-width: 1060px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+}
+
+.searchBox{
+    width: 480px;
+    height: 40px;
+    padding: 0px 20px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    border-radius: 100px;
+    border: 1.5px solid rgb(0, 221, 109);
+}
+
+.closeButton{
+    display: none;
+}
+
+.searchBox > input {
+    width: 100%;
+    padding: 0px 40px 0px 44px;
+    height: 40px;
+    border: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    right: 0px;
+    background-color: transparent;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.searchBox > input:focus {
+    outline: none;
+}
+
+.searchButton{
+    position: absolute;
+    left: 16px;
+    top: 8px;
+}
+
+.searchButton > svg > g > circle {
+    stroke: rgb(0, 221, 109);
+}
+
+.searchButton > svg > g > path {
+    stroke: rgb(0, 221, 109);
+}
+
+.searchWindow{
+    position: fixed;
+    top: 64px;
+    right: 430px;
+    width: 472px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+    box-shadow: rgba(20, 20, 20, 0.12) 0px 8px 16px;
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 24px;
+    visibility: hidden;
+}
+
+.searchWindowTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.searchWindowTitle > h4{
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+
+.searchWindowContents{
+    padding: 28px 0px 36px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(153, 153, 153);
+}
+
+.leftNavigation{
+    display: flex;
+    margin-left: -20px;
+}
+
+.rightNavigation{
+    display: flex;
+    margin-right: -12px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.leftNavigation > li{
+    position: relative;
+    padding: 0px 20px;
+}
+
+.leftNavigation > li:first-child>a{
+    font-weight: 700;
+}
+
+.leftNavigation:hover a {
+    opacity: 0.5;
+}
+
+.leftNavigation a:hover {
+    opacity: 1;
+}
+
+.navigationMenu{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    padding: 10px 4px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.rightNavigation > li {
+    position: relative;
+    padding: 0px 12px;
+}
+
+.mainWrapper{
+    position: relative;
+    padding: 60px 0px 80px;
+    max-width: 1060px;
+    margin: 0px auto;
+}
+
+.mainContent{
+    position: relative;
+    width: 630px;
+}
+
+.sidePositionInfo{
+    width: 340px;
+    height: calc(100% - 100px);
+    position: absolute;
+    top: 60px;
+    right: calc(50% - 530px);
+}
+
+.positionInfo{
+    margin-top: 48px;
+}
+
+.basicInfo{
+    padding: 32px 0px;
+    border-top: 1px solid rgb(234, 234, 234);
+    border-bottom: 1px solid rgb(234, 234, 234);
+}
+
+.companyInfo{
+    position: relative;
+}
+
+.contentTitle>h1{
+    font-size: 36px;
+    line-height: 48px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.contentTitle .name{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.contentTitle .name>span{
+    font-size: 18px;
+    line-height: 26px;
+    color: rgb(68, 68, 68);
+    max-width: 606px;
+}
+
+.contentTitle .name>svg{
+    width: 20px;
+    height: 20px;
+}
+
+.contentTitle .name>svg>path{
+    fill: rgb(196, 196, 196);
+}
+
+.positionDetail{
+    margin: 0px 0px 56px;
+    text-align: left;
+}
+
+.detailTitle{
+    padding-bottom: 12px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+.positionDetail>dd>pre{
+    margin: 0px;
+    padding: 0px;
+    white-space: pre-line;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    font-family: inherit;
+    color: rgb(68, 68, 68);
+    font-size: 16px;
+    line-height: 28px;
+}
+
+footer{
+    background-color: rgb(251, 251, 251);
+    padding: 40px 0px 30px;
+}
+
+.inner{
+    max-width: 1060px;
+    position: relative;
+    margin: 0px auto;
+    padding: 24px 0px 60px;
+    text-align: left;
+}
+
+.inner::after{
+    display: table;
+    table-layout: fixed;
+    clear: both;
+    content: "";
+}
+
+.inner > .logo {
+    position: absolute;
+    left: 0px;
+    top: 27px;
+    width: 42px;
+    height: 22px;
+}
+
+.contents{
+    display: flex;
+    padding-left: 92px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.linksWrap{
+    display: flex;
+    width: 250px;
+}
+
+.info{
+    display: inline-block;
+    width: 718px;
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.links>li{
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.links>li>a{
+    display: inline-block;
+    color: rgb(68, 68, 68);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.links>li:nth-child(2n+1){
+    width: 140px;
+}
+
+.blind{
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.info>dd{
+    padding-bottom: 16px;
+}
+
+.snsIcon{
+    margin-top: 14px;
+}
+
+.snsIcon>a>img {
+    margin-right: 8px;
+}
+
+.slickSlider{
+    position: relative;
+    display: block;
+}
+
+.slickList{
+    transform: translateZ(0);
+    overflow: hidden;
+}
+
+.slickTrack{
+    width: 700px;
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    display: flex;
+}
+
+.slickTrack::before{
+    display: table;
+    content: "";
+}
+
+.sideSlickSlide{
+    display: block;
+    outline: none;
+    width: 100px;
+}
+
+.slickSlideLink{
+    width: 100%;
+    display: inline-block;
+}
+
+.sideSlideImg1{
+    width: 100px;
+    height: 148px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: url("https://cdn.jumpit.co.kr/jumpit/banner/home/programmers_wing.webp") 0% 0% / 100px 148px no-repeat;
+}
+
+.sideSlideImg2{
+    width: 100px;
+    height: 148px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: url("https://cdn.jumpit.co.kr/jumpit/banner/home/komate_launching_wing.webp") 0% 0% / 100px 148px no-repeat;
+}
+
+.sideSlideImg3{
+    width: 100px;
+    height: 148px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: url("https://cdn.jumpit.co.kr/jumpit/personal/main_banner/event_for_develop_banner.png") 0% 0% / 100px 148px no-repeat;
+}
+
+.sideSlideButtonWrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 29px;
+    margin: 0px auto;
+}
+
+.sideSlideButton>span{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: rgb(212, 212, 212);
+}
+
+.blind{
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px); 
+}
+
+.basicDetail{
+    position: relative;
+    color: rgb(68, 68, 68);
+    font-size: 15px;
+    line-height: 22px;
+    margin: 10px 0px;
+    display: flex;
+    align-items: baseline;
+}
+
+.basicDetail > dt{
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    width: 90px;
+    min-width: 90px;
+}
+
+li>.btns{
+    display: block;
+    margin-top: 4px;
+}
+
+.addressbtn{
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: rgb(102, 102, 102);
+}
+
+.addressbtn>svg{
+    position: relative;
+    top: -1px;
+    width: 16px;
+    height: 16px;
+}
+
+.addressbtn>svg>path{
+    fill: rgb(192, 192, 192);
+}
+
+.addressDeco{
+    padding: 0px 10px;
+    color: rgb(34, 34, 34);
+}
+
+.address>button>span{
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    color: rgb(0, 221, 109);
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.copy{
+    position: relative;
+    width: 16px;
+    height: 16px;
+}
+
+.copy>path{
+    fill: rgb(0, 221, 109);
+}
+
+.companyInfo{
+    position: relative;
+}
+
+.companyInfo>.title{
+    margin: 48px 0px 16px;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.companyInfo>.link{
+    position: absolute;
+    top: 4px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: underline;
+    text-underline-position: under;
+    color: rgb(0, 221, 109);
+}
+
+.companyInfo>.link>svg{
+    width: 16px;
+    height: 16px;
+}
+
+.companyInfo>.link>svg>path{
+    fill: rgb(0, 221, 109);
+}
+
+.companyImg{
+    position: relative;
+}
+
+.leftButtonWrapper{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    z-index: 1;
+}
+
+.rightButtonWrapper{
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    z-index: 1;
+}
+
+.imageBanner{
+    display: flex;
+    flex-flow: row;
+    align-items: flex-start;
+    padding-bottom: 6px;
+    height: auto;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior: contain;
+}
+
+.bannerCount{
+    position: absolute;
+    right: 16px;
+    bottom: 32px;
+    padding: 6px 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.leftButton{
+    padding: 0.3px;
+    width: 33px;
+    height: 33px;
+}
+
+.leftButton>svg{
+    width: 32px;
+    height: 32px;
+}
+
+.leftButton>svg>g>path:first-child{
+    opacity: 0.5;
+    fill: transparent;
+    stroke: rgb(255, 255, 255);
+}
+.leftButton:hover>svg>g>path:first-child{
+    opacity: 0.5;
+    fill: rgb(255, 255, 255);
+    stroke: rgb(255, 255, 255);
+}
+
+.leftButton>svg>g>path:nth-child(2){
+    fill: rgb(255, 255, 255);
+}
+
+.leftButton:hover>svg>g>path:nth-child(2){
+    fill: rgb(0, 0, 0);
+}
+
+.rightButton{
+    padding: 0.3px;
+    width: 33px;
+    height: 33px;
+}
+
+.rightButton>svg{
+    width: 32px;
+    height: 32px;
+}
+
+.rightButton>svg>g>path:first-child{
+    opacity: 0.5;
+    fill: transparent;
+    stroke: rgb(255, 255, 255);
+}
+.rightButton:hover>svg>g>path:first-child{
+    opacity: 0.5;
+    fill: rgb(255, 255, 255);
+    stroke: rgb(255, 255, 255);
+}
+
+.rightButton>svg>g>path:nth-child(2){
+    fill: rgb(255, 255, 255);
+}
+
+.rightButton:hover>svg>g>path:nth-child(2){
+    fill: rgb(0, 0, 0);
+}
+
+.imageBanner>div{
+    scroll-snap-align: start;
+    position: relative;
+    width: 100%;
+    flex-shrink: 0;
+    padding-bottom: 70%;
+}
+
+.imageBanner>div>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    border-radius: 4px;
+    object-fit: cover;
+    outline-offset: -1px;
+}
+
+.companyDetail{
+    position: relative;
+}
+
+.companyDetailText{
+    padding: 0px;
+    color: rgb(68, 68, 68);
+    font-size: 16px;
+    line-height: 28px;
+    word-break: break-all;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    font-family: inherit;
+    max-height: 168px;
+    overflow: hidden;
+}
+
+.companyDetailButton{
+    padding: 0px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    height: 48px;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(212, 212, 212);
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 16px;
+}
+
+.compnayDetailHide{
+    position: absolute;
+    bottom: 64px;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgb(255, 255, 255) 100%);
+}

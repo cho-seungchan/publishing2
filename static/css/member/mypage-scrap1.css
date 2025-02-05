@@ -292,10 +292,6 @@
     border-top: 1px solid rgb(228, 228, 228);
     padding-top: 24px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 .mypagemenu2-2 {
     font-size: 15px;
     line-height: 22px;
@@ -305,10 +301,6 @@
     position: relative;
     font-weight: 900;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 .mymenu-popuptext {
     cursor: default;
     position: absolute;
@@ -456,6 +448,11 @@
     padding: 0px;
     background-color: transparent;
     margin-right: 8px !important;
+}
+
+.top-checkbox4:checked {
+    border-color: rgb(0, 221, 109);
+    background: url("https://jumpit.saramin.co.kr/assets/images/attach-checked.svg") center center no-repeat;
 }
 
 .article-wrap {

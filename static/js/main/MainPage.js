@@ -4,6 +4,7 @@ const searchWindow = document.querySelector(".searchWindow");
 
 searchBox.addEventListener("focus", () => {
     searchWindow.style.visibility = "visible";
+    searchWindow.style.transform = "translateX(400px)";
 });
 
 searchBox.addEventListener("blur", () => {

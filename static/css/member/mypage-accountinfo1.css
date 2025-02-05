@@ -765,6 +765,14 @@ h6 {
     background: var(--gray40) url("https://www.saraminimage.co.kr/sri/person/img/profile_noimg.png") no-repeat center center;
 }
 
+.photo-wrap .photo>img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .photo-wrap .photo-border {
     position: absolute;
     top: 0;
@@ -786,7 +794,7 @@ h6 {
     height: 32px;
     border: 1px solid var(--gray40);
     border-radius: 100%;
-    background: var(--white) url("//www.saraminimage.co.kr/sri/person/ico/ico-camera.png") no-repeat center center;
+    background: var(--white) url("https://www.saraminimage.co.kr/sri/person/ico/ico_camera.png") no-repeat center center;
 }
 
 .photo-edit-btn {
