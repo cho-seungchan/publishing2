@@ -189,6 +189,16 @@ profileEditButton.addEventListener("click", () => {
     input.click();
 });
 
+window.addEventListener("click", (e) => {
+    if(photoEditButton.contains(e.target)){
+        photoEditList.style.display ="block";
+    }
+    else if(!photoEditList.contains(e.target)){
+        photoEditList.style.display ="none";
+    }
+})
+
+
 input.addEventListener("change", (e) => {
     const [file] = e.target.files;
     const reader = new FileReader();
