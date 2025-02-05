@@ -1,69 +1,93 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 필터 관련 요소들 선택
-  const statusFilter = document.querySelector(".status-filter");
-  const dateFilter = document.querySelector(".date-filter");
-  const searchInput = document.querySelector(".search-input");
-  const searchBtn = document.querySelector(".search-btn");
+    const statusFilter = document.querySelector(".status-filter"); //처리 상태 필터 박스
+    const dateFilter = document.querySelector(".date-filter"); //날짜 필터 박스
+    const searchInput = document.querySelector(".search-input"); // 검색어 입력창
+    const searchBtn = document.querySelector(".search-btn"); // 연두색 검색 버튼
+    const reportRows = document.querySelectorAll(".report-table tbody tr"); //테이블 레이아웃
 
-  // 상태 필터 변경 이벤트
-  // statusFilter > option 태그의 value (all: 전체, pending: 처리중, completed: 처리완료)
-  statusFilter.addEventListener("change", function () {
-    const selectedStatus = this.value; // 선택된 상태값 (all, pending, completed)
-    const reportRows = document.querySelectorAll(".report-table tbody tr");
+    // 상태 필터링 함수
+    // 목적: 사용자가 선택한 status에 따라 테이블 행을 필터링
+    // 매개변수 status: 처리상태 필터 박스로 필터링할 상태 값 (all, 처리중, 처리완료)
+    function filterByStatus(status) {
+        reportRows.forEach((row) => {
+            const statusCell = row.querySelector(".status"); // tbody > tr > td들 > span: 행 안의 처리상태를 나타내는 span태그
+            const currentStatus = statusCell.textContent.trim(); // trim: 선택된 상태 셀의 텍스트 내용을 가져오고 앞뒤 공백 제거
+            // 행의 표시 여부 결정
+            // status가 'all'이거나 현재 행의 상태(currentStatus)와 일치하면 행을 보이게 함
+            // 그렇지 않으면 행을 숨김 (display: none)
+            row.style.display =
+                status === "all" || currentStatus === status ? "" : "none";
+        });
+    }
 
-    // 선택된 상태에 따라 행 표시/숨김 처리 (실제로는 서버에 요청하게 될 부분)
-    // tr에서 status 클래스 요소들 = 상태값 표시 요소 선택
-    reportRows.forEach((row) => {
-      const statusCell = row.querySelector(".status");
-      switch (selectedStatus) {
-        case "all":
-          row.style.display = ""; // 모든 행 표시
-          break;
-        case "pending":
-          row.style.display =
-            statusCell.textContent.trim() === "처리중" ? "" : "none";
-          break;
-        case "completed":
-          row.style.display =
-            statusCell.textContent.trim() === "처리완료" ? "" : "none";
-          break;
-      }
+    // 상태 필터 변경 이벤트
+    // 사용자가 상태 필터를 변경할 때마다 실행
+    statusFilter.addEventListener("change", function () {
+        // 현재 선택된 필터 값 가져오기
+        // value: pending(처리중), completed(처리완료), all(전체)
+        const selectedStatus = this.value;
+        console.log("선택된 상태:", selectedStatus);
+        // 선택된 상태에 따라 위에서 정의한 filterByStatus 함수 호출
+        // 선택된 값을 실제 상태 텍스트로 변환
+        filterByStatus(
+            selectedStatus === "pending"
+                ? "처리중"
+                : selectedStatus === "completed"
+                ? "처리완료"
+                : "all"
+        );
     });
 
-    console.log("상태 필터 변경:", selectedStatus);
-    // 여기에 나중에 서버 요청 코드가 들어갈 예정
-  });
+    // 기간 필터 변경 이벤트
+    // 사용자가 날짜 필터를 변경할 때 실행
+    dateFilter.addEventListener("change", function () {
+        // 현재 선택된 날짜 범위 값 가져오기
+        // value: week(1주일), month(1개월), three-month(3개월)
+        const selectedDate = this.value;
+        // 구현부 자리: 백엔드에서 날짜 범위에 따른 데이터 필터링 로직 추가 예정
+        console.log("기간 필터 변경:", selectedDate);
+    });
 
-  // 기간 필터 변경 이벤트
-  dateFilter.addEventListener("change", function () {
-    const selectedDate = this.value;
-    console.log("기간 필터 변경:", selectedDate);
-    // 여기에 나중에 서버 요청 코드가 들어갈 예정
-  });
+    // 검색 함수
+    // 매개변수 searchText: 사용자가 입력한 검색어
+    function performSearch(searchText) {
+        // 검색어가 비어있는지 확인
+        // 비어있다면 사용자에게 경고 메시지 표시
+        if (!searchText) {
+            alert("검색어를 입력해주세요.");
+            return;
+        }
 
-  // 검색 버튼 클릭 이벤트
-  searchBtn.addEventListener("click", function () {
-    const searchText = searchInput.value.trim();
-    if (searchText) {
-      console.log("검색어:", searchText);
-      // 여기에 나중에 서버 요청 코드가 들어갈 예정
+        // 구현부 자리: 백엔드에서 검색어 기반 데이터 필터링 로직 추가 예정
+        console.log("검색어:", searchText);
     }
-  });
 
-  // 검색어 입력 필드에서 Enter 키 처리
-  searchInput.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      searchBtn.click(); // 검색 버튼 클릭 이벤트 발생
+    // 검색 버튼 클릭 이벤트
+    // 사용자가 검색 버튼을 클릭하면 실행
+    searchBtn.addEventListener("click", function () {
+        // 검색어 입력창의 값을 가져와 앞뒤 공백 제거
+        const searchText = searchInput.value.trim();
+        // 위의 performSearch 함수 호출하여 검색 처리
+        performSearch(searchText);
+        console.log("검색 버튼 마우스 클릭: 잘눌렸습니다.");
+    });
+
+    // 검색어 입력 필드에서 Enter 키 처리
+    searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+            const searchText = this.value.trim();
+            performSearch(searchText);
+            console.log("엔터로 검색: 잘눌렸습니다.");
+        }
+    });
+
+    // 초기 상태 설정
+    function initializeFilters() {
+        statusFilter.value = "all";
+        dateFilter.value = "week";
+        searchInput.value = "";
     }
-  });
 
-  // 초기 상태 설정
-  function initializeFilters() {
-    statusFilter.value = "all"; // 초기값 '전체'로 설정
-    dateFilter.value = "week"; // 초기값 '최근 1주일'로 설정
-    searchInput.value = ""; // 검색창 비우기
-  }
-
-  // 초기화 실행
-  initializeFilters();
+    // 초기화 실행
+    initializeFilters();
 });
