@@ -224,15 +224,17 @@
 
                                 <div class="person-update-sidearea">
                                     <div class="photo-wrap">
-                                        <span class="photo" id="myhome-profile-photo"></span>
+                                        <label for="attach"><span class="photo"
+                                                id="myhome-profile-photo"></span></label>
                                         <span class="photo-border"></span>
                                         <button type="button" class="btn-photo" aria-label="프로필 편집/삭제"
                                             aria-haspopup="menu"></button>
-                                        <div class="photo-edit-btn">
+                                        <div class="photo-edit-btn" style="">
                                             <button type="button" id="btnPhotoEdit">프로필 편집</button>
                                             <button type="button" id="btnPhotoDelete">프로필 삭제</button>
                                         </div>
                                     </div>
+                                    <input type="file" id="attach" style="display: none" />
                                 </div>
                                 <div class="update-main person-update-main">
                                     <div class="field-wrap">
