@@ -1,528 +1,710 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>관리자 페이지</title>
-    <link rel="stylesheet" href="../../static/css/admin/global.css" />
-    <link rel="stylesheet" href="../../static/css/admin/navi.css" />
-    <link rel="stylesheet" href="../../static/css/admin/sidebar.css" />
-    <link rel="stylesheet" href="../../static/css/admin/main.css" />
-    <link rel="stylesheet" href="../../static/css/admin/media.css" />
-    <link rel="stylesheet" href="../../static/css/admin/report.css" />
-  </head>
-  <body class="admin-body">
-    <div id="root">
-      <div id="admin-layout" class="layout-container">
-        <!-- 상단 네비게이션 바 -->
-        <header class="gnb-container" id="admin-gnb">
-          <div class="gnb-content">
-            <div class="logo-wrapper">
-              <button
-                class="logo-btn"
-                type="button"
-                aria-label="로고 버튼"
-              ></button>
-              <div class="logo-type"></div>
-            </div>
-          </div>
-        </header>
-
-        <!-- 메인 콘텐츠 영역 -->
-        <div class="main-content">
-          <!-- 사이드바 네비게이션 -->
-          <nav
-            id="sidebar-nav"
-            class="sidebar-container sidebar-expanded sidebar-scroll"
-          >
-            <div class="sidebar-content">
-              <div class="nav-menu">
-                <div
-                  id="nav-links"
-                  class="nav-links-menu"
-                  style="overflow: auto"
-                >
-                  <!-- 공고관리 섹션 -->
-                  <div class="menu-section">
-                    <a class="menu-item menu-has-submenu">
-                      <span class="menu-label">
-                        <img
-                          src="../../static/images/admin/공고.svg"
-                          alt="공고관리"
-                          class="menu-icon"
-                          width="16"
-                          height="16"
-                        />
-                        공고관리
-                        <img
-                          src="../../static/images/admin/arrow.svg"
-                          class="arrow-icon menu-arrow"
-                          alt="메뉴 화살표"
-                        />
-                      </span>
-                    </a>
-                    <div class="submenu-container">
-                      <a class="submenu-item announce-link" href="#"
-                        >공고목록</a
-                      >
-                    </div>
-                  </div>
-
-                  <!-- 회원관리 섹션 -->
-                  <div class="menu-section">
-                    <a class="menu-item menu-has-submenu">
-                      <span class="menu-label">
-                        <img
-                          src="../../static/images/admin/회원1.png"
-                          alt="회원관리"
-                          class="menu-icon"
-                          width="16"
-                          height="16"
-                        />
-                        회원관리
-                        <img
-                          src="../../static/images/admin/arrow.svg"
-                          class="arrow-icon menu-arrow"
-                          alt="메뉴 화살표"
-                        />
-                      </span>
-                    </a>
-                    <div class="submenu-container">
-                      <a class="submenu-item normal-member-link" href="#"
-                        >일반회원</a
-                      >
-                      <a class="submenu-item company-member-link" href="#"
-                        >기업회원</a
-                      >
-                    </div>
-                  </div>
-
-                  <!-- 문의관리 섹션 -->
-                  <div class="menu-section">
-                    <a class="menu-item menu-has-submenu">
-                      <span class="menu-label">
-                        <img
-                          src="../../static/images/admin/문의.png"
-                          alt="문의관리"
-                          class="menu-icon"
-                          width="16"
-                          height="16"
-                        />
-                        문의관리
-                        <img
-                          src="../../static/images/admin/arrow.svg"
-                          class="arrow-icon menu-arrow"
-                          alt="메뉴 화살표"
-                        />
-                      </span>
-                    </a>
-                    <div class="submenu-container">
-                      <a class="submenu-item personal-inquiry-link" href="#"
-                        >개인문의</a
-                      >
-                      <a class="submenu-item company-inquiry-link" href="#"
-                        >기업문의</a
-                      >
-                    </div>
-                  </div>
-
-                  <!-- 신고관리 섹션 -->
-                  <div class="menu-section">
-                    <a class="menu-item menu-has-submenu">
-                      <span class="menu-label">
-                        <img
-                          src="../../static/images/admin/신고.png"
-                          alt="신고관리"
-                          class="menu-icon"
-                          width="16"
-                          height="16"
-                        />
-                        신고관리
-                        <img
-                          src="../../static/images/admin/arrow.svg"
-                          class="arrow-icon menu-arrow"
-                          alt="메뉴 화살표"
-                        />
-                      </span>
-                    </a>
-                    <div class="submenu-container">
-                      <a class="submenu-item report-link" href="#">신고목록</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-
-          <!-- 메인 컨텐츠 영역 -->
-          <div id="main-contents" class="contents-container">
-            <!-- 홈 컨텐츠 -->
-            <main class="project-container">
-              <div id="project-content" class="project-box">
-                <section>
-                  <div class="head-banner"></div>
-                </section>
-                <section class="project-presentation">
-                  <h2 class="presentation-title">HOME</h2>
-                  <div class="presentation-desc">
-                    각 관리 메뉴에 간편하고 빠르게 접근할 수 있습니다.
-                  </div>
-                  <div class="presentation-content">
-                    <div class="project-wrapper">
-                      <div class="project-layout">
-                        <div class="project-contents">
-                          <div class="menu-list-container">
-                            <ul>
-                              <li class="menu-card menu-announce">
-                                <div class="menu-content">
-                                  <div class="menu-name">공고목록</div>
-                                  <em class="menu-status menu-wadiz-color"
-                                    >공고관리</em
-                                  >
-                                  <a class="menu-btn announce-link" href="#">
-                                    <span>바로가기</span>
-                                  </a>
-                                </div>
-                              </li>
-
-                              <li class="menu-card menu-member">
-                                <div class="menu-content">
-                                  <div class="menu-name">일반회원 관리</div>
-                                  <em class="menu-status menu-wadiz-color"
-                                    >회원관리</em
-                                  >
-                                  <a
-                                    class="menu-btn normal-member-link"
-                                    href="#"
-                                  >
-                                    <span>바로가기</span>
-                                  </a>
-                                </div>
-                              </li>
-
-                              <li class="menu-card menu-member">
-                                <div class="menu-content">
-                                  <div class="menu-name">기업회원 관리</div>
-                                  <em class="menu-status menu-wadiz-color"
-                                    >회원관리</em
-                                  >
-                                  <a
-                                    class="menu-btn company-member-link"
-                                    href="#"
-                                  >
-                                    <span>바로가기</span>
-                                  </a>
-                                </div>
-                              </li>
-
-                              <li class="menu-card menu-inquiry">
-                                <div class="menu-content">
-                                  <div class="menu-name">
-                                    개인문의 목록 / 답변
-                                  </div>
-                                  <em class="menu-status menu-wadiz-color"
-                                    >문의관리</em
-                                  >
-                                  <a
-                                    class="menu-btn personal-inquiry-link"
-                                    href="#"
-                                  >
-                                    <span>바로가기</span>
-                                  </a>
-                                </div>
-                              </li>
-
-                              <li class="menu-card menu-inquiry">
-                                <div class="menu-content">
-                                  <div class="menu-name">
-                                    기업문의 목록 / 답변
-                                  </div>
-                                  <em class="menu-status menu-wadiz-color"
-                                    >문의관리</em
-                                  >
-                                  <a
-                                    class="menu-btn company-inquiry-link"
-                                    href="#"
-                                  >
-                                    <span>바로가기</span>
-                                  </a>
-                                </div>
-                              </li>
-
-                              <li class="menu-card menu-report">
-                                <div class="menu-content">
-                                  <div class="menu-name">신고목록</div>
-                                  <em class="menu-status menu-wadiz-color"
-                                    >신고관리</em
-                                  >
-                                  <a class="menu-btn report-link" href="#">
-                                    <span>바로가기</span>
-                                  </a>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>관리자 페이지</title>
+        <link rel="stylesheet" href="../../static/css/admin/global.css" />
+        <link rel="stylesheet" href="../../static/css/admin/navi.css" />
+        <link rel="stylesheet" href="../../static/css/admin/sidebar.css" />
+        <link rel="stylesheet" href="../../static/css/admin/main.css" />
+        <link rel="stylesheet" href="../../static/css/admin/media.css" />
+        <link rel="stylesheet" href="../../static/css/admin/report.css" />
+    </head>
+    <body class="admin-body">
+        <div id="root">
+            <div id="admin-layout" class="layout-container">
+                <!-- 상단 네비게이션 바 -->
+                <header class="gnb-container" id="admin-gnb">
+                    <div class="gnb-content">
+                        <div class="logo-wrapper">
+                            <button
+                                class="logo-btn"
+                                type="button"
+                                aria-label="로고 버튼"
+                            ></button>
+                            <div class="logo-type"></div>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                </section>
-              </div>
-            </main>
+                </header>
 
-            <!-- 공고관리 컨텐츠 -->
-            <div class="announce-management" style="display: none"></div>
+                <!-- 메인 콘텐츠 영역 -->
+                <div class="main-content">
+                    <!-- 사이드바 네비게이션 -->
+                    <nav
+                        id="sidebar-nav"
+                        class="sidebar-container sidebar-expanded sidebar-scroll"
+                    >
+                        <div class="sidebar-content">
+                            <div class="nav-menu">
+                                <div
+                                    id="nav-links"
+                                    class="nav-links-menu"
+                                    style="overflow: auto"
+                                >
+                                    <!-- 공고관리 섹션 -->
+                                    <div class="menu-section">
+                                        <a class="menu-item menu-has-submenu">
+                                            <span class="menu-label">
+                                                <img
+                                                    src="../../static/images/admin/공고.svg"
+                                                    alt="공고관리"
+                                                    class="menu-icon"
+                                                    width="16"
+                                                    height="16"
+                                                />
+                                                공고관리
+                                                <img
+                                                    src="../../static/images/admin/arrow.svg"
+                                                    class="arrow-icon menu-arrow"
+                                                    alt="메뉴 화살표"
+                                                />
+                                            </span>
+                                        </a>
+                                        <div class="submenu-container">
+                                            <a
+                                                class="submenu-item announce-link"
+                                                href="#"
+                                                >공고목록</a
+                                            >
+                                        </div>
+                                    </div>
 
-            <!-- 일반회원 관리 컨텐츠 -->
-            <div class="normal-member-management" style="display: none"></div>
+                                    <!-- 회원관리 섹션 -->
+                                    <div class="menu-section">
+                                        <a class="menu-item menu-has-submenu">
+                                            <span class="menu-label">
+                                                <img
+                                                    src="../../static/images/admin/회원1.png"
+                                                    alt="회원관리"
+                                                    class="menu-icon"
+                                                    width="16"
+                                                    height="16"
+                                                />
+                                                회원관리
+                                                <img
+                                                    src="../../static/images/admin/arrow.svg"
+                                                    class="arrow-icon menu-arrow"
+                                                    alt="메뉴 화살표"
+                                                />
+                                            </span>
+                                        </a>
+                                        <div class="submenu-container">
+                                            <a
+                                                class="submenu-item normal-member-link"
+                                                href="#"
+                                                >일반회원</a
+                                            >
+                                            <a
+                                                class="submenu-item company-member-link"
+                                                href="#"
+                                                >기업회원</a
+                                            >
+                                        </div>
+                                    </div>
 
-            <!-- 기업회원 관리 컨텐츠 -->
-            <div class="company-member-management" style="display: none"></div>
+                                    <!-- 문의관리 섹션 -->
+                                    <div class="menu-section">
+                                        <a class="menu-item menu-has-submenu">
+                                            <span class="menu-label">
+                                                <img
+                                                    src="../../static/images/admin/문의.png"
+                                                    alt="문의관리"
+                                                    class="menu-icon"
+                                                    width="16"
+                                                    height="16"
+                                                />
+                                                문의관리
+                                                <img
+                                                    src="../../static/images/admin/arrow.svg"
+                                                    class="arrow-icon menu-arrow"
+                                                    alt="메뉴 화살표"
+                                                />
+                                            </span>
+                                        </a>
+                                        <div class="submenu-container">
+                                            <a
+                                                class="submenu-item personal-inquiry-link"
+                                                href="#"
+                                                >개인문의</a
+                                            >
+                                            <a
+                                                class="submenu-item company-inquiry-link"
+                                                href="#"
+                                                >기업문의</a
+                                            >
+                                        </div>
+                                    </div>
 
-            <!-- 개인문의 관리 컨텐츠 -->
-            <div
-              class="personal-inquiry-management"
-              style="display: none"
-            ></div>
+                                    <!-- 신고관리 섹션 -->
+                                    <div class="menu-section">
+                                        <a class="menu-item menu-has-submenu">
+                                            <span class="menu-label">
+                                                <img
+                                                    src="../../static/images/admin/신고.png"
+                                                    alt="신고관리"
+                                                    class="menu-icon"
+                                                    width="16"
+                                                    height="16"
+                                                />
+                                                신고관리
+                                                <img
+                                                    src="../../static/images/admin/arrow.svg"
+                                                    class="arrow-icon menu-arrow"
+                                                    alt="메뉴 화살표"
+                                                />
+                                            </span>
+                                        </a>
+                                        <div class="submenu-container">
+                                            <a
+                                                class="submenu-item report-link"
+                                                href="#"
+                                                >신고목록</a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
 
-            <!-- 기업문의 관리 컨텐츠 -->
-            <div class="company-inquiry-management" style="display: none"></div>
+                    <!-- 메인 컨텐츠 영역 -->
+                    <div id="main-contents" class="contents-container">
+                        <!-- 홈 컨텐츠 -->
+                        <main class="project-container">
+                            <div id="project-content" class="project-box">
+                                <section>
+                                    <div class="head-banner"></div>
+                                </section>
+                                <section class="project-presentation">
+                                    <h2 class="presentation-title">HOME</h2>
+                                    <div class="presentation-desc">
+                                        각 관리 메뉴에 간편하고 빠르게 접근할 수
+                                        있습니다.
+                                    </div>
+                                    <div class="presentation-content">
+                                        <div class="project-wrapper">
+                                            <div class="project-layout">
+                                                <div class="project-contents">
+                                                    <div
+                                                        class="menu-list-container"
+                                                    >
+                                                        <ul>
+                                                            <li
+                                                                class="menu-card menu-announce"
+                                                            >
+                                                                <div
+                                                                    class="menu-content"
+                                                                >
+                                                                    <div
+                                                                        class="menu-name"
+                                                                    >
+                                                                        공고목록
+                                                                    </div>
+                                                                    <em
+                                                                        class="menu-status menu-wadiz-color"
+                                                                        >공고관리</em
+                                                                    >
+                                                                    <a
+                                                                        class="menu-btn announce-link"
+                                                                        href="#"
+                                                                    >
+                                                                        <span
+                                                                            >바로가기</span
+                                                                        >
+                                                                    </a>
+                                                                </div>
+                                                            </li>
 
-            <!-- 신고관리 컨텐츠 -->
-            <div class="report-management" style="display: none">
-              <!-- 상단 검색/필터 영역 -->
-              <div class="search-filter-container">
-                <div class="search-box">
-                  <input
-                    type="text"
-                    placeholder="검색어를 입력하세요"
-                    class="search-input"
-                  />
-                  <button type="button" class="search-btn">검색</button>
+                                                            <li
+                                                                class="menu-card menu-member"
+                                                            >
+                                                                <div
+                                                                    class="menu-content"
+                                                                >
+                                                                    <div
+                                                                        class="menu-name"
+                                                                    >
+                                                                        일반회원
+                                                                        관리
+                                                                    </div>
+                                                                    <em
+                                                                        class="menu-status menu-wadiz-color"
+                                                                        >회원관리</em
+                                                                    >
+                                                                    <a
+                                                                        class="menu-btn normal-member-link"
+                                                                        href="#"
+                                                                    >
+                                                                        <span
+                                                                            >바로가기</span
+                                                                        >
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+
+                                                            <li
+                                                                class="menu-card menu-member"
+                                                            >
+                                                                <div
+                                                                    class="menu-content"
+                                                                >
+                                                                    <div
+                                                                        class="menu-name"
+                                                                    >
+                                                                        기업회원
+                                                                        관리
+                                                                    </div>
+                                                                    <em
+                                                                        class="menu-status menu-wadiz-color"
+                                                                        >회원관리</em
+                                                                    >
+                                                                    <a
+                                                                        class="menu-btn company-member-link"
+                                                                        href="#"
+                                                                    >
+                                                                        <span
+                                                                            >바로가기</span
+                                                                        >
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+
+                                                            <li
+                                                                class="menu-card menu-inquiry"
+                                                            >
+                                                                <div
+                                                                    class="menu-content"
+                                                                >
+                                                                    <div
+                                                                        class="menu-name"
+                                                                    >
+                                                                        개인문의
+                                                                        목록 /
+                                                                        답변
+                                                                    </div>
+                                                                    <em
+                                                                        class="menu-status menu-wadiz-color"
+                                                                        >문의관리</em
+                                                                    >
+                                                                    <a
+                                                                        class="menu-btn personal-inquiry-link"
+                                                                        href="#"
+                                                                    >
+                                                                        <span
+                                                                            >바로가기</span
+                                                                        >
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+
+                                                            <li
+                                                                class="menu-card menu-inquiry"
+                                                            >
+                                                                <div
+                                                                    class="menu-content"
+                                                                >
+                                                                    <div
+                                                                        class="menu-name"
+                                                                    >
+                                                                        기업문의
+                                                                        목록 /
+                                                                        답변
+                                                                    </div>
+                                                                    <em
+                                                                        class="menu-status menu-wadiz-color"
+                                                                        >문의관리</em
+                                                                    >
+                                                                    <a
+                                                                        class="menu-btn company-inquiry-link"
+                                                                        href="#"
+                                                                    >
+                                                                        <span
+                                                                            >바로가기</span
+                                                                        >
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+
+                                                            <li
+                                                                class="menu-card menu-report"
+                                                            >
+                                                                <div
+                                                                    class="menu-content"
+                                                                >
+                                                                    <div
+                                                                        class="menu-name"
+                                                                    >
+                                                                        신고목록
+                                                                    </div>
+                                                                    <em
+                                                                        class="menu-status menu-wadiz-color"
+                                                                        >신고관리</em
+                                                                    >
+                                                                    <a
+                                                                        class="menu-btn report-link"
+                                                                        href="#"
+                                                                    >
+                                                                        <span
+                                                                            >바로가기</span
+                                                                        >
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </main>
+
+                        <!-- 공고관리 컨텐츠 -->
+                        <div
+                            class="announce-management"
+                            style="display: none"
+                        ></div>
+
+                        <!-- 일반회원 관리 컨텐츠 -->
+                        <div
+                            class="normal-member-management"
+                            style="display: none"
+                        ></div>
+
+                        <!-- 기업회원 관리 컨텐츠 -->
+                        <div
+                            class="company-member-management"
+                            style="display: none"
+                        ></div>
+
+                        <!-- 개인문의 관리 컨텐츠 -->
+                        <div
+                            class="personal-inquiry-management"
+                            style="display: none"
+                        ></div>
+
+                        <!-- 기업문의 관리 컨텐츠 -->
+                        <div
+                            class="company-inquiry-management"
+                            style="display: none"
+                        ></div>
+
+                        <!-- 신고관리 컨텐츠 -->
+                        <div class="report-management" style="display: none">
+                            <!-- 상단 검색/필터 영역 -->
+                            <div class="search-filter-container">
+                                <div class="search-box">
+                                    <input
+                                        type="text"
+                                        placeholder="검색어를 입력하세요"
+                                        class="search-input"
+                                    />
+                                    <button type="button" class="search-btn">
+                                        검색
+                                    </button>
+                                </div>
+                                <div class="filter-box">
+                                    <select class="status-filter">
+                                        <option value="all">전체</option>
+                                        <option value="pending">처리중</option>
+                                        <option value="completed">
+                                            처리완료
+                                        </option>
+                                    </select>
+                                    <select class="date-filter">
+                                        <option value="week">최근 1주일</option>
+                                        <option value="month">
+                                            최근 1개월
+                                        </option>
+                                        <option value="three-month">
+                                            최근 3개월
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 신고 목록 테이블 -->
+                            <div class="report-table-container">
+                                <table class="report-table">
+                                    <thead>
+                                        <tr>
+                                            <th>신고번호</th>
+                                            <th>신고유형</th>
+                                            <th>신고대상</th>
+                                            <th>신고자</th>
+                                            <th>신고일시</th>
+                                            <th>처리상태</th>
+                                            <th>&nbsp&nbsp신고관리</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>0000001</td>
+                                            <td>부적절한 내용</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000002</td>
+                                            <td>허위정보</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000003</td>
+                                            <td>스팸 / 도배</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000004</td>
+                                            <td>권리침해</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000005</td>
+                                            <td>불법행위</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000006</td>
+                                            <td>비매너 / 불건전</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000007</td>
+                                            <td>차별 / 비하</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000008</td>
+                                            <td>부적절한 내용</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000009</td>
+                                            <td>프로그램 품질</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000010</td>
+                                            <td>기타</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>0000011</td>
+                                            <td>불법행위</td>
+                                            <td>템프</td>
+                                            <td>허세웅</td>
+                                            <td>2025-02-04</td>
+                                            <td>
+                                                <span class="status pending"
+                                                    >처리중</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    type="button"
+                                                    class="detail-btn"
+                                                >
+                                                    상세보기
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- 페이지네이션 -->
+                            <div class="pagination">
+                                <button type="button" class="page-btn prev">
+                                    이전
+                                </button>
+                                <div class="page-numbers">
+                                    <button
+                                        type="button"
+                                        class="page-btn active"
+                                    >
+                                        1
+                                    </button>
+                                    <button type="button" class="page-btn">
+                                        2
+                                    </button>
+                                    <button type="button" class="page-btn">
+                                        3
+                                    </button>
+                                </div>
+                                <button type="button" class="page-btn next">
+                                    다음
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 사이드바 토글 버튼 -->
+                    <button
+                        type="button"
+                        class="sidebar-toggle-btn sidebar-expanded"
+                    >
+                        <i class="toggle-icon"></i>
+                    </button>
                 </div>
-                <div class="filter-box">
-                  <select class="status-filter">
-                    <option value="all">전체</option>
-                    <option value="pending">처리중</option>
-                    <option value="completed">처리완료</option>
-                  </select>
-                  <select class="date-filter">
-                    <option value="week">최근 1주일</option>
-                    <option value="month">최근 1개월</option>
-                    <option value="three-month">최근 3개월</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- 신고 목록 테이블 -->
-              <div class="report-table-container">
-                <table class="report-table">
-                  <thead>
-                    <tr>
-                      <th>신고번호</th>
-                      <th>신고유형</th>
-                      <th>신고대상</th>
-                      <th>신고자</th>
-                      <th>신고일시</th>
-                      <th>처리상태</th>
-                      <th>&nbsp&nbsp신고관리</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>0000001</td>
-                      <td>부적절한 내용</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000002</td>
-                      <td>허위정보</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000003</td>
-                      <td>스팸 / 도배</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000004</td>
-                      <td>권리침해</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000005</td>
-                      <td>불법행위</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000006</td>
-                      <td>비매너 / 불건전</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000007</td>
-                      <td>차별 / 비하</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000008</td>
-                      <td>부적절한 내용</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000009</td>
-                      <td>프로그램 품질</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000010</td>
-                      <td>기타</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>0000011</td>
-                      <td>불법행위</td>
-                      <td>템프</td>
-                      <td>허세웅</td>
-                      <td>2025-02-04</td>
-                      <td>
-                        <span class="status pending">처리중</span>
-                      </td>
-                      <td>
-                        <button type="button" class="detail-btn">
-                          상세보기
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <!-- 페이지네이션 -->
-              <div class="pagination">
-                <button type="button" class="page-btn prev">이전</button>
-                <div class="page-numbers">
-                  <button type="button" class="page-btn active">1</button>
-                  <button type="button" class="page-btn">2</button>
-                  <button type="button" class="page-btn">3</button>
-                </div>
-                <button type="button" class="page-btn next">다음</button>
-              </div>
             </div>
-          </div>
-
-          <!-- 사이드바 토글 버튼 -->
-          <button type="button" class="sidebar-toggle-btn sidebar-expanded">
-            <i class="toggle-icon"></i>
-          </button>
         </div>
-      </div>
-    </div>
-    <!-- JavaScript 파일 연결 -->
-    <script src="../../static/js/admin/sidebar_each_menu_toggle.js"></script>
-    <script src="../../static/js/admin/sidebar_toggle.js"></script>
-    <script src="../../static/js/admin/main_contents_toggle.js"></script>
-    <script src="../../static/js/admin/pagination.js"></script>
-    <script src="../../static/js/admin/report_filter.js"></script>
-  </body>
+        <!-- JavaScript 파일 연결 -->
+        <script src="../../static/js/admin/sidebar_each_menu_toggle.js"></script>
+        <script src="../../static/js/admin/sidebar_toggle.js"></script>
+        <script src="../../static/js/admin/main_contents_toggle.js"></script>
+        <script src="../../static/js/admin/pagination.js"></script>
+        <script src="../../static/js/admin/report_filter.js"></script>
+    </body>
 </html>
