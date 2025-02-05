@@ -442,11 +442,11 @@
     line-height: 28px;
 }
 
-.applied-list0 > h1 > div:nth-child(2){
+/* .applied-list0 > h1 > div:nth-child(2){
     font-size: 18px;
     text-align: center;
     width: 140px;    
-}
+} */
 
 .applied-list0 > h1 > div:nth-child(2) {
     flex-shrink: 0;
@@ -543,11 +543,6 @@
     margin: 20px 20px 0px;
 }
 
-.applied-list0 > h1 > div:nth-child(2) button {
-    display: flex;
-    align-items: center;
-    margin-right: 0px;
-}
 
 .filter-inner h1 {
     font-size: 28px;
