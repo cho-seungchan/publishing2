@@ -8,7 +8,11 @@
     width: 100%;
     border-bottom: 1px solid rgb(228, 228, 228);
 }
-
+@media (max-width: 1080px) {
+    .header-sc {
+        border-bottom: unset;
+    }
+}
 .div-sc1 {
     position: relative;
     max-width: 1060px;
@@ -22,7 +26,11 @@
     height: 64px;
     transition: 0.2s;
 }
-
+@media (max-width: 1080px) {
+    .div-sc2 {
+        padding: 0px 16px;
+    }
+}
 .div-sc2 .logo-wrap {
     padding-top: 5px;
 }
@@ -34,7 +42,11 @@
 .searchbox-top {
     position: relative;
 }
-
+@media (max-width: 1080px) {
+    .searchbox-top {
+        display: flex;
+    }
+}
 .searchbox-inner {
     position: relative;
     z-index: 2;
@@ -140,17 +152,36 @@
     align-items: center;
     height: 56px;
 }
-
+@media (max-width: 1080px) {
+    .nav-sc3 {
+        display: flex;
+        width: 100%;
+        overflow-x: scroll;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        padding: 0px 16px;
+        border-bottom: 1px solid rgb(228, 228, 228);
+    }
+}
 .header4 {
     display: flex;
     margin-left: -20px;
 }
-
+@media (max-width: 1080px) {
+    .header4 {
+        margin-left: -10px;
+        padding: 0px 20px 0px 0px;
+    }
+}
 .header4>li {
     position: relative;
     padding: 0px 20px;
 }
-
+@media (max-width: 1080px) {
+    .header4 > li {
+        padding: 0px 10px;
+    }
+}
 .header-element5 {
     font-weight: 400;
 }
@@ -169,6 +200,12 @@
     margin-right: -12px;
     font-size: 14px;
     line-height: 20px;
+}
+
+@media (max-width: 1080px) {
+    .header-right6 {
+        display: none;
+    }
 }
 .header-right6 li {
     position: relative;
