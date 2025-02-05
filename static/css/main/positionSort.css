@@ -153,11 +153,12 @@ header{
 
 .pageLogo{
     display: inline-flex;
-    transform: translateX(-20px);
+    transform: translateX(-80px);
 }
 
 .mainSearch{
     position: relative;
+    transform: translateX(80px);
 }
 
 .pageLogo{
@@ -224,7 +225,7 @@ header{
     position: fixed; /* 화면 전체 기준으로 배치 */
     top: 64px; /* fixedNav 아래 */
     left: 50%;
-    transform: translateX(-2%);
+    transform: translateX(5px);
     width: 472px;
     background: rgb(255, 255, 255);
     border: 1px solid rgb(228, 228, 228);
@@ -265,6 +266,7 @@ main{
 .leftNavigation{
     display: flex;
     margin-left: -20px;
+    transform: translateX(-40px);
 }
 
 .leftNavigation>li{
@@ -290,6 +292,7 @@ main{
     margin-right: -12px;
     font-size: 14px;
     line-height: 20px;
+    transform: translateX(50px);
 }
 
 .rightNavigation>li{
@@ -350,6 +353,7 @@ main{
 
 .categoryButton[aria-pressed="false"]:hover{
     background-color: rgb(228, 228, 228);
+    border: 1px solid rgb(228, 228, 228);
 }
 
 .categoryButton>span{

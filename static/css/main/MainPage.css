@@ -193,8 +193,8 @@ img, fieldset, iframe {
 
 .searchWindow{
     position: fixed;
-    top: 51px;
-    left: 0px;
+    top: 64px;
+    right: 825px;
     width: 472px;
     background: rgb(255, 255, 255);
     border: 1px solid rgb(228, 228, 228);
