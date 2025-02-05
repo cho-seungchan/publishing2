@@ -6,6 +6,7 @@ const searchWindow = document.querySelector(".searchWindow");
 searchBox.addEventListener("focus", () => {
     searchWindow.style.visibility = "visible";
     searchWindow.style.zIndex = "999999";
+    searchWindow.style.transform = "translateX(65px)";
 });
 
 // blur: 검색창 밖을 클릭했을 때 검색창 숨겨지게 하기
