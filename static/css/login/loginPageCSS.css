@@ -287,7 +287,7 @@ body {
 .wrap_intergranted_login_page {
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 1084px;
   height: 734px;
   margin: 0 auto 60px;
   box-sizing: border-box;
@@ -319,7 +319,15 @@ body {
 .wrap_intergranted_login_page .box_intergrated_login > div {
   flex: auto;
 }
-.wrap_intergranted_login_page .box_intergrated_login .box_right:before {
+.wrap_intergranted_login_page .box_intergrated_login #normal_page:before {
+  width: 1px;
+  height: 100%;
+  background-color: var(--gray40);
+  position: absolute;
+  left: 0;
+  content: "";
+}
+.wrap_intergranted_login_page .box_intergrated_login #company_login:before {
   width: 1px;
   height: 100%;
   background-color: var(--gray40);
@@ -863,11 +871,16 @@ b {
   width: 320px;
 }
 #company_login {
-  transform: translateX(-355px);
-  display: none;
+  transform: translateX(-497px);
+  opacity: 0;
   position: relative;
-  background-color: white;
+}
+#normal_page {
+  opacity: 1;
 }
 .normal_user {
-  display: block;
+  position: relative;
+}
+.InpBox .Chk:hover .Lbl:before {
+  background: var(--gray20);
 }
