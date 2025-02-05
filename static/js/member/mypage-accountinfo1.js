@@ -177,3 +177,36 @@ const checkEmailCerted = document.getElementById("mailCert");
 // })
 
 // 취소 버튼이나 확인 버튼으로 인증이 완료된 경우에 타이머가 초기화 되어야 하는데 안 됨.
+
+const photoEditButton = document.querySelector("button.btn-photo");
+const photoEditList = document.querySelector("div.photo-edit-btn");
+const profileEditButton = document.getElementById("btnPhotoEdit");
+const profileDeleteButton = document.getElementById("btnPhotoDelete");
+const thumbnail = document.getElementById("myhome-profile-photo");
+const input = document.getElementById("attach");
+
+profileEditButton.addEventListener("click", () => {
+    input.click();
+});
+
+input.addEventListener("change", (e) => {
+    const [file] = e.target.files;
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.addEventListener("load", (e) => {
+        const path = e.target.result;
+        if (path.includes("image")) {
+            thumbnail.style.backgroundImage = `url(${path})`;
+        } else {
+            thumbnail.style.backgroundImage = `url("images/document.jpg")`;
+        }
+    });
+});
+
+profileDeleteButton.addEventListener("click", (e) => {
+    thumbnail.style.backgroundImage = `url("https://www.saraminimage.co.kr/sri/person/img/profile_noimg.png")`;
+    thumbnail.removeChild;
+    input.value = "";
+
+    console.log("실행됨");
+});

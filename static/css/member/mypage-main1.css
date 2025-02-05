@@ -448,6 +448,41 @@
     fill: rgb(192, 192, 192);
 }
 
+.mainpage-scraplist {
+    width: 100%;
+    position: relative;
+    margin: 48px 0px 10px;
+}
+
+.mainpage-scraplist > h1 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(34, 34, 34);
+}
+
+.mainpage-scraplist > a {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    font-weight: 400;
+    color: rgb(136, 136, 136);
+    cursor: pointer;
+    text-decoration-line: underline;
+    font-size: 14px;
+    line-height: 20px;
+}
+.mainpage-scrapcontent {
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: calc(100% + 20px);
+    margin: 0px 0px 0px -10px;
+    left: 0px;
+}
+
+/*  */
 .main-content5 {
     width: 100%;
     margin: 60px 0px 0px;
