@@ -797,14 +797,14 @@
     right: 16px;
 }
 
-.resumetop>div>div>.tooltip_title {
+.resumetop>div>div>.tooltip-title {
     font-weight: 700;
     font-size: 13px;
     line-height: 18px;
     color: rgb(34, 34, 34);
 }
 
-.resumetop>div>div>.tooltip_message {
+.resumetop>div>div>.tooltip-message {
     margin-top: 8px;
     font-weight: 400;
     font-size: 13px;
@@ -1232,7 +1232,7 @@
     width: 100%;
 }
 
-.jobcategory .box_select {
+.jobcategory .box-select {
     height: 48px;
     padding: 0px 16px;
     border-radius: 8px;
@@ -1251,7 +1251,7 @@
     border: none;
 }
 
-.jobcategory .box_select button svg {
+.jobcategory .box-select button svg {
     width: 20px;
     height: 20px;
 }
@@ -1313,11 +1313,11 @@
     border-radius: 4px;
 }
 
-.jobcategory-list ul li .inp_chk {
+.jobcategory-list ul li .inp-chk {
     position: relative;
 }
 
-.jobcategory-list ul li .inp_chk input {
+.jobcategory-list ul li .inp-chk input {
     position: absolute;
     top: 0px;
     width: 1px;
@@ -1327,11 +1327,11 @@
     pointer-events: none;
 }
 
-.jobcategory-list ul li .inp_chk>label {
+.jobcategory-list ul li .inp-chk>label {
     margin-right: 12px;
 }
 
-.jobcategory-list ul li .inp_chk label {
+.jobcategory-list ul li .inp-chk label {
     width: 96%;
     margin-right: 0px;
     display: inline-block;
@@ -1342,7 +1342,7 @@
 }
 
 
-.jobcategory-list ul li .inp_chk label::before {
+.jobcategory-list ul li .inp-chk label::before {
     position: absolute;
     top: 8px;
     left: 8px;
@@ -1357,7 +1357,7 @@
     content: "";
 }
 
-.jobcategory-list ul li .inp_chk label::after {
+.jobcategory-list ul li .inp-chk label::after {
     position: absolute;
     left: 0px;
     top: 0px;
@@ -1505,6 +1505,35 @@
     text-align: left;
     cursor: pointer;
     font-weight: 400;
+}
+
+.memberedu-drop label::before {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    z-index: 1;
+    width: 9px;
+    height: 5px;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-bottom: 1.2px solid currentcolor;
+    border-left: 1.2px solid currentcolor;
+    transform: rotate(-45deg);
+    content: "";
+}
+
+.memberedu-drop label::after {
+    position: absolute;
+    left: 0px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(212, 212, 212);
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    content: "";
 }
 
 .memberedu-division {
@@ -1778,11 +1807,12 @@
     margin-right: 4px;
 }
 
-.membercareer{
+/*  */
+.membercareer {
     margin-top: 82px;
 }
 
-.membercareer > h1{
+.membercareer>h1 {
     display: block;
     padding: 0px 0px 12px;
     border-bottom: 1px solid rgb(34, 34, 34);
@@ -1812,4 +1842,955 @@
     line-height: 20px;
     color: rgb(136, 136, 136);
     z-index: 2;
+}
+
+.membercareer-content {
+    position: relative;
+    display: flex;
+    margin: 20px 0px 0px;
+}
+
+.membercareer-edit-mark {
+    width: 7px;
+    min-width: 7px;
+    height: 7px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(34, 34, 34);
+    margin-right: 14px;
+    margin-top: 6px;
+}
+
+.membercareer-date1 {
+    position: relative;
+}
+
+.membercareer-date2 {
+    position: relative;
+    min-width: 200px;
+}
+
+.membercareer-date1::before {
+    content: "*";
+    position: absolute;
+    top: 4px;
+    left: -10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(255, 78, 99);
+    z-index: 2;
+}
+
+.duration {
+    width: 100%;
+    max-width: 110px;
+    position: relative;
+}
+
+.duration .hide {
+    width: 0px;
+    height: 0px;
+    border: none;
+    position: absolute;
+}
+
+.duration .calendar-area {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    justify-content: space-between;
+}
+
+.duration .calendar-box {
+    display: flex;
+    align-items: center;
+}
+
+.duration .calendar-area>div {
+    max-width: 160px;
+}
+
+.duration .calendar-year {
+    width: 36px;
+}
+
+.duration .profile-input {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    border-radius: 0px;
+    height: auto;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    color: rgb(34, 34, 34);
+}
+
+.duration .calendar-box input {
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    color: rgb(34, 34, 34);
+}
+
+.duration .calendar-area span {
+    display: inline-block;
+    text-align: center;
+}
+
+.duration .calendar-box span {
+    display: inline-block;
+}
+
+.duration .calendar-month {
+    width: 24px;
+}
+
+.duration .profile-input {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    border-radius: 0px;
+    height: auto;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    color: rgb(34, 34, 34);
+}
+
+.duration .calendar-box input {
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    color: rgb(34, 34, 34);
+}
+
+.duration .calendar-area input:nth-child(3) {
+    text-align: left;
+}
+
+.duration .center-pa {
+    margin: 0px 2px;
+}
+
+.duration .calendar-area span {
+    display: inline-block;
+    text-align: center;
+}
+
+.during-button {
+    position: relative;
+    margin-top: 4px;
+}
+
+.during-button input {
+    position: absolute;
+    top: 0px;
+    width: 1px;
+    height: 1px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.during-button>label {
+    margin-right: 12px;
+}
+
+.during-button label {
+    margin-right: 0px;
+    display: inline-block;
+    padding-left: 24px;
+    color: rgb(102, 102, 102);
+    text-align: left;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.during-button label::before {
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    z-index: 1;
+    width: 9px;
+    height: 5px;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-bottom: 1.2px solid currentcolor;
+    border-left: 1.2px solid currentcolor;
+    transform: rotate(-45deg);
+    content: "";
+}
+
+.during-button label::after {
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(212, 212, 212);
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    content: "";
+}
+
+.company-name {
+    width: 100%;
+}
+
+.company-name-input {
+    display: flex;
+    align-items: flex-start;
+}
+
+.company-name1 {
+    position: relative;
+}
+
+.non-develop {
+    position: relative;
+    top: 2px;
+}
+
+.non-develop input {
+    position: absolute;
+    top: 0px;
+    width: 1px;
+    height: 1px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.non-develop>label {
+    margin-right: 12px;
+    margin-top: 2px;
+}
+
+.non-develop label {
+    margin-right: 0px;
+    display: inline-block;
+    padding-left: 24px;
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    line-height: 18px;
+    text-align: left;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.non-develop label::before {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    z-index: 1;
+    width: 9px;
+    height: 5px;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-bottom: 1.2px solid currentcolor;
+    border-left: 1.2px solid currentcolor;
+    transform: rotate(-45deg);
+    content: "";
+}
+
+.non-develop label::after {
+    position: absolute;
+    left: 0px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(212, 212, 212);
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    content: "";
+}
+
+.company-name-input div {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.company-name-input .flex-main-text {
+    position: relative;
+    width: calc(100% - 160px);
+}
+
+.company-name1::before {
+    content: "*";
+    position: absolute;
+    top: 4px;
+    left: -10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(255, 78, 99);
+    z-index: 2;
+}
+
+.company-name2>input {
+    width: calc(100% - 10px);
+}
+
+.company-name-input .flex-main-text>input {
+    font-size: 18px;
+    line-height: 26px;
+    color: rgb(34, 34, 34);
+    font-weight: 700;
+    border: none;
+}
+
+.company-name-input .profile-order-control {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.companytext1 {
+    position: relative;
+}
+
+.companytext2 {
+    padding: 0px;
+    margin-top: 8px;
+}
+
+.companytext2 input {
+    border: none;
+}
+
+.companytext2>input {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(34, 34, 34);
+}
+
+.companytext3 {
+    padding: 0px;
+    margin-top: 12px;
+}
+
+.companytext3 input {
+    border: none;
+}
+
+.companytext3>input {
+    width: 100%;
+    color: rgb(34, 34, 34);
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.companytext4 {
+    padding: 0px;
+    margin: 16px 0px 0px;
+    display: block;
+}
+
+.company-category {
+    margin-bottom: 16px;
+}
+
+.company-category-selected {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.company-category-selected .select-item {
+    height: 20px;
+    padding: 8px 16px;
+    background-color: rgb(48, 54, 77);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(255, 255, 255);
+    margin-right: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 300px;
+}
+
+.company-category-selected .select-item img {
+    border-radius: 3px;
+}
+
+.company-category-selected .btn-close {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0px 0px 0px 4px;
+    border-radius: 0px 4px;
+    color: rgb(255, 255, 255);
+}
+
+.company-category-selected .btn-close::before {
+    position: absolute;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url("https://jumpit.saramin.co.kr/assets/images/ic_close.svg") center center / 100% no-repeat;
+    content: "";
+    top: 0px;
+    left: 0px;
+}
+
+.company-category-selected .btn-close span {
+    margin-left: 6px;
+}
+
+.company-category .box-inp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.company-category .box-inp::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url("https://jumpit.saramin.co.kr/assets/images/ic_search.svg") center center no-repeat;
+}
+
+.companytext4 input {
+    border: none;
+}
+
+.company-category .box-inp input {
+    border: none;
+    height: 48px;
+    padding: 0px 16px 0px 44px;
+    border-radius: 8px;
+    background-color: rgb(245, 245, 248);
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.companytext5 {
+    position: relative;
+}
+
+.companytext6 {
+    padding: 0px;
+    margin-top: 16px;
+    display: block;
+    position: relative;
+}
+
+.companytext5::before {
+    content: "*";
+    position: absolute;
+    top: 0px;
+    left: -10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(255, 78, 99);
+    z-index: 2;
+}
+
+.companytext6::before {
+    top: 7px;
+}
+
+.companytext6::before {
+    top: 3px;
+}
+
+.careertext {
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    caret-color: rgb(0, 0, 0);
+    overflow: hidden;
+    resize: none;
+}
+
+.companytext6 textarea {
+    border: none;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(34, 34, 34);
+    height: 24px;
+}
+
+
+
+.membercareer>button {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: rgb(68, 68, 68);
+    margin: 20px 0px 0px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.membercareer>button:hover {
+    text-decoration: underline;
+}
+
+.membercareer>button>svg {
+    margin-right: 4px;
+}
+
+.etcarea {
+    margin-top: 82px;
+}
+
+.etcarea>h1 {
+    display: block;
+    padding: 0px 0px 12px;
+    border-bottom: 1px solid rgb(34, 34, 34);
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.etctext {
+    margin: 12px 0px 20px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(68, 68, 68);
+}
+
+.etc-content {
+    position: relative;
+    display: flex;
+    margin: 20px 0px 0px;
+}
+
+.etc-content-mark {
+    width: 7px;
+    min-width: 7px;
+    height: 7px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(34, 34, 34);
+    margin-right: 14px;
+    margin-top: 6px;
+}
+
+.etcdate1 {
+    position: relative;
+}
+
+.etcdate2 {
+    position: relative;
+    min-width: 200px;
+}
+
+.etc-calander {
+    width: 100%;
+    max-width: 110px;
+    position: relative;
+}
+
+.etc-calander .hide {
+    width: 0px;
+    height: 0px;
+    border: none;
+    position: absolute;
+}
+
+.etc-calander .calendar-area {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    justify-content: space-between;
+}
+
+.etc-calander .calendar-box {
+    display: flex;
+    align-items: center;
+}
+
+.etc-calander .calendar-area>div {
+    max-width: 160px;
+}
+
+.etc-calander .calendar-year {
+    width: 36px;
+}
+.etc-calander .calendar-month {
+    width: 24px;
+}
+
+.etc-calander .profile-input {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    border-radius: 0px;
+    height: auto;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    color: rgb(34, 34, 34);
+}
+
+.etc-calander .calendar-box input {
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    color: rgb(34, 34, 34);
+}
+
+.etc-calander .calendar-area span {
+    display: inline-block;
+    text-align: center;
+}
+
+.etc-calander .calendar-box span {
+    display: inline-block;
+}
+
+.etc-calander .calendar-area input:nth-child(3) {
+    text-align: left;
+}
+
+.etc-calander .center-pa {
+    margin: 0px 2px;
+}
+
+.no-expire {
+    position: relative;
+    margin-top: 4px;
+}
+
+.no-expire input {
+    position: absolute;
+    top: 0px;
+    width: 1px;
+    height: 1px;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.no-expire>label {
+    margin-right: 12px;
+}
+
+.no-expire label {
+    margin-right: 0px;
+    display: inline-block;
+    padding-left: 24px;
+    color: rgb(102, 102, 102);
+    text-align: left;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.etc-content-wrapper {
+    width: 100%;
+}
+
+.etc-content-input {
+    display: flex;
+    align-items: flex-start;
+}
+
+.etctext1 {
+    position: relative;
+}
+
+.etc-content-input div {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.etc-content-input .main-text {
+    width: calc(100% - 100px);
+}
+
+.etctext2>input {
+    width: calc(100% - 10px);
+}
+
+.etc-content-input .main-text>input {
+    font-size: 18px;
+    line-height: 26px;
+    color: rgb(34, 34, 34);
+    font-weight: 700;
+    border: none;
+}
+
+.etc-content-input .profile-order-control {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.etctext3 {
+    padding: 0px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.etc-chocie {
+    position: relative;
+}
+
+.etc-choice-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    cursor: pointer;
+    color: rgb(0, 0, 0) !important;
+}
+
+.etctext3 > div > div {
+    font-size: 14px;
+}
+
+.etc-choice-input {
+    width: 0px;
+    height: 0px;
+    border: none;
+}
+
+.etctext3 input {
+    border: none;
+}
+
+.etc-choice-inner svg {
+    left: auto !important;
+    margin-left: 2px !important;
+}
+
+.etc-choice-inner svg path {
+    fill: rgb(34, 34, 34);
+}
+
+.etc-choice-inner svg path {
+    fill: rgb(196, 196, 196);
+}
+
+.etc-content-list{
+    position: absolute;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 8px;
+    left: 0px;
+    z-index: 3;
+    bottom: 28px;
+}
+
+.etc-content-list ul li div {
+    padding: 0px 10px;
+    height: 50px;
+}
+
+.etc-content-list ul li div > label {
+    display: block;
+    padding: 12px 10px;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.etctext3 > .text-wrap {
+    padding-left: 8px;
+    margin-left: 8px;
+    position: relative;
+}
+
+.etctext3 > .text-wrap::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 12px;
+    width: 1px;
+    left: 0px;
+    top: 5px;
+    background-color: rgb(212, 212, 212);
+}
+
+.etctext3 input {
+    border: none;
+}
+
+.etctext4 {
+    padding: 0px;
+    margin-top: 16px;
+    display: block;
+    position: relative;
+}
+
+.etcbottomtext {
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    caret-color: rgb(0, 0, 0);
+    overflow: hidden;
+    resize: none;
+}
+
+.etctext4 textarea {
+    border: none;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(34, 34, 34);
+    height: 24px;
+}
+
+.etcarea > button {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: rgb(68, 68, 68);
+    margin: 20px 0px 0px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.etcarea > button > svg {
+    margin-right: 4px;
+}
+
+.applicant {
+    margin-top: 82px;
+}
+
+.applicant > h1 {
+    display: block;
+    padding: 0px 0px 12px;
+    border-bottom: 1px solid rgb(34, 34, 34);
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.applicant-wrapper {
+    position: relative;
+    display: flex;
+    margin: 20px 0px 0px;
+}
+
+.applicant-mark {
+    width: 7px;
+    min-width: 7px;
+    height: 7px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(34, 34, 34);
+    margin-right: 14px;
+    margin-top: 6px;
+}
+
+.applicant-content{
+    width: 100%;
+}
+
+.applicant-text-first{
+    display: flex
+;
+    align-items: flex-start;
+}
+
+.applicant-text1{
+    position: relative;
+}
+
+.applicant-text-first div {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.applicant-text-first .pr-text {
+    width: calc(100% - 160px);
+}
+
+.applicant-text2 > input {
+    width: calc(100% - 10px);
+}
+
+.applicant-text-first .pr-text > input {
+    font-size: 18px;
+    line-height: 26px;
+    color: rgb(34, 34, 34);
+    font-weight: 700;
+    border: none;
+}
+
+.applicant-text-first .profile_order_control {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.applicant-text3 {
+    padding: 0px;
+    margin-top: 6px;
+    display: block;
+    position: relative;
+}
+
+.applicant-text-second{
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    caret-color: rgb(0, 0, 0);
+    overflow: hidden;
+    resize: none;
+}
+
+.applicant-text3 textarea {
+    border: none;
+    width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(34, 34, 34);
+    height: 24px;
+}
+
+.textamount {
+    position: absolute;
+    right: 0px;
+    bottom: -16px;
+    color: rgb(153, 153, 153);
+    font-weight: 400;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.applicant > button {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: rgb(68, 68, 68);
+    margin: 20px 0px 0px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.applicant > button > svg {
+    margin-right: 4px;
 }
