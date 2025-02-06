@@ -1536,7 +1536,8 @@
     z-index: 2;
 }
 
-.memberedu-class-choice {
+.memberedu-class-choice,
+.member-standard-grade {
     position: relative;
     display: flex;
     align-items: center;
@@ -1702,4 +1703,77 @@
 .memberedu-schoolname3 {
     padding: 0px;
     margin-top: 8px;
+}
+
+.memberedu-schoolname3 input {
+    border: none;
+}
+
+.memberedu-schoolname3>input {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(34, 34, 34);
+}
+
+.member-grade {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.memberedu-schoolname4 {
+    padding: 0;
+}
+
+.member-grade>div:first-child {
+    left: 0px;
+    width: 48px;
+}
+
+.memberedu-schoolname4 input {
+    border: none;
+}
+
+.member-grade input {
+    font-size: 14px;
+}
+
+.member-grade>div:first-child>input {
+    width: calc(100% - 20px);
+}
+
+.member-grade>div:nth-child(2)::before {
+    display: block;
+    position: absolute;
+    content: "/";
+    top: 1px;
+    left: -15px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.member-standard-grade svg {
+    left: auto !important;
+    margin-left: 2px !important;
+}
+
+.member-grade>div:nth-child(2) svg {
+    margin-top: 0px !important;
+}
+
+.memberedu>button {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: rgb(68, 68, 68);
+    margin: 20px 0px 0px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.memberedu>button>svg {
+    margin-right: 4px;
 }
