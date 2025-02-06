@@ -1777,3 +1777,39 @@
 .memberedu>button>svg {
     margin-right: 4px;
 }
+
+.membercareer{
+    margin-top: 82px;
+}
+
+.membercareer > h1{
+    display: block;
+    padding: 0px 0px 12px;
+    border-bottom: 1px solid rgb(34, 34, 34);
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.membercareer-title {
+    position: relative;
+    display: block;
+    padding-bottom: 6px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(34, 34, 34);
+}
+
+
+.membercareer-title::before {
+    content: "*";
+    position: absolute;
+    top: 7px;
+    left: -10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(136, 136, 136);
+    z-index: 2;
+}
