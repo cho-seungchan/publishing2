@@ -245,6 +245,11 @@
     -webkit-appearance: none;
 }
 
+.menu-btn:hover {
+    background-color: #cdd3d8;
+    color: white;
+}
+
 .menu-card .menu-btn span {
     display: inline-flex;
     align-items: center;
@@ -269,12 +274,18 @@
 }
 
 /* 비활성화된 버튼 */
+/* 
+.btn-disabled 클래스가 있는 버튼
+:disabled 가상 클래스가 적용된 버튼
+[disabled] 속성이 있는 버튼 
+:not(.btn-loading)은 로딩 상태가 아닌 버튼
+*/
 .btn:not(.btn-loading).btn-disabled,
 .btn:not(.btn-loading):disabled,
 .btn:not(.btn-loading)[disabled] {
-    opacity: 0.4;
-    cursor: default;
-    pointer-events: none;
+    opacity: 0.4; /* 버튼을 40% 투명도로 설정 */
+    cursor: default; /* 마우스 커서를 기본 형태로 변경 */
+    pointer-events: none; /* 모든 마우스 이벤트를 비활성화 */
 }
 
 /* 제출 버튼 사이즈 */

@@ -61,6 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
          ],
      };
      
+    //  // 잘 작동하는 지 확인        
+    //  const firstReportInPage1 = pageDatas[1][0];
+    //  console.log(firstReportInPage1); // 1페이지의 첫 번째 신고 데이터
+     
      function generateRow(pageData) {
        return `
          <tr>

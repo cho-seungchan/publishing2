@@ -30,10 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
         // 선택된 상태에 따라 위에서 정의한 filterByStatus 함수 호출
         // 선택된 값을 실제 상태 텍스트로 변환
         filterByStatus(
-            selectedStatus === "pending"
+            selectedStatus === "processing"
                 ? "처리중"
+                : selectedStatus === "hold"
+                ? "보류"
                 : selectedStatus === "completed"
                 ? "처리완료"
+                : selectedStatus === "false"
+                ? "허위신고"
                 : "all"
         );
     });
