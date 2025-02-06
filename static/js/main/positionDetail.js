@@ -4,10 +4,12 @@ const searchWindow = document.querySelector(".searchWindow");
 
 searchBox.addEventListener("focus", () => {
     searchWindow.style.visibility = "visible";
+    searchWindow.style.pointerEvents = "auto";
 });
 
 searchBox.addEventListener("blur", () => {
     searchWindow.style.visibility = "hidden";
+    searchWindow.style.pointerEvents = "none";
 });
 
 // 복사 버튼 만들기, 복사 한 다음 텍스트 alert

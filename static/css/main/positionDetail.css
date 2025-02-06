@@ -192,15 +192,15 @@ img, fieldset, iframe {
 }
 
 .searchWindow{
-    position: fixed;
-    top: 64px;
-    right: 430px;
+    position: absolute;
+    top: 51px;
+    left: 0;
     width: 472px;
     background: rgb(255, 255, 255);
     border: 1px solid rgb(228, 228, 228);
     box-shadow: rgba(20, 20, 20, 0.12) 0px 8px 16px;
     border-radius: 8px;
-    z-index: 1000;
+    z-index: 6;
     padding: 24px;
     visibility: hidden;
 }
