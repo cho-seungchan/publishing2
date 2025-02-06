@@ -6,7 +6,6 @@ const searchWindow = document.querySelector(".searchWindow");
 searchBox.addEventListener("focus", () => {
     searchWindow.style.visibility = "visible";
     searchWindow.style.zIndex = "999999";
-    searchWindow.style.transform = "translateX(65px)";
 });
 
 // blur: 검색창 밖을 클릭했을 때 검색창 숨겨지게 하기
@@ -35,17 +34,12 @@ window.addEventListener("scroll", function () {
             // 스크롤이 설정한 값을 넘으면
             if (currentScrollPosition > lastScrollPosition) {
                 mainNav.classList.remove("show"); // mainNav 숨기기
-                fixedNav.style.borderBottom = "1px solid rgb(228, 228, 228)";
             } else {
                 mainNav.classList.add("show"); // 스크롤 올리면 나타나게
-                fixedNav.style.borderBottom = "none";
-                mainNav.style.zIndex = "5";
             }
         } else {
             // 스크롤이 threshold 아래일 경우 mainNav를 항상 보이게
             mainNav.classList.add("show"); // mainNav 나타나게 하기
-            fixedNav.style.borderBottom = "none"; // 밑 경계선 안 보이게
-            mainNav.style.zIndex = "5";
         }
     }
 
