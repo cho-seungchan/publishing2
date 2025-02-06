@@ -33,6 +33,10 @@
     cursor: pointer;
 }
 
+.search-btn:hover {
+    background-color: rgb(0, 200, 98);
+}
+
 .filter-box {
     display: flex;
     gap: 8px;
@@ -101,6 +105,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /* 페이지네이션 */
@@ -120,11 +125,24 @@
     cursor: pointer;
 }
 
-/* 버튼 활성화 시 */
+/* 일반 버튼 호버 효과 */
+.page-btn:hover:not(.active) {
+    background-color: #dee2e6;
+    border-color: #dee2e6;
+}
+
+/* 활성화된 버튼 기본 스타일 */
 .page-btn.active {
     background-color: rgb(0, 221, 109);
     color: white;
     border-color: rgb(0, 221, 109);
+}
+
+/* 활성화된 버튼 호버 효과 */
+.page-btn.active:hover {
+    background-color: rgb(0, 200, 98); /* 살짝 어두운 녹색 */
+    border-color: rgb(0, 200, 98);
+    color: white;
 }
 
 /* 모달 스타일 */
