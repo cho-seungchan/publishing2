@@ -161,3 +161,46 @@ rightButton.addEventListener("click", () => {
 
 // 초기 상태 업데이트
 updateCountAndButtons();
+
+// 지원서의 radio를 체크하면 테두리랑 체크부분이 바뀌는 부분
+const radios = document.querySelectorAll("input[type='radio']");
+const resumeBoxes = document.querySelectorAll(".resumeContent"); // 여러 개 선택 가능하도록 수정
+
+radios.forEach((radio, index) => {
+    radio.addEventListener("change", () => {
+        // 모든 resumeBox의 테두리 초기화
+        resumeBoxes.forEach((box) => {
+            box.style.border = "1px solid rgb(228, 228, 228)"; // 기본 테두리 색으로 초기화
+        });
+
+        // 선택된 radio에 해당하는 resumeBox 스타일 변경
+        if (resumeBoxes[index]) {
+            resumeBoxes[index].style.border = "1px solid rgb(0, 221, 109)"; // 선택된 것 강조
+        }
+    });
+});
+
+// resumeBox 클릭 시 해당 radio 체크하도록 설정
+resumeBoxes.forEach((box, index) => {
+    box.addEventListener("click", () => {
+        // 해당 radio 버튼을 체크
+        radios[index].checked = true;
+        // 체크된 radio의 스타일을 반영하기 위해 change 이벤트 트리거
+        radios[index].dispatchEvent(new Event("change"));
+    });
+});
+
+// 닫기 누르면 입사지원창이 꺼짐
+const applyCloseButton = document.querySelector(".applyCloseBtn");
+const applyWindow = document.querySelector(".applyNewWindow");
+
+applyCloseButton.addEventListener("click", () => {
+    applyWindow.style.display = "none";
+});
+
+// 지원하기 누르면 입사지원창이 켜짐
+const applyOpenButton = document.querySelector(".applyButton");
+
+applyOpenButton.addEventListener("click", () => {
+    applyWindow.style.display = "";
+});

@@ -16,7 +16,7 @@
     </head>
     <body>
         <!-- 헤더 시작 -->
-        <header>
+        <header class="topHeader">
             <div class="headerWrapper">
                 <div class="headerUpper">
                     <div class="logoWrap">
@@ -1135,7 +1135,214 @@
             </div>
             <!-- // 유사 포지션 모음 끝 -->
             <!-- 버튼 누르면 뜨는 입사지원창 시작 -->
-            <div class="applyNewWindow"></div>
+            <div class="applyNewWindow">
+                <header class="applyTitle">
+                    <h1>입사지원</h1>
+                    <button class="applyCloseBtn">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                fill="#fff"
+                                fill-rule="evenodd"
+                                d="m12.072 13.485 7.07 7.071 1.415-1.414-7.071-7.071 7.07-7.07-1.414-1.415-7.07 7.07L5 3.587 3.586 5l7.071 7.071-7.071 7.071L5 20.557l7.072-7.072Z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>
+                </header>
+                <form novalidate>
+                    <article class="applyForm">
+                        <main class="formMain horizonalScroll">
+                            <!-- 이력서에 정보입력이 안 되면 뜨는 창 시작 -->
+                            <!-- <div class="resumeNullMessage">
+                                <a href="" target="_blank" class="resumeReLink">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#F04452" d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Z"></path><path fill="#fff" fill-rule="evenodd" d="M13 6.5h-2v7h2v-7Zm0 9h-2v2h2v-2Z" clip-rule="evenodd"></path></svg>
+                                    <h1 class="redWindowText">
+                                        <span>기술스택</span>,&nbsp;<span>최종학력</span>을 입력해주세요.
+
+                                    </h1>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="#c4c4c4" fill-rule="evenodd" d="M4.146 1.896a.5.5 0 0 1 .708 0l3.75 3.75a.5.5 0 0 1 0 .708l-3.75 3.75a.5.5 0 0 1-.708-.708L7.543 6 4.146 2.604a.5.5 0 0 1 0-.708Z" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </div> -->
+                            <!-- // 이력서에 정보입력이 안 되면 뜨는 창 끝 -->
+                            <div class="formWrapper">
+                                <section class="formElement first">
+                                    <h1>레진코믹스 백엔드 개발자</h1>
+                                    <p>레진엔터테인먼트</p>
+                                </section>
+                                <section class="formElement">
+                                    <div class="accountTitle">
+                                        <h2>통합 계정정보</h2>
+                                    </div>
+                                    <ul class="accountInfo">
+                                        <li>
+                                            <span class="title">이름</span>
+                                            <span class="accountContent"
+                                                >홍길동</span
+                                            >
+                                            <a href="">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="12"
+                                                    height="12"
+                                                    fill="none"
+                                                    viewBox="0 0 12 12"
+                                                >
+                                                    <path
+                                                        fill="#c4c4c4"
+                                                        fill-rule="evenodd"
+                                                        d="M4.146 1.896a.5.5 0 0 1 .708 0l3.75 3.75a.5.5 0 0 1 0 .708l-3.75 3.75a.5.5 0 0 1-.708-.708L7.543 6 4.146 2.604a.5.5 0 0 1 0-.708Z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <span class="title">이메일</span>
+                                            <span class="accountContent"
+                                                >hong1234@kakao.com</span
+                                            >
+                                            <a href="">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="12"
+                                                    height="12"
+                                                    fill="none"
+                                                    viewBox="0 0 12 12"
+                                                >
+                                                    <path
+                                                        fill="#c4c4c4"
+                                                        fill-rule="evenodd"
+                                                        d="M4.146 1.896a.5.5 0 0 1 .708 0l3.75 3.75a.5.5 0 0 1 0 .708l-3.75 3.75a.5.5 0 0 1-.708-.708L7.543 6 4.146 2.604a.5.5 0 0 1 0-.708Z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <span class="title">연락처</span>
+                                            <span class="accountContent"
+                                                >01012345678</span
+                                            >
+                                            <a href="">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="12"
+                                                    height="12"
+                                                    fill="none"
+                                                    viewBox="0 0 12 12"
+                                                >
+                                                    <path
+                                                        fill="#c4c4c4"
+                                                        fill-rule="evenodd"
+                                                        d="M4.146 1.896a.5.5 0 0 1 .708 0l3.75 3.75a.5.5 0 0 1 0 .708l-3.75 3.75a.5.5 0 0 1-.708-.708L7.543 6 4.146 2.604a.5.5 0 0 1 0-.708Z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <span class="title">출생년도</span>
+                                            <span class="accountContent"
+                                                >1990</span
+                                            >
+                                            <a href="">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="12"
+                                                    height="12"
+                                                    fill="none"
+                                                    viewBox="0 0 12 12"
+                                                >
+                                                    <path
+                                                        fill="#c4c4c4"
+                                                        fill-rule="evenodd"
+                                                        d="M4.146 1.896a.5.5 0 0 1 .708 0l3.75 3.75a.5.5 0 0 1 0 .708l-3.75 3.75a.5.5 0 0 1-.708-.708L7.543 6 4.146 2.604a.5.5 0 0 1 0-.708Z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </section>
+                                <section class="formElement">
+                                    <div class="resumeTitle">
+                                        <h2>지원 이력서<em class="mustRedDot">
+                                                <span class="blind">필수</span>
+                                            </em>
+                                        </h2>
+                                        <span>이력서 총
+                                            <em>1</em>개
+                                        </span>
+                                    </div>
+                                    <ul class="resumeInfoWrapper">
+                                        <!-- 지원 이력서 1번 시작 -->
+                                        <li class="resumeContent">
+                                            <div>
+                                                <input type="radio" name="selectResumeid" value="true">
+                                                <div class="resumeInfo">
+                                                    <h3>홍길동이력서_250101</h3>
+                                                    <ul>
+                                                        <li class="resumeSkill">기술스택</li>
+                                                        <li class="resumeSkill">학력</li>
+                                                        <li class="resumeSkill">경력/프로젝트</li>
+                                                    </ul>
+                                                    <p>
+                                                        <span>
+                                                            2025.01.01
+                                                            등록
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="resumeFixBtn">
+                                                <a href="" target="_blank">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="#fff" fill-rule="evenodd" d="M22.221 4.667a2.667 2.667 0 0 0-3.77 0l-11.602 11.6c-.5.501-.781 1.18-.781 1.887v3.18A2.667 2.667 0 0 0 8.734 24h3.18c.707 0 1.386-.281 1.886-.781L25.4 11.617a2.667 2.667 0 0 0 0-3.77l-3.18-3.18ZM8.734 18.153l11.602-11.6 3.18 3.179-11.602 11.601h-3.18v-3.18ZM5.334 26a1.333 1.333 0 1 0 0 2.666h21.333a1.333 1.333 0 0 0 0-2.666H5.333Z" clip-rule="evenodd"></path></svg>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <!-- // 지원 이력서 1번 끝 -->
+                                        <!-- 지원 이력서 2번 시작 -->
+                                        <li class="resumeContent">
+                                            <div>
+                                                <input type="radio" name="selectResumeid" value="true">
+                                                <div class="resumeInfo">
+                                                    <h3>홍길동이력서_250101</h3>
+                                                    <ul>
+                                                        <li class="resumeSkill">기술스택</li>
+                                                        <li class="resumeSkill">학력</li>
+                                                        <li class="resumeSkill">경력/프로젝트</li>
+                                                    </ul>
+                                                    <p>
+                                                        <span>
+                                                            2025.01.01
+                                                            등록
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="resumeFixBtn">
+                                                <a href="" target="_blank">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path fill="#fff" fill-rule="evenodd" d="M22.221 4.667a2.667 2.667 0 0 0-3.77 0l-11.602 11.6c-.5.501-.781 1.18-.781 1.887v3.18A2.667 2.667 0 0 0 8.734 24h3.18c.707 0 1.386-.281 1.886-.781L25.4 11.617a2.667 2.667 0 0 0 0-3.77l-3.18-3.18ZM8.734 18.153l11.602-11.6 3.18 3.179-11.602 11.601h-3.18v-3.18ZM5.334 26a1.333 1.333 0 1 0 0 2.666h21.333a1.333 1.333 0 0 0 0-2.666H5.333Z" clip-rule="evenodd"></path></svg>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <!-- // 지원 이력서 2번 끝 -->
+                                    </div>
+                                </section>
+                                <section class="formElement"></section>
+                                <section class="formElement last"></section>
+                            </div>
+                        </main>
+                        <footer class="formSubmitBtn"></footer>
+                    </article>
+                </form>
+            </div>
             <!-- // 버튼 누르면 뜨는 입사지원창 끝 -->
         </main>
         <!-- // 메인 끝 -->
