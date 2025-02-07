@@ -614,6 +614,10 @@
     justify-content: space-between;
 }
 
+.editListMenu .section-wrap .section>dl>dt {
+    flex: 1 1 100%;
+}
+
 .editListMenu .section-wrap .section .title {
     position: relative;
     font-weight: 700;
@@ -645,6 +649,11 @@
     line-height: 16px;
     color: rgb(255, 78, 99);
 }
+
+.editListMenu .section-wrap .section .optional::after {
+    color: rgb(136, 136, 136);
+}
+
 
 .editListMenu .section-wrap .section>ul {
     margin-top: 16px;
@@ -2355,6 +2364,17 @@
     margin-top: 82px;
 }
 
+.etc-title {
+    position: relative;
+    display: block;
+    padding-bottom: 6px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(34, 34, 34);
+}
+
 .etcarea>h1 {
     display: block;
     padding: 0px 0px 12px;
@@ -2429,6 +2449,7 @@
 .etc-calander .calendar-year {
     width: 36px;
 }
+
 .etc-calander .calendar-month {
     width: 24px;
 }
@@ -2564,7 +2585,7 @@
     color: rgb(0, 0, 0) !important;
 }
 
-.etctext3 > div > div {
+.etctext3>div>div {
     font-size: 14px;
 }
 
@@ -2591,7 +2612,7 @@
     fill: rgb(196, 196, 196);
 }
 
-.etc-content-list{
+.etc-content-list {
     position: absolute;
     width: 100%;
     border-radius: 4px;
@@ -2606,20 +2627,20 @@
     height: 50px;
 }
 
-.etc-content-list ul li div > label {
+.etc-content-list ul li div>label {
     display: block;
     padding: 12px 10px;
     font-size: 15px;
     line-height: 22px;
 }
 
-.etctext3 > .text-wrap {
+.etctext3>.text-wrap {
     padding-left: 8px;
     margin-left: 8px;
     position: relative;
 }
 
-.etctext3 > .text-wrap::before {
+.etctext3>.text-wrap::before {
     content: "";
     position: absolute;
     display: block;
@@ -2660,7 +2681,7 @@
     height: 24px;
 }
 
-.etcarea > button {
+.etcarea>button {
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -2670,7 +2691,7 @@
     line-height: 24px;
 }
 
-.etcarea > button > svg {
+.etcarea>button>svg {
     margin-right: 4px;
 }
 
@@ -2678,13 +2699,26 @@
     margin-top: 82px;
 }
 
-.applicant > h1 {
+.applicant-title {
+    position: relative;
+    display: block;
+    padding-bottom: 6px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(34, 34, 34);
+}
+
+.applicant>h1 {
     display: block;
     padding: 0px 0px 12px;
     border-bottom: 1px solid rgb(34, 34, 34);
     font-size: 22px;
     line-height: 30px;
 }
+
+
 
 .applicant-wrapper {
     position: relative;
@@ -2703,17 +2737,16 @@
     margin-top: 6px;
 }
 
-.applicant-content{
+.applicant-content {
     width: 100%;
 }
 
-.applicant-text-first{
-    display: flex
-;
+.applicant-text-first {
+    display: flex;
     align-items: flex-start;
 }
 
-.applicant-text1{
+.applicant-text1 {
     position: relative;
 }
 
@@ -2726,11 +2759,11 @@
     width: calc(100% - 160px);
 }
 
-.applicant-text2 > input {
+.applicant-text2>input {
     width: calc(100% - 10px);
 }
 
-.applicant-text-first .pr-text > input {
+.applicant-text-first .pr-text>input {
     font-size: 18px;
     line-height: 26px;
     color: rgb(34, 34, 34);
@@ -2751,7 +2784,7 @@
     position: relative;
 }
 
-.applicant-text-second{
+.applicant-text-second {
     white-space: pre-wrap;
     word-break: break-all;
     overflow-wrap: break-word;
@@ -2781,7 +2814,7 @@
     line-height: 18px;
 }
 
-.applicant > button {
+.applicant>button {
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -2791,6 +2824,155 @@
     line-height: 24px;
 }
 
-.applicant > button > svg {
+.applicant>button>svg {
     margin-right: 4px;
+}
+
+.sidebar {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+.sidebar-inner {
+    position: relative;
+}
+
+.sidebar-inner>div {
+    position: fixed;
+}
+
+.sidebutton-wrapper {
+    position: relative;
+}
+
+.sidebutton {
+    margin: 0px;
+    position: relative;
+}
+
+.bottombar {
+    position: fixed;
+    width: 100%;
+    inset: auto 0px 0px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(228, 228, 228);
+    z-index: 3;
+}
+
+
+.bottombar .bottom-wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1060px;
+    margin: 0px auto;
+    padding: 12px 0px;
+}
+
+.bottombar .progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(34, 34, 34);
+}
+
+.bottombar .progress .tooltip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.bottomquestion {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bottomlist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.bottomlist>li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.bottomlist>li>i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(240, 68, 82);
+    border-radius: 100%;
+}
+
+.bottomlist>li .active {
+    background-color: rgb(0, 221, 109);
+}
+
+.bottombar .bottom-btns {
+    display: flex;
+    align-items: center;
+}
+
+.loadbutton {
+    padding: 0px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    height: 48px;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(212, 212, 212);
+    width: 48px;
+    min-width: 48px;
+}
+
+.loadbutton .bottom-btns button svg {
+    position: absolute;
+}
+
+
+.previewbutton {
+    padding: 0px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    height: 48px;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(212, 212, 212);
+    width: 164px;
+    min-width: 164px;
+}
+
+.savebutton {
+    padding: 0px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    height: 48px;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 221, 109);
+    width: 164px;
+    min-width: 164px;
+}
+
+.bottombar .bottom-btns button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.bottombar .bottom-btns button:last-of-type {
+    margin-right: 0px;
 }
