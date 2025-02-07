@@ -492,7 +492,31 @@ label {
   border: 1px solid #8491a7;
   background-color: #eff5ff;
 }
+
 input:focus {
   outline: 2px solid var(--blue100);
   outline-offset: 2px;
+}
+.modal_notice_message_law {
+  width: 602px;
+}
+.ModalBox {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 110;
+  padding: 40px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  background-color: var(--white);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.15);
+  transform: translateY(-50%) translateX(-50%) translateZ(0);
+}
+.ModalBox .Tit {
+  margin-bottom: 24px;
+  color: var(--gray120);
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 28px;
 }
