@@ -716,6 +716,18 @@
     border: 1px solid rgb(228, 228, 228);
 }
 
+.resume-open-button.public {
+    width: 26px;
+    height: 16px;
+    border-radius: 26px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(0, 221, 109);
+    border: 1px solid rgb(0, 221, 109);
+}
+
+
+
 .resume-content-bottom>div>button {
     margin-right: 6px;
 }
@@ -732,6 +744,21 @@
     top: 0px;
     margin-left: 1px;
 }
+
+.resume-open-button.public::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: 0.5s;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    margin-left: 10px;
+}
+
+
 
 .resume-content-bottom>div>span {
     font-size: 14px;
@@ -785,6 +812,18 @@
     cursor: pointer;
 }
 
+@media (max-width: 1080px) {
+    .new-resume {
+        flex-basis: calc(50% - 8px);
+    }
+}
+
+@media (max-width: 1080px) {
+    .new-resume:nth-child(2n) {
+        margin-right: 0px;
+    }
+}
+
 .new-resume>p {
     margin-top: 8px;
     font-size: 14px;
@@ -825,6 +864,48 @@
     background-color: rgb(245, 245, 248);
     border-radius: 8px;
     cursor: pointer;
+}
+
+.file-container>li>.file-type {
+    display: inline-block;
+    background-color: rgb(34, 34, 34);
+    padding: 1px 6px 0px;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    margin: 0px 8px 0px 0px;
+}
+
+.file-container>li>.file-title {
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    overflow-wrap: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 24px;
+    display: inline-block;
+    width: 100%;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(0, 0, 0);
+    margin-right: 24px;
+}
+
+.file-container>li>.file-create {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(119, 119, 119);
+    min-width: 95px;
+    flex-shrink: 0;
+    margin-right: 5px;
+    text-align: right;
+}
+
+.file-container>li>button {
+    position: relative;
+    top: 1px;
 }
 
 .file-container>.empty-file {

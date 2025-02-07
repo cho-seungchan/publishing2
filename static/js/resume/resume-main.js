@@ -83,28 +83,78 @@ document.addEventListener("click", (e) => {
             if (screenWidth >= 1080) {
                 hiddenArea.classList.add("hidden");
                 if (blinkArea.contains(e.target)) {
-                    console.log(screenWidth);
                     hiddenArea.classList.remove("hidden");
-
-                    console.log("일반형/검색");
                 } else if (!hiddenArea.contains(e.target)) {
-                    console.log(screenWidth);
                     hiddenArea.classList.add("hidden");
-                    console.log("일반형/탈출");
                 }
             } else if (screenWidth < 1080) {
                 if (mediaSearchBtn.contains(e.target)) {
                     hiddenArea.classList.remove("hidden");
                     newtopSearchBox.style.display = "block";
                     newSearchBoxOnClick.style.display = "block";
-                    console.log("반응형/검색");
                 } else if (!newtopSearchBox.contains(e.target)) {
                     hiddenArea.classList.add("hidden");
                     newtopSearchBox.style.display = "none";
                     newSearchBoxOnClick.style.display = "none";
-                    console.log("반응형/탈출");
                 }
             }
         });
     });
+});
+
+const addfileButton = document.getElementById("addfilebutton");
+const emptyfileArea = document.querySelector("li.empty-file");
+const fileaddArea = document.querySelector("ul.file-container");
+const input = document.getElementById("attach");
+
+addfileButton.addEventListener("click", () => {
+    input.click();
+});
+
+input.addEventListener("change", (e) => {
+    const [file] = e.target.files;
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    var newFile = document.createElement("li");
+    newFile.innerHTML = `<span class="file-type">PDF</span>
+                    <span class="file-title">${[file][0].name}</span>
+                    <span class="file-create">2025.02.06 등록</span>
+                    <button type="button" class="file-remove">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="none"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                fill="#C4C4C4"
+                                fill-rule="evenodd"
+                                d="M4.667 2h6.666v2.667H14V6h-1.333v8H3.333V6H2V4.667h2.667V2ZM6 4.667h4V3.333H6v1.334ZM4.667 6v6.667h6.666V6H4.667ZM6 10.667V8h1.333v2.667H6ZM8.667 8v2.667H10V8H8.667Z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>`;
+    console.log(newFile);
+    reader.addEventListener("load", (e) => {
+        const path = e.target.result;
+        if (path.includes("pdf")) {
+            fileaddArea.append(newFile);
+            emptyfileArea.style.display = "none";
+        }
+    });
+});
+
+const fileRemoveButton = document.querySelector("ul.");
+
+const resumeOpenButton = document.querySelector("button.resume-open-button");
+const toggleText = resumeOpenButton.nextElementSibling;
+resumeOpenButton.addEventListener("click", () => {
+    if (toggleText.innerText == "비공개") {
+        resumeOpenButton.classList.add("public");
+        toggleText.innerText = "공개";
+    } else {
+        resumeOpenButton.classList.remove("public");
+        toggleText.innerText = "비공개";
+    }
 });
