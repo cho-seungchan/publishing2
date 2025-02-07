@@ -145,7 +145,19 @@ input.addEventListener("change", (e) => {
     });
 });
 
-const fileRemoveButton = document.querySelector("ul.");
+const fileRemoveButton = document.querySelectorAll("button.file-remove");
+const removeli = fileRemoveButton.parentNode
+fileRemoveButton.forEach(button, () => {
+    button.addEventListener('click', function() {
+        console.log('실행점1')
+        button.parentElement.remove();
+        console.log('실행점2')
+    })
+})
+
+
+
+
 
 const resumeOpenButton = document.querySelector("button.resume-open-button");
 const toggleText = resumeOpenButton.nextElementSibling;
