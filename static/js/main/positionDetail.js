@@ -161,3 +161,82 @@ rightButton.addEventListener("click", () => {
 
 // 초기 상태 업데이트
 updateCountAndButtons();
+
+// 지원서의 radio를 체크하면 테두리랑 체크부분이 바뀌는 부분
+const radios = document.querySelectorAll("input[type='radio']");
+const resumeBoxes = document.querySelectorAll(".resumeContent"); // 여러 개 선택 가능하도록 수정
+
+radios.forEach((radio, index) => {
+    radio.addEventListener("change", () => {
+        // 모든 resumeBox의 테두리 초기화
+        resumeBoxes.forEach((box) => {
+            box.style.border = "1px solid rgb(228, 228, 228)"; // 기본 테두리 색으로 초기화
+        });
+
+        // 선택된 radio에 해당하는 resumeBox 스타일 변경
+        if (resumeBoxes[index]) {
+            resumeBoxes[index].style.border = "1px solid rgb(0, 221, 109)"; // 선택된 것 강조
+        }
+    });
+});
+
+// resumeBox 클릭 시 해당 radio 체크하도록 설정
+resumeBoxes.forEach((box, index) => {
+    box.addEventListener("click", () => {
+        // 해당 radio 버튼을 체크
+        radios[index].checked = true;
+        // 체크된 radio의 스타일을 반영하기 위해 change 이벤트 트리거
+        // dispatchEvent는 이벤트를 강제로 실행할 때 사용됨
+        radios[index].dispatchEvent(new Event("change"));
+    });
+});
+
+// 닫기 누르면 입사지원창이 꺼짐
+const applyCloseButton = document.querySelector(".applyCloseBtn");
+const applyWindow = document.querySelector(".applyNewWindow");
+
+applyCloseButton.addEventListener("click", () => {
+    applyWindow.style.display = "none";
+});
+
+// 지원하기 누르면 입사지원창이 켜짐
+const applyOpenButton = document.querySelector(".applyButton");
+
+applyOpenButton.addEventListener("click", () => {
+    applyWindow.style.display = "";
+});
+
+// 지원서 첨부파일의 checkbox를 체크하면 테두리랑 체크부분이 바뀌는 부분
+
+// 모든 체크박스와 해당되는 attachBox 선택
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
+const attachBoxes = document.querySelectorAll(".attachFileContent");
+
+// 각 체크박스에 'change' 이벤트 리스너 추가
+// 걍 radio에 줬던 이벤트를 복붙해서 주면 되지 않나 생각했는데 해보니까 radio랑 다르게
+// checkbox는 해제도 되고 중복 선택도 가능해서 끄는 기능도 만들어야 함..
+checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener("change", () => {
+        // 모든 attachBox의 테두리 색을 기본으로 초기화
+        attachBoxes.forEach((box) => {
+            box.style.border = "1px solid rgb(228, 228, 228)"; // 기본 회색 테두리
+        });
+
+        // 체크된 모든 checkbox에 해당하는 attachBox의 테두리 색을 초록색으로 바꿈
+        checkboxes.forEach((checkbox, i) => {
+            if (checkbox.checked) {
+                attachBoxes[i].style.border = "1px solid rgb(0, 221, 109)"; // 초록색 테두리
+            }
+        });
+    });
+});
+
+// 각 attachBox에 클릭 이벤트 리스너 추가
+attachBoxes.forEach((box, index) => {
+    box.addEventListener("click", () => {
+        // 클릭된 attachBox에 해당하는 체크박스 상태 반전 (체크 또는 해제)
+        checkboxes[index].checked = !checkboxes[index].checked;
+        // 체크박스 상태 변화 후 'change' 이벤트 트리거하여 스타일 반영
+        checkboxes[index].dispatchEvent(new Event("change"));
+    });
+});
