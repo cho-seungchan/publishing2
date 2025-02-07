@@ -1335,8 +1335,82 @@
                                         <!-- // 지원 이력서 2번 끝 -->
                                     </div>
                                 </section>
-                                <section class="formElement"></section>
-                                <section class="formElement last"></section>
+                                <section class="formElement">
+                                    <div class="attachTitle">
+                                        <h2>첨부 파일<em class="noFillRedDot">
+                                            <span class="blind">선택</span>
+                                        </em></h2>
+                                    </div>
+                                    <div class="attachInfo">
+                                        <p>같이 제출하실 첨부파일을 선택해주세요!</p>
+                                        <label>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path fill="#00DD6D" fill-rule="evenodd" d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10ZM9 9V5.5h2V9h3.5v2H11v3.5H9V11H5.5V9H9Z" clip-rule="evenodd"></path></svg>
+                                            첨부파일 추가
+                                            <input hidden type="file">
+                                        </label>
+                                    </div>
+                                    <!-- 첨부한 파일이 없을 때 -->
+                                    <!-- <div class="attachFile">
+                                        <h4>첨부파일이 비어있습니다.</h4>
+                                        <p>
+                                            PDF 첨부를 추천드려요!
+                                            <br>
+                                            점핏은 인사담당자가 PDF로 보기 편하게 만들었어요 :&#41;
+                                        </p>
+                                    </div> -->
+                                    <!-- // 첨부한 파일이 없을 때 -->
+                                    <!-- 첨부한 파일이 있을 때 -->
+                                    <ul class="attachFileOn">
+                                        <li class="attachFileContent">
+                                            <div>
+                                                <input type="checkbox" name="files_311765" value="311765">
+                                                <div class="fileInfo">
+                                                    <h3>sample.pdf</h3>
+                                                    <p>
+                                                        <time datetime="2025-02-07T16:06:16">2025.02.07 등록</time>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="attachFileButton">
+                                                <a href="" class="fileDownloadBtn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path fill="#999" fill-rule="evenodd" d="M10 2.083c.46 0 .833.373.833.834v7.487l2.66-2.66a.833.833 0 1 1 1.179 1.179l-4.125 4.124a.833.833 0 0 1-1.178 0L5.244 8.923a.833.833 0 1 1 1.178-1.179l2.745 2.744V2.917c0-.46.373-.834.833-.834ZM16.25 15c0 .46-.373.833-.833.833H4.583A.833.833 0 0 1 3.75 15v-2.917a.833.833 0 0 0-1.667 0V15a2.5 2.5 0 0 0 2.5 2.5h10.834a2.5 2.5 0 0 0 2.5-2.5v-2.917a.833.833 0 0 0-1.667 0V15Z" clip-rule="evenodd"></path></svg>
+                                                </a>
+                                                <button type="button">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#C4C4C4" fill-rule="evenodd" d="M4.667 2h6.666v2.667H14V6h-1.333v8H3.333V6H2V4.667h2.667V2ZM6 4.667h4V3.333H6v1.334ZM4.667 6v6.667h6.666V6H4.667ZM6 10.667V8h1.333v2.667H6ZM8.667 8v2.667H10V8H8.667Z" clip-rule="evenodd"></path></svg>
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li class="attachFileContent">
+                                            <div>
+                                                <input type="checkbox" name="files_311765" value="311765">
+                                                <div class="fileInfo">
+                                                    <h3>sample2.pdf</h3>
+                                                    <p>
+                                                        <time datetime="2025-02-07T16:06:16">2025.02.07 등록</time>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="attachFileButton">
+                                                <a href="" class="fileDownloadBtn">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path fill="#999" fill-rule="evenodd" d="M10 2.083c.46 0 .833.373.833.834v7.487l2.66-2.66a.833.833 0 1 1 1.179 1.179l-4.125 4.124a.833.833 0 0 1-1.178 0L5.244 8.923a.833.833 0 1 1 1.178-1.179l2.745 2.744V2.917c0-.46.373-.834.833-.834ZM16.25 15c0 .46-.373.833-.833.833H4.583A.833.833 0 0 1 3.75 15v-2.917a.833.833 0 0 0-1.667 0V15a2.5 2.5 0 0 0 2.5 2.5h10.834a2.5 2.5 0 0 0 2.5-2.5v-2.917a.833.833 0 0 0-1.667 0V15Z" clip-rule="evenodd"></path></svg>
+                                                </a>
+                                                <button type="button">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#C4C4C4" fill-rule="evenodd" d="M4.667 2h6.666v2.667H14V6h-1.333v8H3.333V6H2V4.667h2.667V2ZM6 4.667h4V3.333H6v1.334ZM4.667 6v6.667h6.666V6H4.667ZM6 10.667V8h1.333v2.667H6ZM8.667 8v2.667H10V8H8.667Z" clip-rule="evenodd"></path></svg>
+                                                </button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <p>･ PDF 첨부를 추천드려요! 점핏은 인사담당자가 PDF로 보기 편하게 만들었어요 :&#41</p>
+                                    <!-- // 첨부한 파일이 있을 때 -->
+                                </section>
+                                <section class="formElement last">
+                                    <div>제출서류는 입사자 확정일로부터 180일까지 지원기업에게 제공됩니다. 제출에 동의할 경우에만 입사지원 해주세요. <br>동의하지 않을 경우 입사지원이 불가능합니다.
+                                    </div>
+                                    <button type="button">
+                                        접기
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"><path fill="#000" fill-rule="evenodd" d="M3.793 16.207a1 1 0 0 1 0-1.414l7.5-7.5a1 1 0 0 1 1.414 0l7.5 7.5a1 1 0 0 1-1.414 1.414L12 9.414l-6.793 6.793a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg>
+                                    </button>
+                                </section>
                             </div>
                         </main>
                         <footer class="formSubmitBtn"></footer>
