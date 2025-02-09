@@ -140,21 +140,10 @@ input.addEventListener("change", (e) => {
         const path = e.target.result;
         if (path.includes("pdf")) {
             fileaddArea.append(newFile);
-            emptyfileArea.style.display = "none";
+            emptyfileArea.remove()
         }
     });
 });
-
-const fileRemoveButton = document.querySelectorAll("button.file-remove");
-const removeli = fileRemoveButton.parentNode
-fileRemoveButton.forEach(button, () => {
-    button.addEventListener('click', function() {
-        console.log('실행점1')
-        button.parentElement.remove();
-        console.log('실행점2')
-    })
-})
-
 
 
 
@@ -170,3 +159,25 @@ resumeOpenButton.addEventListener("click", () => {
         toggleText.innerText = "비공개";
     }
 });
+
+
+const attachmentList = document.querySelector("ul.file-container")
+const addedFile = document.querySelectorAll("ul.file-container li.added-file")
+
+// window.addEventListener('click', (e) =>{
+//     console.log(e.target)
+// })
+
+// attachmentList.addEventListener('click', function(event) {
+//     console.log("실행점")
+//     console.log(event.target)
+//     console.log(event.target.classList)
+//     if(event.target.tagName === 'SVG' ){
+//         event.parentElement.parentElement.remove()
+//     }
+//     else if(event.target.tagName === 'PATH'){
+//         event.parentElement.parentElement.parentElement.remove()
+//     }
+// })
+    
+// addedFile.addEventListener
