@@ -479,7 +479,7 @@ window.addEventListener("click", (e) => {
         e.target.closest("div.memberedu-edit").remove();
         //  학력 정보가 한 개만 남았을 때에는 clicked 속성이 없어져야 함.
         if (amountDiv.length === 1) {
-            editMark.forEach(mark, () => {
+            editMark.forEach((mark) => {
                 mark.classList.remove("clicked");
             });
         }
