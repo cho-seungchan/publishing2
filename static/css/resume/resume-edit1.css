@@ -172,6 +172,11 @@
     --subwayLine801: #34a344;
 }
 
+input:focus,
+input:hover {
+    background-color: rgb(228, 228, 228);
+}
+
 .header-sc {
     position: fixed;
     top: 0px;
@@ -508,6 +513,10 @@
     height: 42px;
 }
 
+.header-right-user7 svg:hover {
+    transform: rotate(180deg);
+}
+
 .header-right-menu8 {
     display: none;
     position: absolute;
@@ -564,6 +573,7 @@
 .main-sc0 {
     background-color: rgb(255, 255, 255);
     padding-top: 65px;
+    height: 2000px
 }
 
 .main-wrapper {
@@ -578,7 +588,7 @@
     margin: 0px auto;
     position: relative;
     align-items: center;
-    padding-bottom: 100px;
+    /* padding-bottom: 100px; */
 }
 
 .main-content {
@@ -698,6 +708,31 @@
     border: 1px solid rgb(0, 221, 109);
 }
 
+.editMenuButton.clicked {
+    width: 26px;
+    height: 16px;
+    border-radius: 26px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(228, 228, 228);
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.editMenuButton.clicked::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: 0.5s;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    margin-left: 1px;
+}
+
+
+
 .editMenuButton::before {
     content: "";
     display: block;
@@ -753,6 +788,8 @@
     color: rgb(34, 34, 34);
     width: calc(100% - 80px);
 }
+
+
 
 .resumetop-text-img {
     display: inline-block;
@@ -930,8 +967,10 @@
     font-size: 15px;
 }
 
-.memberinfo1:first-child {
+.memberinfo1:nth-child(2) {
+    padding-right: 16px;
     margin-right: 16px;
+    max-width: 210px;
 }
 
 .memberinfo-img>svg {
@@ -997,11 +1036,16 @@
     font-size: 15px;
 }
 
-.memberinfo2:nth-child(2) {
+.memberinfo2:nth-child(3) {
+    padding-left: 32px;
+    padding-right: 0px;
+}
+
+/* .memberinfo2:nth-child(2) {
     padding-right: 16px;
     margin-right: 16px;
     max-width: 210px;
-}
+} */
 
 .memberinfo-text2 {
     display: flex;
@@ -1011,6 +1055,59 @@
     cursor: default;
     font-size: 15px;
     line-height: 22px;
+}
+
+.resumeradiobutton {
+    width: 26px;
+    height: 16px;
+    border-radius: 26px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(228, 228, 228);
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.resumeradiobutton::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: 0.5s;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    margin-left: 1px;
+}
+
+.resumeradiobutton.clicked {
+    width: 26px;
+    height: 16px;
+    border-radius: 26px;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(0, 221, 109);
+    border: 1px solid rgb(0, 221, 109);
+}
+
+.resumeradiobutton.clicked::before {
+    content: "";
+    display: block;
+    position: absolute;
+    transition: 0.5s;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: rgb(255, 255, 255);
+    top: 0px;
+    margin-left: 10px;
+}
+
+.memberinfo-img>button {
+    position: absolute !important;
+    left: 0px;
+    top: 12px;
+    margin-top: -8px;
 }
 
 .memberinfo2:nth-child(2)>dd {
@@ -1045,12 +1142,46 @@
     margin-left: 2px !important;
 }
 
+.svghovered {
+    transform: rotate(180deg)
+}
+
 .memberinfo-text2-text svg path {
     fill: rgb(34, 34, 34);
 }
 
 .memberinfo-text2-text svg path {
     fill: rgb(196, 196, 196);
+}
+
+.memberinfo-text2-option {
+    position: absolute;
+    width: 140px;
+    border-radius: 4px;
+    margin-top: 300px;
+    left: 50px;
+    z-index: 3;
+}
+
+.memberinfo-text2-option ul {
+    box-shadow: rgba(20, 20, 20, 0.02) 0px 4px 8px 0px, rgba(20, 20, 20, 0.12) 4px 16px 24px 0px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden auto;
+    max-height: 260px;
+    padding: 10px 0px;
+    border-radius: 4px;
+}
+
+.memberinfo-text2-option ul li div {
+    padding: 0px 10px;
+    height: 50px;
+}
+
+.memberinfo-text2-option ul li div>label {
+    display: block;
+    padding: 12px 10px;
+    font-size: 15px;
+    line-height: 22px;
 }
 
 .memberbirth {
@@ -1097,7 +1228,7 @@
     top: -1px;
 }
 
-.memberinfo-tooltip-button-before {
+.memberinfo-tooltip-button-change.before {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1116,11 +1247,11 @@
     border: 1px solid rgb(196, 196, 196);
 }
 
-.memberinfo-tooltip-button-before::before {
+.memberinfo-tooltip-button-change.before::before {
     content: "?";
 }
 
-.memberinfo-tooltip-button-after {
+.memberinfo-tooltip-button-change.after {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1139,9 +1270,10 @@
     border: 1px solid rgb(34, 34, 34);
 }
 
-.memberinfo-tooltip-button-after::before {
+.memberinfo-tooltip-button-change.after::before {
     content: "?";
 }
+
 
 .resume-private {
     white-space: nowrap;
@@ -1158,6 +1290,12 @@
     font-size: 13px;
     line-height: 18px;
 }
+
+input:focus,
+textarea:focus {
+    border: none;
+}
+
 
 .resume-private>button {
     position: absolute;
@@ -1219,6 +1357,11 @@
     border: none;
 }
 
+.simplepr>textarea:hover,
+.simplepr>textarea:focus {
+    background-color: rgb(228, 228, 228);
+}
+
 .jobcategory {
     margin-top: 36px;
     position: relative;
@@ -1239,6 +1382,43 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
+}
+
+.jobcategory .select-wrap .select-item {
+    height: 20px;
+    padding: 8px 16px;
+    background-color: rgb(48, 54, 77);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(255, 255, 255);
+    margin-right: 6px;
+    margin-bottom: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 300px;
+}
+
+.jobcategory .select-wrap .btn-close {
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0px 0px 0px 4px;
+    border-radius: 0px 4px;
+    color: rgb(255, 255, 255);
+}
+
+.jobcategory .select-wrap .btn-close::before {
+    position: absolute;
+    display: block;
+    width: 14px;
+    height: 14px;
+    background: url("https://jumpit.saramin.co.kr/assets/images/ic_close.svg") center center / 100% no-repeat;
+    content: "";
+    top: 0px;
+    left: 0px;
 }
 
 .jobcategory .box-select {
@@ -1303,7 +1483,7 @@
     box-shadow: rgba(20, 20, 20, 0.02) 0px 4px 8px 0px, rgba(20, 20, 20, 0.12) 4px 16px 24px 0px;
     background-color: rgb(255, 255, 255);
     margin-top: 8px;
-    z-index: 2;
+    z-index: 3;
 }
 
 .jobcategory-list ul {
@@ -1380,6 +1560,12 @@
     content: "";
 }
 
+.jobcategory-list ul li .inp-chk input:checked+label::before,
+.jobcategory-list ul li .inp-chk input:checked+label::after {
+    background-color: rgb(0, 221, 109);
+    border-color: rgb(255, 255, 255);
+}
+
 /*  */
 
 .memberedu {
@@ -1420,8 +1606,17 @@
 .memberedu-edit {
     position: relative;
     display: flex;
-    margin: 20px 0px 0px;
+    margin: 30px 0px 0px;
 }
+
+
+/* .memberedu-edit.newarea {
+    position: relative;
+    display: flex;
+    margin: 40px 0px 0px;
+} */
+
+
 
 .memberedu-edit-mark {
     width: 7px;
@@ -1433,6 +1628,19 @@
     margin-right: 14px;
     margin-top: 6px;
 }
+
+.memberedu-edit-mark.clicked::after {
+    position: absolute;
+    content: "";
+    height: calc(100% + 19px);
+    padding-bottom: 10px;
+    width: 1px;
+    top: 18px;
+    left: 5px;
+    z-index: 1;
+    background-color: rgb(212, 212, 212);
+}
+
 
 .memberedu-graduate1 {
     position: relative;
@@ -1545,6 +1753,12 @@
     content: "";
 }
 
+.memberedu-drop input:checked+label::before,
+.memberedu-drop input:checked+label::after {
+    background-color: rgb(0, 221, 109);
+    border-color: rgb(255, 255, 255);
+}
+
 .memberedu-division {
     width: 100%;
 }
@@ -1639,13 +1853,17 @@
 
 
 .memberedu-class>div>div {
-    min-width: 16px;
+    min-width: 116px;
 }
 
 .memberedu-class-choice-input {
     width: 0px;
     height: 0px;
     border: none;
+}
+
+.class-content-label:hover {
+    background-color: rgb(229, 252, 239);
 }
 
 .memberedu-class-list ul {
@@ -1800,6 +2018,41 @@
 
 .member-grade>div:nth-child(2) svg {
     margin-top: 0px !important;
+}
+
+.standard-degree {
+    position: absolute;
+    width: 140px;
+    border-radius: 4px;
+    margin-top: 8px;
+    left: 0px;
+    z-index: 3;
+}
+
+.member-grade>div:nth-child(2)>div:nth-child(2) {
+    top: 20px;
+    left: -10px;
+}
+
+.standard-degree ul {
+    box-shadow: rgba(20, 20, 20, 0.02) 0px 4px 8px 0px, rgba(20, 20, 20, 0.12) 4px 16px 24px 0px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden auto;
+    max-height: 260px;
+    padding: 10px 0px;
+    border-radius: 4px;
+}
+
+.standard-degree ul li div {
+    padding: 0px 10px;
+    height: 50px;
+}
+
+.standard-degree ul li div>label {
+    display: block;
+    padding: 12px 10px;
+    font-size: 15px;
+    line-height: 22px;
 }
 
 .memberedu>button {
@@ -2975,4 +3228,8 @@
 
 .bottombar .bottom-btns button:last-of-type {
     margin-right: 0px;
+}
+
+.hidden2 {
+    display: none;
 }
