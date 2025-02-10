@@ -1333,7 +1333,7 @@
                                             </div>
                                         </li>
                                         <!-- // 지원 이력서 2번 끝 -->
-                                    </div>
+                                    </ul>
                                 </section>
                                 <section class="formElement">
                                     <div class="attachTitle">
@@ -1404,16 +1404,22 @@
                                     <!-- // 첨부한 파일이 있을 때 -->
                                 </section>
                                 <section class="formElement last">
-                                    <div>제출서류는 입사자 확정일로부터 180일까지 지원기업에게 제공됩니다. 제출에 동의할 경우에만 입사지원 해주세요. <br>동의하지 않을 경우 입사지원이 불가능합니다.
-                                    </div>
-                                    <button type="button">
+                                    <div class="textContent" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-height: 1.5em; ">제출서류는 입사자 확정일로부터 180일까지 지원기업에게 제공됩니다. 제출에 동의할 경우에만 입사지원 해주세요. <br>동의하지 않을 경우 입사지원이 불가능합니다.</div>
+                                    <button type="button" class="botCollapse" style="display: none;">
                                         접기
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"><path fill="#000" fill-rule="evenodd" d="M3.793 16.207a1 1 0 0 1 0-1.414l7.5-7.5a1 1 0 0 1 1.414 0l7.5 7.5a1 1 0 0 1-1.414 1.414L12 9.414l-6.793 6.793a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg>
                                     </button>
+                                    <button type="button" class="botExpand">
+                                        자세히 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#222" fill-rule="evenodd" d="M13.472 5.195c.26.26.26.683 0 .943l-5 5a.667.667 0 0 1-.943 0l-5-5a.667.667 0 1 1 .943-.943L8 9.724l4.529-4.529c.26-.26.682-.26.943 0Z" clip-rule="evenodd"></path></svg></button>
                                 </section>
                             </div>
                         </main>
-                        <footer class="formSubmitBtn"></footer>
+                        <footer class="formSubmitBtn">
+                            <div class="formButton">
+                                <button color="green" class="submitButton" disabled type="submit">지원하기</button>
+                            </div>
+                        </footer>
                     </article>
                 </form>
             </div>

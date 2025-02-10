@@ -240,3 +240,28 @@ attachBoxes.forEach((box, index) => {
         checkboxes[index].dispatchEvent(new Event("change"));
     });
 });
+
+// 기업/서비스 소개 더보기 버튼 누르면 정보 전체출력
+document.addEventListener("DOMContentLoaded", function () {
+    const textDiv = document.querySelector(".textContent");
+    const collapseBtn = document.querySelector(".botCollapse");
+    const expandBtn = document.querySelector(".botExpand");
+
+    expandBtn.addEventListener("click", function () {
+        textDiv.style.overflow = "auto";
+        textDiv.style.textOverflow = "unset";
+        textDiv.style.whiteSpace = "normal";
+        textDiv.style.maxHeight = "none";
+        collapseBtn.style.display = "inline-flex";
+        expandBtn.style.display = "none";
+    });
+
+    collapseBtn.addEventListener("click", function () {
+        textDiv.style.overflow = "hidden";
+        textDiv.style.textOverflow = "ellipsis";
+        textDiv.style.whiteSpace = "nowrap";
+        textDiv.style.maxHeight = "1.5em";
+        collapseBtn.style.display = "none";
+        expandBtn.style.display = "inline-flex";
+    });
+});
