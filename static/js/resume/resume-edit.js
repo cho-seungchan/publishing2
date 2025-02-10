@@ -723,6 +723,63 @@ etcAddArea.insertBefore(newEditArea, etcAddButton);
     });
 })
 
+const applicantAddButton = document.getElementById("applicant-add-button")
+const applicantAddArea = document.querySelector("div.applicant")
+applicantAddButton.addEventListener('click', () => {
+    const memberApplicantEditMark = document.querySelectorAll(
+        "div.applicant-mark"
+    );
+    let newEditArea = document.createElement("div");
+    memberApplicantEditMark.forEach((mark) => {
+        mark.classList.add("clicked");
+    });
+
+    newEditArea.className = "applicant-wrapper";
+    newEditArea.innerHTML = `<div class="applicant-mark"></div>
+<div class="applicant-content">
+    <div class="applicant-text-first">
+        <div class="applicant-text1 applicant-text2 pr-text">
+            <input placeholder="소제목을 입력해주세요" maxlength="255" type="text" value="" name="selfIntroductions.0.selfTitle">
+        </div>
+        <div class="profile-order-control">
+            <div class="order-inner">
+                <div class="order-buttons">
+                    <button class="profile-down-button" disabled="" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                            <path fill="#222" fill-rule="evenodd" d="M13.472 5.195c.26.26.26.683 0 .943l-5 5a.667.667 0 0 1-.943 0l-5-5a.667.667 0 1 1 .943-.943L8 9.724l4.529-4.529c.26-.26.682-.26.943 0Z" clip-rule="evenodd"></path>
+                        </svg></button><button class="profile-up-button" disabled="" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24">
+                            <path fill="#000" fill-rule="evenodd" d="M3.793 16.207a1 1 0 0 1 0-1.414l7.5-7.5a1 1 0 0 1 1.414 0l7.5 7.5a1 1 0 0 1-1.414 1.414L12 9.414l-6.793 6.793a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path>
+                        </svg></button><button class="profile-delete-button" disabled="" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path fill="#C4C4C4" fill-rule="evenodd" d="M6.25 5.5a3 3 0 0 1 3-3h5.5a3 3 0 0 1 3 3v1.25H21a1 1 0 1 1 0 2h-1.25v9.75a3 3 0 0 1-3 3h-9.5a3 3 0 0 1-3-3V8.75H3a1 1 0 0 1 0-2h3.25V5.5Zm2 1.25h7.5V5.5a1 1 0 0 0-1-1h-5.5a1 1 0 0 0-1 1v1.25Zm-2 2v9.75a1 1 0 0 0 1 1h9.5a1 1 0 0 0 1-1V8.75H6.25Zm3.5 3a1 1 0 0 1 1 1v2.5a1 1 0 1 1-2 0v-2.5a1 1 0 0 1 1-1Zm5.5 1a1 1 0 1 0-2 0v2.5a1 1 0 1 0 2 0v-2.5Z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="applicant-text1 applicant-text3">
+        <textarea name="selfIntroductions.0.selfContent" placeholder="자기소개서 내용을 작성해주세요" class="applicant-text-second" style="
+                    height: 22px;
+                "></textarea><span class="textamount">0 자</span>
+    </div>
+</div>`;
+    applicantAddArea.insertBefore(newEditArea, applicantAddButton);
+    profileDownBtn.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+
+    profileUpBtn.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+
+    profileDeleteButton.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+})
+
 
                                                 
-                                           
+
+
