@@ -32,7 +32,6 @@
     width: 90%;
     max-width: 600px; /* 최대 너비 제한 */
     max-height: 90vh; /* 뷰포트 높이의 90%로 제한 */
-    overflow-y: auto; /* 내용이 넘칠 경우 세로 스크롤 */
 }
 
 /* 
@@ -95,12 +94,22 @@
     - 전체 너비 사용
     - 일관된 테두리와 모서리 처리
  */
+.status-selection {
+    margin-top: 30px;
+}
+
 .status-select {
+    cursor: pointer;
     width: 100%;
     padding: 8px;
     margin: 8px 0;
     border: 1px solid #e9ecef;
     border-radius: 4px;
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: rgb(0, 221, 109);
 }
 
 /* 
