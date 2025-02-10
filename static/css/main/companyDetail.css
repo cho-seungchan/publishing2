@@ -758,3 +758,214 @@ dd>.btns{
 .companyWindow>dl>div dd>a>svg path{
     fill: rgb(0, 221, 109);
 }
+
+.companyDetail{
+    position: relative;
+}
+
+.companyDetailText{
+    padding: 0px;
+    color: rgb(68, 68, 68);
+    font-size: 16px;
+    line-height: 28px;
+    word-break: break-all;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    font-family: inherit;
+    max-height: 168px;
+    overflow: hidden;
+}
+
+.companyDetailButton{
+    padding: 0px 16px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    height: 48px;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(212, 212, 212);
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 16px;
+}
+
+.gradient{
+    position: absolute;
+    bottom: 64px;
+    width: 100%;
+    height: 32px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgb(255, 255, 255) 100%);
+}
+
+.companyImages{
+    position: relative;
+    height: 169px;
+    margin-top: 24px;
+    margin-left: -12px;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+}
+
+.companyImages>img{
+    width: 255px;
+    height: 169px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-left: 12px;
+}
+
+.companyImages .moreContentPc{
+    position: absolute;
+    top: 0px;
+    right: 1px;
+    width: calc(35% - 25px);
+    height: 169px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.modalWrapper .moreImageModal{
+    display: none;
+    align-items: center;
+    position: fixed;
+    padding: 0px 60px 0px 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 11; 
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.moreImageModal .modalCloseButton{
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: 400;
+    opacity: unset;
+    z-index: 1;
+}
+
+.moreImageModal .moduleLeftButton{
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    left: 0;
+    opacity: unset;
+    width: 50%;
+    height: 100%;
+}
+
+.moreImageModal .moduleRightButton{
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    right: 0;
+    opacity: unset;
+    width: 50%;
+    height: 100%;
+    justify-content: end;
+}
+
+.moduleContent{
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    height: 100%;
+    max-height: 100%;
+    text-align: center;
+}
+
+.moduleSlide{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compSection .content{
+    padding: 0px;
+    color: rgb(68, 68, 68);
+    font-size: 16px;
+    line-height: 28px;
+    word-break: break-all;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    font-family: inherit;
+}
+
+.compSection .date{
+    position: absolute;
+    top: 2px;
+    left: 109px;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    color: rgb(136, 136, 136);
+}
+
+.compSection .source, .compSection .standard{
+    position: absolute;
+    top: 4px;
+    right: 0px;
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.compSection .info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+}
+
+.compSection .info>span{
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(68, 68, 68);
+}
+
+.compSection .info>strong{
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.employeeGraph{
+    max-width: 790px;
+}

@@ -74,3 +74,126 @@ copyAddressBtn.addEventListener("click", () => {
             console.error("Failed to copy text: ", err);
         });
 });
+
+// 기업/서비스 소개 더보기 버튼 누르면 정보 전체출력
+const moreInfoBtn = document.querySelector(".companyDetailButton");
+const moreInfoText = document.querySelector(".companyDetailText");
+const textGradient = document.querySelector(".compnayDetailHide");
+const expandIcon = moreInfoBtn.querySelector(".expandIcon"); // 펼치기 아이콘
+const collapseIcon = moreInfoBtn.querySelector(".collapseIcon"); // 접기 아이콘
+const buttonText = moreInfoBtn.querySelector(".buttonText"); // 버튼 내 텍스트 span
+
+// 버튼 클릭 시 이벤트
+collapseIcon.style.display = "none";
+expandIcon.style.display = "inline-block";
+
+moreInfoBtn.addEventListener("click", () => {
+    const isExpanded = moreInfoBtn.getAttribute("aria-expanded") === "true";
+
+    if (isExpanded) {
+        // 이미 열려있으면 닫기
+        moreInfoText.style.maxHeight = "168px";
+        moreInfoText.style.overflow = "hidden";
+        textGradient.classList.add("gradient");
+        moreInfoBtn.setAttribute("aria-expanded", "false");
+
+        // 버튼 텍스트 변경 (SVG는 유지됨)
+        buttonText.textContent = "더 보기";
+
+        // SVG 변경
+        expandIcon.style.display = "inline-block";
+        collapseIcon.style.display = "none";
+    } else {
+        // 닫혀있으면 열기
+        moreInfoText.style.maxHeight = "none";
+        moreInfoText.style.overflow = "visible";
+        textGradient.classList.remove("gradient");
+        moreInfoBtn.setAttribute("aria-expanded", "true");
+
+        // 버튼 텍스트 변경 (SVG는 유지됨)
+        buttonText.textContent = "접기";
+
+        // SVG 변경
+        expandIcon.style.display = "none";
+        collapseIcon.style.display = "inline-block";
+    }
+});
+
+// 모달창 이미지 변경...
+// 일일히 innerhtml이나 이미지를 다 집어넣고 display를 바꾸는 것보단 배열에 이미지들을 넣어
+// 링크만 바꾸는게 더 편해보임
+const modalImages = [
+    "https://cdn.jumpit.co.kr/lg/images/syyun_26773/20232607112656155_1080_790.webp",
+    "https://cdn.jumpit.co.kr/lg/images/syyun_26773/20232607112658487_1080_790.webp",
+    "https://cdn.jumpit.co.kr/lg/images/syyun_26773/20232607112653349_1080_790.webp",
+    "https://cdn.jumpit.co.kr/lg/images/syyun_26773/20232707112703284_1080_790.webp",
+]; // 이미지 목록
+
+let currentIndex = 0; // 현재 이미지 인덱스
+
+const imgElement = document.querySelector(".moduleSlide img"); // 이미지 태그
+const prevButton = document.querySelector(".moduleLeftButton"); // 왼쪽 버튼
+const nextButton = document.querySelector(".moduleRightButton"); // 오른쪽 버튼
+const moduleSlide = document.querySelector(".moduleSlide"); // 슬라이드 컨테이너
+
+// 이미지 변경 함수
+const updateImage = () => {
+    imgElement.src = modalImages[currentIndex];
+};
+
+// 왼쪽 버튼 클릭 시
+prevButton.addEventListener("click", () => {
+    // currentIndex - 1: 현재 인덱스
+    // modalImages.length: 배열 안에 있는 이미지들의 개수
+    // + modalImages.length 는 인덱스가 음수가 되는걸 방지하기 위해
+    // % modalImage.length 는 인덱스가 배열의 크기를 넘어가지 않게 하려고,,
+    currentIndex = (currentIndex - 1 + modalImages.length) % modalImages.length;
+    updateImage(); // 이미지를 변경
+});
+
+// 오른쪽 버튼 클릭 시
+nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % modalImages.length;
+    updateImage();
+});
+
+// 초기 이미지 설정
+updateImage();
+
+// 홈페이지에서 누른 이미지에 따라 모달창에서 조회 가능하게
+// 아으 이미지 이벤트 진짜 많네
+
+const companyImages = document.querySelectorAll(".companyImages img"); // 회사 이미지 리스트
+const modal = document.querySelector(".moreImageModal"); // 모달창
+const modalImgElement = document.querySelector(".moduleSlide img"); // 모달 내 이미지
+const modalCloseButton = document.querySelector(".modalCloseButton"); // 닫기 버튼
+const imagesLastStyle = document.querySelector(".moreContentPc"); // 마지막 이미지를 덮는 스타일
+
+// 마지막 이미지로 설정하는 함수
+const showThirdImage = () => {
+    currentIndex = modalImages.length - 2; // 3번째 이미지 인덱스(마지막 이미지는 가려져 안 보임)
+    updateImage(); // 이미지 변경
+    modal.style.display = "flex"; // 모달창 띄우기
+};
+
+// 마지막 이미지 클릭 이벤트 추가
+imagesLastStyle.addEventListener("click", showThirdImage);
+
+// 이미지 클릭 이벤트 추가
+companyImages.forEach((img, index) => {
+    img.addEventListener("click", () => {
+        currentIndex = index; // 클릭한 이미지의 인덱스 저장
+        updateImage(); // 모달창 이미지 변경
+        modal.style.display = "flex"; // 모달창 보이게
+    });
+});
+
+// 모달창 닫기
+modalCloseButton.addEventListener("click", () => {
+    modal.style.display = "none"; // 모달창 숨기기
+});
+
+// 초기 이미지 설정 함수
+const updateModalImage = () => {
+    modalImgElement.src = modalImages[currentIndex];
+};
