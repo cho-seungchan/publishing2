@@ -470,12 +470,19 @@ maxGradeValue.forEach((choice) => {
 
 // 한 개만 있을 때는 버튼들 disabled 상태, 여러개면 활성화
 // 삭제는 무조건 활성화, 위 아래 버튼은 각각 맨 위, 맨 아래에 있을 때 비활성화
-const firstAddedEdu = document.querySelector(".memberedu > div:first-child");
-const lastAddedEdu = document.querySelector(".memberedu > div:last-child");
+const memberEdu = document.querySelector("div.memberedu");
+const amountDiv = memberEdu.querySelectorAll("div");
+const editMark = document.querySelectorAll("div.memberedu-edit-mark");
+
 window.addEventListener("click", (e) => {
     if (e.target && e.target.matches("button.profile-delete-button")) {
         e.target.closest("div.memberedu-edit").remove();
         //  학력 정보가 한 개만 남았을 때에는 clicked 속성이 없어져야 함.
+        if (amountDiv.length === 1) {
+            editMark.forEach(mark, () => {
+                mark.classList.remove("clicked");
+            });
+        }
     }
 });
 window.addEventListener("click", (e) => {
