@@ -797,12 +797,12 @@
                                                             class="month-content" placeholder="MM" maxlength="2"
                                                             type="text" value=""
                                                             name="educations.0.graduateMonth" /><span
-                                                            id="dropped">졸업(예정)</span>
+                                                            class="dropped">졸업(예정)</span>
                                                     </div>
                                                     <div class="memberedu-drop">
                                                         <input id="educations.0.educationStatus"
                                                             type="checkbox" /><label for="educations.0.educationStatus"
-                                                            class="sc-beab3720-0 lbwSup">중퇴</label>
+                                                            class="dropcheck">중퇴</label>
                                                     </div>
                                                 </div>
                                                 <div class="memberedu-division">
@@ -931,7 +931,7 @@
                                                                     class="memberedu-class-choice-input" type="text"
                                                                     name="educations.0.creditPointType"
                                                                     inputmode="none" /><button type="button"
-                                                                    id="standardgrade">
+                                                                    class="standardgrade">
                                                                     <span style="
                                                                                 display: flex;
                                                                             "><svg xmlns="http://www.w3.org/2000/svg"
@@ -1037,7 +1037,7 @@
                                                     </div>
                                                     <div class="during-button">
                                                         <input autocomplete="off" id="careers.0-proceeding"
-                                                            class="jobcategory-inputarea" type="checkbox"
+                                                            class="working" type="checkbox"
                                                             name="careers.0-proceeding" /><label
                                                             for="careers.0-proceeding"
                                                             class="sc-beab3720-0 lbwSup">재직중</label>
@@ -1051,7 +1051,7 @@
                                                         </div>
                                                         <div class="non-develop">
                                                             <input autocomplete="off" id="careers.0.isNotDevelop"
-                                                                class="jobcategory-inputarea" type="checkbox"
+                                                                class="nondevelop" type="checkbox"
                                                                 name="careers.0.isNotDevelop" /><label
                                                                 for="careers.0.isNotDevelop"
                                                                 class="sc-beab3720-0 lbwSup">비개발</label>
@@ -1098,28 +1098,7 @@
                                                         <input placeholder="부서명/직책" maxlength="255" type="text" value=""
                                                             name="careers.0.divisionName" />
                                                     </div>
-                                                    <div class="companytext1 companytext4">
-                                                        <div class="company-category">
-                                                            <div>
-                                                                <div class="company-category-selected">
-                                                                    <div class="select-item">
-                                                                        <img alt="AR" height="20" loading="lazy"
-                                                                            src="https://cdn.jumpit.co.kr/images/stacks/noStack.png"
-                                                                            width="20" /><span>AR</span><button
-                                                                            class="btn-close" type="button">
-                                                                            <span class="blind">닫기</span>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="box-inp">
-                                                                    <input autocomplete="off" id="careers-0-techStacks"
-                                                                        placeholder="기술스택을 등록해주세요"
-                                                                        class="jobcategory-inputarea" type="text"
-                                                                        value="" name="careers-0-techStacks" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class="companytext5 companytext6">
                                                         <textarea name="careers.0.jobDetailInfo"
                                                             placeholder="주요업무 및 성과를 작성해주세요" class="careertext" style="
@@ -1128,7 +1107,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="button">
+                                            <button type="button" id="careeraddbutton">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="none" viewBox="0 0 20 20">
                                                     <path fill="#00DD6D" fill-rule="evenodd"
@@ -1409,7 +1388,7 @@
                                                     </div>
                                                     <div class="no-expire">
                                                         <input autocomplete="off" id="etcHistories.0-proceeding"
-                                                            class="jobcategory-inputarea" type="checkbox"
+                                                            class="noexpire-input" type="checkbox"
                                                             name="etcHistories.0-proceeding" /><label
                                                             for="etcHistories.0-proceeding"
                                                             class="sc-beab3720-0 lbwSup">종료일
@@ -1477,7 +1456,7 @@
                                                             <div class="etc-content-list" style="
                                                                         display: none;
                                                                     ">
-                                                                <!-- 편집 중 임시 속성 -->
+
                                                                 <ul>
                                                                     <li>
                                                                         <div class="etc-content-elements">
@@ -1528,7 +1507,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="button">
+                                            <button type="button" id="etcaddbutton">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                     fill="none" viewBox="0 0 20 20">
                                                     <path fill="#00DD6D" fill-rule="evenodd"
@@ -1809,5 +1788,30 @@
                                                         d="M10 20c5.523 0 10-4.477 10-10S15.523 0 10 0 0 4.477 0 10s4.477 10 10 10ZM9 9V5.5h2V9h3.5v2H11v3.5H9V11H5.5V9H9Z"
                                                         clip-rule="evenodd"></path>
                                                 </svg> 링크 추가</button>
+                                        </div>
+                                    </div> -->
+
+
+<!-- 경력사항 -> 회사 카테고리 -->
+                                    <!-- <div class="companytext1 companytext4">
+                                        <div class="company-category">
+                                            <div>
+                                                <div class="company-category-selected">
+                                                    <div class="select-item">
+                                                        <img alt="AR" height="20" loading="lazy"
+                                                            src="https://cdn.jumpit.co.kr/images/stacks/noStack.png"
+                                                            width="20" /><span>AR</span><button
+                                                            class="btn-close" type="button">
+                                                            <span class="blind">닫기</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="box-inp">
+                                                    <input autocomplete="off" id="careers-0-techStacks"
+                                                        placeholder="기술스택을 등록해주세요"
+                                                        class="jobcategory-inputarea" type="text"
+                                                        value="" name="careers-0-techStacks" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div> -->
