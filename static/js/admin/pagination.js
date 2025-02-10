@@ -1,165 +1,201 @@
-// 페이지네이션
-// 하단 1,2,3 버튼과 이전, 다음 버튼 동작 구현
+// 모든 관리 페이지의 페이지네이션을 처리하는 JS
+// 프론트엔드 역할: active 클래스 토글, 페이지 그룹 전환, 버튼 표시/숨김 제어
+// 백엔드 역할: 실제 페이지 데이터 처리, 데이터 필터링, DB 쿼리 처리
 
 document.addEventListener("DOMContentLoaded", function () {
-    // 페이지네이션 관련 요소들 선택
-    // .page-numbers: 신고관리 테이블 하단의 페이지 번호들을 감싸는 컨테이너. 페이지 번호 버튼들이 동적으로 추가될 부모 요소
-    // .page-btn.prev: 신고관리 테이블 하단의 '이전' 버튼. 현재 페이지 그룹에서 이전 그룹으로 이동하기 위해 사용
-    // .page-btn.next: 신고관리 테이블 하단의 '다음' 버튼. 현재 페이지 그룹에서 다음 그룹으로 이동하기 위해 사용
-    const pageNumbers = document.querySelector(".page-numbers");
-    const prevButton = document.querySelector(".page-btn.prev");
-    const nextButton = document.querySelector(".page-btn.next");
+  // 각 페이지의 페이지네이션 요소 선택
+  // 공고관리
+  const announcePageNumbers = document.querySelector(
+    ".announce-pagination .page-numbers"
+  ); // 페이지 번호 컨테이너
+  const announcePrevBtn = document.querySelector(".announce-pagination .prev"); // 이전 버튼
+  const announceNextBtn = document.querySelector(".announce-pagination .next"); // 다음 버튼
 
-    // 현재 페이지 그룹 설정
-    let currentGroup = 1; // 초기 현재 페이지 그룹 // 그룹:(1: 1,2,3 / 2: 4,5,6 / 3: 7,8,9...)
-    const pageNumPerGroup = 3; // 한 그룹당 페이지 수
+  // 일반회원
+  const normalMemberPageNumbers = document.querySelector(
+    ".normal-member-pagination .page-numbers"
+  );
+  const normalMemberPrevBtn = document.querySelector(
+    ".normal-member-pagination .prev"
+  );
+  const normalMemberNextBtn = document.querySelector(
+    ".normal-member-pagination .next"
+  );
 
-    // 테이블 컨텐츠 업데이트 함수
-    // pageNum에 따라 해당하는 데이터를 테이블에 표시
-    // prettier-ignore
-    function updateContent(pageNum) {
-        const tbody = document.querySelector(".report-table tbody");
-        const pageDatas = {
-         1: [
-           { id: '0000001', type: '부적절한 내용', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000002', type: '허위정보', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000003', type: '스팸 / 도배', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000004', type: '권리침해', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000005', type: '불법행위', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000006', type: '비매너 / 불건전', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000007', type: '차별 / 비하', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000008', type: '부적절한 내용', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000009', type: '프로그램 품질', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000010', type: '기타', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' },
-           { id: '0000011', type: '불법행위', target: '템프', reporter: '허세웅', date: '2025-02-04', status: '처리중' }
-         ],
-         2: [
-           { id: '0000012', type: '스팸 / 도배', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000013', type: '프로그램 품질', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000014', type: '스팸 / 도배', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000015', type: '프로그램 품질', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000016', type: '비매너 / 불건전', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000017', type: '부적절한 내용', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000018', type: '차별 / 비하', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000019', type: '부적절한 내용', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000020', type: '부적절한 내용', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000021', type: '프로그램 품질', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' },
-           { id: '0000022', type: '불법행위', target: '코리아IT', reporter: '김승균', date: '2025-02-04', status: '처리중' }
-         ],
-         3: [
-           { id: '0000023', type: '비매너 / 불건전', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000024', type: '부적절한 내용', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000025', type: '차별 / 비하', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000026', type: '허위정보', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000027', type: '불법행위', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000028', type: '부적절한 내용', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000029', type: '부적절한 내용', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000030', type: '기타', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000031', type: '부적절한 내용', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000032', type: '기타', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' },
-           { id: '0000033', type: '차별 / 비하', target: '점핏', reporter: '한지수', date: '2025-02-04', status: '처리중' }
-         ],
-     };
-     
-    //  // 잘 작동하는 지 확인        
-    //  const firstReportInPage1 = pageDatas[1][0];
-    //  console.log(firstReportInPage1); // 1페이지의 첫 번째 신고 데이터
-     
-     function generateRow(pageData) {
-       return `
-         <tr>
-           <td>${pageData.id}</td>
-           <td>${pageData.type}</td>
-           <td>${pageData.target}</td>
-           <td>${pageData.reporter}</td>
-           <td>${pageData.date}</td>
-           <td><span class="status pending">${pageData.status}</span></td>
-           <td><button type="button" class="detail-btn">상세보기</button></td>
-         </tr>
-       `;
-     }
+  // 기업회원
+  const companyMemberPageNumbers = document.querySelector(
+    ".company-member-pagination .page-numbers"
+  );
+  const companyMemberPrevBtn = document.querySelector(
+    ".company-member-pagination .prev"
+  );
+  const companyMemberNextBtn = document.querySelector(
+    ".company-member-pagination .next"
+  );
 
-     function generateEmptyRow() {
-      return `
-        <tr>
-          <td>데이터 없음</td>
-          <td>데이터 없음</td>
-          <td>데이터 없음</td>
-          <td>데이터 없음</td>
-          <td>데이터 없음</td>
-          <td>처리불가</td>
-          <td><button type="button" class="detail-btn">상세보기</button></td>
-        </tr>
-      `;
+  // 개인문의
+  const personalInquiryPageNumbers = document.querySelector(
+    ".personal-inquiry-pagination .page-numbers"
+  );
+  const personalInquiryPrevBtn = document.querySelector(
+    ".personal-inquiry-pagination .prev"
+  );
+  const personalInquiryNextBtn = document.querySelector(
+    ".personal-inquiry-pagination .next"
+  );
+
+  // 기업문의
+  const companyInquiryPageNumbers = document.querySelector(
+    ".company-inquiry-pagination .page-numbers"
+  );
+  const companyInquiryPrevBtn = document.querySelector(
+    ".company-inquiry-pagination .prev"
+  );
+  const companyInquiryNextBtn = document.querySelector(
+    ".company-inquiry-pagination .next"
+  );
+
+  // 신고관리
+  const reportPageNumbers = document.querySelector(
+    ".report-pagination .page-numbers"
+  );
+  const reportPrevBtn = document.querySelector(".report-pagination .prev");
+  const reportNextBtn = document.querySelector(".report-pagination .next");
+
+  // 페이지네이션 설정값
+  const pageNumPerGroup = 3; // 한 그룹당 표시할 페이지 번호 개수 (1,2,3 | 4,5,6 | ...)
+
+  // 각 페이지별 현재 그룹 상태 관리 객체
+  // 페이지 전환시에도 각 페이지의 현재 그룹을 기억하기 위함
+  const currentGroups = {
+    announce: 1,
+    normalMember: 1,
+    companyMember: 1,
+    personalInquiry: 1,
+    companyInquiry: 1,
+    report: 1,
+  };
+
+  // 페이지 그룹 변경 함수
+  // 이전/다음 버튼 클릭시 호출되어 페이지 그룹을 전환
+  function changePageGroup(group, pageNumbers, prevBtn) {
+    // 해당 그룹의 첫 페이지와 마지막 페이지 번호 계산
+    // 예: group=1 -> 1~3, group=2 -> 4~6
+    const firstNumInGroup = group * pageNumPerGroup - 2;
+    const lastNumInGroup = firstNumInGroup + 2;
+
+    // 기존 페이지 번호들을 제거하고 새로운 번호들을 생성
+    pageNumbers.innerHTML = "";
+    for (let i = firstNumInGroup; i <= lastNumInGroup; i++) {
+      const button = document.createElement("button");
+      button.type = "button";
+      // 그룹의 첫 번째 페이지에 active 클래스 부여
+      button.className = "page-btn" + (i === firstNumInGroup ? " active" : "");
+      button.textContent = i;
+      pageNumbers.appendChild(button);
     }
 
-     // pageNum에 해당하는 데이터가 있는지 확인하고 처리
-     if (pageDatas[pageNum]) {
-     // 해당 페이지의 데이터로 HTML 생성
-      tbody.innerHTML = pageDatas[pageNum]
-         .map(pageData => generateRow(pageData))
-         .join("");
-     } else {
-      // tbody.innerHTML = pageNum+ "번째 데이터가 표시될 예정...";  // 데이터가 없는 페이지
-      tbody.innerHTML = Array(11).fill().map(() => generateEmptyRow()).join("");
-     }
-    }
+    // 첫 번째 그룹에서는 이전 버튼을 숨김
+    prevBtn.style.visibility = group === 1 ? "hidden" : "visible";
+  }
 
-    // 페이지 버튼 생성 및 컨텐츠 업데이트를 함께 처리하는 함수
-    function ChangePageGroup(group) {
-        // 현재 그룹의 첫 페이지 번호 계산 (1, 4, 7, ...)
-        const firstNumInGroup = group * pageNumPerGroup - 2;
-        const lastNumInGroup = firstNumInGroup + 2;
-
-        // 1. 페이지 버튼들 생성
-        pageNumbers.innerHTML = "";
-        for (let i = firstNumInGroup; i <= lastNumInGroup; i++) {
-            const button = document.createElement("button");
-            button.type = "button";
-            button.className =
-                "page-btn" + (i === firstNumInGroup ? " active" : "");
-            button.textContent = i;
-            pageNumbers.appendChild(button);
-        }
-
-        // 2. 이전 버튼 표시/숨김 처리
-        prevButton.style.visibility = group === 1 ? "hidden" : "visible";
-
-        // 3. 첫 페이지의 컨텐츠 표시
-        updateContent(firstNumInGroup);
-    }
-
-    // 페이지 버튼 클릭 이벤트
+  // 페이지 번호 클릭 이벤트 핸들러 설정 함수
+  function setPageNumbersEvent(pageNumbers) {
     pageNumbers.addEventListener("click", function (e) {
-        if (e.target.classList.contains("page-btn")) {
-            // 기존 active 클래스 제거
-            const currentActive = pageNumbers.querySelector(".active");
-            if (currentActive) {
-                currentActive.classList.remove("active");
-            }
-            // 클릭된 버튼에 active 클래스 추가
-            e.target.classList.add("active");
-
-            // 클릭된 페이지의 컨텐츠 업데이트
-            const pageNum = parseInt(e.target.textContent);
-            updateContent(pageNum);
+      // 실제 페이지 번호 버튼을 클릭했을 때만 처리
+      if (e.target.classList.contains("page-btn")) {
+        // 현재 active 상태인 버튼에서 active 클래스 제거
+        const currentActive = pageNumbers.querySelector(".active");
+        if (currentActive) {
+          currentActive.classList.remove("active");
         }
+        // 클릭한 버튼에 active 클래스 추가
+        e.target.classList.add("active");
+
+        // 클릭한 페이지 번호 추출 (정수로 변환)
+        const pageNum = parseInt(e.target.textContent);
+        // 백엔드에서 처리할 페이지 번호 전달 (실제 구현시 ajax 호출 등으로 처리)
+        console.log("선택된 페이지:", pageNum);
+      }
     });
+  }
 
+  // 이전/다음 네비게이션 버튼 이벤트 핸들러 설정 함수
+  function setNavigationEvents(pageType, prevBtn, nextBtn, pageNumbers) {
     // 이전 버튼 클릭 이벤트
-    prevButton.addEventListener("click", function () {
-        if (currentGroup > 1) {
-            currentGroup--;
-            ChangePageGroup(currentGroup);
-        }
+    prevBtn.addEventListener("click", function () {
+      // 현재 그룹이 1보다 클 때만 이전 그룹으로 이동
+      if (currentGroups[pageType] > 1) {
+        currentGroups[pageType]--; // 현재 그룹 번호 감소
+        changePageGroup(currentGroups[pageType], pageNumbers, prevBtn);
+      }
     });
 
     // 다음 버튼 클릭 이벤트
-    nextButton.addEventListener("click", function () {
-        currentGroup++;
-        ChangePageGroup(currentGroup);
+    nextBtn.addEventListener("click", function () {
+      currentGroups[pageType]++; // 현재 그룹 번호 증가
+      changePageGroup(currentGroups[pageType], pageNumbers, prevBtn);
     });
+  }
 
-    // 초기 페이지 그룹 생성 및 컨텐츠 표시
-    ChangePageGroup(1);
+  // 각 페이지 페이지네이션 초기화 함수
+  // DOM 요소가 모두 존재할 때만 초기화 실행
+  function initializePagination(pageType, pageNumbers, prevBtn, nextBtn) {
+    if (pageNumbers && prevBtn && nextBtn) {
+      // 1. 초기 페이지 그룹(1,2,3) 설정
+      changePageGroup(1, pageNumbers, prevBtn);
+      // 2. 페이지 번호 클릭 이벤트 설정
+      setPageNumbersEvent(pageNumbers);
+      // 3. 이전/다음 버튼 이벤트 설정
+      setNavigationEvents(pageType, prevBtn, nextBtn, pageNumbers);
+    }
+  }
+
+  // 공고관리 페이지네이션 초기화
+  initializePagination(
+    "announce",
+    announcePageNumbers,
+    announcePrevBtn,
+    announceNextBtn
+  );
+
+  // 일반회원 페이지네이션 초기화
+  initializePagination(
+    "normalMember",
+    normalMemberPageNumbers,
+    normalMemberPrevBtn,
+    normalMemberNextBtn
+  );
+
+  // 기업회원 페이지네이션 초기화
+  initializePagination(
+    "companyMember",
+    companyMemberPageNumbers,
+    companyMemberPrevBtn,
+    companyMemberNextBtn
+  );
+
+  // 개인문의 페이지네이션 초기화
+  initializePagination(
+    "personalInquiry",
+    personalInquiryPageNumbers,
+    personalInquiryPrevBtn,
+    personalInquiryNextBtn
+  );
+
+  // 기업문의 페이지네이션 초기화
+  initializePagination(
+    "companyInquiry",
+    companyInquiryPageNumbers,
+    companyInquiryPrevBtn,
+    companyInquiryNextBtn
+  );
+
+  // 신고관리 페이지네이션 초기화
+  initializePagination(
+    "report",
+    reportPageNumbers,
+    reportPrevBtn,
+    reportNextBtn
+  );
 });
