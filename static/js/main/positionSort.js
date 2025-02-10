@@ -4,13 +4,13 @@ const searchWindow = document.querySelector(".searchWindow");
 
 // focus: 검색창을 클릭했을 때 검색창 뜨게 하기
 searchBox.addEventListener("focus", () => {
-    searchWindow.style.visibility = "visible";
+    searchWindow.style.display = "block";
     searchWindow.style.zIndex = "999999";
 });
 
 // blur: 검색창 밖을 클릭했을 때 검색창 숨겨지게 하기
 searchBox.addEventListener("blur", () => {
-    searchWindow.style.visibility = "hidden";
+    searchWindow.style.display = "none";
 });
 
 // 네비 스크롤에 따라 나타났다 없어지게 하기
@@ -156,3 +156,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// 로그인 후 회원버튼에 마우스를 갖다대면 전용 메뉴가 뜸
+const memberButton = document.querySelector(".loginedMemberButton>button"); // 홍길동님
+const memberNav = document.querySelector(".loginMemberNav"); // 메뉴
+
+const showDiv = () => (memberNav.style.display = "block"); // div가 보이게
+const hideDiv = () => (memberNav.style.display = "none"); // div가 숨겨지게
+
+// 마우스가 나가면 창이 꺼지게
+// div에서 커서가 nav까지 가기 전에 창이 꺼져버리기 때문에 약간 꺼지는 시간에 딜레이를 주었다
+const checkMouseLeave = () => {
+    setTimeout(() => {
+        // 버튼과 메뉴 둘 다 마우스를 떼면 숨기기
+        if (!memberButton.matches(":hover") && !memberNav.matches(":hover")) {
+            hideDiv();
+        }
+    }, 100);
+};
+
+// 마우스를 올렸을 때
+memberButton.addEventListener("mouseenter", showDiv);
+memberNav.addEventListener("mouseenter", showDiv);
+
+// 마우스를 뗐을 때
+memberButton.addEventListener("mouseleave", checkMouseLeave);
+memberNav.addEventListener("mouseleave", checkMouseLeave);

@@ -183,7 +183,42 @@
                     <ul class="rightNavigation">
                         <!-- 기업 서비스 항목 생략 -->
                         <li>
-                            <a href="/">회원가입/로그인</a>
+                            <!-- 로그인 안 했을 때 있는 버튼 -->
+                            <a href="/" style="display: none"
+                                >회원가입/로그인</a
+                            >
+                            <!-- // 로그인 안 했을 때 있는 버튼 -->
+                            <!-- 로그인 이후에 뜨는 버튼 -->
+                            <div class="loginedMemberButton">
+                                <button type="button">홍길동님</button>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="none"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        fill="#222"
+                                        fill-rule="evenodd"
+                                        d="M13.472 5.195c.26.26.26.683 0 .943l-5 5a.667.667 0 0 1-.943 0l-5-5a.667.667 0 1 1 .943-.943L8 9.724l4.529-4.529c.26-.26.682-.26.943 0Z"
+                                        clip-rule="evenodd"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <!-- 로그인 이후 버튼에 커서 갖다대면 뜨는 창 -->
+                            <div class="loginMemberNav">
+                                <ul>
+                                    <li>
+                                        <a href="">마이템프</a>
+                                    </li>
+                                    <li>
+                                        <button type="button">로그아웃</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- // 로그인 이후 버튼에 커서 갖다대면 뜨는 창 -->
+                            <!-- // 로그인 이후에 뜨는 버튼 -->
                         </li>
                     </ul>
                 </nav>
@@ -310,12 +345,8 @@
                     </div>
                     <div class="basicInfo">
                         <h2 class="blind">
-                            포지션 경력/학력/마감일/근무지역 정보
+                            포지션 학력/마감일/근무지역 정보
                         </h2>
-                        <dl class="basicDetail">
-                            <dt>경력</dt>
-                            <dd>경력 3~5년</dd>
-                        </dl>
                         <dl class="basicDetail">
                             <dt>학력</dt>
                             <dd>무관</dd>
@@ -744,7 +775,7 @@
                                         <span>아파트아이</span>
                                     </div>
                                     <h2 class="positionCardTitle">
-                                        Java 백엔드 개발자(경력: 5년~15년)
+                                        Java 백엔드 개발자
                                     </h2>
                                     <!-- 요구 스킬을 포지션 카테고리로 바꿔도? -->
                                     <ul class="requiredSkill">
@@ -755,7 +786,6 @@
                                     </ul>
                                     <ul class="companyLocation">
                                         <li>서울 금천구</li>
-                                        <li>경력 5~15년</li>
                                     </ul>
                                 </div>
                             </a>
@@ -810,7 +840,6 @@
                                     </ul>
                                     <ul class="companyLocation">
                                         <li>서울 강남구</li>
-                                        <li>경력 3~7년</li>
                                     </ul>
                                 </div>
                             </a>
@@ -861,7 +890,6 @@
                                     </ul>
                                     <ul class="companyLocation">
                                         <li>경기 성남시</li>
-                                        <li>경력 5~10년</li>
                                     </ul>
                                 </div>
                             </a>
@@ -900,7 +928,7 @@
                                         <span>엠로</span>
                                     </div>
                                     <h2 class="positionCardTitle">
-                                        Java개발자 (Cloud Native) (경력 3년~5년)
+                                        Java개발자 (Cloud Native)
                                     </h2>
                                     <!-- 요구 스킬을 포지션 카테고리로 바꿔도? -->
                                     <ul class="requiredSkill">
@@ -912,7 +940,6 @@
                                     </ul>
                                     <ul class="companyLocation">
                                         <li>서울 영등포구</li>
-                                        <li>경력 3~5년</li>
                                     </ul>
                                 </div>
                             </a>
@@ -966,7 +993,6 @@
                                     </ul>
                                     <ul class="companyLocation">
                                         <li>경기 성남시</li>
-                                        <li>경력 5~10년</li>
                                     </ul>
                                 </div>
                             </a>
@@ -1015,7 +1041,6 @@
                                     </ul>
                                     <ul class="companyLocation">
                                         <li>서울 종로구</li>
-                                        <li>경력 3~10년</li>
                                     </ul>
                                 </div>
                             </a>
@@ -1071,7 +1096,6 @@
                                     </ul>
                                     <ul class="companyLocation">
                                         <li>서울 성동구</li>
-                                        <li>경력 4~25년</li>
                                     </ul>
                                 </div>
                             </a>
@@ -1125,7 +1149,6 @@
                                     </ul>
                                     <ul class="companyLocation">
                                         <li>서울 성북구</li>
-                                        <li>경력 4~8년</li>
                                     </ul>
                                 </div>
                             </a>
@@ -1163,7 +1186,7 @@
                                 <a href="" target="_blank" class="resumeReLink">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path fill="#F04452" d="M12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12s5.373 12 12 12Z"></path><path fill="#fff" fill-rule="evenodd" d="M13 6.5h-2v7h2v-7Zm0 9h-2v2h2v-2Z" clip-rule="evenodd"></path></svg>
                                     <h1 class="redWindowText">
-                                        <span>기술스택</span>,&nbsp;<span>최종학력</span>을 입력해주세요.
+                                        <span>최종학력</span>을 입력해주세요.
 
                                     </h1>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="#c4c4c4" fill-rule="evenodd" d="M4.146 1.896a.5.5 0 0 1 .708 0l3.75 3.75a.5.5 0 0 1 0 .708l-3.75 3.75a.5.5 0 0 1-.708-.708L7.543 6 4.146 2.604a.5.5 0 0 1 0-.708Z" clip-rule="evenodd"></path></svg>
@@ -1288,9 +1311,8 @@
                                                 <div class="resumeInfo">
                                                     <h3>홍길동이력서_250101</h3>
                                                     <ul>
-                                                        <li class="resumeSkill">기술스택</li>
                                                         <li class="resumeSkill">학력</li>
-                                                        <li class="resumeSkill">경력/프로젝트</li>
+                                                        <li class="resumeSkill">프로젝트</li>
                                                     </ul>
                                                     <p>
                                                         <span>
@@ -1314,9 +1336,8 @@
                                                 <div class="resumeInfo">
                                                     <h3>홍길동이력서_250101</h3>
                                                     <ul>
-                                                        <li class="resumeSkill">기술스택</li>
                                                         <li class="resumeSkill">학력</li>
-                                                        <li class="resumeSkill">경력/프로젝트</li>
+                                                        <li class="resumeSkill">프로젝트</li>
                                                     </ul>
                                                     <p>
                                                         <span>
@@ -1333,7 +1354,7 @@
                                             </div>
                                         </li>
                                         <!-- // 지원 이력서 2번 끝 -->
-                                    </div>
+                                    </ul>
                                 </section>
                                 <section class="formElement">
                                     <div class="attachTitle">
@@ -1404,16 +1425,22 @@
                                     <!-- // 첨부한 파일이 있을 때 -->
                                 </section>
                                 <section class="formElement last">
-                                    <div>제출서류는 입사자 확정일로부터 180일까지 지원기업에게 제공됩니다. 제출에 동의할 경우에만 입사지원 해주세요. <br>동의하지 않을 경우 입사지원이 불가능합니다.
-                                    </div>
-                                    <button type="button">
+                                    <div class="textContent" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-height: 1.5em; ">제출서류는 입사자 확정일로부터 180일까지 지원기업에게 제공됩니다. 제출에 동의할 경우에만 입사지원 해주세요. <br>동의하지 않을 경우 입사지원이 불가능합니다.</div>
+                                    <button type="button" class="botCollapse" style="display: none;">
                                         접기
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24"><path fill="#000" fill-rule="evenodd" d="M3.793 16.207a1 1 0 0 1 0-1.414l7.5-7.5a1 1 0 0 1 1.414 0l7.5 7.5a1 1 0 0 1-1.414 1.414L12 9.414l-6.793 6.793a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg>
                                     </button>
+                                    <button type="button" class="botExpand">
+                                        자세히 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="#222" fill-rule="evenodd" d="M13.472 5.195c.26.26.26.683 0 .943l-5 5a.667.667 0 0 1-.943 0l-5-5a.667.667 0 1 1 .943-.943L8 9.724l4.529-4.529c.26-.26.682-.26.943 0Z" clip-rule="evenodd"></path></svg></button>
                                 </section>
                             </div>
                         </main>
-                        <footer class="formSubmitBtn"></footer>
+                        <footer class="formSubmitBtn">
+                            <div class="formButton">
+                                <button color="green" class="submitButton" disabled type="submit">지원하기</button>
+                            </div>
+                        </footer>
                     </article>
                 </form>
             </div>
