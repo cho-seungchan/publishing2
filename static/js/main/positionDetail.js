@@ -203,7 +203,7 @@ applyCloseButton.addEventListener("click", () => {
 const applyOpenButton = document.querySelector(".applyButton");
 
 applyOpenButton.addEventListener("click", () => {
-    applyWindow.style.display = "";
+    applyWindow.style.display = "block";
 });
 
 // 지원서 첨부파일의 checkbox를 체크하면 테두리랑 체크부분이 바뀌는 부분
@@ -240,3 +240,54 @@ attachBoxes.forEach((box, index) => {
         checkboxes[index].dispatchEvent(new Event("change"));
     });
 });
+
+// 기업/서비스 소개 더보기 버튼 누르면 정보 전체출력
+document.addEventListener("DOMContentLoaded", function () {
+    const textDiv = document.querySelector(".textContent");
+    const collapseBtn = document.querySelector(".botCollapse");
+    const expandBtn = document.querySelector(".botExpand");
+
+    expandBtn.addEventListener("click", function () {
+        textDiv.style.overflow = "auto";
+        textDiv.style.textOverflow = "unset";
+        textDiv.style.whiteSpace = "normal";
+        textDiv.style.maxHeight = "none";
+        collapseBtn.style.display = "inline-flex";
+        expandBtn.style.display = "none";
+    });
+
+    collapseBtn.addEventListener("click", function () {
+        textDiv.style.overflow = "hidden";
+        textDiv.style.textOverflow = "ellipsis";
+        textDiv.style.whiteSpace = "nowrap";
+        textDiv.style.maxHeight = "1.5em";
+        collapseBtn.style.display = "none";
+        expandBtn.style.display = "inline-flex";
+    });
+});
+
+// 로그인 후 회원버튼에 마우스를 갖다대면 전용 메뉴가 뜸
+const memberButton = document.querySelector(".loginedMemberButton>button"); // 홍길동님
+const memberNav = document.querySelector(".loginMemberNav"); // 메뉴
+
+const showDiv = () => (memberNav.style.display = "block"); // div가 보이게
+const hideDiv = () => (memberNav.style.display = "none"); // div가 숨겨지게
+
+// 마우스가 나가면 창이 꺼지게
+// div에서 커서가 nav까지 가기 전에 창이 꺼져버리기 때문에 약간 꺼지는 시간에 딜레이를 주었다
+const checkMouseLeave = () => {
+    setTimeout(() => {
+        // 버튼과 메뉴 둘 다 마우스를 떼면 숨기기
+        if (!memberButton.matches(":hover") && !memberNav.matches(":hover")) {
+            hideDiv();
+        }
+    }, 100);
+};
+
+// 마우스를 올렸을 때
+memberButton.addEventListener("mouseenter", showDiv);
+memberNav.addEventListener("mouseenter", showDiv);
+
+// 마우스를 뗐을 때
+memberButton.addEventListener("mouseleave", checkMouseLeave);
+memberNav.addEventListener("mouseleave", checkMouseLeave);
