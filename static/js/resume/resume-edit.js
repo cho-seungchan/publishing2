@@ -474,15 +474,10 @@ const firstAddedEdu = document.querySelector(".memberedu > div:first-child");
 const lastAddedEdu = document.querySelector(".memberedu > div:last-child");
 window.addEventListener("click", (e) => {
     if (e.target && e.target.matches("button.profile-delete-button")) {
-        console.log(firstAddedEdu.classList);
-        console.log(lastAddedEdu.classList);
         e.target.closest("div.memberedu-edit").remove();
-        if (firstAddedEdu == lastAddedEdu) {
-            firstAddedEdu.firstElementChild.classList.remove("clicked");
-        }
+        //  학력 정보가 한 개만 남았을 때에는 clicked 속성이 없어져야 함.
     }
 });
-
 window.addEventListener("click", (e) => {
     if (e.target && e.target.matches("button.profile-up-button")) {
         const currentDiv = e.target.closest("div.memberedu-edit");
