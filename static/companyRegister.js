@@ -43,3 +43,84 @@ integratedNUM.addEventListener("blur", () => {
     integratedMSG.innerText = "올바른 사업자번호가 아닙니다.";
   }
 });
+
+// 사업자 등록증 모달창 클릭 이벤트
+
+const pagebtn = document.querySelector("#notice_message_law_btn"); // 사업자 번호가 없어요 버튼.
+const modalBOX = document.querySelector("#notice_message_law");
+const btnclose2 = document.querySelector(".btn_cancel");
+const modalBackground = document.querySelector("#dimmed");
+const btnclose = document.querySelector(".BtnClose");
+
+modalBOX.style.display = "none";
+modalBackground.style.display = "none";
+
+pagebtn.addEventListener("click", () => {
+  console.log("PAGEbtn");
+  if (modalBOX.style.display === "none") {
+    console.log("IN");
+    modalBOX.style.display = "block";
+    modalBackground.style.display = "block";
+  } else if (pagebtn.style.display === "block") {
+    modalBOX.style.display = "none";
+    modalBackground.style.display = "none";
+  }
+});
+
+btnclose.addEventListener("click", () => {
+  if (modalBOX.style.display === "block") {
+    modalBOX.style.display = "none";
+    modalBackground.style.display = "none";
+  }
+});
+
+btnclose2.addEventListener("click", () => {
+  if (modalBOX.style.display === "block") {
+    modalBOX.style.display = "none";
+    modalBackground.style.display = "none";
+  }
+});
+
+// 파일 선택 버튼 눌럿을떄 사업자 등록번호로 포커스,
+const btnFile = document.querySelector("#select_certification_file");
+
+btnFile.style.display = "block";
+
+btnFile.addEventListener("click", () => {
+  console.log("in");
+  if (integratedNUM.value.length < 14) {
+    integratedNUM.focus();
+    alert("사업자 등록번호를 입력하세요.");
+    // window.scrollTo("top : 0");
+  }
+});
+
+const nextTbtn = document.querySelector("#next_certification_check");
+const corp_wrap = document.querySelector(
+  // 기업인증 사진있는곳,위에 글자까지
+  "#normal_corp_code_certification_notice"
+);
+const subCorp_wrap = document.querySelector(".file_txt_guide3");
+
+console.log(corp_wrap);
+
+corp_wrap.style.display = "block";
+btnFile.style.display = "block";
+subCorp_wrap.style.display = "none";
+
+console.log(corp_wrap);
+nextTbtn.addEventListener("change", () => {
+  console.log("변함");
+  //
+  if (nextTbtn.checked) {
+    console.log("진입");
+    //
+    corp_wrap.style.display = "none";
+    btnFile.style.display = "none";
+    subCorp_wrap.style.display = "block";
+  } else {
+    corp_wrap.style.display = "block";
+    btnFile.style.display = "block";
+    subCorp_wrap.style.display = "none";
+  }
+});
