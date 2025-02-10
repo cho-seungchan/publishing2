@@ -172,6 +172,11 @@
     --subwayLine801: #34a344;
 }
 
+input:focus,
+input:hover {
+    background-color: rgb(228, 228, 228);
+}
+
 .header-sc {
     position: fixed;
     top: 0px;
@@ -508,7 +513,7 @@
     height: 42px;
 }
 
-.header-right-user7 svg:hover{
+.header-right-user7 svg:hover {
     transform: rotate(180deg);
 }
 
@@ -568,7 +573,7 @@
 .main-sc0 {
     background-color: rgb(255, 255, 255);
     padding-top: 65px;
-    height :2000px
+    height: 2000px
 }
 
 .main-wrapper {
@@ -1098,7 +1103,7 @@
     margin-left: 10px;
 }
 
-.memberinfo-img > button {
+.memberinfo-img>button {
     position: absolute !important;
     left: 0px;
     top: 12px;
@@ -1137,7 +1142,7 @@
     margin-left: 2px !important;
 }
 
-.svghovered{
+.svghovered {
     transform: rotate(180deg)
 }
 
@@ -1172,7 +1177,7 @@
     height: 50px;
 }
 
-.memberinfo-text2-option ul li div > label {
+.memberinfo-text2-option ul li div>label {
     display: block;
     padding: 12px 10px;
     font-size: 15px;
@@ -1286,7 +1291,8 @@
     line-height: 18px;
 }
 
-input:focus, textarea:focus{
+input:focus,
+textarea:focus {
     border: none;
 }
 
@@ -1350,8 +1356,9 @@ input:focus, textarea:focus{
     height: 24px;
     border: none;
 }
+
 .simplepr>textarea:hover,
-.simplepr>textarea:focus{
+.simplepr>textarea:focus {
     background-color: rgb(228, 228, 228);
 }
 
@@ -1553,7 +1560,8 @@ input:focus, textarea:focus{
     content: "";
 }
 
-.jobcategory-list ul li .inp-chk input:checked + label::before, .jobcategory-list ul li .inp-chk input:checked + label::after {
+.jobcategory-list ul li .inp-chk input:checked+label::before,
+.jobcategory-list ul li .inp-chk input:checked+label::after {
     background-color: rgb(0, 221, 109);
     border-color: rgb(255, 255, 255);
 }
@@ -1598,8 +1606,17 @@ input:focus, textarea:focus{
 .memberedu-edit {
     position: relative;
     display: flex;
-    margin: 20px 0px 0px;
+    margin: 30px 0px 0px;
 }
+
+
+/* .memberedu-edit.newarea {
+    position: relative;
+    display: flex;
+    margin: 40px 0px 0px;
+} */
+
+
 
 .memberedu-edit-mark {
     width: 7px;
@@ -1611,6 +1628,19 @@ input:focus, textarea:focus{
     margin-right: 14px;
     margin-top: 6px;
 }
+
+.memberedu-edit-mark.clicked::after {
+    position: absolute;
+    content: "";
+    height: calc(100% + 19px);
+    padding-bottom: 10px;
+    width: 1px;
+    top: 18px;
+    left: 5px;
+    z-index: 1;
+    background-color: rgb(212, 212, 212);
+}
+
 
 .memberedu-graduate1 {
     position: relative;
@@ -1723,6 +1753,12 @@ input:focus, textarea:focus{
     content: "";
 }
 
+.memberedu-drop input:checked+label::before,
+.memberedu-drop input:checked+label::after {
+    background-color: rgb(0, 221, 109);
+    border-color: rgb(255, 255, 255);
+}
+
 .memberedu-division {
     width: 100%;
 }
@@ -1817,13 +1853,17 @@ input:focus, textarea:focus{
 
 
 .memberedu-class>div>div {
-    min-width: 16px;
+    min-width: 116px;
 }
 
 .memberedu-class-choice-input {
     width: 0px;
     height: 0px;
     border: none;
+}
+
+.class-content-label:hover {
+    background-color: rgb(229, 252, 239);
 }
 
 .memberedu-class-list ul {
@@ -1978,6 +2018,41 @@ input:focus, textarea:focus{
 
 .member-grade>div:nth-child(2) svg {
     margin-top: 0px !important;
+}
+
+.standard-degree {
+    position: absolute;
+    width: 140px;
+    border-radius: 4px;
+    margin-top: 8px;
+    left: 0px;
+    z-index: 3;
+}
+
+.member-grade>div:nth-child(2)>div:nth-child(2) {
+    top: 20px;
+    left: -10px;
+}
+
+.standard-degree ul {
+    box-shadow: rgba(20, 20, 20, 0.02) 0px 4px 8px 0px, rgba(20, 20, 20, 0.12) 4px 16px 24px 0px;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden auto;
+    max-height: 260px;
+    padding: 10px 0px;
+    border-radius: 4px;
+}
+
+.standard-degree ul li div {
+    padding: 0px 10px;
+    height: 50px;
+}
+
+.standard-degree ul li div>label {
+    display: block;
+    padding: 12px 10px;
+    font-size: 15px;
+    line-height: 22px;
 }
 
 .memberedu>button {
