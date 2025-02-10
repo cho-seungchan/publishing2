@@ -1193,6 +1193,7 @@ li>.btns{
 }
 
 .applyNewWindow{
+    display: none;
     position: fixed;
     z-index: 3;
     background-color: rgb(255, 255, 255);
@@ -1824,4 +1825,84 @@ li>.btns{
 
 .botCollapse {
     display: none;
+}
+
+.loginedMemberButton{
+    padding-top: 1px;
+    height: 42px;
+}
+
+.loginedMemberButton button{
+    width: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.rightNavigation li button{
+    display: inline-block;
+    position: relative;
+    padding: 10px 0px;
+    font-weight: 500;
+    color: rgb(34, 34, 34);
+    text-align: end;
+}
+
+.rightNavigation li button:hover{
+    color: rgb(34, 34, 34);
+}
+
+.loginedMemberButton svg{
+    position: relative;
+    top: 2px;
+    margin-left: 5px;
+}
+
+.loginedMemberButton:hover svg {
+    transform: rotate(180deg);
+}
+
+.loginedMemberButton svg path{
+    fill: rgb(204, 204, 204);
+}
+
+.loginMemberNav{
+    display: none;
+    position: absolute;
+    width: 175px;
+    right: 0px;
+    border: 1px solid rgb(228, 228, 228);
+    box-sizing: border-box;
+    box-shadow: rgba(20, 20, 20, 0.12) 0px 8px 16px;
+    border-radius: 4px;
+    padding: 8px 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.loginMemberNav ul li:hover{
+    background-color: rgb(244, 244, 244);
+    cursor: pointer;
+}
+
+.loginMemberNav li button:hover{
+    color: rgb(34, 34, 34);
+}
+
+.loginMemberNav ul li{
+    position: relative;
+    padding: 0px 12px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.loginMemberNav ul li > a, .loginMemberNav ul li button{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 0px 8px;
+    font-weight: normal;
 }
