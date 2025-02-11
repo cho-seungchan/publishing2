@@ -1179,3 +1179,127 @@ dd>.btns{
     font-size: 14px;
     line-height: 20px;
 }
+
+.dDayLeft{
+    font-weight: 500;
+    color: rgb(68, 68, 68);
+}
+
+.positionIngTitle{
+    flex-grow: 1;
+    color: rgb(0, 0, 0);
+    min-height: 52px;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.skillCategory{
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.positionSkill{
+    color: rgb(153, 153, 153);
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.positionScrap{
+    position: absolute;
+    top: 24px;
+    right: 24px;  
+}
+
+.positionScrap svg{
+    width: 20px;
+    height: 20px;
+}
+
+.positionScrap svg.default > path{
+    fill: rgb(196, 196, 196);
+}
+
+.reliabilityInfo{
+    width: fit-content;
+    min-width: 200px;
+    max-width: 440px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(228, 228, 228);
+    background-color: rgb(255, 255, 255);
+}
+
+.reliabilityBtn>.layer{
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    z-index: 2;
+}
+
+.tipTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tipTop>span{
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(0, 0, 0);
+}
+
+.salaryInfo li>div>div svg{
+    width: 20px;
+    height: 20px;
+}
+
+.tipOffButton>svg>path{
+    fill: rgb(0, 0, 0);
+}
+
+.tipMid{
+    margin-top: 8px;
+}
+
+.tipMid>p{
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(34, 34, 34);
+}
+
+.tipBot{
+    margin-top: 12px;
+}
+
+.tipBot>p{
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(34, 34, 34); 
+}
+
+.sideNavigation>ul{
+    position: sticky;
+    top: 180px;
+    cursor: pointer;
+}
+
+.sideNavigation>ul li{
+    padding: 10px 16px;
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+    line-height: 20px;
+    border-left: 2px solid rgb(228, 228, 228);
+}
+
+.sideNavigation>ul .active{
+    font-weight: 700;
+    color: rgb(34, 34, 34);
+    border-left-color: rgb(34, 34, 34);
+}

@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     backgroundColor: "#2e37ff",
                     fill: false,
                     tension: 0.1,
-                    pointRadius: 5, // 점 크기
+                    pointRadius: 4, // 점 크기
                     pointStyle: "circle", // 점 스타일을 circle로 변경
                 },
                 {
@@ -266,3 +266,84 @@ document.addEventListener("DOMContentLoaded", function () {
         },
     });
 });
+
+// 신뢰도 옆 버튼을 누르면 신뢰도 기준 창이 보임
+const button = document.querySelector(".reliabilityBtn");
+const infoLayer = document.querySelector(".reliabilityInfo");
+const buttonSvgOff = document.querySelector("#reliabilitySvg1");
+const buttonSvgOn = document.querySelector("#reliabilitySvg2");
+
+infoLayer.style.display = "none";
+
+button.addEventListener("click", function () {
+    if (infoLayer.style.display === "block") {
+        infoLayer.style.display = "none";
+        buttonSvgOff.style.display = "block";
+        buttonSvgOn.style.display = "none";
+    } else {
+        infoLayer.style.display = "block";
+        buttonSvgOn.style.display = "block";
+        buttonSvgOff.style.display = "none";
+    }
+});
+
+// 특정 세션에 진입하면 aria-current의 상태 변경, nav를 누르면 그 구간으로 이동
+const sections = document.querySelectorAll(".compSection");
+const navLinks = document.querySelectorAll(".sectionNav");
+
+// 스크롤 시 현재 보이는 섹션을 감지하고, 해당 링크의 active 상태를 업데이트하는 함수
+function updateActiveLink() {
+    let currentSection = null;
+
+    // 모든 섹션을 돌면서 화면에 보이는 섹션을 찾음
+    sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        // 섹션이 화면 중앙에 있는 경우
+        if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+        ) {
+            currentSection = section;
+        }
+    });
+
+    // 현재 보이는 섹션이 있을 경우
+    if (currentSection) {
+        // 네비게이션 링크를 돌면서 active 상태를 업데이트
+        navLinks.forEach((link) => {
+            // 기존 active 클래스와 aria-current 속성을 제거
+            link.classList.remove("active");
+            link.setAttribute("aria-current", "false");
+
+            // 현재 보이는 섹션의 id와 링크의 data-target이 일치하면 해당 링크에 active 클래스와 aria-current 속성 추가
+            if (link.dataset.target === currentSection.id) {
+                link.classList.add("active");
+                link.setAttribute("aria-current", "true");
+            }
+        });
+    }
+}
+
+// 각 네비게이션 링크 클릭 시 해당 섹션으로 부드럽게 스크롤
+navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault(); // 기본 동작 방지 (링크 클릭 시 페이지 이동을 방지)
+
+        // 클릭한 링크의 data-target 값에 맞는 섹션을 찾음
+        const targetSection = document.getElementById(link.dataset.target);
+
+        // 해당 섹션이 존재하면 부드럽게 스크롤
+        if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop, // 섹션의 최상단 위치로 스크롤
+                behavior: "smooth", // 부드러운 스크롤 동작
+            });
+        }
+    });
+});
+
+// 스크롤 이벤트 발생 시 updateActiveLink 함수 실행
+window.addEventListener("scroll", updateActiveLink);
+
+// 초기 실행: 페이지 로드 시 현재 보이는 섹션을 감지하고 활성화된 링크를 업데이트
+updateActiveLink();
