@@ -7,13 +7,24 @@
         <title>지원자 관리</title>
     </head>
     <body>
-        <div class="sidebar">
-            <h2>지원자 관리</h2>
-            <p class="title all"><span class="circle"></span>포지션 전체</p>
-            <p onclick="toggleArrow(this)" class="title each"><span class="arrow"></span>진행중 포지션</p>
-            <ul></ul>
-            <p onclick="toggleArrow(this)" class="title each"><span class="arrow"></span>마감된 포지션</p>
-            <ul></ul>
+        <div class="content-wrapper">
+            <div class="sidebar">
+                <h2>지원자관리</h2>
+                <button class="all">포지션 전체</button>
+                <button class="triangle"><span>진행중 포지션</span></button>
+                <ul></ul>
+                <button class="triangle"><span>마감된 포지션</span></button>
+                <ul></ul>
+            </div>
+            <div class="main-content">
+                <div class="row">
+                    <input type="checkbox" class="checkbox" />
+                    <div class="star"></div>
+                    <div class="column">2022.12.31 지원</div>
+                    <div class="column">김점핏<br />총 10년 10개월<br />[점핏] 서버/백엔드 개발자</div>
+                    <div class="column">미열람</div>
+                </div>
+            </div>
         </div>
     </body>
     <script src="../../static/js/aside/applicantmanagement.js"></script>
