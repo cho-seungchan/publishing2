@@ -35,11 +35,14 @@ integratedNUM.addEventListener("blur", () => {
     //
     integratedBOX.style.borderColor = "red";
     integratedMSG.style.display = "block";
+    integratedMSG.style.color = "red";
+    integratedMSG.innerText = "올바른 사업자번호가 아닙니다.";
   } else if (integratedNUM.value.length < 12) {
     //
     // 사업자 번호 다안적으면 뜨는 문구
     integratedBOX.style.borderColor = "red";
     integratedMSG.style.display = "block";
+    integratedMSG.style.color = "red";
     integratedMSG.innerText = "올바른 사업자번호가 아닙니다.";
   }
 });
@@ -82,6 +85,7 @@ btnclose2.addEventListener("click", () => {
 });
 
 // 파일 선택 버튼 눌럿을떄 사업자 등록번호로 포커스,
+// 사업자등록번호 확인안돼면
 const btnFile = document.querySelector("#select_certification_file");
 
 btnFile.style.display = "block";
@@ -102,13 +106,10 @@ const corp_wrap = document.querySelector(
 );
 const subCorp_wrap = document.querySelector(".file_txt_guide3");
 
-console.log(corp_wrap);
-
 corp_wrap.style.display = "block";
 btnFile.style.display = "block";
 subCorp_wrap.style.display = "none";
 
-console.log(corp_wrap);
 nextTbtn.addEventListener("change", () => {
   console.log("변함");
   //
@@ -123,4 +124,19 @@ nextTbtn.addEventListener("change", () => {
     btnFile.style.display = "block";
     subCorp_wrap.style.display = "none";
   }
+});
+
+// 체크 박스 이벤트
+const checkall = document.querySelector("#hidden_check_all_company");
+const checkboxes = document.querySelectorAll(".itembtn");
+
+checkall.addEventListener("change", function () {
+  checkboxes.forEach((checkbox) => (checkbox.checked = checkall.checked));
+});
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    const checkedCheckbox =
+      document.querySelectorAll(".itembtn:checked").length;
+    checkall.checked = checkedCheckbox === checkboxes.length; // 전부 체크되면 전체 체크
+  });
 });
