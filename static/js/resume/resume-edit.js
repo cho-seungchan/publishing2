@@ -95,6 +95,58 @@ document.addEventListener("click", (e) => {
 });
 
 // 검색창
+const profilePhoto = document.querySelector("div.profilephoto")
+const profilePhotoArea = document.querySelector("div.profile-image")
+const profileUpLoadArea = document.querySelector("div.profile-upload")
+const input = profilePhoto.lastElementChild
+
+
+profilePhoto.addEventListener('click', () => {
+    input.click();
+    profilePhotoArea.classList.remove("hidden")
+    profileUpLoadArea.classList.add("hidden")
+})
+
+input.addEventListener("change", (e) => {
+    const [file] = e.target.files;
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.addEventListener("load", (e) => {
+        const path = e.target.result;
+        if (path.includes("image")) {
+            profilePhotoArea.style.background = `url(${path}) center center / contain no-repeat rgb(255, 255, 255)`;
+        } else {
+            profilePhotoArea.style.background = `url("images/document.jpg")`;
+        }
+    });
+});
+
+profilePhotoArea.addEventListener('mouseover', () => {
+    const hoverArea1 = document.querySelector("div.hover-bg")
+    const hoverArea2 = hoverArea1.nextElementSibling
+    hoverArea1.style.display = "block"
+    hoverArea2.style.display = "block"
+})
+
+profilePhotoArea.addEventListener('mouseout', () => {
+    const hoverArea1 = document.querySelector("div.hover-bg")
+    const hoverArea2 = hoverArea1.nextElementSibling
+    hoverArea1.style.display = "none"
+    hoverArea2.style.display = "none"
+})
+
+const profilePhotoDeleteBtn = document.querySelector("div.hover-bg").nextElementSibling
+
+profilePhotoDeleteBtn.addEventListener('click', () => {
+    if (confirm("이미지를 삭제하시겠습니까?")) {
+        profilePhotoArea.style.background = "";
+        profilePhotoArea.classList.add("hidden")
+        console.log(profilePhotoArea.classList)
+        profileUpLoadArea.classList.remove("hidden")
+    }
+})
+
+
 
 // 좌측 메뉴 버튼 + 해당 버튼으로 비활성화 여부 가능.
 const editMenuButton = document.querySelectorAll("button.editMenuButton");
@@ -415,7 +467,7 @@ eduEditBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("click", (e) => {
-    const temp = e.target.closest("span.dropped");
+    const temp = e.target.closest("div.memberedu-graduate2").firstElementChild.lastElementChild;
     if (e.target && e.target.matches("div.memberedu-drop input"))
         if (e.target.checked) {
             temp.innerText = "중퇴";
@@ -510,10 +562,10 @@ window.addEventListener("click", (e) => {
 const careerAddButton = document.getElementById("careeraddbutton");
 const careerAddArea = document.querySelector("div.membercareer");
 const memberCareerEditMark = document.querySelectorAll(
-        "div.membercareer-edit-mark"
-    );
+    "div.membercareer-edit-mark"
+);
 careerAddButton.addEventListener("click", () => {
-    
+
     let newEditArea = document.createElement("div");
     memberCareerEditMark.forEach((mark) => {
         mark.classList.add("clicked");
@@ -593,12 +645,12 @@ careerAddButton.addEventListener("click", () => {
 window.addEventListener("click", (e) => {
     if (e.target && e.target.matches(".during-button input")) {
         const duringtemp = e.target.closest("div").previousElementSibling;
-        if(e.target.checked){
+        if (e.target.checked) {
             duringtemp.lastElementChild.lastElementChild.classList.add("read-only")
             duringtemp.lastElementChild.lastElementChild.firstElementChild.disabled = 'true'
             duringtemp.lastElementChild.lastElementChild.lastElementChild.disabled = 'true'
         }
-        else{
+        else {
             duringtemp.lastElementChild.lastElementChild.classList.remove("read-only")
             duringtemp.lastElementChild.lastElementChild.firstElementChild.disabled = 'false'
             duringtemp.lastElementChild.lastElementChild.lastElementChild.disabled = 'false'
@@ -801,8 +853,8 @@ etcAddArea.addEventListener("click", (e) => {
     }
 });
 
-etcAddArea.addEventListener('click',(e) =>{
-    if(e.target && e.target.matches("button.cvchoice svg")){
+etcAddArea.addEventListener('click', (e) => {
+    if (e.target && e.target.matches("button.cvchoice svg")) {
         e.target.closest('div').nextElementSibling.classList.toggle("hidden")
     }
 })
@@ -853,12 +905,12 @@ etcAddArea.addEventListener("click", (e) => {
 etcAddArea.addEventListener("click", (e) => {
     if (e.target && e.target.matches(".noexpire-input")) {
         const duringtemp = e.target.closest("div").previousElementSibling;
-        if(e.target.checked){
+        if (e.target.checked) {
             duringtemp.lastElementChild.lastElementChild.classList.add("read-only")
             duringtemp.lastElementChild.lastElementChild.firstElementChild.disabled = 'true'
             duringtemp.lastElementChild.lastElementChild.lastElementChild.disabled = 'true'
         }
-        else{
+        else {
             duringtemp.lastElementChild.lastElementChild.classList.remove("read-only")
             duringtemp.lastElementChild.lastElementChild.firstElementChild.disabled = 'false'
             duringtemp.lastElementChild.lastElementChild.lastElementChild.disabled = 'false'
@@ -964,15 +1016,29 @@ applicantAddArea.addEventListener("click", (e) => {
 });
 const previewButton = document.querySelector("button.previewbutton")
 const saveButton = document.querySelector("button.savebutton")
-saveButton.addEventListener("click",() =>{
+saveButton.addEventListener("click", () => {
     alert('이력서가 저장되었습니다.')
-    
+
     // alert('확인이 필요한 항목이 있습니다. 다시 확인 후 시도해주세요.')
     // 필요 조건이 충족되지 않을 경우 출력할 메시지.
 })
 
-previewButton.addEventListener('click',()=>{
+previewButton.addEventListener('click', () => {
     window.open('popup.html', "popupWindow", "width:759,height:1822,scrollbars=yes")
 })
 
 // 바닥 툴팁 물음표 버튼 누르면 툴팁 뜨도록 하기.
+
+const bottomToolTip = document.querySelector("div.bottom-tooltip")
+const bottomToolTipBtn = document.querySelector("div.bottomquestion")
+bottomToolTipBtn.addEventListener('click', () => {
+    bottomToolTip.classList.toggle("hidden")
+    bottomToolTipBtn.classList.toggle("clicked")
+})
+
+const bottomToolTipClose = document.querySelector("button.bottom-tooltip-text1-btn")
+
+bottomToolTipClose.addEventListener('click', () => {
+    bottomToolTip.classList.add("hidden")
+    console.log("실행")
+})

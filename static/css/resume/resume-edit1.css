@@ -918,6 +918,37 @@ input:hover {
     color: rgb(119, 119, 119);
 }
 
+.profilephoto > .profile-image {
+    background: url("") center center / contain no-repeat rgb(255, 255, 255);
+    width: 100%;
+    height: 188px;
+    border-radius: 12px;
+    border: 1px solid rgb(228, 228, 228);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.profilephoto > .profile-image > .hover-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+
+
+.profilephoto > .profile-image > button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: none;
+}
+
+.profilephoto > .profile-image > button > svg > g > path:nth-child(2) {
+    stroke: rgb(255, 255, 255);
+}
+
 .memberinfoedit {
     width: 100%;
 }
@@ -3254,6 +3285,12 @@ textarea:focus {
     cursor: pointer;
 }
 
+.bottomquestion.clicked{
+    border-radius: 14px;
+    color: rgb(255, 255, 255);
+    background: rgb(34, 34, 34);
+    border: 1px solid rgb(34, 34, 34);
+}
 .bottomlist {
     display: flex;
     flex-wrap: wrap;
@@ -3359,7 +3396,7 @@ textarea:focus {
     z-index: 2;
 }
 
-.bottom-tooltip .progress .tooltip .layer {
+.bottombar .progress .tooltip .layer {
     top: unset;
     right: unset;
     bottom: 30px;
@@ -3425,4 +3462,5 @@ textarea:focus {
 .bottom-tooltip-text4 > span {
     font-size: 13px;
     line-height: 18px;
+    color : black
 }
