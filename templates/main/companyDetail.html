@@ -252,7 +252,31 @@
                                                     fill-rule="evenodd"
                                                     d="M16.736 3.5c1.396 0 2.735.574 3.722 1.597A5.55 5.55 0 0 1 22 8.951a5.55 5.55 0 0 1-1.542 3.855l-1.014 1.05-6.011 6.173a2 2 0 0 1-2.866 0l-6.011-6.173-1.014-1.05c-2.056-2.129-2.056-5.58 0-7.709a5.132 5.132 0 0 1 7.07-.352c.128.11.253.227.373.352L12 6.147l1.014-1.05c.126-.13.258-.254.395-.37l.016-.013a5.152 5.152 0 0 1 3.31-1.214Z"
                                                     clip-rule="evenodd"
-                                                ></path></svg></span
+                                                ></path>
+                                            </svg>
+                                            <!-- 좋아요 눌렀을 때 버튼변경 -->
+                                            <!-- <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    fill="#222"
+                                                    fill-rule="evenodd"
+                                                    d="m14.453 6.486-1.015 1.05a2 2 0 0 1-2.877 0l-1.014-1.05a3.137 3.137 0 0 0-4.567 0c-1.307 1.354-1.307 3.577 0 4.93l1.012 1.047L12 18.633l6.005-6.166.006-.006 1.008-1.045A3.55 3.55 0 0 0 20 8.951a3.55 3.55 0 0 0-.98-2.464 3.175 3.175 0 0 0-2.284-.987c-.843 0-1.666.346-2.283.986Zm4.99 7.37-6.01 6.173a2 2 0 0 1-2.866 0l-6.011-6.173-1.014-1.05c-2.056-2.129-2.056-5.58 0-7.709a5.132 5.132 0 0 1 7.049-.37c.136.115.268.239.395.37L12 6.147l1.014-1.05A5.152 5.152 0 0 1 16.736 3.5c1.396 0 2.735.574 3.722 1.597A5.55 5.55 0 0 1 22 8.951a5.55 5.55 0 0 1-1.542 3.855l-1.014 1.05Z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                                <path
+                                                    fill="#00DD6D"
+                                                    fill-rule="evenodd"
+                                                    d="M16.736 3.5c1.396 0 2.735.574 3.722 1.597A5.55 5.55 0 0 1 22 8.951a5.55 5.55 0 0 1-1.542 3.855l-1.014 1.05-6.011 6.173a2 2 0 0 1-2.866 0l-6.011-6.173-1.014-1.05c-2.056-2.129-2.056-5.58 0-7.709a5.132 5.132 0 0 1 7.07-.352c.128.11.253.227.373.352L12 6.147l1.014-1.05c.126-.13.258-.254.395-.37l.016-.013a5.152 5.152 0 0 1 3.31-1.214Z"
+                                                    clip-rule="evenodd"
+                                                ></path>
+                                            </svg> -->
+                                            <!-- // 좋아요 눌렀을 때 버튼변경 --> </span
                                         ><span class="blind"
                                             >기업 좋아요</span
                                         ></span
@@ -282,7 +306,7 @@
                             </li>
                         </ul>
                     </section>
-                    <section class="companyInfo compSection">
+                    <section id="companyInfo" class="companyInfo compSection">
                         <h2>기업 정보</h2>
                         <div class="more">
                             채용중인 포지션 2건
@@ -403,7 +427,10 @@
                             </dl>
                         </div>
                     </section>
-                    <section class="companyIntroduce compSection">
+                    <section
+                        id="companyIntroduce"
+                        class="companyIntroduce compSection"
+                    >
                         <h2>회사 소개</h2>
                         <div class="companyDetail">
                             <pre class="companyDetailText">
@@ -528,7 +555,10 @@
                             </div>
                         </div>
                     </section>
-                    <section class="companyWelfare compSection">
+                    <section
+                        id="companyWelfare"
+                        class="companyWelfare compSection"
+                    >
                         <h2>복지 및 혜택</h2>
                         <pre class="content">
 업무에만 집중할 수 있도록,
@@ -553,7 +583,10 @@
 • 직무 교육 지원
                         </pre>
                     </section>
-                    <section class="companyEmployee compSection">
+                    <section
+                        id="companyEmployee"
+                        class="companyEmployee compSection"
+                    >
                         <h2>기업 직원 규모</h2>
                         <em class="date">(최근 6개월)</em>
                         <span class="source">출처: 국민연금</span>
@@ -561,13 +594,365 @@
                             <span>전체 직원수</span>
                             <strong>226명</strong>
                         </div>
-                        <div class="employeeGraph"></div>
+                        <div class="employeeGraph">
+                            <div>
+                                <ul class="graphCompMember">
+                                    <li>
+                                        <span
+                                            class="circle"
+                                            style="background-color: #2e37ff"
+                                        ></span>
+                                        직원 수
+                                    </li>
+                                    <li>
+                                        <span
+                                            class="square"
+                                            style="background-color: #00dd6d"
+                                        ></span>
+                                        입사자 수
+                                    </li>
+                                    <li>
+                                        <span
+                                            class="square"
+                                            style="background-color: #c4c4c4"
+                                        ></span>
+                                        퇴사자 수
+                                    </li>
+                                </ul>
+                                <canvas
+                                    id="companyGraph"
+                                    role="img"
+                                    height="493"
+                                    width="987"
+                                    style="
+                                        display: block;
+                                        box-sizing: border-box;
+                                        height: 395px;
+                                        width: 790;
+                                    "
+                                ></canvas>
+                            </div>
+                        </div>
                     </section>
-                    <section class="companySalary compSection"></section>
-                    <section class="companyInvestment compSection"></section>
-                    <section class="companyIngPosition compSection"></section>
+                    <section
+                        id="companySalary"
+                        class="companySalary compSection"
+                    >
+                        <h2>평균 연봉 정보</h2>
+                        <span class="source"
+                            >출처: 사람인 내부 수집자료 분석</span
+                        >
+                        <ul class="salaryInfo">
+                            <li>
+                                <div>
+                                    <span>전체</span>
+                                </div>
+                                <strong class="salary">5,266만원</strong>
+                            </li>
+                            <li>
+                                <div>
+                                    <span>신뢰도</span>
+                                    <div
+                                        class="reliabilityBtn"
+                                        aria-pressed="true"
+                                        role="button"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            aria-hidden="true"
+                                            id="reliabilitySvg1"
+                                        >
+                                            <path
+                                                fill="#C4C4C4"
+                                                fill-rule="evenodd"
+                                                d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm10-8c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10ZM12 8.75a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm-1 7.5a1 1 0 1 0 2 0v-5a1 1 0 1 0-2 0v5Z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            aria-hidden="true"
+                                            id="reliabilitySvg2"
+                                            style="display: none"
+                                        >
+                                            <path
+                                                fill="#222"
+                                                fill-rule="evenodd"
+                                                d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Zm-9-4.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm-1 9.5a1 1 0 0 1-1-1v-5a1 1 0 1 1 2 0v5a1 1 0 0 1-1 1Z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                        <span class="blind"
+                                            >신뢰도 관련 툴팁</span
+                                        >
+                                        <div
+                                            class="reliabilityInfo layer"
+                                            id="companyFinancialTip"
+                                        >
+                                            <div class="tipTop">
+                                                <span
+                                                    >연봉정보 신뢰도 기준</span
+                                                >
+                                                <button class="tipOffButton">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        aria-hidden="true"
+                                                    >
+                                                        <path
+                                                            fill="#fff"
+                                                            fill-rule="evenodd"
+                                                            d="m12.072 13.485 7.07 7.071 1.415-1.414-7.071-7.071 7.07-7.07-1.414-1.415-7.07 7.07L5 3.587 3.586 5l7.071 7.071-7.071 7.071L5 20.557l7.072-7.072Z"
+                                                            clip-rule="evenodd"
+                                                        ></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="tipMid">
+                                                <p>
+                                                    연봉 데이터의
+                                                    연령별(20~50세) 분포개수에
+                                                    따라 신뢰도 부여
+                                                </p>
+                                            </div>
+                                            <div class="tipBot">
+                                                <p>· 매우 높음: 26~31개 구간</p>
+                                                <p>· 높음: 16~25개 구간</p>
+                                                <p>· 보통: 7~15개 구간</p>
+                                                <p>· 낮음: 1~6개 구간</p>
+                                                <p>
+                                                    · 매우 낮음: 기초데이터*만
+                                                    존재
+                                                </p>
+                                                <p>
+                                                    (*기초데이터: 국민연금,
+                                                    고용보험, 금감원, 알리오
+                                                    정보 등)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <strong class="reliability">높음</strong>
+                            </li>
+                        </ul>
+                        <ul class="salaryDetail">
+                            <li>
+                                본 자료는 사람인 내부 수집 데이터와 기업의
+                                경영공시자료, 공공기관의 공개자료 및 보도자료,
+                                기타 자료(국민연금)를 토대로 통계분석하여
+                                추정하였습니다. 연봉 데이터 출처 및 성과급,
+                                계약직 근로자 급여 등의 포함 여부는 기업별로
+                                다를 수 있으며, 실제 기업의 연봉과 차이가 발생할
+                                수 있으므로 해당 기업의 정보 및 급여 수준을
+                                참고하는 자료로 활용하시기를 권장해 드립니다.
+                            </li>
+                        </ul>
+                    </section>
+                    <section
+                        id="companyInvestment"
+                        class="companyInvestment compSection"
+                    >
+                        <h2>투자 정보</h2>
+                        <ul class="investmentInfo">
+                            <li>
+                                <div>
+                                    <span>최종투자 단계</span>
+                                </div>
+                                <strong class="phase">Series C</strong>
+                            </li>
+                            <li>
+                                <div>
+                                    <span>누적 투자액</span>
+                                </div>
+                                <strong class="amount">790억 3,000만원</strong>
+                            </li>
+                            <li>
+                                <div>
+                                    <span>투자유치 횟수</span>
+                                </div>
+                                <strong class="count">3회</strong>
+                            </li>
+                        </ul>
+                        <ul class="investmentDetail">
+                            <li>
+                                • 본 정보는 신뢰할 만한 자료를 직접 수집/분석한
+                                추정 정보로, 제공된 정보에 대한 법적인 책임을
+                                지지 않습니다.
+                            </li>
+                            <li>
+                                • 기업의 투자 유치 사실을 직접 검증하지 않아
+                                정확성을 보장 할 수 없으며, 시간이 경과함에 따라
+                                변경될 수 있습니다.
+                            </li>
+                            <li>
+                                • 본 자료의 저작권은 (주)사람인에 있으며 동의
+                                없이 재가공 및 재배포할 수 없음을 알려드립니다.
+                            </li>
+                        </ul>
+                    </section>
+                    <section
+                        id="companyIngPosition"
+                        class="companyIngPosition compSection"
+                    >
+                        <h2>채용중인 포지션</h2>
+                        <em class="num">2</em>
+                        <div class="positionWrapper">
+                            <div class="currentPositions">
+                                <a href="" class="compPosition">
+                                    <label class="positionLeftDate">
+                                        <span class="dDayLeft">D-9</span>
+                                    </label>
+                                    <h3 class="positionIngTitle">
+                                        레진코믹스 안드로이드 개발자
+                                    </h3>
+                                    <ul class="skillCategory">
+                                        <li class="positionSkill">Java</li>
+                                        <li class="positionSkill">
+                                            · Android OS
+                                        </li>
+                                        <li class="positionSkill">· Kotlin</li>
+                                    </ul>
+                                    <button
+                                        aria-label="스크랩"
+                                        class="positionScrap"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            class="default"
+                                        >
+                                            <path
+                                                fill="#222"
+                                                fill-rule="evenodd"
+                                                d="M10.725 14.71a2 2 0 0 1 2.55 0l3.975 3.289V5H6.75v12.999l3.975-3.29ZM4.75 20.123V5a2 2 0 0 1 2-2h10.5a2 2 0 0 1 2 2v15.124a1 1 0 0 1-1.638.77L12 16.25l-5.612 4.645a1 1 0 0 1-1.638-.77Z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                        <!-- 스크랩이 활성화됐을때 아이콘 -->
+                                        <!-- <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                fill="#00DD6D"
+                                                fill-rule="evenodd"
+                                                d="M6.403 20.825a1 1 0 0 1-1.653-.757V5a2 2 0 0 1 2-2h10.5a2 2 0 0 1 2 2v15.068a1 1 0 0 1-1.653.757L12 16l-5.597 4.825Z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg> -->
+                                        <!-- // 스크랩이 활성화됐을때 아이콘 -->
+                                    </button>
+                                </a>
+                                <a href="" class="compPosition">
+                                    <label class="positionLeftDate">
+                                        <span class="dDayLeft">D-9</span>
+                                    </label>
+                                    <h3 class="positionIngTitle">
+                                        레진코믹스 백엔드 개발자
+                                    </h3>
+                                    <ul class="skillCategory">
+                                        <li class="positionSkill">Java</li>
+                                        <li class="positionSkill">· Spring</li>
+                                        <li class="positionSkill">· AWS</li>
+                                        <li class="positionSkill">· Kotlin</li>
+                                        <li class="positionSkill">· SQL</li>
+                                    </ul>
+                                    <button
+                                        aria-label="스크랩"
+                                        class="positionScrap"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            class="default"
+                                        >
+                                            <path
+                                                fill="#222"
+                                                fill-rule="evenodd"
+                                                d="M10.725 14.71a2 2 0 0 1 2.55 0l3.975 3.289V5H6.75v12.999l3.975-3.29ZM4.75 20.123V5a2 2 0 0 1 2-2h10.5a2 2 0 0 1 2 2v15.124a1 1 0 0 1-1.638.77L12 16.25l-5.612 4.645a1 1 0 0 1-1.638-.77Z"
+                                                clip-rule="evenodd"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <nav class="sideNavigation"></nav>
+                <nav class="sideNavigation" aria-label="기업정보 우측 메뉴">
+                    <ul>
+                        <li
+                            data-target="companyInfo"
+                            aria-current="true"
+                            class="sectionNav active"
+                        >
+                            <span>기업 정보</span>
+                        </li>
+                        <li
+                            data-target="companyIntroduce"
+                            aria-current="false"
+                            class="sectionNav"
+                        >
+                            <span>회사 소개</span>
+                        </li>
+                        <li
+                            data-target="companyWelfare"
+                            aria-current="false"
+                            class="sectionNav"
+                        >
+                            <span>복지 및 혜택</span>
+                        </li>
+                        <li
+                            data-target="companyEmployee"
+                            aria-current="false"
+                            class="sectionNav"
+                        >
+                            <span>기업 직원 규모</span>
+                        </li>
+                        <li
+                            data-target="companySalary"
+                            aria-current="false"
+                            class="sectionNav"
+                        >
+                            <span>평균 연봉 정보</span>
+                        </li>
+                        <li
+                            data-target="companyInvestment"
+                            aria-current="false"
+                            class="sectionNav"
+                        >
+                            <span>투자 정보</span>
+                        </li>
+                        <li
+                            data-target="companyIngPosition"
+                            aria-current="false"
+                            class="sectionNav"
+                        >
+                            <span>채용중인 포지션</span>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </main>
         <!-- 푸터 시작 -->
@@ -718,4 +1103,5 @@
         <!-- // 푸터 끝 -->
     </body>
     <script src="../../static/js/main/companyDetail.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </html>
