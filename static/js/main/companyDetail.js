@@ -197,3 +197,72 @@ modalCloseButton.addEventListener("click", () => {
 const updateModalImage = () => {
     modalImgElement.src = modalImages[currentIndex];
 };
+
+// 사원 수 그래프
+document.addEventListener("DOMContentLoaded", function () {
+    const ctx = document.getElementById("companyGraph").getContext("2d");
+
+    new Chart(ctx, {
+        type: "bar", // 기본은 막대 그래프
+        data: {
+            labels: ["24.07", "24.08", "24.09", "24.10", "24.11"], // x축 라벨
+            datasets: [
+                {
+                    label: "직원 수",
+                    data: [216, 218, 217, 215, 226],
+                    type: "line", // 선 그래프
+                    borderColor: "#2e37ff",
+                    backgroundColor: "#2e37ff",
+                    fill: false,
+                    tension: 0.1,
+                    pointRadius: 5, // 점 크기
+                    pointStyle: "circle", // 점 스타일을 circle로 변경
+                },
+                {
+                    label: "입사자 수",
+                    data: [12, 7, 0, 6, 14],
+                    backgroundColor: "#00dd6d",
+                },
+                {
+                    label: "퇴사자 수",
+                    data: [5, 1, 8, 3, 8],
+                    backgroundColor: "#c4c4c4",
+                },
+            ],
+        },
+        options: {
+            scales: {
+                x: {
+                    grid: {
+                        display: false, // x축의 세로선 숨기기
+                    },
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false, // 기본 범례 숨기기
+                },
+                tooltip: {
+                    enabled: true, // 툴팁 활성화
+                    mode: "index", // 여러 데이터셋에 대해 툴팁을 동시에 표시
+                    intersect: false, // 데이터를 정확히 일치시키지 않아도 툴팁 표시
+                    backgroundColor: "rgba(255, 255, 255, 0.9)", // 배경색 하얗게 설정
+                    borderColor: "#000", // 테두리 색을 검정색으로 설정
+                    borderWidth: 1, // 테두리 두께 설정
+                    titleColor: "#000", // 제목 텍스트 색상 설정
+                    bodyColor: "#000", // 본문 텍스트 색상 설정
+                    callbacks: {
+                        title: function (tooltipItem) {
+                            return tooltipItem[0].label; // x축 레이블(날짜)만 표시
+                        },
+                        label: function (tooltipItem) {
+                            let datasetLabel = tooltipItem.dataset.label || "";
+                            let value = tooltipItem.raw;
+                            return datasetLabel + ": " + value; // 데이터셋 이름과 값 표시
+                        },
+                    },
+                },
+            },
+        },
+    });
+});
