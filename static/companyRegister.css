@@ -916,3 +916,145 @@ li {
   border-color: var(--blue90);
   background-color: var(--blue20);
 }
+.InpBox .Chk .Lbl:before {
+  display: inline-block;
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--gray70);
+  border-radius: 4px;
+  vertical-align: top;
+  background: #fff;
+  content: "";
+}
+.InpBox .Chk .Lbl:before {
+  display: inline-block;
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--gray70);
+  border-radius: 4px;
+  vertical-align: top;
+  background: #fff;
+  content: "";
+}
+.cont_division .agree_box {
+  padding: 16px;
+  border: 1px solid #d7dce5;
+  border-radius: 4px;
+}
+.cont_division .agree_box .agree_article {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #d7dce5;
+  color: #5c667b;
+}
+.cont_division .agree_box .agree_article.depth2 {
+  padding-bottom: 0;
+  border: none;
+}
+.cont_division .agree_box .agree_article .agree_txt {
+  margin: 8px 0 0 40px;
+  color: var(--gray100);
+  font-size: 13px;
+  line-height: 20px;
+}
+a:link,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+.cont_division .agree_box .agree_article.depth2 li a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='12' viewBox='0 0 7 12' fill='none'%3E%3Cpath d='M0.5 11L5.5 6L0.5 1' stroke='%238491A7' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat;
+  background-position: center right;
+}
+.cont_division .agree_box .agree_article.depth2 span {
+  font-size: 15px;
+}
+.cont_division .agree_box .agree_article.depth2 li {
+  position: relative;
+  margin: 16px 0;
+}
+.btn_join button {
+  width: 100%;
+}
+[class*="BtnType"].SizeL {
+  padding: 10px 15px 12px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 24px;
+}
+[class*="BtnType"]:hover {
+  border-color: var(--blue100);
+  background-color: var(--blue100);
+}
+.btn_join {
+  margin-top: 24px;
+  padding-bottom: 100px;
+}
+.area_corp_certification .btn_close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+}
+.area_corp_certification .file_upload_name {
+  overflow: hidden;
+  margin-top: 12px;
+  width: 100%;
+  color: var(--gray100);
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: transparent;
+}
+.area_corp_certification .box_notice .txt_notice {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+.area_corp_certification .file_txt_guide2 {
+  margin-top: 8px;
+  color: var(--gray100);
+  font-size: 13px;
+  line-height: 20px;
+}
+.area_corp_certification .box_file_upload {
+  position: relative;
+  padding: 148px 16px 16px;
+  box-sizing: border-box;
+}
+.area_corp_certification .box_file_upload .file_input,
+.area_corp_certification .box_file_upload .file_label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.area_corp_certification .box_file_upload .file_label {
+  z-index: 5;
+}
+.area_corp_certification .box_file_upload .file_view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue20);
+}
+.area_corp_certification .file_txt_guide {
+  margin-top: 12px;
+  color: var(--gray90);
+  font-size: 13px;
+  line-height: 17px;
+}

@@ -9,7 +9,7 @@
   <body class="join_body">
     <header id="sri_header" class="integrated_header">
       <div class="area_logo">
-        <a href="https://jumpit.saramin.co.kr/">
+        <a href="">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="62"
@@ -138,6 +138,15 @@
                   placeholder="사업자 등록번호 직접 입력 (10자리)"
                 />
               </div>
+              <!-- 사업자 확인하는거 생기면 사용하면될듯. -->
+              <!-- <p         
+                class="alert_column good_txt"
+                id="msg_corp_code"
+                style="display: none"
+              >
+                사업자등록번호 확인완료, 기업인증에 사업자등록증명원을
+                첨부해주세요.
+              </p> -->
               <p class="msgInvalid" id="msg_corp_code">
                 사업자 등록번호를 입력하세요.
               </p>
@@ -172,6 +181,48 @@
                   </div>
                 </div>
               </div>
+              <!-- 클릭시 다른 파일 업로드 할수있는 이미지, -->
+              <!-- <div
+                class="box_file_upload"
+                id="box_file_upload"
+                style="display: none"
+              >
+                <input
+                  type="file"
+                  id="confirm_document_file"
+                  name="confirm_document_file"
+                  class="file_input"
+                  data-gtm-form-interact-field-id="9"
+                />
+                <label
+                  for="confirm_document_file"
+                  class="file_label"
+                  id="confirm_document_file_label"
+                >
+                  <span class="blind">파일찾기</span>
+                </label>
+                <div class="file_view">
+                  <p class="file_upload_name" id="confirm_document_file_nm"></p>
+                  <p class="file_txt_guide">
+                    클릭시 다른 파일로 변경할 수 있습니다
+                  </p>
+                </div>
+              </div> -->
+
+              <!-- 파일 검토받기 버튼 -->
+              <!-- <div
+                class="box_btn"
+                id="request_certification_wrap"
+                style="display: none"
+              >
+                <button
+                  type="button"
+                  class="BtnType BtnTypeRd SizeM btn_certify_file"
+                  id="btn_request_ocr"
+                >
+                  파일 검토받기
+                </button>
+              </div>
               <div
                 class="box_btn"
                 id="select_certification_file_wrap"
@@ -184,7 +235,22 @@
                 >
                   파일 선택
                 </button>
-              </div>
+              </div> -->
+              <!-- 검사 성공 -->
+              <!-- <div
+                class="file_upload_completed"
+                id="request_certification_complete"
+                style="display: none"
+              >
+                <p class="file_upload_name">icon1.png</p>
+                <div class="box_notice">
+                  <p class="txt_notice txt_blue">검토완료 되었습니다.</p>
+                </div>
+                <p class="file_txt_guide2">
+                  기업인증이 가능 한 서류 입니다.<br />
+                  <strong>회원 가입을 진행 해주세요.</strong>
+                </p>
+              </div> -->
               <div
                 class="InpBox chkbox_next_certi"
                 id="next_certification_check_wrap"
@@ -200,10 +266,24 @@
                   >
                 </span>
               </div>
-              <p class="file_txt_guide3">
-                가입 후 서비스 이용에 제한이 있을 수 있으니<br />
-                <strong>이용 전 반드시 기업 인증을 신청해 주세요.</strong>
-              </p>
+              <!--가입 후 서비스 이용에 제한이 있을 수 있으니
+                  이용 전 반드시 기업 인증을 신청해 주세요.  -->
+              <!-- <div class="file_upload_next" id="next_certification_msg" style="display: none;">
+
+                            <p class="file_txt_guide3">
+                                가입 후 서비스 이용에 제한이 있을 수 있으니<br>
+                                <strong>이용 전 반드시 기업 인증을 신청해 주세요.</strong>
+                            </p>
+                        </div> -->
+              <!-- 닫기 버튼 누르면 원래 처음 첨부파일 화면으로 돌아감 -->
+              <!-- <button
+                type="button"
+                class="btn_close"
+                id="btn_reset_certification"
+                style="display: none"
+              >
+                <span class="blind">닫기</span>
+              </button> -->
             </div>
           </div>
           <div class="cont_division">
@@ -367,15 +447,208 @@
               </div>
             </div>
           </div>
+          <!-- 왜 숨어있지모를 기업 정보입력. 사업자등록번호, 첨부파일 등록완료되면뜸 -->
+          <div class="area_input_company" style="display: none">
+            <div class="write_base">
+              <!-- 기업명 -->
+              <div class="item">
+                <label for="company_nm"><strong>기업명</strong></label>
+                <div class="TypoBox">
+                  <input
+                    name="company_nm"
+                    id="company_nm"
+                    type="text"
+                    class="Typo SizeL defalt"
+                    maxlength="25"
+                    onmousedown="pushDataLayer('ga_lead', 'company_join', 'company_nm_input', 'click_company_nm');"
+                    autocapitalize="off"
+                    autocomplete="off"
+                    placeholder="기업명 입력 (사업자등록증명원 기업명)"
+                  />
+                </div>
+                <em class="msgInvalid" id="msg_company_nm" style="display: none"
+                  >필수 정보입니다.</em
+                >
+              </div>
+            </div>
+          </div>
+          <div class="cont_division" id="company_terms_title">
+            <span class="terms_agree"><strong>약관</strong></span>
+            <div class="agree_box">
+              <ul class="agree_article">
+                <li>
+                  <div class="InpBox">
+                    <span class="Chk SizeL">
+                      <input
+                        type="checkbox"
+                        class="check_mail"
+                        id="hidden_check_all_company"
+                        name="hidden_check_all_company"
+                        value="0"
+                      />
+                      <label
+                        class="check_all check_off Lbl"
+                        for="hidden_check_all_company"
+                      >
+                        <strong class="all_agree">전체 동의</strong>
+                      </label>
+                    </span>
+                  </div>
+                  <p class="agree_txt">
+                    마케팅 정보 수신 동의(이메일,SMS/MMS)(선택) 동의를
+                    포함합니다.
+                  </p>
+                </li>
+              </ul>
+              <ul class="agree_article depth2">
+                <li>
+                  <div class="agree_desc">
+                    <div class="InpBox">
+                      <span class="Chk">
+                        <input
+                          class="itembtn"
+                          type="checkbox"
+                          id="agree_rule2"
+                        />
+                        <label class="Lbl check_off" for="agree_rule2">
+                          <span
+                            ><strong>(필수) 기업회원 약관에 동의</strong></span
+                          >
+                        </label>
+                      </span>
+                    </div>
+                  </div>
+                  <a href="" class="view_indetail">
+                    <span class="blind">기업회원 약관 상세보기</span>
+                  </a>
+                </li>
+                <li>
+                  <div class="agree_desc">
+                    <div class="InpBox">
+                      <span class="Chk">
+                        <input
+                          class="itembtn"
+                          type="checkbox"
+                          id="agree_take2"
+                        />
+                        <label class="Lbl check_off" for="agree_take2">
+                          <span
+                            ><strong
+                              >(필수) 개인정보 수집 및 이용에 동의</strong
+                            ></span
+                          >
+                        </label>
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    href=""
+                    class="view_indetail popup_clause_open"
+                    target="_blank"
+                  >
+                    <span class="blind"
+                      >개인정보 수집 및 이용에 동의 약관 상세보기</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <div class="agree_desc">
+                    <div class="InpBox">
+                      <span class="Chk">
+                        <input
+                          class="itembtn"
+                          type="checkbox"
+                          id="agree_sms2"
+                        />
+                        <label class="Lbl check_off" for="agree_sms2">
+                          <span
+                            ><strong
+                              >(필수) SMS 발송 서비스 약관에 동의</strong
+                            ></span
+                          >
+                        </label>
+                      </span>
+                    </div>
+                  </div>
+                  <a id="popupTermsAgreeLb" href="" class="view_indetail">
+                    <span class="blind"
+                      >SMS 발송 서비스 약관에 동의 상세보기</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <div class="agree_desc">
+                    <div class="InpBox">
+                      <span class="Chk">
+                        <input
+                          type="checkbox"
+                          class="check_mail itembtn"
+                          id="corpAgree"
+                        />
+                        <label class="Lbl check_off" for="corpAgree">
+                          <span>(선택) 마케팅정보 수신 동의 - 이메일</span>
+                        </label>
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    id="popupEmailReceive"
+                    href=""
+                    class="view_indetail popup_clause_open"
+                  >
+                    <span class="blind"
+                      >마케팅 정보수신 동의 - 이메일 약관 상세보기</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <div class="agree_desc">
+                    <div class="InpBox">
+                      <span class="Chk">
+                        <input
+                          class="itembtn"
+                          type="checkbox"
+                          id="reject_sms_fl"
+                          name="reject_sms_fl"
+                          value="n"
+                        />
+                        <label class="Lbl check_off" for="reject_sms_fl">
+                          <span>(선택) 마케팅정보 수신 동의 - SMS/MMS</span>
+                        </label>
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    id="popupSmsReceive"
+                    href=""
+                    class="view_indetail popup_clause_open"
+                  >
+                    <span class="blind"
+                      >마케팅정보 수신 동의 - SMS/MMS 약관 상세보기</span
+                    >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="btn_join">
+            <button
+              type="button"
+              id="btn_submit"
+              class="inp_join BtnType SizeL defalt ga_data_layer submit_btn"
+            >
+              회원가입 완료
+            </button>
+          </div>
         </fieldset>
       </form>
     </div>
     <!-- 사업자 등록증 없음 모달창 -->
-    <div id="dimmed" class="sri_dimmed" style="display: block"></div>
+    <div id="dimmed" class="sri_dimmed" style="display: none"></div>
     <div
       class="ModalBox modal_notice_message_law show"
       id="notice_message_law"
-      style="display: block"
+      style="display: none"
       aria-expanded="true"
     >
       <h4 class="Tit">사업자등록번호가 없어요</h4>
