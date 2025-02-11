@@ -3342,9 +3342,22 @@ textarea:focus {
 .hidden2 {
     display: none;
 }
+.bottom-tooltip {
+    width: fit-content;
+    min-width: 200px;
+    max-width: 440px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(228, 228, 228);
+    background-color: rgb(255, 255, 255);
+}
 
-
-
+.bottomquestion > .layer {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    z-index: 2;
+}
 
 .bottom-tooltip .progress .tooltip .layer {
     top: unset;
@@ -3352,4 +3365,64 @@ textarea:focus {
     bottom: 30px;
     left: 0px;
     min-width: 330px;
+}
+.bottom-tooltip-text1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.bottom-tooltip-text1 > span {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(0, 0, 0);
+}
+
+.bottom-tooltip-text1-btn > svg {
+    width: 16px;
+    height: 16px;
+}
+
+.bottom-tooltip-text1-btn > svg > path {
+    fill: rgb(0, 0, 0);
+}
+
+
+.bottom-tooltip-text2 {
+    margin-top: 8px;
+}
+
+.bottom-tooltip-text2 > p {
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(34, 34, 34);
+}
+
+.bottom-tooltip-text3 {
+    margin-top: 12px;
+}
+
+.bottom-tooltip-text3  > p {
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(34, 34, 34);
+}
+
+.bottom-tooltip-text4 {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.bottom-tooltip-text4 > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.bottom-tooltip-text4 > span {
+    font-size: 13px;
+    line-height: 18px;
 }

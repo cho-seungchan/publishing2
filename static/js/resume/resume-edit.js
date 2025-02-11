@@ -974,3 +974,5 @@ saveButton.addEventListener("click",() =>{
 previewButton.addEventListener('click',()=>{
     window.open('popup.html', "popupWindow", "width:759,height:1822,scrollbars=yes")
 })
+
+// 바닥 툴팁 물음표 버튼 누르면 툴팁 뜨도록 하기.
