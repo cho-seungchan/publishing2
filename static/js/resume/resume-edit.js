@@ -1,7 +1,7 @@
 const righttopbutton = document.querySelector("div.header-right-user7");
 const righttopmenu = document.querySelector("div.header-right-menu8");
 NodeList.prototype.addEventListener = Array.prototype.addEventListener;
-
+NodeList.prototype.forEach = Array.prototype.forEach;
 // 우상단 마우스 이벤트트
 righttopbutton.addEventListener("mouseover", function () {
     righttopmenu.style.display = "block";
@@ -236,7 +236,6 @@ jobCheckButton.forEach((buttons) => {
     buttons.addEventListener("click", (e) => {
         const buttonsValue = buttons.nextElementSibling.innerText;
         var temp = `<div class="select-item"><span>${buttonsValue}</span><button class="btn-close" type="button"><span class="blind">닫기</span></button></div>`;
-        console.log(temp);
         if (buttons.checked) {
             selectionWrapper.innerHTML += temp;
         } else {
@@ -270,10 +269,10 @@ eduEditBtn.addEventListener("click", () => {
     newEditArea.innerHTML = `<div class="memberedu-edit-mark"></div>
                                                 <div class="memberedu-graduate1 memberedu-graduate2">
                                                     <div class="year-month-content">
-                                                        <input class="year-content" placeholder="YYYY" maxlength="4" type="text" value="" name="educations.0.graduateYear">.<input class="month-content" placeholder="MM" maxlength="2" type="text" value="" name="educations.0.graduateMonth"><span id="dropped">졸업(예정)</span>
+                                                        <input class="year-content" placeholder="YYYY" maxlength="4" type="text" value="" name="educations.0.graduateYear">.<input class="month-content" placeholder="MM" maxlength="2" type="text" value="" name="educations.0.graduateMonth"><span class="dropped">졸업(예정)</span>
                                                     </div>
                                                     <div class="memberedu-drop">
-                                                        <input id="educations.0.educationStatus" type="checkbox"><label for="educations.0.educationStatus" class="sc-beab3720-0 lbwSup">중퇴</label>
+                                                        <input id="educations.0.educationStatus" type="checkbox"><label for="educations.0.educationStatus" class="dropcheck">중퇴</label>
                                                     </div>
                                                 </div>
                                                 <div class="memberedu-division">
@@ -297,27 +296,27 @@ eduEditBtn.addEventListener("click", () => {
                                                                             <ul>
                                                                                 <li>
                                                                                     <div class="memberedu-class-content">
-                                                                                        <label for="category0" class="class-content-label">고등학교</label>
+                                                                                        <label for="" class="class-content-label">고등학교</label>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <div class="memberedu-class-content">
-                                                                                        <label for="category1" class="class-content-label">대학(2,3년)</label>
+                                                                                        <label for="" class="class-content-label">대학(2,3년)</label>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <div class="memberedu-class-content">
-                                                                                        <label for="category2" class="class-content-label">대학교(4년)</label>
+                                                                                        <label for="" class="class-content-label">대학교(4년)</label>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <div class="memberedu-class-content">
-                                                                                        <label for="category3" class="class-content-label">대학원(석사)</label>
+                                                                                        <label for="" class="class-content-label">대학원(석사)</label>
                                                                                     </div>
                                                                                 </li>
                                                                                 <li>
                                                                                     <div class="memberedu-class-content">
-                                                                                        <label for="category4" class="class-content-label">대학원(박사)</label>
+                                                                                        <label for="" class="class-content-label">대학원(박사)</label>
                                                                                     </div>
                                                                                 </li>
                                                                             </ul>
@@ -356,7 +355,7 @@ eduEditBtn.addEventListener("click", () => {
                                                         </div>
                                                         <div class="memberinfo-text2-inner">
                                                             <div class="member-standard-grade">
-                                                                <span>기준학점</span><input class="memberedu-class-choice-input" type="text" name="educations.0.creditPointType" inputmode="none"><button type="button" id="standardgrade">
+                                                                <span>기준학점</span><input class="memberedu-class-choice-input" type="text" name="educations.0.creditPointType" inputmode="none"><button type="button" class="standardgrade">
                                                                     <span style="
                                                                                 display: flex;
                                                                             "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -371,27 +370,27 @@ eduEditBtn.addEventListener("click", () => {
                                                                                 안함</label></div>
                                                                     </li>
                                                                     <li>
-                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="category0" class="maxgrade">4.5</label>
+                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="" class="maxgrade">4.5</label>
                                                                         </div>
                                                                     </li>
                                                                     <li>
-                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="category1" class="maxgrade">4.3</label>
+                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="" class="maxgrade">4.3</label>
                                                                         </div>
                                                                     </li>
                                                                     <li>
-                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="category2" class="maxgrade">4.0</label>
+                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="" class="maxgrade">4.0</label>
                                                                         </div>
                                                                     </li>
                                                                     <li>
-                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="category3" class="maxgrade">5.0</label>
+                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="" class="maxgrade">5.0</label>
                                                                         </div>
                                                                     </li>
                                                                     <li>
-                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="category4" class="maxgrade">7.0</label>
+                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="" class="maxgrade">7.0</label>
                                                                         </div>
                                                                     </li>
                                                                     <li>
-                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="category5" class="maxgrade">100</label>
+                                                                        <div class="sc-5a671f5b-4 khTWOS"><label for="" class="maxgrade">100</label>
                                                                         </div>
                                                                     </li>
                                                                 </ul>
@@ -403,86 +402,93 @@ eduEditBtn.addEventListener("click", () => {
 
     eduAddPlace.insertBefore(newEditArea, eduEditBtn);
     profileDownBtn.forEach((buttons) => {
-        buttons.removeAttribute("disabled");
+        buttons.removeAttribute("disabled")
     });
 
     profileUpBtn.forEach((buttons) => {
-        buttons.removeAttribute("disabled");
+        buttons.removeAttribute("disabled")
     });
 
     profileDeleteButton.forEach((buttons) => {
-        buttons.removeAttribute("disabled");
+        buttons.removeAttribute("disabled")
     });
 });
 
-const dropButton = document.getElementById("educations.0.educationStatus");
-const dropSpan = document.getElementById("dropped");
+window.addEventListener("click", (e) => {
+    const temp = e.target.closest("span.dropped");
+    if (e.target && e.target.matches("div.memberedu-drop input"))
+        if (e.target.checked) {
+            temp.innerText = "중퇴";
+        } else {
+            temp.innerText = "졸업(예정)";
+        }
+});
 
-dropButton.addEventListener("click", () => {
-    if (dropButton.checked) {
-        dropSpan.innerText = "중퇴";
-    } else {
-        dropSpan.innerText = "졸업(예정)";
+// const classChoiceBtn = document.querySelectorAll("button.classchoice");
+const classChoice = document.querySelectorAll("div.memberedu-class-list");
+
+window.addEventListener("click", (e) => {
+    const eduClassList = e.target.closest("div").nextElementSibling;
+    if (e.target && e.target.matches("button.classchoice svg")) {
+        eduClassList.classList.toggle("hidden");
     }
 });
 
-const classChoiceBtn = document.querySelectorAll("button.classchoice");
-const classChoice = document.querySelector("div.memberedu-class-list");
-classChoiceBtn.forEach((buttons) => {
-    window.addEventListener("click", (e) => {
-        if (buttons.contains(e.target)) {
-            classChoice.classList.toggle("hidden");
-        } else {
-            classChoice.classList.add("hidden");
-        }
-    });
+window.addEventListener("click", (e) => {
+    const classLabel = e.target.closest("div.memberedu-class-list");
+
+    if (e.target && e.target.matches(".class-content-label")) {
+        classLabel.previousElementSibling.firstElementChild.innerText =
+            e.target.innerText;
+        classLabel.previousElementSibling.firstElementChild.style.color =
+            "black";
+        classLabel.classList.add("hidden");
+    }
 });
 
-const memberEduValue = document.querySelectorAll(
-    "div.memberedu-class-content label"
-);
-const membereduSpan = document.querySelector("div.memberedu-class-choice span");
-memberEduValue.forEach((choice) => {
-    choice.addEventListener("click", () => {
-        membereduSpan.innerText = choice.innerText;
-        membereduSpan.style.color = "black";
-    });
+//  기준학점 선택 시 숫자 입력되는 코드
+window.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("label.maxgrade")) {
+        const temp = e.target.closest(
+            "div.standard-degree"
+        ).previousElementSibling;
+        const memberEduSpan = temp.firstElementChild;
+        if (e.target.innerText != "선택 안함") {
+            memberEduSpan.innerText = e.target.innerText;
+        }
+        e.target.closest("div.standard-degree").classList.add("hidden");
+    }
 });
+//
 
 const maxGradeBtn = document.getElementById("standardgrade");
-const maxGradeList = document.querySelector("div.standard-degree");
 window.addEventListener("click", (e) => {
-    if (maxGradeBtn.contains(e.target)) {
+    if (e.target && e.target.matches(".standardgrade svg")) {
+        const maxGradeList = e.target.closest("div").nextElementSibling;
         maxGradeList.classList.toggle("hidden");
-    } else {
-        maxGradeList.classList.add("hidden");
     }
 });
 const maxGradeSpan = document.querySelector("div.member-standard-grade span");
 const maxGradeValue = document.querySelectorAll("label.maxgrade");
 
-maxGradeValue.forEach((choice) => {
-    choice.addEventListener("click", () => {
-        maxGradeSpan.innerText = choice.innerText;
-        maxGradeSpan.style.color = "black";
-    });
-});
-
 // 한 개만 있을 때는 버튼들 disabled 상태, 여러개면 활성화
 // 삭제는 무조건 활성화, 위 아래 버튼은 각각 맨 위, 맨 아래에 있을 때 비활성화
-const firstAddedEdu = document.querySelector(".memberedu > div:first-child");
-const lastAddedEdu = document.querySelector(".memberedu > div:last-child");
+const memberEdu = document.querySelector("div.memberedu");
+const amountDiv = memberEdu.querySelectorAll("div");
+const editMark = document.querySelectorAll("div.memberedu-edit-mark");
+
 window.addEventListener("click", (e) => {
     if (e.target && e.target.matches("button.profile-delete-button")) {
-        console.log(firstAddedEdu.classList);
-        console.log(lastAddedEdu.classList);
         e.target.closest("div.memberedu-edit").remove();
-        if (firstAddedEdu == lastAddedEdu) {
-            firstAddedEdu.firstElementChild.classList.remove("clicked");
+        //  학력 정보가 한 개만 남았을 때에는 clicked 속성이 없어져야 함.
+
+        if (amountDiv.length === 35) {
+            editMark.forEach((mark) => {
+                mark.classList.remove("clicked");
+            });
         }
     }
 });
-
 window.addEventListener("click", (e) => {
     if (e.target && e.target.matches("button.profile-up-button")) {
         const currentDiv = e.target.closest("div.memberedu-edit");
@@ -498,3 +504,473 @@ window.addEventListener("click", (e) => {
         eduAddPlace.insertBefore(nextDiv, currentDiv);
     }
 });
+
+//  경력
+
+const careerAddButton = document.getElementById("careeraddbutton");
+const careerAddArea = document.querySelector("div.membercareer");
+const memberCareerEditMark = document.querySelectorAll(
+        "div.membercareer-edit-mark"
+    );
+careerAddButton.addEventListener("click", () => {
+    
+    let newEditArea = document.createElement("div");
+    memberCareerEditMark.forEach((mark) => {
+        mark.classList.add("clicked");
+    });
+
+    newEditArea.className = "membercareer-content";
+    newEditArea.innerHTML = ` <div class="membercareer-edit-mark"></div>
+                                                <div class="membercareer-date1 membercareer-date2">
+                                                    <div class="duration">
+                                                        <input class="hide" type="text" value="" name="careers.0.startTime"><input class="hide" type="text" value="" name="careers.0.endTime">
+                                                        <div class="calendar-area">
+                                                            <div class="calendar-box">
+                                                                <input class="calendar-year profile-input" maxlength="4" placeholder="YYYY" type="text" value=""><span>.</span><input class="calendar-month profile-input" maxlength="2" placeholder="MM" type="text" value="">
+                                                            </div>
+                                                            <span class="center-pa">-</span>
+                                                            <div class="calendar-box">
+                                                                <input class="calendar-year profile-input" maxlength="4" placeholder="YYYY" type="text" value=""><span>.</span><input class="calendar-month profile-input" maxlength="2" placeholder="MM" type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="during-button">
+                                                        <input autocomplete="off" id="careers.0-proceeding" class="working" type="checkbox" name="careers.0-proceeding"><label for="careers.0-proceeding" class="sc-beab3720-0 lbwSup">재직중</label>
+                                                    </div>
+                                                </div>
+                                                <div class="company-name">
+                                                    <div class="company-name-input">
+                                                        <div class="company-name1 company-name2 flex-main-text">
+                                                            <input placeholder="회사명을 입력해주세요" maxlength="255" type="text" value="" name="careers.0.companyName">
+                                                        </div>
+                                                        
+                                                        <div class="profile-order-control">
+                                                            <div class="order-inner">
+                                                                <div class="order-buttons">
+                                                                    <button class="profile-down-button" disabled="" type="button">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                                            <path fill="#222" fill-rule="evenodd" d="M13.472 5.195c.26.26.26.683 0 .943l-5 5a.667.667 0 0 1-.943 0l-5-5a.667.667 0 1 1 .943-.943L8 9.724l4.529-4.529c.26-.26.682-.26.943 0Z" clip-rule="evenodd"></path>
+                                                                        </svg></button><button class="profile-up-button" disabled="" type="button">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24">
+                                                                            <path fill="#000" fill-rule="evenodd" d="M3.793 16.207a1 1 0 0 1 0-1.414l7.5-7.5a1 1 0 0 1 1.414 0l7.5 7.5a1 1 0 0 1-1.414 1.414L12 9.414l-6.793 6.793a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path>
+                                                                        </svg></button><button class="profile-delete-button" disabled="" type="button">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                                            <path fill="#C4C4C4" fill-rule="evenodd" d="M6.25 5.5a3 3 0 0 1 3-3h5.5a3 3 0 0 1 3 3v1.25H21a1 1 0 1 1 0 2h-1.25v9.75a3 3 0 0 1-3 3h-9.5a3 3 0 0 1-3-3V8.75H3a1 1 0 0 1 0-2h3.25V5.5Zm2 1.25h7.5V5.5a1 1 0 0 0-1-1h-5.5a1 1 0 0 0-1 1v1.25Zm-2 2v9.75a1 1 0 0 0 1 1h9.5a1 1 0 0 0 1-1V8.75H6.25Zm3.5 3a1 1 0 0 1 1 1v2.5a1 1 0 1 1-2 0v-2.5a1 1 0 0 1 1-1Zm5.5 1a1 1 0 1 0-2 0v2.5a1 1 0 1 0 2 0v-2.5Z" clip-rule="evenodd"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="companytext1 companytext2">
+                                                        <input placeholder="회사소개를 간단하게 입력해주세요" type="text" value="" name="careers.0.companyInfo">
+                                                    </div>
+                                                    <div class="companytext1 companytext3">
+                                                        <input placeholder="부서명/직책" maxlength="255" type="text" value="" name="careers.0.divisionName">
+                                                    </div>
+                                                    
+                                                    <div class="companytext5 companytext6">
+                                                        <textarea name="careers.0.jobDetailInfo" placeholder="주요업무 및 성과를 작성해주세요" class="careertext" style="
+                                                                    height: 22px;
+                                                                "></textarea>
+                                                    </div>
+                                                </div>
+                                            `;
+    careerAddArea.insertBefore(newEditArea, careerAddButton);
+    profileDownBtn.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+
+    profileUpBtn.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+
+    profileDeleteButton.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target && e.target.matches(".during-button input")) {
+        const duringtemp = e.target.closest("div").previousElementSibling;
+        if(e.target.checked){
+            duringtemp.lastElementChild.lastElementChild.classList.add("read-only")
+            duringtemp.lastElementChild.lastElementChild.firstElementChild.disabled = 'true'
+            duringtemp.lastElementChild.lastElementChild.lastElementChild.disabled = 'true'
+        }
+        else{
+            duringtemp.lastElementChild.lastElementChild.classList.remove("read-only")
+            duringtemp.lastElementChild.lastElementChild.firstElementChild.disabled = 'false'
+            duringtemp.lastElementChild.lastElementChild.lastElementChild.disabled = 'false'
+        }
+    }
+});
+
+window.addEventListener("input", (e) => {
+    if (e.target && e.target.matches("textarea.careertext")) {
+        e.target.style.height = "auto";
+        e.target.style.height = e.target.scrollHeight + "px"; // 내용에 맞게 높이 조정
+    }
+});
+
+
+const careerDiv = careerAddArea.querySelectorAll("div");
+careerAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-delete-button")) {
+        e.target.closest("div.membercareer-content").remove();
+        //  학력 정보가 한 개만 남았을 때에는 clicked 속성이 없어져야 함.
+
+        if (careerDiv.length === 35) {
+            memberCareerEditMark.forEach((mark) => {
+                mark.classList.remove("clicked");
+            });
+        }
+    }
+});
+careerAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-up-button")) {
+        const currentDiv = e.target.closest("div.membercareer-content");
+        const previousDiv = currentDiv.previousElementSibling;
+        careerAddArea.insertBefore(currentDiv, previousDiv);
+    }
+});
+
+careerAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-down-button")) {
+        const currentDiv = e.target.closest("div.membercareer-content");
+        const nextDiv = currentDiv.nextElementSibling;
+        careerAddArea.insertBefore(nextDiv, currentDiv);
+    }
+});
+
+
+
+//기타사항
+const etcAddButton = document.getElementById("etcaddbutton");
+const etcAddArea = document.querySelector("div.etcarea");
+etcAddButton.addEventListener("click", () => {
+    const memberEtcEditMark = document.querySelectorAll("div.etc-content-mark");
+    let newEditArea = document.createElement("div");
+    memberEtcEditMark.forEach((mark) => {
+        mark.classList.add("clicked");
+    });
+
+    newEditArea.className = "etc-content";
+    newEditArea.innerHTML = `<div class="etc-content-mark"></div>
+                                                <div class="etcdate1 etcdate2">
+                                                    <div class="etc-calender">
+                                                        <input class="hide" type="text" value="" name="etcHistories.0.startTime"><input class="hide" type="text" value="" name="etcHistories.0.endTime">
+                                                        <div class="calendar-area">
+                                                            <div class="calendar-box">
+                                                                <input class="calendar-year profile-input" maxlength="4" placeholder="YYYY" type="text" value=""><span>.</span><input class="calendar-month profile-input" maxlength="2" placeholder="MM" type="text" value="">
+                                                            </div>
+                                                            <span class="center-pa">-</span>
+                                                            <div class="calendar-box">
+                                                                <input class="calendar-year profile-input" maxlength="4" placeholder="YYYY" type="text" value=""><span>.</span><input class="calendar-month profile-input" maxlength="2" placeholder="MM" type="text" value="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="no-expire">
+                                                        <input autocomplete="off" id="etcHistories.0-proceeding" class="noexpire-input" type="checkbox" name="etcHistories.0-proceeding"><label for="etcHistories.0-proceeding" class="sc-beab3720-0 lbwSup">종료일
+                                                            없음</label>
+                                                    </div>
+                                                </div>
+                                                <div class="etc-content-wrapper">
+                                                    <div class="etc-content-input">
+                                                        <div class="etctext1 etctext2 main-text">
+                                                            <input placeholder="활동명/이력제목을 입력해주세요" maxlength="255" type="text" value="" name="etcHistories.0.etcName">
+                                                        </div>
+                                                        <div class="profile-order-control">
+                                                            <div class="order-inner">
+                                                                <div class="order-buttons">
+                                                                    <button class="profile-down-button" type="button">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                                            <path fill="#222" fill-rule="evenodd" d="M13.472 5.195c.26.26.26.683 0 .943l-5 5a.667.667 0 0 1-.943 0l-5-5a.667.667 0 1 1 .943-.943L8 9.724l4.529-4.529c.26-.26.682-.26.943 0Z" clip-rule="evenodd"></path>
+                                                                        </svg></button><button class="profile-up-button" type="button">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24">
+                                                                            <path fill="#000" fill-rule="evenodd" d="M3.793 16.207a1 1 0 0 1 0-1.414l7.5-7.5a1 1 0 0 1 1.414 0l7.5 7.5a1 1 0 0 1-1.414 1.414L12 9.414l-6.793 6.793a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path>
+                                                                        </svg></button><button class="profile-delete-button" type="button">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                                            <path fill="#C4C4C4" fill-rule="evenodd" d="M6.25 5.5a3 3 0 0 1 3-3h5.5a3 3 0 0 1 3 3v1.25H21a1 1 0 1 1 0 2h-1.25v9.75a3 3 0 0 1-3 3h-9.5a3 3 0 0 1-3-3V8.75H3a1 1 0 0 1 0-2h3.25V5.5Zm2 1.25h7.5V5.5a1 1 0 0 0-1-1h-5.5a1 1 0 0 0-1 1v1.25Zm-2 2v9.75a1 1 0 0 0 1 1h9.5a1 1 0 0 0 1-1V8.75H6.25Zm3.5 3a1 1 0 0 1 1 1v2.5a1 1 0 1 1-2 0v-2.5a1 1 0 0 1 1-1Zm5.5 1a1 1 0 1 0-2 0v2.5a1 1 0 1 0 2 0v-2.5Z" clip-rule="evenodd"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="etctext1 etctext3">
+                                                        <div class="etc-chocie">
+                                                            <div class="etc-choice-inner">
+                                                                이력구분
+                                                                선택<input class="etc-choice-input" type="text" name="drop-0-etcType" inputmode="none"><button type="button" class="cvchoice">
+                                                                    <span style="
+                                                                                display: flex;
+                                                                            "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                                                            <path fill="#222" fill-rule="evenodd" d="M13.472 5.195c.26.26.26.683 0 .943l-5 5a.667.667 0 0 1-.943 0l-5-5a.667.667 0 1 1 .943-.943L8 9.724l4.529-4.529c.26-.26.682-.26.943 0Z" clip-rule="evenodd"></path>
+                                                                        </svg></span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="etc-content-list hidden">
+                                                         
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="etc-content-elements">
+                                                                            <label for="category9999" class="sc-beab3720-0 lbwSup">선택
+                                                                                안함</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="etc-content-elements">
+                                                                            <label for="" class="sc-beab3720-0 lbwSup">자격증</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="etc-content-elements">
+                                                                            <label for="" class="sc-beab3720-0 lbwSup">대외활동</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="etc-content-elements">
+                                                                            <label for="" class="sc-beab3720-0 lbwSup">어학</label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="etc-content-elements">
+                                                                            <label for="" class="sc-beab3720-0 lbwSup">수상이력</label>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-wrap">
+                                                            <input maxlength="255" placeholder="관련기관을 입력해주세요" type="text" value="" name="etcHistories.0.etcOrganization">
+                                                        </div>
+                                                    </div>
+                                                    <div class="etctext1 etctext4">
+                                                        <textarea name="etcHistories.0.etcInfo" placeholder="상세내용/점수 및 수준을 작성해주세요" class="etcbottomtext" style="
+                                                                    height: 22px;
+                                                                "></textarea>
+                                                    </div>
+                                                </div> `;
+    etcAddArea.insertBefore(newEditArea, etcAddButton);
+    profileDownBtn.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+
+    profileUpBtn.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+
+    profileDeleteButton.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+});
+
+window.addEventListener("input", (e) => {
+    if (e.target && e.target.matches("textarea.etcbottomtext")) {
+        e.target.style.height = "auto";
+        e.target.style.height = e.target.scrollHeight + "px"; // 내용에 맞게 높이 조정
+    }
+});
+
+etcAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-delete-button")) {
+        e.target.closest("div.membercareer-content").remove();
+        //  학력 정보가 한 개만 남았을 때에는 clicked 속성이 없어져야 함.
+
+        if (careerDiv.length === 35) {
+            memberCareerEditMark.forEach((mark) => {
+                mark.classList.remove("clicked");
+            });
+        }
+    }
+});
+etcAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-up-button")) {
+        const currentDiv = e.target.closest("div.membercareer-content");
+        const previousDiv = currentDiv.previousElementSibling;
+        etcAddArea.insertBefore(currentDiv, previousDiv);
+    }
+});
+
+etcAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-down-button")) {
+        const currentDiv = e.target.closest("div.membercareer-content");
+        const nextDiv = currentDiv.nextElementSibling;
+        etcAddArea.insertBefore(nextDiv, currentDiv);
+    }
+});
+
+etcAddArea.addEventListener('click',(e) =>{
+    if(e.target && e.target.matches("button.cvchoice svg")){
+        e.target.closest('div').nextElementSibling.classList.toggle("hidden")
+    }
+})
+
+etcAddArea.addEventListener("click", (e) => {
+    console.log(e.target)
+    if (e.target && e.target.matches("label.etccontentvalue")) {
+        const temp = e.target.closest(
+            "div.etc-content-list"
+        ).previousElementSibling;
+        const etcChoiceSpan = temp.firstElementChild;
+        if (e.target.innerText != "선택 안함") {
+            etcChoiceSpan.innerText = e.target.innerText;
+        }
+        e.target.closest("div.etc-content-list").classList.add("hidden");
+    }
+});
+
+const etcDiv = etcAddArea.querySelectorAll("div");
+etcAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-delete-button")) {
+        e.target.closest("div.etc-content").remove();
+        //  학력 정보가 한 개만 남았을 때에는 clicked 속성이 없어져야 함.
+
+        if (etcDiv.length === 35) {
+            memberEtcEditMark.forEach((mark) => {
+                mark.classList.remove("clicked");
+            });
+        }
+    }
+});
+etcAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-up-button")) {
+        const currentDiv = e.target.closest("div.etc-content");
+        const previousDiv = currentDiv.previousElementSibling;
+        etcAddArea.insertBefore(currentDiv, previousDiv);
+    }
+});
+
+etcAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-down-button")) {
+        const currentDiv = e.target.closest("div.etc-content");
+        const nextDiv = currentDiv.nextElementSibling;
+        etcAddArea.insertBefore(nextDiv, currentDiv);
+    }
+});
+
+etcAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches(".noexpire-input")) {
+        const duringtemp = e.target.closest("div").previousElementSibling;
+        if(e.target.checked){
+            duringtemp.lastElementChild.lastElementChild.classList.add("read-only")
+            duringtemp.lastElementChild.lastElementChild.firstElementChild.disabled = 'true'
+            duringtemp.lastElementChild.lastElementChild.lastElementChild.disabled = 'true'
+        }
+        else{
+            duringtemp.lastElementChild.lastElementChild.classList.remove("read-only")
+            duringtemp.lastElementChild.lastElementChild.firstElementChild.disabled = 'false'
+            duringtemp.lastElementChild.lastElementChild.lastElementChild.disabled = 'false'
+        }
+    }
+});
+
+
+
+// 자소서
+const applicantAddButton = document.getElementById("applicant-add-button");
+const applicantAddArea = document.querySelector("div.applicant");
+applicantAddButton.addEventListener("click", () => {
+    const memberApplicantEditMark =
+        document.querySelectorAll("div.applicant-mark");
+    let newEditArea = document.createElement("div");
+    memberApplicantEditMark.forEach((mark) => {
+        mark.classList.add("clicked");
+    });
+
+    newEditArea.className = "applicant-wrapper";
+    newEditArea.innerHTML = `<div class="applicant-mark"></div>
+<div class="applicant-content">
+    <div class="applicant-text-first">
+        <div class="applicant-text1 applicant-text2 pr-text">
+            <input placeholder="소제목을 입력해주세요" maxlength="255" type="text" value="" name="selfIntroductions.0.selfTitle">
+        </div>
+        <div class="profile-order-control">
+            <div class="order-inner">
+                <div class="order-buttons">
+                    <button class="profile-down-button" disabled="" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
+                            <path fill="#222" fill-rule="evenodd" d="M13.472 5.195c.26.26.26.683 0 .943l-5 5a.667.667 0 0 1-.943 0l-5-5a.667.667 0 1 1 .943-.943L8 9.724l4.529-4.529c.26-.26.682-.26.943 0Z" clip-rule="evenodd"></path>
+                        </svg></button><button class="profile-up-button" disabled="" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24">
+                            <path fill="#000" fill-rule="evenodd" d="M3.793 16.207a1 1 0 0 1 0-1.414l7.5-7.5a1 1 0 0 1 1.414 0l7.5 7.5a1 1 0 0 1-1.414 1.414L12 9.414l-6.793 6.793a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path>
+                        </svg></button><button class="profile-delete-button" disabled="" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path fill="#C4C4C4" fill-rule="evenodd" d="M6.25 5.5a3 3 0 0 1 3-3h5.5a3 3 0 0 1 3 3v1.25H21a1 1 0 1 1 0 2h-1.25v9.75a3 3 0 0 1-3 3h-9.5a3 3 0 0 1-3-3V8.75H3a1 1 0 0 1 0-2h3.25V5.5Zm2 1.25h7.5V5.5a1 1 0 0 0-1-1h-5.5a1 1 0 0 0-1 1v1.25Zm-2 2v9.75a1 1 0 0 0 1 1h9.5a1 1 0 0 0 1-1V8.75H6.25Zm3.5 3a1 1 0 0 1 1 1v2.5a1 1 0 1 1-2 0v-2.5a1 1 0 0 1 1-1Zm5.5 1a1 1 0 1 0-2 0v2.5a1 1 0 1 0 2 0v-2.5Z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="applicant-text1 applicant-text3">
+        <textarea name="selfIntroductions.0.selfContent" placeholder="자기소개서 내용을 작성해주세요" class="applicant-text-second" style="
+                    height: 22px;
+                "></textarea><span class="textamount">0 자</span>
+    </div>
+</div>`;
+    applicantAddArea.insertBefore(newEditArea, applicantAddButton);
+    profileDownBtn.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+
+    profileUpBtn.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+
+    profileDeleteButton.forEach((buttons) => {
+        buttons.removeAttribute("disabled");
+    });
+});
+
+window.addEventListener("input", (e) => {
+    if (e.target && e.target.matches("textarea.applicant-text-second")) {
+        e.target.style.height = "auto";
+        e.target.style.height = e.target.scrollHeight + "px"; // 내용에 맞게 높이 조정
+    }
+});
+
+
+
+
+const applicantDiv = applicantAddArea.querySelectorAll("div");
+applicantAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-delete-button")) {
+        e.target.closest("div.applicant-wrapper").remove();
+        //  학력 정보가 한 개만 남았을 때에는 clicked 속성이 없어져야 함.
+
+        if (etcDiv.length === 35) {
+            memberApplicantEditMark.forEach((mark) => {
+                mark.classList.remove("clicked");
+            });
+        }
+    }
+});
+applicantAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-up-button")) {
+        const currentDiv = e.target.closest("div.applicant-wrapper");
+        const previousDiv = currentDiv.previousElementSibling;
+        applicantAddArea.insertBefore(currentDiv, previousDiv);
+    }
+});
+
+applicantAddArea.addEventListener("click", (e) => {
+    if (e.target && e.target.matches("button.profile-down-button")) {
+        const currentDiv = e.target.closest("div.applicant-wrapper");
+        const nextDiv = currentDiv.nextElementSibling;
+        applicantAddArea.insertBefore(nextDiv, currentDiv);
+    }
+});
+const previewButton = document.querySelector("button.previewbutton")
+const saveButton = document.querySelector("button.savebutton")
+saveButton.addEventListener("click",() =>{
+    alert('이력서가 저장되었습니다.')
+    
+    // alert('확인이 필요한 항목이 있습니다. 다시 확인 후 시도해주세요.')
+    // 필요 조건이 충족되지 않을 경우 출력할 메시지.
+})
+
+previewButton.addEventListener('click',()=>{
+    window.open('popup.html', "popupWindow", "width:759,height:1822,scrollbars=yes")
+})
