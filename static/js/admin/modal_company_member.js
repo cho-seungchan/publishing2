@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 모달 열기
     function openModal(modal) {
-        if (!modal) return;
+        // if (!modal) return;
         try {
             modal.style.display = "block";
             document.body.style.overflow = "hidden";
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 모달 닫기
     function closeModal(modal) {
-        if (!modal) return;
+        // if (!modal) return;
         try {
             modal.style.display = "none";
             document.body.style.overflow = "";
@@ -71,10 +71,12 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("모달 초기화 시작");
 
             // 카테고리 선택 초기화
+            // selectedIndex는 <select> 요소의 기본 내장 속성
             if (detailSelect) detailSelect.selectedIndex = 0;
             if (activitySelect) activitySelect.selectedIndex = 0;
 
             // 상세정보 영역 초기화
+            // foreach 쓰기위한 변수선언
             if (detailContent) {
                 const detailSections =
                     detailContent.querySelectorAll(".content-section");
@@ -100,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // (상세보기 버튼 클릭시)
     // 회원 데이터 로드 및 표시
     function loadMemberData(memberId) {
         try {
@@ -125,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 상세정보 카테고리 변경 처리
     function handleDetailCategoryChange(select, contentDiv) {
-        if (!select || !contentDiv) return;
+        // if (!select || !contentDiv) return;
 
         // 모든 섹션 숨기기
         const sections = contentDiv.querySelectorAll(".content-section");
@@ -160,6 +163,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         this.closest("tr").querySelector(
                             "td:first-child"
                         ).textContent;
+                    // this: 클릭된 버튼의
+                    // closest("tr"): 가장 가까의 가장 가까의 tr의
+                    // querySelector("td:first-child"): 첫번째 td의
+                    // textContent: td의 text 내용 (회원번호)
                     openModal(companyMemberModal);
                     loadMemberData(memberId);
                 });
