@@ -144,12 +144,12 @@ input.addEventListener("change", (e) => {
     });
     const fileRemoveBtn = newFile.querySelector(".file-remove")
     const amountLi = newFile.querySelectorAll("li")
-    fileRemoveBtn.addEventListener('click',(e)=>{
-            e.target.closest('li').remove()
-            if(amountLi.length < 1){
+    fileRemoveBtn.addEventListener('click', (e) => {
+        e.target.closest('li').remove()
+        if (amountLi.length < 1) {
             emptyfileArea.classList.remove("hidden")
-            }
-              
+        }
+
     })
 });
 
@@ -169,12 +169,78 @@ resumeOpenButton.addEventListener("click", () => {
 });
 
 
-const resumeManageBtn = document.querySelectorAll(".resumemanage")
 
-resumeManageBtn.forEach((button) =>{
-    button.addEventListener('click', (e) =>{
-        const manageWrapper = resumeManageBtn.nextElementSibling
-        
-        manageWrapper.classList.toggle("hidden")
-    })
+
+const newResume = document.querySelector("div.new-resume")
+const resumeArea = document.querySelector("ul.resume-content-list2")
+const addResume = resumeArea.lastElementChild
+const resumeManageBtn = document.querySelectorAll(".resumemanage")
+const amountResume = resumeArea.querySelectorAll("li.resume-content3")
+
+
+newResume.addEventListener('click', () => {
+    const newResumeHtml = document.createElement("li")
+    newResumeHtml.className = "resume-content3"
+    newResumeHtml.innerHTML = `<div class="resume-content-inner4">
+                                <div class="resume-content-top">
+                                    <button type="button" class="resumemanage">
+                                        <span style="display: flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                                <path fill="#A4A4A4" fill-rule="evenodd" d="M10 5a2 2 0 1 0 4 0 2 2 0 0 0-4 0Zm2 9a2 2 0 1 1 0-4 2 2 0 0 1 0 4Zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z" clip-rule="evenodd"></path>
+                                            </svg></span>
+                                    </button>
+                                    <div class="managemenu-wrapper hidden">
+                                        <ul>
+                                            <li><button type="button">다운로드</button></li>
+                                            <li><button type="button">이력서 복사</button></li>
+                                            <li><button class="warning" type="button" disabled="">이력서 삭제</button></li>
+                                        </ul>
+                                    </div>
+                                    <h2>
+                                        <a href="/resume/468095">서버주고받을이름</a>
+                                    </h2>
+                                    <a href="/resume/468095">
+                                        <ul>
+                                            <li class="resume-content-element">
+                                                기술스택
+                                            </li>
+                                            <li class="resume-content-element">
+                                                학력
+                                            </li>
+                                            <li class="resume-content-element">
+                                                경력/프로젝트
+                                            </li>
+                                        </ul>
+                                    </a>
+                                </div>
+                                <div class="resume-content-bottom">
+                                    <div>
+                                        <button type="button" class="resume-open-button"></button><span>비공개</span>
+                                        <div class="resume-question">
+                                            <div class="resume-question-inner"></div>
+                                        </div>
+                                    </div>
+                                    <span>2025.01.30 등록</span>
+                                </div>
+                            </div>`
+    resumeArea.insertBefore(newResumeHtml,addResume)    
+    
 })
+const warningBtn = resumeArea.querySelectorAll("button.warning")
+window.addEventListener('click', (e) =>{
+    if(e.target && e.target.classList.contains("new-resume")){
+        warningBtn.forEach((buttons) =>{
+            buttons.removeAttribute("disabled")
+        })
+    }
+})
+
+
+
+
+resumeArea.addEventListener('click',(e)=>{
+    var temp = e.target.closest("button").nextElementSibling
+    if(e.target && e.target.matches("button.resumemanage svg")){
+        temp.classList.toggle("hidden")
+    }   
+})
+
