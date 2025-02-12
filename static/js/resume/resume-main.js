@@ -167,3 +167,14 @@ resumeOpenButton.addEventListener("click", () => {
         toggleText.innerText = "비공개";
     }
 });
+
+
+const resumeManageBtn = document.querySelectorAll(".resumemanage")
+
+resumeManageBtn.forEach((button) =>{
+    button.addEventListener('click', (e) =>{
+        const manageWrapper = resumeManageBtn.nextElementSibling
+        
+        manageWrapper.classList.toggle("hidden")
+    })
+})
