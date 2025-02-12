@@ -44,6 +44,12 @@ integratedNUM.addEventListener("blur", () => {
     integratedMSG.style.display = "block";
     integratedMSG.style.color = "red";
     integratedMSG.innerText = "올바른 사업자번호가 아닙니다.";
+  } else if ((integratedNUM.value.length = 12)) {
+    integratedBOX.style.borderColor = "gray";
+    integratedMSG.style.display = "block";
+    integratedMSG.style.color = "blue";
+    integratedMSG.innerText =
+      "사업자등록번호 확인완료, 기업인증에 사업자등록증명원 첨부해주세요.";
   }
 });
 
@@ -92,19 +98,21 @@ btnFile.style.display = "block";
 
 btnFile.addEventListener("click", () => {
   console.log("in");
-  if (integratedNUM.value.length < 14) {
+  if (integratedNUM.value.length <= 14) {
     integratedNUM.focus();
     alert("사업자 등록번호를 입력하세요.");
     // window.scrollTo("top : 0");
+  } else if ((integratedNUM.value.length = 12)) {
   }
 });
 
+// 기업인증 사진있는곳,위에 글자까지
+// 다음에 할게요 누르면 발생하는 이벤트
 const nextTbtn = document.querySelector("#next_certification_check");
 const corp_wrap = document.querySelector(
-  // 기업인증 사진있는곳,위에 글자까지
   "#normal_corp_code_certification_notice"
 );
-const subCorp_wrap = document.querySelector(".file_txt_guide3");
+const subCorp_wrap = document.querySelector("#next_certification_msg");
 
 corp_wrap.style.display = "block";
 btnFile.style.display = "block";
@@ -126,7 +134,7 @@ nextTbtn.addEventListener("change", () => {
   }
 });
 
-// 체크 박스 이벤트
+// 체크 박스 이벤트 동의 체크박스
 const checkall = document.querySelector("#hidden_check_all_company");
 const checkboxes = document.querySelectorAll(".itembtn");
 
@@ -139,4 +147,83 @@ checkboxes.forEach((checkbox) => {
       document.querySelectorAll(".itembtn:checked").length;
     checkall.checked = checkedCheckbox === checkboxes.length; // 전부 체크되면 전체 체크
   });
+});
+
+// 판독 이후, 아이디 이벤트들
+const idMsg = document.querySelector("#id");
+const idbox = document.querySelector(".idbox");
+const idcheckmsgbx = document.querySelector("#idCheckMsg1");
+const idcheckmsg = document.querySelector("#idFocusMsg");
+
+idMsg.addEventListener("focus", () => {
+  idcheckmsgbx.innerText = "4 ~ 20자의 영문, 숫자와 특수문자 '_'만 사용가능.";
+  idcheckmsgbx.style.display = "block";
+  idcheckmsgbx.style.color = "gray";
+  idcheckmsgbx.style.fontSize = "14px";
+  idbox.style.borderColor = "gray";
+});
+
+// 아이디칸 블러됫을때 이벤트
+idMsg.addEventListener("blur", () => {
+  if (idMsg.value === "") {
+    //
+    idcheckmsgbx.style.fontSize = "12px";
+    idbox.style.borderColor = "red";
+    idcheckmsgbx.style.display = "block";
+    idcheckmsgbx.style.color = "red";
+    idcheckmsgbx.innerText =
+      "4 ~ 20자의 영문, 숫자와 특수문자 '_'만 사용해주세요.";
+  }
+  // 만약 아아디 공통이 없다면
+  else if (idMsg.value.length <= 20 || idMsg.value.length >= 4) {
+    idbox.style.borderColor = "red";
+    idcheckmsgbx.style.display = "block";
+    idcheckmsgbx.style.color = "red";
+  }
+});
+
+// 비밀번호 눌럿을때 이벤트들
+
+const passwordImsg = document.querySelector("#password1FocusMsg");
+const passwordbinput = document.querySelector("#password1");
+const passwordbox = document.querySelector(".pass_box");
+const passwordeye = document.querySelector("#masking_password");
+
+passwordbinput.addEventListener("focus", () => {
+  if (passwordbinput.value.length === 0) {
+    passwordImsg.style.display = "block";
+    passwordbox.style.borderColor = "gray";
+    passwordImsg.style.color = "gray";
+    passwordImsg.innerText =
+      "8~16자리 영문 대소문자, 숫자, 특수문자 중 3가지 이상 조합으로 만들어주세요.";
+  } else if (passwordImsg.value !== "") {
+    passwordbox.style.borderColor = "red";
+    passwordImsg.style.color = "red";
+    passwordImsg.innerText =
+      "3자리 이상 연속되는 영문, 숫자, 특수문자는 비밀번호로 사용할 수 없습니다.";
+  }
+});
+
+const phoneBtn = document.querySelector("#identify_phone");
+const hiddenEmail = document.querySelector("#phoneTOemail");
+const hemailMSG = document.querySelector("#sms_msg_email1");
+const hemailInput = document.querySelector("#sms_email_id");
+const hiddenEmailbox = document.querySelector("#hidden-emaill-wrap");
+
+phoneBtn.addEventListener("click", () => {
+  hiddenEmail.style.display = "block";
+});
+hemailInput.addEventListener("focus", () => {
+  //
+});
+// 이메일에 @ 없으면 오류가뜸
+hemailInput.addEventListener("blur", () => {
+  if (!hemailInput.value.includes("@")) {
+    hemailMSG.style.display = "block";
+    hiddenEmailbox.style.borderColor = "red";
+    //
+  } else if (hemailInput.value.includes("@")) {
+    hemailMSG.style.display = "none";
+    hiddenEmailbox.style.borderColor = "gray";
+  }
 });
