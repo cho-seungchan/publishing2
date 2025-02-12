@@ -28,11 +28,6 @@
     margin-bottom: 30px;
 }
 
-.manager-info h4 {
-    margin-bottom: 12px;
-    font-size: 16px;
-}
-
 /* 섹션 제목 스타일 */
 /* .modal-body h4 {
     font-size: 16px;
@@ -199,3 +194,147 @@
 .modal-body::-webkit-scrollbar-thumb:hover {
     background: #aaa;
 } */
+
+/* 추가 작업: 기본 INFO 정보와 담당자 정보를 테이블화 작업 */
+
+.company-detail h4 {
+    margin-bottom: 4px;
+}
+
+.company-activity h4 {
+    margin-bottom: 4px;
+}
+
+.member-info h4 {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.manager-info h4 {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.status-selection h4 {
+    margin-bottom: 4px;
+}
+
+.admin-memo h4 {
+    margin-bottom: 4px;
+}
+
+.manager-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.manager-table th,
+.manager-table td {
+    padding: 8px;
+    border: 1px solid #e9ecef;
+    text-align: left;
+}
+
+.manager-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    width: 120px;
+}
+
+.manager-table td {
+    color: #495057;
+}
+
+/* 반응형을 위한 스타일 */
+.manager-table {
+    table-layout: fixed;
+}
+
+.manager-table td {
+    word-break: break-all;
+}
+
+/* 기업 정보 테이블 스타일 */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.info-table th,
+.info-table td {
+    padding: 8px;
+    border: 1px solid #e9ecef;
+    text-align: left;
+}
+
+.info-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    width: 120px;
+}
+
+.info-table td {
+    color: #495057;
+}
+
+/* 주소가 들어가는 셀 특별 처리 */
+.info-table td[colspan="3"] {
+    width: auto;
+}
+
+/* 반응형을 위한 스타일 */
+.info-table {
+    table-layout: fixed;
+}
+
+.info-table td {
+    word-break: break-all;
+}
+
+/* 추가 작업 */
+/* 사업자등록증명원 이미지 영역 스타일 */
+.certificate-image-view {
+    text-align: center;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.certificate-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 800px;
+    object-fit: contain;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.certificate-image:hover {
+    transform: scale(1.02);
+}
+
+.certificate-info {
+    margin-top: 12px;
+    text-align: left;
+}
+
+.certificate-date {
+    font-size: 14px;
+    color: #495057;
+    margin-bottom: 4px;
+}
+
+.certificate-notice {
+    font-size: 12px;
+    color: #868e96;
+    font-style: italic;
+    /* 눞히기 */
+}

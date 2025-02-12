@@ -32,6 +32,10 @@
             rel="stylesheet"
             href="../../static/css/admin/company_member_modal.css"
         />
+        <link
+            rel="stylesheet"
+            href="../../static/css/admin/company_certificate_modal.css"
+        />
     </head>
     <body class="admin-body">
         <div id="root">
@@ -1102,7 +1106,7 @@
             </div>
         </div>
 
-        <!-- 모달 컨테이너 -->
+        <!-- 신고관리 상세보기 모달 -->
         <div class="report-modal" style="display: none">
             <div class="modal-backdrop"></div>
             <div class="modal-container">
@@ -1120,31 +1124,31 @@
                 <!-- 모달 본문 -->
                 <div class="modal-body">
                     <!-- 신고 기본 정보 -->
+
                     <div class="report-info">
-                        <div class="info-row">
-                            <span class="label">신고번호</span>
-                            <span class="value" id="report-id">0000001</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">신고유형</span>
-                            <span class="value" id="report-type"
-                                >부적절한 내용</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">신고자</span>
-                            <span class="value" id="reporter">허세웅</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">신고대상</span>
-                            <span class="value" id="report-target">템프</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">신고일시</span>
-                            <span class="value" id="report-date"
-                                >2025-02-04</span
-                            >
-                        </div>
+                        <h4>INFO</h4>
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <th>신고번호</th>
+                                    <td id="report-id">0000001</td>
+                                    <th>신고일시</th>
+                                    <td id="report-date">2025-02-04</td>
+                                </tr>
+                                <tr>
+                                    <th>신고자</th>
+                                    <td id="reporter">허세웅</td>
+                                    <th>신고대상</th>
+                                    <td id="report-target">템프</td>
+                                </tr>
+                                <tr>
+                                    <th>신고유형</th>
+                                    <td colspan="3" id="report-type">
+                                        부적절한 내용
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <!-- 신고 상세 내용 -->
@@ -1185,7 +1189,7 @@
             </div>
         </div>
 
-        <!-- 공고 상세 모달 -->
+        <!-- 공고관리 상세보기 모달 -->
         <div class="announce-modal" style="display: none">
             <div class="modal-backdrop"></div>
             <div class="modal-container">
@@ -1204,32 +1208,30 @@
                 <div class="modal-body">
                     <!-- 공고 기본 정보 -->
                     <div class="announce-info">
-                        <div class="info-row">
-                            <span class="label">공고번호</span>
-                            <span class="value" id="announce-id">0000001</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">기업명</span>
-                            <span class="value" id="company-name">템프</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">공고 제목</span>
-                            <span class="value" id="announce-title"
-                                >실무자 원데이 체험 프로그램</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">등록일</span>
-                            <span class="value" id="register-date"
-                                >2025-02-07</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">마감일</span>
-                            <span class="value" id="deadline-date"
-                                >2025-02-28</span
-                            >
-                        </div>
+                        <h4>INFO</h4>
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <th>공고 제목</th>
+                                    <td colspan="3" id="announce-title">
+                                        실무자 원데이 체험 프로그램
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>공고번호</th>
+                                    <td id="announce-id">0000001</td>
+                                    <th>기업명</th>
+                                    <td id="company-name">템프</td>
+                                </tr>
+
+                                <tr>
+                                    <th>등록일</th>
+                                    <td id="register-date">2025-02-07</td>
+                                    <th>마감일</th>
+                                    <td id="deadline-date">2025-02-28</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <!-- 공고 상세내용 -->
@@ -1306,7 +1308,7 @@
             <div class="modal-container">
                 <!-- 모달 헤더 -->
                 <div class="modal-header">
-                    <h3>회원 상세정보</h3>
+                    <h3>일반회원 상세정보</h3>
                     <button type="button" class="close-btn">
                         <img
                             src="../../static/images/admin/cross.png"
@@ -1319,41 +1321,40 @@
                 <div class="modal-body">
                     <!-- 기본 정보 섹션 -->
                     <div class="member-info">
-                        <div class="info-row">
-                            <span class="label">회원번호</span>
-                            <span class="value" id="member-id">0000001</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">이름</span>
-                            <span class="value" id="member-name">허세웅</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">아이디</span>
-                            <span class="value" id="member-userid"
-                                >woong123</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">이메일</span>
-                            <span class="value" id="member-email"
-                                >woongzzang123@gmail.com</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">가입일</span>
-                            <span class="value" id="join-date">2025-01-15</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">최근접속일</span>
-                            <span class="value" id="last-access"
-                                >2025-02-10</span
-                            >
-                        </div>
+                        <h4>INFO</h4>
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <th>회원번호</th>
+                                    <td id="member-id">0000001</td>
+                                    <th>이름</th>
+                                    <td id="member-name">허세웅</td>
+                                </tr>
+                                <tr>
+                                    <th>아이디</th>
+                                    <td id="member-userid">woong123</td>
+                                    <th>연락처</th>
+                                    <td id="member-phone">010-1234-5678</td>
+                                </tr>
+                                <tr>
+                                    <th>가입일</th>
+                                    <td id="join-date">2025-01-15</td>
+                                    <th>최근접속일</th>
+                                    <td id="last-access">2025-02-10</td>
+                                </tr>
+                                <tr>
+                                    <th>이메일</th>
+                                    <td colspan="3" id="member-email">
+                                        woongzzang123@gmail.com
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <!-- 상세 내용 섹션 -->
                     <div class="member-detail">
-                        <h4>상세 내용</h4>
+                        <h4>회원 상세내용</h4>
                         <select class="status-select detail-select">
                             <option value="">카테고리 선택</option>
                             <option value="profile-image">대표 이미지</option>
@@ -1535,91 +1536,74 @@
                 <div class="modal-body">
                     <!-- 기본 정보 섹션 -->
                     <div class="member-info">
-                        <div class="info-row">
-                            <span class="label">회원번호</span>
-                            <span class="value" id="company-member-id"
-                                >0000001</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">기업명</span>
-                            <span class="value" id="company-name">템프</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">사업자등록번호</span>
-                            <span class="value" id="business-number"
-                                >123-45-67890</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">대표자명</span>
-                            <span class="value" id="ceo-name">홍길동</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">설립일</span>
-                            <span class="value" id="establishment-date"
-                                >2020-01-01</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">기업규모</span>
-                            <span class="value" id="company-size"
-                                >중소기업</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">업종</span>
-                            <span class="value" id="company-sector"
-                                >IT서비스</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">사원수</span>
-                            <span class="value" id="employee-count">50명</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">본사주소</span>
-                            <span class="value" id="company-address"
-                                >서울시 강남구 테헤란로</span
-                            >
-                        </div>
+                        <h4>INFO</h4>
+                        <table class="info-table">
+                            <tbody>
+                                <tr>
+                                    <th>회원번호</th>
+                                    <td id="company-member-id">0000001</td>
+                                    <th>기업명</th>
+                                    <td id="company-name">템프</td>
+                                </tr>
+                                <tr>
+                                    <th>사업자등록번호</th>
+                                    <td id="business-number">123-45-67890</td>
+                                    <th>대표자명</th>
+                                    <td id="ceo-name">홍길동</td>
+                                </tr>
+                                <tr>
+                                    <th>설립일</th>
+                                    <td id="establishment-date">2020-01-01</td>
+                                    <th>기업규모</th>
+                                    <td id="company-size">중소기업</td>
+                                </tr>
+                                <tr>
+                                    <th>업종</th>
+                                    <td id="company-sector">IT서비스</td>
+                                    <th>사원수</th>
+                                    <td id="employee-count">50명</td>
+                                </tr>
+                                <tr>
+                                    <th>본사주소</th>
+                                    <td colspan="3" id="company-address">
+                                        서울시 강남구 테헤란로
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <!-- 담당자 정보 섹션 -->
                     <div class="manager-info">
-                        <h4>담당자 상세정보</h4>
-                        <div class="info-row">
-                            <span class="label">담당자명</span>
-                            <span class="value" id="manager-name">김영희</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">부서/직책</span>
-                            <span class="value" id="manager-position"
-                                >인사팀/과장</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">이메일</span>
-                            <span class="value" id="manager-email"
-                                >temp@temp.com</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">연락처</span>
-                            <span class="value" id="manager-phone"
-                                >02-1234-5678</span
-                            >
-                        </div>
-                        <div class="info-row">
-                            <span class="label">가입일</span>
-                            <span class="value" id="join-date">2025-01-15</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">최근접속일</span>
-                            <span class="value" id="last-access"
-                                >2025-02-10</span
-                            >
-                        </div>
+                        <h4>담당자 정보</h4>
+                        <table class="manager-table">
+                            <tbody>
+                                <tr>
+                                    <th>담당자명</th>
+                                    <td id="manager-name">김영희</td>
+                                    <th>부서/직책</th>
+                                    <td id="manager-position">인사팀/과장</td>
+                                </tr>
+                                <tr>
+                                    <th>아이디</th>
+                                    <td id="manager-userid">younghee123</td>
+                                    <th>연락처</th>
+                                    <td id="manager-phone">02-1234-5678</td>
+                                </tr>
+                                <tr>
+                                    <th>가입일</th>
+                                    <td id="join-date">2025-01-15</td>
+                                    <th>최근접속일</th>
+                                    <td id="last-access">2025-02-10</td>
+                                </tr>
+                                <tr>
+                                    <th>이메일</th>
+                                    <td colspan="3" id="manager-email">
+                                        temp@temp.com
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <!-- 기업 상세 정보 섹션 -->
@@ -1628,6 +1612,9 @@
                         <select class="status-select detail-select">
                             <option value="">카테고리 선택</option>
                             <option value="company-logo">기업 로고</option>
+                            <option value="business-certificate">
+                                사업자등록증명원
+                            </option>
                             <option value="company-intro">기업 소개</option>
                             <option value="financial-info">재무정보</option>
                             <option value="welfare">복리후생</option>
@@ -1648,7 +1635,28 @@
                                     />
                                 </div>
                             </div>
-
+                            <!-- 사업자등록증명원 섹션 추가 -->
+                            <div
+                                class="content-section business-certificate-section"
+                                style="display: none"
+                            >
+                                <div class="certificate-image-view">
+                                    <img
+                                        src="/static/images/admin/default_certificate.png"
+                                        alt="사업자등록증명원"
+                                        class="certificate-image"
+                                    />
+                                    <div class="certificate-info">
+                                        <p class="certificate-date">
+                                            등록일: 2025-01-15
+                                        </p>
+                                        <p class="certificate-notice">
+                                            * 이미지를 클릭하면 원본 크기로 볼
+                                            수 있습니다
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                             <!-- 기업 소개 섹션 -->
                             <div
                                 class="content-section company-intro-section"
@@ -1814,6 +1822,17 @@
             </div>
         </div>
 
+        <!-- 사업자등록증면원 이미지 뷰어 모달 -->
+        <div class="image-viewer-modal" style="display: none">
+            <div class="modal-backdrop"></div>
+            <div class="viewer-container">
+                <img src="" alt="원본 이미지" class="viewer-image" />
+                <button type="button" class="close-viewer-btn">
+                    <img src="../../static/images/admin/cross.png" alt="닫기" />
+                </button>
+            </div>
+        </div>
+
         <!-- JavaScript 파일 연결 -->
         <script src="../../static/js/admin/sidebar_each_menu_toggle.js"></script>
         <script src="../../static/js/admin/sidebar_toggle.js"></script>
@@ -1827,5 +1846,6 @@
         <script src="../../static/js/admin/modal_announce.js"></script>
         <script src="../../static/js/admin/modal_normal_member.js"></script>
         <script src="../../static/js/admin/modal_company_member.js"></script>
+        <script src="../../static/js/admin/modal_company_certificate.js"></script>
     </body>
 </html>
