@@ -684,6 +684,21 @@
     color: rgb(68, 68, 68);
 }
 
+.managemenu-wrapper {
+    position: absolute;
+    top: 28px;
+    right: 0px;
+    width: 128px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 16px;
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.managemenu-wrapper > ul {
+    padding: 8px;
+}
+
 .resume-content-element::after {
     position: absolute;
     top: 5px;

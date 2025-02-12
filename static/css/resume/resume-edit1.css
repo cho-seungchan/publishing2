@@ -918,6 +918,37 @@ input:hover {
     color: rgb(119, 119, 119);
 }
 
+.profilephoto > .profile-image {
+    background: url("") center center / contain no-repeat rgb(255, 255, 255);
+    width: 100%;
+    height: 188px;
+    border-radius: 12px;
+    border: 1px solid rgb(228, 228, 228);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.profilephoto > .profile-image > .hover-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+
+
+.profilephoto > .profile-image > button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: none;
+}
+
+.profilephoto > .profile-image > button > svg > g > path:nth-child(2) {
+    stroke: rgb(255, 255, 255);
+}
+
 .memberinfoedit {
     width: 100%;
 }
@@ -3254,6 +3285,12 @@ textarea:focus {
     cursor: pointer;
 }
 
+.bottomquestion.clicked{
+    border-radius: 14px;
+    color: rgb(255, 255, 255);
+    background: rgb(34, 34, 34);
+    border: 1px solid rgb(34, 34, 34);
+}
 .bottomlist {
     display: flex;
     flex-wrap: wrap;
@@ -3342,14 +3379,88 @@ textarea:focus {
 .hidden2 {
     display: none;
 }
+.bottom-tooltip {
+    width: fit-content;
+    min-width: 200px;
+    max-width: 440px;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(228, 228, 228);
+    background-color: rgb(255, 255, 255);
+}
 
+.bottomquestion > .layer {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    z-index: 2;
+}
 
-
-
-.bottom-tooltip .progress .tooltip .layer {
+.bottombar .progress .tooltip .layer {
     top: unset;
     right: unset;
     bottom: 30px;
     left: 0px;
     min-width: 330px;
+}
+.bottom-tooltip-text1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.bottom-tooltip-text1 > span {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(0, 0, 0);
+}
+
+.bottom-tooltip-text1-btn > svg {
+    width: 16px;
+    height: 16px;
+}
+
+.bottom-tooltip-text1-btn > svg > path {
+    fill: rgb(0, 0, 0);
+}
+
+
+.bottom-tooltip-text2 {
+    margin-top: 8px;
+}
+
+.bottom-tooltip-text2 > p {
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(34, 34, 34);
+}
+
+.bottom-tooltip-text3 {
+    margin-top: 12px;
+}
+
+.bottom-tooltip-text3  > p {
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(34, 34, 34);
+}
+
+.bottom-tooltip-text4 {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.bottom-tooltip-text4 > svg {
+    width: 20px;
+    height: 20px;
+}
+
+.bottom-tooltip-text4 > span {
+    font-size: 13px;
+    line-height: 18px;
+    color : black
 }
