@@ -1,27 +1,26 @@
-/**
- * 일반회원 관리 모달 기능
- * 1. 모달 열기/닫기
- * 2. 카테고리별 콘텐츠 표시
- * 3. 데이터 처리 및 상태 관리
- */
+// 일반회원 상세정보 모달
+// 회원정보 상세보기 모달 제어, 카테고리별 콘텐츠 표시, 활동내역 관리
+// 모달, 상세정보(6개 카테고리), 활동내역(2개 카테고리)
 
 document.addEventListener("DOMContentLoaded", function () {
-    // 공통 모달 제어 함수
+    // 모달 열기: display 처리 및 배경 스크롤 방지
     function openModal(modal) {
-        if (!modal) return;
+        // if (!modal) return;
         modal.style.display = "block";
         document.body.style.overflow = "hidden";
         console.log("일반회원 모달 열기");
     }
 
+    // 모달 닫기: display 처리 및 배경 스크롤 복구
     function closeModal(modal) {
-        if (!modal) return;
+        // if (!modal) return;
         modal.style.display = "none";
         document.body.style.overflow = "";
         console.log("일반회원 모달 닫기");
     }
 
     // DOM 요소 선택
+    // 기본 모달 요소
     const memberModal = document.querySelector(".normal-member-modal");
     const memberDetailBtns = document.querySelectorAll(
         ".normal-member-table .detail-btn"
@@ -35,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const memberSaveBtn = document.querySelector(
         ".normal-member-modal .save-btn"
     );
+
+    // 카테고리 및 콘텐츠 요소
     const detailSelect = document.querySelector(
         ".normal-member-modal .detail-select"
     );
@@ -48,22 +49,22 @@ document.addEventListener("DOMContentLoaded", function () {
         ".normal-member-modal .activity-content"
     );
 
-    // DOM 요소 존재 확인
+    // 필수 DOM 요소 검증
     if (!memberModal) {
         console.error("일반회원 모달을 찾을 수 없습니다.");
         return;
     }
 
-    // 모달 초기화 함수
+    // 모달 초기 상태로 리셋
     function resetMemberModal() {
         try {
             console.log("모달 초기화 시작");
 
-            // 셀렉트 박스 초기화
+            // 선택 상자 초기화
             if (detailSelect) detailSelect.selectedIndex = 0;
             if (activitySelect) activitySelect.selectedIndex = 0;
 
-            // 콘텐츠 영역 초기화
+            // 상세정보 영역 초기화
             if (detailContent) {
                 const detailSections =
                     detailContent.querySelectorAll(".content-section");
@@ -72,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
+            // 활동내역 영역 초기화
             if (activityContent) {
                 const activitySections =
                     activityContent.querySelectorAll(".content-section");
@@ -89,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 이벤트 리스너 설정
     function initializeEventListeners() {
         try {
-            // 상세보기 버튼 클릭 이벤트
+            // 상세보기 버튼으로 모달 열기
             memberDetailBtns.forEach((btn) => {
                 btn.addEventListener("click", () => {
                     openModal(memberModal);
@@ -97,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
 
-            // 닫기/취소 버튼 이벤트
+            // 모달 닫기 버튼 처리
             if (memberCloseBtn) {
                 memberCloseBtn.addEventListener("click", () =>
                     closeModal(memberModal)
@@ -109,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
             }
 
-            // 저장 버튼 이벤트
+            // 저장 버튼 처리 (실제 저장 로직은 추후 구현)
             if (memberSaveBtn) {
                 memberSaveBtn.addEventListener("click", () => {
                     console.log("회원정보 저장");
@@ -117,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // 상세내용 카테고리 선택 이벤트
+            // 상세정보 카테고리 선택 처리 (프로필~자기소개)
             if (detailSelect && detailContent) {
                 detailSelect.addEventListener("change", function () {
                     const sections =
@@ -138,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // 활동내역 카테고리 선택 이벤트
+            // 활동내역 카테고리 선택 처리 (지원이력/신고내역)
             if (activitySelect && activityContent) {
                 activitySelect.addEventListener("change", function () {
                     const sections =
@@ -159,14 +161,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
-            // 모달 바깥 영역 클릭 이벤트
+            // 모달 외부 클릭시 닫기
             memberModal.addEventListener("click", (e) => {
                 if (e.target.classList.contains("modal-backdrop")) {
                     closeModal(memberModal);
                 }
             });
 
-            // ESC 키 이벤트
+            // ESC 키로 모달 닫기
             document.addEventListener("keydown", (e) => {
                 if (
                     e.key === "Escape" &&

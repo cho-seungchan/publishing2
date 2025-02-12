@@ -54,7 +54,7 @@
 } */
 
 /* 상세 내용 표시 영역 */
-.detail-content,
+.member-detail .detail-content,
 .activity-content {
     margin: 0 0;
     padding: 16px;
@@ -110,6 +110,11 @@
 .activity-table th {
     background-color: #f8f9fa;
     font-weight: 600;
+    color: #495057;
+}
+
+.activity-table td {
+    color: #495057;
 }
 
 /* 관리자 메모 영역은 공통 스타일 사용
