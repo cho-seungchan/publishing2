@@ -1058,3 +1058,40 @@ a:hover {
   font-size: 13px;
   line-height: 17px;
 }
+.write_base .item .input_sebu_address {
+  margin-top: 8px;
+}
+.write_base .item .input_address {
+  width: 287px;
+}
+.cont_division .msgInvalid {
+  display: block;
+  clear: both;
+  margin-top: 8px;
+  color: #d64141;
+  font-size: 13px;
+  line-height: 20px;
+}
+.btn_identify_phone {
+  width: 100%;
+}
+.write_base .item .pass_box .field_eye::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='18' viewBox='0 0 28 18' fill='none'%3E%3Cpath d='M27.3527 8.08339C27.7724 8.6432 27.8117 9.37916 27.4384 9.97089C25.9706 12.2976 21.5981 18 14 18C6.94269 18 2.28128 12.3525 0.648399 10.0048C0.226372 9.39807 0.246159 8.61481 0.691325 8.02481C2.44888 5.69541 7.41903 0 14 0C20.6368 0 25.6354 5.79251 27.3527 8.08339Z' fill='%235C667B'/%3E%3Cellipse cx='14.0001' cy='9.00003' rx='5.09091' ry='5.14286' fill='white'/%3E%3Cellipse cx='14' cy='8.9999' rx='2.54545' ry='2.57143' fill='%235C667B'/%3E%3C/svg%3E")
+    no-repeat center;
+  background-size: contain;
+}
+.cont_division .identify_phone .box_form,
+.cont_division .identify_phone .box_form + .box_form {
+  margin-top: 8px;
+}
+.cont_division .input_certify {
+  border-color: var(--gray70);
+  background-color: var(--gray20);
+}
+.cont_division .identify_phone .TypoBox {
+  width: 100%;
+}
