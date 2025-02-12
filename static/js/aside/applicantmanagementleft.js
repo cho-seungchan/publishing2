@@ -12,7 +12,7 @@ document.querySelectorAll("button").forEach((button) => {
         });
 
         // 버튼의 배경색과 글자색이 바뀌도록 변경
-        if (e.target.tagName == "SPAN") {
+        if (e.target.tagName == "SPAN" || e.target.classList.contains("triangle")) {
             // 진행중 포지션과 마감된 포지션은 SPAN이 클릭 됨.
             e.target.closest("button").classList.add("clicked");
 
