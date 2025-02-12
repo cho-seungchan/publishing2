@@ -1,0 +1,51 @@
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid rgba(200, 200, 200, 0.8);
+}
+.sidebar h1 {
+    font-size: 16px;
+    font-weight: 900;
+}
+.sidebar h2 {
+    font-size: 14px;
+    font-weight: 100;
+}
+.sidebar .input-section {
+    margin-top: 20px;
+}
+.sidebar .input-section textarea {
+    /* position: relative; */
+    width: 100%;
+    padding: 5px;
+    height: 160px;
+    box-sizing: border-box;
+}
+.sidebar .submit-button{
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* 또는 space-around, space-evenly */
+    gap: 10px;
+}
+.sidebar .submit-button button{
+    width: 100%;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+}
+.sidebar .submit-button button.clicked {
+    background: rgb(0, 221, 109);
+    border: 1px solid rgb(0, 221, 109);
+    color: rgb(255, 255, 255);
+    padding: 0px 16px;
+}

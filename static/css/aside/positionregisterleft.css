@@ -1,4 +1,4 @@
-.content-wrapper {
+.sidebar {
     width: 300px;
     font-size: 16px;
     color: black;
@@ -41,45 +41,50 @@
 .headbar .green::before {
     background-color: green;
 }
-.sidebar {
+.contentbar {
     overflow-y: scroll;
     height: 500px;
     border: 1px solid rgba(200, 200, 200, 0.8);
     /* border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px; */
 }
-.sidebar h1 {
+.contentbar h1 {
     font-size: 25px;
     font-weight: 700;
 }
-.sidebar h2 {
+.contentbar h2 {
     font-size: 18px;
     font-weight: 700;
     margin-top: 12%;
     margin-left: 3%;
 }
-.sidebar div {
+.contentbar div {
     overflow: hidden;
 }
-.sidebar .comment {
+.contentbar .comment {
     font-size: 12px;
     text-align: center;
     padding: 15px;
     background-color: rgb(230, 241, 253);
 }
-.sidebar .title {
+.contentbar .title {
     margin-left: 3%;
     border-bottom: 1px solid rgba(85, 67, 67, 0.32);
 }
-.sidebar .content {
+.contentbar .title img{
+    position: relative;
+    top: 4px;
+    margin-right: 5px; 
+}
+.contentbar .content {
     top: 0px;
 }
-.sidebar .content pre {
+.contentbar .content pre {
     display: flex;
     gap: 7px;
     flex-flow: wrap;
 }
-.sidebar .content pre {
+.contentbar .content pre {
     margin: 2px 6px 2px 6px;
     padding: 0px;
     white-space: pre-line;
@@ -90,11 +95,11 @@
     font-size: 16px;
     line-height: 28px;
 }
-.sidebar .content .circle {
+.contentbar .content .circle {
     margin-left: 3%;
     margin-bottom: -4%;
 }
-.sidebar .content .circle::before {
+.contentbar .content .circle::before {
     content: "●";
     /* transform: translateY(-50%); */
     font-size: 5px;
