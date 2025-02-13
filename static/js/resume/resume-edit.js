@@ -221,7 +221,6 @@ resumeReleaseBtn.addEventListener("click", () => {
 careerPeriodList.forEach((year) => {
     year.addEventListener("click", () => {
         yearText.style.color = "black";
-
         yearText.innerText = year.innerText;
     });
 });

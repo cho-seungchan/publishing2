@@ -153,22 +153,57 @@ input.addEventListener("change", (e) => {
     })
 });
 
-
-
-
-const resumeOpenButton = document.querySelector("button.resume-open-button");
-const toggleText = resumeOpenButton.nextElementSibling;
-resumeOpenButton.addEventListener("click", () => {
-    if (toggleText.innerText == "비공개") {
-        resumeOpenButton.classList.add("public");
+window.addEventListener("click",(e) =>{
+    if(e.target && e.target.matches("button.resume-open-button")){
+        const toggleText = e.target.nextElementSibling
+        if (toggleText.innerText == "비공개") {
+        e.target.classList.add("public");
+        alert("이력서 공개로 설정되었습니다. 추후 이력서 열람서비스를 통한 면접 제안을 받으실 수 있습니다.")
         toggleText.innerText = "공개";
+
     } else {
-        resumeOpenButton.classList.remove("public");
+        e.target.classList.remove("public");
         toggleText.innerText = "비공개";
     }
-});
+    }
+})
 
 
+window.addEventListener('click',(e) =>{
+    if(e.target && e.target.matches("div.tooltip-message button svg")){
+        const temp = e.target.closest("div")
+        temp.classList.add("hidden")
+        const temp2 = temp.parentElement.querySelector('div:first-of-type').lastElementChild
+        console.log(temp2)
+        temp2.classList.remove("clicked")
+    }
+})
+
+window.addEventListener('click',(e) =>{
+    const toggleText = e.target.parentElement.previousElementSibling
+    if(e.target && e.target.matches("div.resume-question-inner")){
+        if (toggleText.innerText == "비공개") {
+        e.target.parentElement.nextElementSibling.classList.toggle("hidden")
+        e.target.parentElement.nextElementSibling.nextElementSibling.classList.add("hidden")
+            if(e.target.classList.contains("clicked")){
+                e.target.classList.remove("clicked")
+            }
+            else{
+                e.target.classList.add("clicked")
+            }
+        
+        } else {
+            e.target.parentElement.nextElementSibling.classList.add("hidden")
+        e.target.parentElement.nextElementSibling.nextElementSibling.classList.toggle("hidden")
+        if(e.target.classList.contains("clicked")){
+                e.target.classList.remove("clicked")
+            }
+            else{
+                e.target.classList.add("clicked")
+            }
+    }
+    }
+})
 
 
 const newResume = document.querySelector("div.new-resume")
@@ -176,7 +211,7 @@ const resumeArea = document.querySelector("ul.resume-content-list2")
 const addResume = resumeArea.lastElementChild
 const resumeManageBtn = document.querySelectorAll(".resumemanage")
 const amountResume = resumeArea.querySelectorAll("li.resume-content3")
-
+const warningBtn = resumeArea.querySelectorAll("button.warning")
 
 newResume.addEventListener('click', () => {
     const newResumeHtml = document.createElement("li")
@@ -192,11 +227,11 @@ newResume.addEventListener('click', () => {
                                         <ul>
                                             <li><button type="button">다운로드</button></li>
                                             <li><button type="button">이력서 복사</button></li>
-                                            <li><button class="warning" type="button" disabled="">이력서 삭제</button></li>
+                                            <li><button class="warning" type="button">이력서 삭제</button></li>
                                         </ul>
                                     </div>
                                     <h2>
-                                        <a href="/resume/468095">서버주고받을이름</a>
+                                        <a href="/resume/468095">회원명이력서_SYSDATE</a>
                                     </h2>
                                     <a href="/resume/468095">
                                         <ul>
@@ -218,6 +253,26 @@ newResume.addEventListener('click', () => {
                                         <div class="resume-question">
                                             <div class="resume-question-inner"></div>
                                         </div>
+                                        <div class="resumeopen-tooltip1 tooltip-message hidden"><button type="button"><span
+                                                    style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24">
+                                                        <g fill="none" fill-rule="evenodd">
+                                                            <path d="M0 0h24v24H0z"></path>
+                                                            <path stroke="#C4C4C4" stroke-linejoin="round"
+                                                                stroke-width="1.5" d="M18 6 6 18M6 6l12 12"></path>
+                                                        </g>
+                                                    </svg></span></button><strong>모든 정보가 비공개</strong> 됩니다.<br>입사지원한
+                                            기업에서만<br>이력서를 확인할 수 있습니다.</div>
+                                        <div class="resumeopen-tooltip2 tooltip-message hidden"><button type="button"><span
+                                                    style="display: flex;"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        width="24" height="24">
+                                                        <g fill="none" fill-rule="evenodd">
+                                                            <path d="M0 0h24v24H0z"></path>
+                                                            <path stroke="#C4C4C4" stroke-linejoin="round"
+                                                                stroke-width="1.5" d="M18 6 6 18M6 6l12 12"></path>
+                                                        </g>
+                                                    </svg></span></button>이력서 열람서비스를<br>준비 중입니다. 이력서 공개하시면<br> 추후
+                                            <strong>이력서 열람 서비스를<br>통한 면접제안</strong>을 받으실 수 있습니다.</div>
                                     </div>
                                     <span>2025.01.30 등록</span>
                                 </div>
@@ -225,22 +280,24 @@ newResume.addEventListener('click', () => {
     resumeArea.insertBefore(newResumeHtml,addResume)    
     
 })
-const warningBtn = resumeArea.querySelectorAll("button.warning")
-window.addEventListener('click', (e) =>{
-    if(e.target && e.target.classList.contains("new-resume")){
-        warningBtn.forEach((buttons) =>{
-            buttons.removeAttribute("disabled")
-        })
-    }
+
+warningBtn.forEach((buttons) =>{
+    newResume.addEventListener('click', ()=>{
+        buttons.removeAttribute("disabled")
+    })
 })
 
-
-
-
+window.addEventListener('click',(e)=>{
+        if(e.target && e.target.matches("button.warning")){
+            e.target.closest('li.resume-content3').remove()
+        }
+})
 resumeArea.addEventListener('click',(e)=>{
     var temp = e.target.closest("button").nextElementSibling
     if(e.target && e.target.matches("button.resumemanage svg")){
         temp.classList.toggle("hidden")
     }   
 })
+
+
 
