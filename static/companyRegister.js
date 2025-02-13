@@ -6,7 +6,7 @@ const integratedBOX = document.querySelector("#redbox");
 const integratedMSG = document.querySelector("#msg_corp_code");
 
 integratedNUM.addEventListener("input", () => {
-  console.log("입력됨");
+  // console.log("입력됨");
 
   // 숫자만 입력가능.
   let value = integratedNUM.value.replace(/\D/g, "");
@@ -25,7 +25,7 @@ integratedNUM.addEventListener("input", () => {
 
 let fmsg = integratedNUM.integratedNUM; // 사업자번호 입력제어
 integratedNUM.addEventListener("focus", () => {
-  console.log("focus 됨");
+  // console.log("focus 됨");
 });
 // 사업자번호 칸 이벤트
 
@@ -65,9 +65,9 @@ modalBOX.style.display = "none";
 modalBackground.style.display = "none";
 
 pagebtn.addEventListener("click", () => {
-  console.log("PAGEbtn");
+  // console.log("PAGEbtn");
   if (modalBOX.style.display === "none") {
-    console.log("IN");
+    // console.log("IN");
     modalBOX.style.display = "block";
     modalBackground.style.display = "block";
   } else if (pagebtn.style.display === "block") {
@@ -91,19 +91,77 @@ btnclose2.addEventListener("click", () => {
 });
 
 // 파일 선택 버튼 눌럿을떄 사업자 등록번호로 포커스,
+// 파일 첨부
 // 사업자등록번호 확인안돼면
 const btnFile = document.querySelector("#select_certification_file");
+const checkbtn = document.querySelector("#request_certification_wrap");
+const nextTimeBtn = document.querySelector("#next_certification_check_wrap");
+const hiddenInputPage = document.querySelector(".area_input_company");
+const input = document.querySelector("#certification_file");
+const filenames = document.querySelectorAll(".file_upload_name");
+const filenamebox = document.querySelector("#request_certification_fail");
+const fileAgree = document.querySelector("#request_certification_complete");
+const fileChange = document.querySelector("#change_confirm_document_file");
+const filefail = document.querySelector("#file-fail");
+const closeBtn = document.querySelector("#btn_reset_certification");
 
 btnFile.style.display = "block";
-
+hiddenInputPage.style.display = "none";
+// 파일 첨부 , 사업자 등록번호 입력해야 넘어감
 btnFile.addEventListener("click", () => {
-  console.log("in");
-  if (integratedNUM.value.length <= 14) {
+  if (integratedNUM.value.length <= 11) {
     integratedNUM.focus();
     alert("사업자 등록번호를 입력하세요.");
-    // window.scrollTo("top : 0");
   } else if ((integratedNUM.value.length = 12)) {
+    corp_wrap.style.display = "block";
+    input.click();
   }
+  closeBtn.addEventListener("click", () => {
+    fileAgree.style.display = "none";
+    corp_wrap.style.display = "block";
+    filenamebox.style.display = "none";
+    checkbtn.style.display = "none";
+    btnFile.style.display = "block";
+    nextTimeBtn.style.display = "block";
+  });
+});
+// 파일변경
+fileChange.addEventListener("click", () => {
+  input.click();
+});
+// 파일첨부
+input.addEventListener("change", (e) => {
+  const [file] = e.target.files;
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.addEventListener("load", (e) => {
+    const path = e.target.result;
+    //  파일통과,
+    // console.log(path);
+    // console.log([file]);
+    if (path.includes("jpg", "png")) {
+      alert("Check");
+      // console.log([file][0].name);
+      filenames.forEach((filename) => {
+        // console.log(filename);
+        filename.innerText = `${[file][0].name}`;
+      });
+      btnFile.style.display = "none";
+      fileAgree.style.display = "block";
+      hiddenInputPage.style.display = "block";
+      nextTimeBtn.style.display = "none";
+      closeBtn.style.display = "block";
+      corp_wrap.style.display = "none";
+      closeBtn.style.display = "block";
+
+      // fileAgree.style.display = "block"
+    } else {
+      // alert("pdf jpg png 만 가능합니다.");
+      corp_wrap.style.display = "none";
+      input.value = "";
+      console.log("out");
+    }
+  });
 });
 
 // 기업인증 사진있는곳,위에 글자까지
@@ -119,10 +177,10 @@ btnFile.style.display = "block";
 subCorp_wrap.style.display = "none";
 
 nextTbtn.addEventListener("change", () => {
-  console.log("변함");
+  // console.log("변함");
   //
   if (nextTbtn.checked) {
-    console.log("진입");
+    // console.log("진입");
     //
     corp_wrap.style.display = "none";
     btnFile.style.display = "none";
