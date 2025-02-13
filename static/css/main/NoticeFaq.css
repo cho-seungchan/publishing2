@@ -681,7 +681,7 @@ img {
     width: 100vw;
     height: 100vh;
     position: fixed;
-    display: flex;
+    display: none;
     align-items: flex-start;
     -webkit-box-pack: center;
     justify-content: center;
@@ -751,6 +751,7 @@ img {
 }
 
 .modalSearchContents{
+    width: 100%;
     flex: 1 1 0%;
     display: flex;
     flex-direction: column;
@@ -956,4 +957,155 @@ input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio"
     font-size: 12px;
     color: rgba(55, 53, 47, 0.6);
     overflow-wrap: break-word;
+}
+
+.modalNoticeIcon{
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    background: url(https://cdn.lazyrockets.com/_next/static/media/emoji.0d02c5b5.png) 49.1525% 42.3729% / 6000% 6000%;
+}
+
+.modalSearchNoResult{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 120%;
+    width: 100%;
+    user-select: none;
+    font-size: 14px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.noResultText{
+    margin-left: 14px;
+    margin-right: 14px;
+    min-width: 0px;
+    flex: 1 1 auto;
+    text-align: center;
+    color: rgba(55, 53, 47, 0.6);
+}
+
+.noResultTitle{
+    margin: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.noResultContext{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.noResultText{
+    font-size: 14px;
+    color: rgba(55, 53, 47, 0.4);
+}
+
+.menuShareWindow{
+    width: 240px;
+    padding: 10px 0px;
+    border-radius: 3px;
+    z-index: 100000;
+    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.shareButtonsWrapper{
+    padding: 6px 0px;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.shareButtonsWrapper:hover{
+    background-color: #cfcfcf;
+}
+
+.shareWindow{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.shareInner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.shareTitle{
+    margin-bottom: 8px;
+    color: inherit;
+    font-size: 14px;
+}
+
+.shareButtons{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.xi-share-alt:before {
+    content: "\e9e9";
+}
+
+.linkShareButton{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+    opacity: 0.6;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 4px 2px;
+}
+
+.linkShareButton:hover{
+    opacity: 1;
+}
+
+.ShareButton{
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+}
+
+.shareImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    opacity: 0.6;
+    transition: 300ms;
+}
+
+.shareImg:hover{
+    opacity: 1;
+}
+
+.shareButtons > * {
+    margin-right: 8px !important;
+}
+
+#hiddenContents{
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
 }
