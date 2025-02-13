@@ -674,14 +674,14 @@ img {
     background-size: 6000% 6000%;
 }
 
-.search-container {
+.searchModalLayout{
     inset: 0px;
     z-index: 2147483647;
     overflow: hidden;
     width: 100vw;
     height: 100vh;
     position: fixed;
-    display: flex;
+    display: none;
     align-items: flex-start;
     -webkit-box-pack: center;
     justify-content: center;
@@ -689,7 +689,7 @@ img {
     background: rgba(15, 15, 15, 0.6);
 }
 
-.search-box {
+.searchModalWindow{
     position: relative;
     z-index: 100000000;
     box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 5px 10px, rgba(15, 15, 15, 0.2) 0px 15px 40px;
@@ -703,7 +703,36 @@ img {
     max-height: 80vh;
 }
 
-.search-input-wrapper {
+.notionQuickFindMenu{
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    max-width: calc(-24px + 100vw);
+    height: 100%;
+    max-height: 80vh;
+    min-height: 50px;
+}
+
+.searchModalWindow2{
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    min-height: 0px;
+    transform: translateZ(0px);
+    display: flex;
+    flex-flow: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    max-height: 80vh;
+}
+
+.searchSectionDivider{
+    flex: 1 1 0%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalSearchInput{
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -721,18 +750,33 @@ img {
     box-shadow: rgba(55, 53, 47, 0.09) 0px 1px 0px;
 }
 
-.search-icon {
-    width: 18px;
-    height: 18px;
-    fill: rgba(55, 53, 47, 0.4);
-    margin-right: 10px;
-    flex-shrink: 0;
-    backface-visibility: hidden;
-    flex-grow: 0;
+.modalSearchContents{
+    width: 100%;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
 }
 
-.search-input {
-    border: none;
+.modalSearchFooter{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    box-shadow: rgba(55, 53, 47, 0.09) 0px -1px 0px;
+    margin-top: 1px;
+    line-height: 120%;
+    width: 100%;
+    min-height: 28px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(55, 53, 47, 0.4);
+    padding: 0px 14px;
+}
+
+.searchInput{
     font-size: inherit;
     line-height: inherit;
     border: none;
@@ -745,10 +789,323 @@ img {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'pretendard';
 }
 
-.search-input::placeholder{
-    color: rgb(170, 170, 170);
+.searchInput::placeholder{
+    color: rgba(66, 66, 66, 0.4);
     font-family: 'pretendard';
-    font-weight: 200;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+input:focus-visible {
+    outline-offset: 0px;
+}
+
+input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio" i]) {
+    overflow-clip-margin: 0px !important;
+    overflow: clip !important;
+}
+
+[placeholder]:empty::before {
+    content: attr(placeholder);
+    min-height: 1em;
+    color: rgb(55, 53, 47);
+    -webkit-text-fill-color: rgba(55, 53, 47, 0.2);
+}
+
+.searchContent{
+    width: 100%;
+    user-select: none;
+    transition: none;
+}
+
+.searchContent:hover{
+    background-color: #ebebeb;
+}
+
+[role="button"]:not([tabindex="-1"]) {
+    cursor: pointer;
+}
+
+.contentTextWrapper{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 120%;
+    width: 100%;
+    user-select: none;
+    min-height: 36px;
+    font-size: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    box-shadow: rgba(55, 53, 47, 0.06) 0px 1px 0px;
+}
+
+.searchTextIcon{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 14px;
+    margin-top: 1px;
+    align-self: flex-start;
+}
+
+.searchTextContent{
+    margin-left: 8px;
+    margin-right: 14px;
+    min-width: 0px;
+}
+
+.searchTextButton{
+    margin-left: auto;
+    margin-right: 14px;
+    min-width: 0px;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin-top: 3px;
+}
+
+.notionRecordIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.modalSearchIcon{
+    height: 15.4px;
+    width: 15.4px;
+    font-size: 15.4px;
+    line-height: 1.1;
+    margin-left: 0px;
+    color: black;
+}
+
+.modalLockIcon{
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    background-repeat: no-repeat;
+    background: url(https://cdn.lazyrockets.com/_next/static/media/emoji.0d02c5b5.png);
+    background-position-x: 50.847457627118644%;
+    background-position-y: 16.94915254237288%;
+    -webkit-background-size: 6000% 6000%;
+    background-size: 6000% 6000%;
+}
+
+.searchTextTitle{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgba(55, 53, 47, 0.6);
+}
+
+.searchTextDetail{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: rgba(55, 53, 47, 0.4);
+}
+
+/* 검색결과에 검색어가 들어있는 부분 강조 */
+.searchWordEM{
+    font-weight: 500;
+    color: rgb(55, 53, 47);
+    white-space: pre-wrap;
+}
+
+.searchDetailWrapper{
+    display: flex;
+    font-size: 12px;
+    color: rgba(55, 53, 47, 0.4);
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.searchHoverButton{
+    display: block;
+    flex-shrink: 0;
+    backface-visibility: hidden;
+    width: 14px;
+    height: 14px;
+    fill: rgba(55, 53, 47, 0.4);
+    opacity: 0;
+}
+
+.searchContent:hover .searchHoverButton{
+    opacity: 1;
+}
+
+.modalEventIcon{
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    background: url(https://cdn.lazyrockets.com/_next/static/media/emoji.0d02c5b5.png) 11.8644% 18.6441% / 6000% 6000%;
+}
+
+.searchTextMore{
+    margin-top: 4px;
+    font-size: 12px;
+    color: rgba(55, 53, 47, 0.6);
+    overflow-wrap: break-word;
+}
+
+.modalNoticeIcon{
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    background: url(https://cdn.lazyrockets.com/_next/static/media/emoji.0d02c5b5.png) 49.1525% 42.3729% / 6000% 6000%;
+}
+
+.modalSearchNoResult{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 120%;
+    width: 100%;
+    user-select: none;
+    font-size: 14px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.noResultText{
+    margin-left: 14px;
+    margin-right: 14px;
+    min-width: 0px;
+    flex: 1 1 auto;
+    text-align: center;
+    color: rgba(55, 53, 47, 0.6);
+}
+
+.noResultTitle{
+    margin: 0px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.noResultContext{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.noResultText{
+    font-size: 14px;
+    color: rgba(55, 53, 47, 0.4);
+}
+
+.menuShareWindow{
+    width: 240px;
+    padding: 10px 0px;
+    border-radius: 3px;
+    z-index: 100000;
+    box-shadow: rgba(15, 15, 15, 0.05) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 3px 6px, rgba(15, 15, 15, 0.2) 0px 9px 24px;
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.shareButtonsWrapper{
+    padding: 6px 0px;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+.shareButtonsWrapper:hover{
+    background-color: #cfcfcf;
+}
+
+.shareWindow{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+.shareInner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.shareTitle{
+    margin-bottom: 8px;
+    color: inherit;
+    font-size: 14px;
+}
+
+.shareButtons{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px;
+}
+
+.xi-share-alt:before {
+    content: "\e9e9";
+}
+
+.linkShareButton{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+    opacity: 0.6;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 4px 2px;
+}
+
+.linkShareButton:hover{
+    opacity: 1;
+}
+
+.ShareButton{
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+}
+
+.shareImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    opacity: 0.6;
+    transition: 300ms;
+}
+
+.shareImg:hover{
+    opacity: 1;
+}
+
+.shareButtons > * {
+    margin-right: 8px !important;
+}
+
+#hiddenContents{
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
 }
