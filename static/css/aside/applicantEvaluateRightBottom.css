@@ -18,6 +18,7 @@
 .sidebar .img-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom:30px;
 }
 .sidebar .img-container .img-button {
     display: flex;

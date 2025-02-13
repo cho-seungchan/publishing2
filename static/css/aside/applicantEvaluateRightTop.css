@@ -44,6 +44,7 @@ body {
 .sidebar .person .name {
     font-size: 26px;
     font-weight: bold;
+    margin-bottom: 40px;
     z-index: 9999;
 }
 .sidebar .person img {
@@ -51,10 +52,24 @@ body {
     margin-left: -20px;
     cursor: pointer;
 }
-.sidebar .buttons {
+.mail, .phone {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+}
+.sidebar .phone img{
+    width: 20px;
+    margin-left: 4px;
+    margin-right: 10px;
+}
+.sidebar .mail img{
+    width: 45px;
+    margin-left: -10px;
+}
+.sidebar buttons {
     margin-top: 16px;
 }
-.sidebar .button {
+.sidebar button {
     width: 100%;
     padding: 15px;
     background-color: #ffffff;
@@ -70,13 +85,152 @@ body {
     height: 55px;
     border-radius: 4px;
 }
-.sidebar .button.clicked {
+.sidebar button.clicked {
     font-weight: 900;
     background: rgb(0, 221, 109);
     border: 1px solid rgb(0, 221, 109);
     color: white;
     border-radius: 4px;
 }
-.sidebar .button.fail {
+.sidebar button.fail, .sidebar button.cancel{
     color: red;
+}
+
+
+/* 수수료 정산 요청하기 모달창 부분 */
+
+.sidebar-modal-body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 999; 
+}
+.sidebar-modal {
+    background: white;
+    width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.sidebar-modal .modal-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.sidebar-modal .modal-body {
+    font-size: 14px;
+}
+.sidebar-modal .info-box {
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+.sidebar-modal .form-group {
+    margin-bottom: 20px;
+    align-items: center;
+}
+.sidebar-modal .form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+    width: 160px;
+}
+.sidebar-modal .form-group div {
+    margin-left: -35px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.sidebar-modal .form-group input {
+    position: relative;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.sidebar-modal .button-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.sidebar-modal .notice {
+    font-size: 12px;
+    color: #666;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.sidebar-modal .button-container {
+    display: flex;
+    justify-content: space-between;
+}
+/* .sidebar-modal button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 55px;
+} */
+
+.sidebar-modal button {
+    padding: 10px;
+    width: 48%;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    border-radius: 4px;
+}
+.sidebar-modal button.clicked {
+    font-weight: 900;
+    background: rgb(0, 221, 109);
+    border: 1px solid rgb(0, 221, 109);
+    color: white;
+    border-radius: 4px;
+}
+/* .sidebar-modal .cancel {
+    background: #ccc;
+} */
+/* .sidebar-modal .submit {
+    background: rgb(0, 221, 109);
+    border: 1px solid rgb(0, 221, 109);
+    color: white;
+    margin-left: 10px;
+} */
+.sidebar-modal .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.sidebar-modal .form-group {
+    display: flex;
 }

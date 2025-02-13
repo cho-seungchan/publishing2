@@ -1,3 +1,5 @@
+// 평가 말풍선 클릭 이벤트
+
 // input 창에 글자를 넣으면 등록 버튼 활성화
 
 document.querySelector(".sidebar .evaluate").addEventListener("input", (e) => {
@@ -36,7 +38,3 @@ document.querySelector(".sidebar .submit-button").addEventListener("click", (e) 
         }
     }
 });
-
-// 평가 말풍선 클릭 이벤트
-
-document.querySelector(".sidebar .speechBubble").addEventListener("click", (e) => {});
