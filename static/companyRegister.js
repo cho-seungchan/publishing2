@@ -6,7 +6,11 @@ const integratedBOX = document.querySelector("#redbox");
 const integratedMSG = document.querySelector("#msg_corp_code");
 
 integratedNUM.addEventListener("input", () => {
+<<<<<<< HEAD
   // console.log("입력됨");
+=======
+  console.log("입력됨");
+>>>>>>> member-mypage/main
 
   // 숫자만 입력가능.
   let value = integratedNUM.value.replace(/\D/g, "");
@@ -25,7 +29,11 @@ integratedNUM.addEventListener("input", () => {
 
 let fmsg = integratedNUM.integratedNUM; // 사업자번호 입력제어
 integratedNUM.addEventListener("focus", () => {
+<<<<<<< HEAD
   // console.log("focus 됨");
+=======
+  console.log("focus 됨");
+>>>>>>> member-mypage/main
 });
 // 사업자번호 칸 이벤트
 
@@ -65,9 +73,15 @@ modalBOX.style.display = "none";
 modalBackground.style.display = "none";
 
 pagebtn.addEventListener("click", () => {
+<<<<<<< HEAD
   // console.log("PAGEbtn");
   if (modalBOX.style.display === "none") {
     // console.log("IN");
+=======
+  console.log("PAGEbtn");
+  if (modalBOX.style.display === "none") {
+    console.log("IN");
+>>>>>>> member-mypage/main
     modalBOX.style.display = "block";
     modalBackground.style.display = "block";
   } else if (pagebtn.style.display === "block") {
@@ -91,6 +105,7 @@ btnclose2.addEventListener("click", () => {
 });
 
 // 파일 선택 버튼 눌럿을떄 사업자 등록번호로 포커스,
+<<<<<<< HEAD
 // 파일 첨부
 // 사업자등록번호 확인안돼면
 const btnFile = document.querySelector("#select_certification_file");
@@ -162,6 +177,21 @@ input.addEventListener("change", (e) => {
       console.log("out");
     }
   });
+=======
+// 사업자등록번호 확인안돼면
+const btnFile = document.querySelector("#select_certification_file");
+
+btnFile.style.display = "block";
+
+btnFile.addEventListener("click", () => {
+  console.log("in");
+  if (integratedNUM.value.length <= 14) {
+    integratedNUM.focus();
+    alert("사업자 등록번호를 입력하세요.");
+    // window.scrollTo("top : 0");
+  } else if ((integratedNUM.value.length = 12)) {
+  }
+>>>>>>> member-mypage/main
 });
 
 // 기업인증 사진있는곳,위에 글자까지
@@ -177,10 +207,17 @@ btnFile.style.display = "block";
 subCorp_wrap.style.display = "none";
 
 nextTbtn.addEventListener("change", () => {
+<<<<<<< HEAD
   // console.log("변함");
   //
   if (nextTbtn.checked) {
     // console.log("진입");
+=======
+  console.log("변함");
+  //
+  if (nextTbtn.checked) {
+    console.log("진입");
+>>>>>>> member-mypage/main
     //
     corp_wrap.style.display = "none";
     btnFile.style.display = "none";
