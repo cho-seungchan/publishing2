@@ -93,16 +93,42 @@ btnclose2.addEventListener("click", () => {
 // 파일 선택 버튼 눌럿을떄 사업자 등록번호로 포커스,
 // 사업자등록번호 확인안돼면
 const btnFile = document.querySelector("#select_certification_file");
+const checkbtn = document.querySelector("#request_certification_wrap");
+const nextTimeBtn = document.querySelector("#next_certification_check_wrap");
+const hiddenInputPage = document.querySelector(".area_input_company");
 
 btnFile.style.display = "block";
+hiddenInputPage.style.display = "none";
+
+btnFile.addEventListener("change", (e) => {
+  const [file] = e.target.files;
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.addEventListener("load", (e) => {
+    const path = e.target.result;
+    if (path.includes("png")) {
+      console.log(path)
+    } else {
+      
+    }
+    
+  });
+});
 
 btnFile.addEventListener("click", () => {
   console.log("in");
-  if (integratedNUM.value.length <= 14) {
+  if (integratedNUM.value.length <= 11) {
     integratedNUM.focus();
     alert("사업자 등록번호를 입력하세요.");
     // window.scrollTo("top : 0");
   } else if ((integratedNUM.value.length = 12)) {
+    corp_wrap.style.display="block";
+    
+    
+    
+    
+
+
   }
 });
 

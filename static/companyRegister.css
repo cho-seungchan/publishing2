@@ -1095,3 +1095,11 @@ a:hover {
 .cont_division .identify_phone .TypoBox {
   width: 100%;
 }
+.area_corp_certification .box_file_upload .file_view:before {
+    display: block;
+    margin: 14px auto 0;
+    width: 53px;
+    height: 68px;
+    background: url(https://www.saraminimage.co.kr/sri/join/img_file_upload.png) 0 0 no-repeat;
+    content: "";
+}
