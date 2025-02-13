@@ -35,10 +35,11 @@
 }
 
 /* 메뉴 섹션 스타일 */
-.menu-section:first-of-type,
-.menu-section:nth-of-type(2) {
+/* .menu-section:first-of-type,
+.menu-section:nth-of-type(2),
+.menu-section:nth-of-type(3) {
   border-bottom: 1px solid #f2f4f6;
-}
+} */
 
 .menu-section {
   padding: 0;

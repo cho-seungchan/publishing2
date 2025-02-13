@@ -1,5 +1,5 @@
 /* 
-  데스크톱 레이아웃 미디어 쿼리 (1096px 이상)
+  데스크톱 레이아웃 미디어 쿼리
   1. 기본 레이아웃 구조
   2. 네비게이션 바
   3. 사이드바
@@ -7,7 +7,7 @@
   5. 토글 버튼
 */
 
-@media screen and (min-width: 1096px) {
+@media screen and (min-width: 800px) {
   /* 레이아웃 기본 구조 */
   .layout-container {
     overflow-y: hidden;

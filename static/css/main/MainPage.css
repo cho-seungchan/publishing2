@@ -116,6 +116,7 @@ img, fieldset, iframe {
     justify-content: space-between;
     align-items: center;
     height: 56px;
+    z-index: 13;
 }
 
 .logoWrap{
@@ -128,6 +129,10 @@ img, fieldset, iframe {
 
 .pageLogo{
     display: inline-flex;
+}
+
+.mainSearch{
+    position: relative;
 }
 
 .searchWrapper{
@@ -189,7 +194,7 @@ img, fieldset, iframe {
 .searchWindow{
     position: absolute;
     top: 51px;
-    left: 0px;
+    left: 0;
     width: 472px;
     background: rgb(255, 255, 255);
     border: 1px solid rgb(228, 228, 228);
@@ -770,6 +775,243 @@ h3{
 
 .companyLocation>li:last-child::before{
     content: "· ";
+}
+
+footer{
+    background-color: rgb(251, 251, 251);
+    padding: 40px 0px 30px;
+}
+
+.inner{
+    max-width: 1060px;
+    position: relative;
+    margin: 0px auto;
+    padding: 24px 0px 60px;
+    text-align: left;
+}
+
+.inner::after{
+    display: table;
+    table-layout: fixed;
+    clear: both;
+    content: "";
+}
+
+.inner > .logo {
+    position: absolute;
+    left: 0px;
+    top: 27px;
+    width: 42px;
+    height: 22px;
+}
+
+.contents{
+    display: flex;
+    padding-left: 92px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.linksWrap{
+    display: flex;
+    width: 250px;
+}
+
+.info{
+    display: inline-block;
+    width: 718px;
+    color: rgb(102, 102, 102);
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.links>li{
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.links>li>a{
+    display: inline-block;
+    color: rgb(68, 68, 68);
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.links>li:nth-child(2n+1){
+    width: 140px;
+}
+
+.blind{
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.info>dd{
+    padding-bottom: 16px;
+}
+
+.snsIcon{
+    margin-top: 14px;
+}
+
+.snsIcon>a>img {
+    margin-right: 8px;
+}
+
+.slickSlider{
+    position: relative;
+    display: block;
+}
+
+.slickList{
+    transform: translateZ(0);
+    overflow: hidden;
+}
+
+.slickTrack{
+    width: 700px;
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    display: flex;
+}
+
+.slickTrack::before{
+    display: table;
+    content: "";
+}
+
+.sideSlickSlide{
+    display: block;
+    outline: none;
+    width: 100px;
+}
+
+.slickSlideLink{
+    width: 100%;
+    display: inline-block;
+}
+
+.sideSlideImg1{
+    width: 100px;
+    height: 148px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: url("https://cdn.jumpit.co.kr/jumpit/banner/home/programmers_wing.webp") 0% 0% / 100px 148px no-repeat;
+}
+
+.sideSlideImg2{
+    width: 100px;
+    height: 148px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: url("https://cdn.jumpit.co.kr/jumpit/banner/home/komate_launching_wing.webp") 0% 0% / 100px 148px no-repeat;
+}
+
+.sideSlideImg3{
+    width: 100px;
+    height: 148px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: url("https://cdn.jumpit.co.kr/jumpit/personal/main_banner/event_for_develop_banner.png") 0% 0% / 100px 148px no-repeat;
+}
+
+.sideSlideButtonWrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 29px;
+    margin: 0px auto;
+}
+
+.sideSlideButton>span{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: rgb(212, 212, 212);
+}
+
+.loginedMemberButton{
+    padding-top: 1px;
+    height: 42px;
+}
+
+.loginedMemberButton button{
+    width: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.rightNavigation li button{
+    display: inline-block;
+    position: relative;
+    padding: 10px 0px;
+    font-weight: 500;
+    color: rgb(34, 34, 34);
+    text-align: end;
+}
+
+.rightNavigation li button:hover{
+    color: rgb(34, 34, 34);
+}
+
+.loginedMemberButton svg{
+    position: relative;
+    top: 2px;
+    margin-left: 5px;
+}
+
+.loginedMemberButton:hover svg {
+    transform: rotate(180deg);
+}
+
+.loginedMemberButton svg path{
+    fill: rgb(204, 204, 204);
+}
+
+.loginMemberNav{
+    display: none;
+    position: absolute;
+    width: 175px;
+    right: 0px;
+    border: 1px solid rgb(228, 228, 228);
+    box-sizing: border-box;
+    box-shadow: rgba(20, 20, 20, 0.12) 0px 8px 16px;
+    border-radius: 4px;
+    padding: 8px 0px;
+    background-color: rgb(255, 255, 255);
+}
+
+.loginMemberNav ul li:hover{
+    background-color: rgb(244, 244, 244);
+    cursor: pointer;
+}
+
+.loginMemberNav li button:hover{
+    color: rgb(34, 34, 34);
+}
+
+.loginMemberNav ul li{
+    position: relative;
+    padding: 0px 12px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.loginMemberNav ul li > a, .loginMemberNav ul li button{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding: 0px 8px;
+    font-weight: normal;
 }
 
 footer{
