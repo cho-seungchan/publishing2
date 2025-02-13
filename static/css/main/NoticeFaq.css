@@ -854,5 +854,106 @@ input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio"
 }
 
 .searchTextContent{
-    
+    margin-left: 8px;
+    margin-right: 14px;
+    min-width: 0px;
+}
+
+.searchTextButton{
+    margin-left: auto;
+    margin-right: 14px;
+    min-width: 0px;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin-top: 3px;
+}
+
+.notionRecordIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    flex-shrink: 0;
+}
+
+.modalSearchIcon{
+    height: 15.4px;
+    width: 15.4px;
+    font-size: 15.4px;
+    line-height: 1.1;
+    margin-left: 0px;
+    color: black;
+}
+
+.modalLockIcon{
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    background-repeat: no-repeat;
+    background: url(https://cdn.lazyrockets.com/_next/static/media/emoji.0d02c5b5.png);
+    background-position-x: 50.847457627118644%;
+    background-position-y: 16.94915254237288%;
+    -webkit-background-size: 6000% 6000%;
+    background-size: 6000% 6000%;
+}
+
+.searchTextTitle{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgba(55, 53, 47, 0.6);
+}
+
+.searchTextDetail{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: rgba(55, 53, 47, 0.4);
+}
+
+/* 검색결과에 검색어가 들어있는 부분 강조 */
+.searchWordEM{
+    font-weight: 500;
+    color: rgb(55, 53, 47);
+    white-space: pre-wrap;
+}
+
+.searchDetailWrapper{
+    display: flex;
+    font-size: 12px;
+    color: rgba(55, 53, 47, 0.4);
+    overflow: hidden;
+    white-space: pre-wrap;
+}
+
+.searchHoverButton{
+    display: block;
+    flex-shrink: 0;
+    backface-visibility: hidden;
+    width: 14px;
+    height: 14px;
+    fill: rgba(55, 53, 47, 0.4);
+    opacity: 0;
+}
+
+.searchContent:hover .searchHoverButton{
+    opacity: 1;
+}
+
+.modalEventIcon{
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    background: url(https://cdn.lazyrockets.com/_next/static/media/emoji.0d02c5b5.png) 11.8644% 18.6441% / 6000% 6000%;
+}
+
+.searchTextMore{
+    margin-top: 4px;
+    font-size: 12px;
+    color: rgba(55, 53, 47, 0.6);
+    overflow-wrap: break-word;
 }
