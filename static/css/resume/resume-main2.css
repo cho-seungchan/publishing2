@@ -576,9 +576,7 @@
     display: contents
 }
 
-.hidden {
-    display: none
-}
+
 
 .h-14 {
     height: 3.5rem
@@ -1018,4 +1016,8 @@
 
 .__className_f53396 {
     font-family: __PretendardFont_f53396, __PretendardFont_Fallback_f53396, -apple-system, system-ui, Apple SD Gothic Neo, Malgun Gothic, Nanum Gothic, sans-serif
+}
+
+.hidden {
+    display: none !important
 }
