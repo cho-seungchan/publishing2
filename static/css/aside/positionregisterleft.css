@@ -71,10 +71,10 @@
     margin-left: 3%;
     border-bottom: 1px solid rgba(85, 67, 67, 0.32);
 }
-.contentbar .title img{
+.contentbar .title img {
     position: relative;
     top: 4px;
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 .contentbar .content {
     top: 0px;
@@ -127,4 +127,9 @@
 }
 .applybar p {
     margin-left: 55px;
+}
+.headbar .other-container .vertical-line {
+    margin-top: 12px;
+    border-left: 2px solid gray;
+    height: 10px;
 }
