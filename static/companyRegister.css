@@ -1103,3 +1103,33 @@ a:hover {
     background: url(https://www.saraminimage.co.kr/sri/join/img_file_upload.png) 0 0 no-repeat;
     content: "";
 }
+.area_corp_certification .btn_change_file {
+    width: 230px;
+    border-color: var(--blue90);
+    color: var(--blue90);
+    background-color: var(--white);
+}
+.area_corp_certification .file_upload_completed:before, .area_corp_certification .file_upload_invalid:before {
+    display: block;
+    margin: 0 auto;
+    width: 86px;
+    height: 87px;
+    background: url(//www.saraminimage.co.kr/sri/join/img_file_upload_completed.png) 0 0 no-repeat;
+    content: "";
+}
+.area_corp_certification .box_notice {
+    margin-top: 12px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--white);
+}
+.area_corp_certification .txt_red {
+    color: var(--coral110);
+}
+.area_corp_certification .btn_close:after {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url('data:image/svg+xml;utf8,<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.9357 5.3209L11.2566 0L12 0.743396L6.6876 6.0558L11.9999 11.248L11.2651 11.9999L5.94415 6.79925L0.743396 12L0 11.2566L5.19226 6.06435L0 0.989476L0.734849 0.23763L5.9357 5.3209Z" fill="%2367738E"/></svg>') 50% no-repeat;
+    content: "";
+}
