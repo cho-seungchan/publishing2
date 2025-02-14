@@ -51,6 +51,11 @@ document.querySelector(".sidebar .speechBubble").addEventListener("click", (e) =
     document.querySelector(".sidebar-modal-bottom-body").style.display = "flex";
 
     // tabs 서류평가 면접평가 클릭시
+    document.querySelector(".sidebar-modal .tabs").addEventListener("click", (e) => {
+        document.querySelectorAll(".sidebar-modal .tabs .tab").forEach((e) => {
+            e.classList.toggle("active");
+        });
+    });
 
     //  X 버튼 클릭시
     document.querySelector(".sidebar-modal .close").addEventListener("click", (e) => {
