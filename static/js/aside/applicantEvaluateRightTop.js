@@ -19,7 +19,6 @@ document.querySelector(".buttons").addEventListener("click", (button) => {
         document.querySelector(".sidebar .badge").textContent = "불합격";
         document.querySelector(".sidebar .buttons").innerHTML = `
                 <button class="review">재검토</button>`;
-        failAction();
     } else if (button.target.classList.contains("pass")) {
         document.querySelector(".sidebar .fail").classList.remove("clicked");
         document.querySelector(".sidebar .badge").textContent = "최종합격";
@@ -36,11 +35,37 @@ document.querySelector(".buttons").addEventListener("click", (button) => {
         document.querySelector(".sidebar .passCancel").classList.remove("clicked");
         applyAction();
     } else if (button.target.classList.contains("review")) {
+        // 확인용 화면으로 변경
+        document.querySelector(".sidebar .buttons").innerHTML = `    
+                <div class="review">
+                    <p class="circle note1">확인 클릭 시, 해당 지원자는 신규지원자 탭으로 상태가 변경됩니다.</p>
+                    <div class="middleText">
+                        <h1 class="highlight-text">'신규지원자' 상태로 변경</h1>
+                        <p note2>
+                            해당 지원자를 <span class="highlight">‘신규지원자(열람)’</span> 상태로 변경합니다.
+                            변경하시겠습니까?
+                        </p>
+                    </div>
+                    <p class="circle note3">
+                        상태 변경 시, 지원자에게 재검토 대상이 되었음을 안내하는 메일이 발송됩니다. 점프 메일 템플릿으로
+                        발송되며, 메일 발송 이력에서 확인 가능합니다.
+                    </p>
+                    <div class="buttons">
+                        <button class="reviewCancel">취소</button>
+                        <button class="reviewConfirm">확인</button>
+                    </div>
+                </div>`;
+    } else if (button.target.classList.contains("reviewCancel")) {
+        document.querySelector(".sidebar .badge").textContent = "불합격";
+        document.querySelector(".sidebar .buttons").innerHTML = `
+                <button class="review">재검토</button>`;
+    } else if (button.target.classList.contains("reviewConfirm")) {
         document.querySelector(".sidebar .badge").textContent = "신규지원자";
         document.querySelector(".sidebar .buttons").innerHTML = `
                 <button class="pass">최종합격</button>
                 <button class="fail">불합격</button>`;
     }
+
     button.target.classList.add("clicked");
 });
 

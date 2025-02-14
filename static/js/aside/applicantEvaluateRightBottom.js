@@ -1,4 +1,66 @@
-// 평가 말풍선 클릭 이벤트
+// 평가 말풍선 클릭 이벤트 - 지원자 평가의견 모달창
+document.querySelector(".sidebar .speechBubble").addEventListener("click", (e) => {
+    e.target.classList.add("clicked");
+    document.querySelector(".sidebar-modal-bottom-body").innerHTML = `
+        <div class="sidebar-modal">
+            <div class="modal-header">
+                <span>지원자 평가 의견</span>
+                <span class="close">&times;</span>
+            </div>
+            <div class="tabs">
+                <div class="tab">서류 평가 2</div>
+                <div class="tab active">면접 평가 3</div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="first">평가자</th>
+                        <th class="second">평가</th>
+                        <th class="third">평가의견</th>
+                        <th class="fourth">평가일시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first">유피엠</td>
+                        <td class="second">
+                            <img src="../../static/images/aside/thumbDown.png" />
+                        </td>
+                        <td class="third">학구적인 태도가 실무에 도움이 될 것으로 기대됨</td>
+                        <td class="fourth">2022.03.15</td>
+                    </tr>
+                    <tr>
+                        <td class="first">정팀장</td>
+                        <td class="second">
+                            <img src="../../static/images/aside/thumbup.png" />
+                        </td>
+                        <td class="third">학구적인 태도가 실무에 도움이 될 것으로 기대됨</td>
+                        <td class="fourth">2022.03.15</td>
+                    </tr>
+                    <tr>
+                        <td class="first">이인담</td>
+                        <td class="second">
+                            <img src="../../static/images/aside/thumbup.png" />
+                        </td>
+                        <td class="third">자신감 넘치는 모습이 주체적으로 업무할 수 있을 것으로 기대됨</td>
+                        <td class="fourth">2022.03.15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>`;
+    document.querySelector(".sidebar-modal-bottom-body").style.display = "flex";
+
+    // tabs 서류평가 면접평가 클릭시
+
+    //  X 버튼 클릭시
+    document.querySelector(".sidebar-modal .close").addEventListener("click", (e) => {
+        e.target.classList.remove("clicked");
+        document.querySelector(".sidebar-modal-bottom-body").innerHTML = ``;
+        document.querySelector(".sidebar-modal-bottom-body").style.display = "none";
+        return;
+    });
+});
+// 평가 말풍선 클릭 이벤트 - 지원자 평가의견 모달창
 
 // input 창에 글자를 넣으면 등록 버튼 활성화
 
